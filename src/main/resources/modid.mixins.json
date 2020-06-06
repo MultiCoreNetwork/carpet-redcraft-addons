@@ -4,10 +4,10 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "MobEntity_makarenaMixin",
-    "MinecraftServer_noopMixin"
+    "Main_serverNoopMixin"
   ],
   "client": [
-    "MinecraftClient_noopMixin"
+    "Main_clientNoopMixin"
   ],
   "injectors": {
     "defaultRequire": 1

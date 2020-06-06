@@ -32,7 +32,7 @@ public class ExampleSimpleSettings
     @Rule(
             desc = "Example numerical setting",
             options = {"32768", "250000", "1000000"},
-            validate = {Validator.POSITIVE_NUMBER.class, CheckValue.class},
+            validate = {Validator.NONNEGATIVE_NUMBER.class, CheckValue.class},
             category = {CREATIVE, "examplemod"}
     )
     public static int uselessNumericalSetting = 32768;
