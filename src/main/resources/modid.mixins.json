@@ -3,11 +3,10 @@
   "package": "carpet_extension.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "MobEntity_makarenaMixin",
-    "Main_serverNoopMixin"
+    "CrashReport_noopMixin",
+    "MobEntity_makarenaMixin"
   ],
   "client": [
-    "Main_clientNoopMixin"
   ],
   "injectors": {
     "defaultRequire": 1
