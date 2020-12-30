@@ -19,6 +19,7 @@ classes/
 bin/
 .classpath
 .project
+local.properties
 
 # fabric
 
