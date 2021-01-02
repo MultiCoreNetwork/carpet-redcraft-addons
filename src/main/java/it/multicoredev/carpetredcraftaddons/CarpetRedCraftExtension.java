@@ -2,9 +2,13 @@ package it.multicoredev.carpetredcraftaddons;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
+import carpet.CarpetSettings;
 import carpet.script.CarpetScriptServer;
 import carpet.script.bundled.BundledModule;
+import com.mojang.brigadier.CommandDispatcher;
+import it.multicoredev.carpetredcraftaddons.commands.DefaultConfig;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.command.ServerCommandSource;
 import org.apache.commons.io.IOUtils;
 
 import java.io.IOException;
@@ -22,14 +26,13 @@ public class CarpetRedCraftExtension implements CarpetExtension {
 
     @Override
     public void onGameStarted() {
-        // let's /carpet handle our few simple settings
         CarpetServer.settingsManager.parseSettingsClass(CarpetRedCraftSettings.class);
-        CarpetScriptServer.registerBuiltInScript(redcraftDefaultScript("placeable", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeable", false));
     }
 
     @Override
-    public void onServerLoadedWorlds(MinecraftServer server) {
-
+    public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher) {
+        DefaultConfig.register(dispatcher);
     }
 
     @Override
