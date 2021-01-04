@@ -31,10 +31,10 @@ public class DefaultConfig {
                     CarpetServer.settingsManager.attachServer(CarpetServer.minecraft_server);
 
                     // GAMERULES
-                    dispatcher.execute("/gamerule playersSleepingPercentage 0",c.getSource());
-                    dispatcher.execute("/gamerule doFireTick false",c.getSource());
-                    dispatcher.execute("/gamerule commandBlockOutput false",c.getSource());
-                    dispatcher.execute("/gamerule spectatorsGenerateChunks false",c.getSource());
+                    dispatcher.execute("gamerule playersSleepingPercentage 0",c.getSource());
+                    dispatcher.execute("gamerule doFireTick false",c.getSource());
+                    dispatcher.execute("gamerule commandBlockOutput false",c.getSource());
+                    dispatcher.execute("gamerule spectatorsGenerateChunks false",c.getSource());
 
                     return 1;
                 });

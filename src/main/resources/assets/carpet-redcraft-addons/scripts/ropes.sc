@@ -15,23 +15,32 @@ __on_player_right_clicks_block(player, item_tuple, hand, block, face, hitvec) ->
 );
 
 entity_pos(entity, pos) -> 
-    filter(entity_list('*'), _ ~ 'type' == entity && pos(_) == pos);
+    length(entity_area(entity,map(pos,floor(_))+[0.5,0.375,0.5],[0.01,0.01,0.01]));
 
-_remove_leash(entity) ->
-if(!entity ~ 'nbt':'Leash' ||
-   !entity_pos('leash_knot', pos(entity)) ||
-   map(['X','Y','Z'], entity ~ 'nbt':'Leash':_) == map(pos(entity), floor(_)),
-    if(entity ~ 'nbt':'Leash', 
-        spawn('item', pos(entity) ,str('{Item:{id:"minecraft:lead",Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', rand(0.2) - 0.1, rand(0.2) - 0.1))
+_remove_leash(entity) ->(
+    if(!entity ~ 'nbt':'Leash' ||
+    !entity_pos('leash_knot', pos(entity)) ||
+    map(['X','Y','Z'], entity ~ 'nbt':('Leash.'+_)) == map(pos(entity), floor(_)),
+        if(entity ~ 'nbt':'Leash',
+            spawn('item', pos(entity) ,str('{Item:{id:"minecraft:lead",Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', rand(0.2) - 0.1, rand(0.2) - 0.1))
+        );
+        modify(entity, 'remove')
     );
-    modify(entity, 'remove')
 );
 
-__on_tick() -> (
-    if(tick_time() % 20, return());
-    for(entity_selector('@e[tag=gb.cord_leash]'), 
+slow_looper() -> (
+    for(entity_selector('@e[tag=gb.cord_leash]'),
+        modify(_, 'effect', 'invisibility', 2147483647, 1, false, false);
+        modify(_, 'age', -2147483648);
+    );
+    schedule(12000, 'slow_looper')
+);
+slow_looper();
+
+fast_looper() -> (
+    for(entity_selector('@e[tag=gb.cord_leash]'),
         _remove_leash(_);
-        // modify(_, 'effect', 'invisibility', 2147483647, 1, false, false);
-        // modify(_, 'age', '-2147483648);
-    )
-)
+    );
+    schedule(20, 'fast_looper')
+);
+fast_looper()

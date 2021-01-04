@@ -3,10 +3,12 @@ package it.multicoredev.carpetredcraftaddons;
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import carpet.CarpetSettings;
+import carpet.script.CarpetExpression;
 import carpet.script.CarpetScriptServer;
 import carpet.script.bundled.BundledModule;
 import com.mojang.brigadier.CommandDispatcher;
 import it.multicoredev.carpetredcraftaddons.commands.DefaultConfig;
+import it.multicoredev.carpetredcraftaddons.functions.StorageCarpetFunction;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import org.apache.commons.io.IOUtils;
@@ -27,12 +29,23 @@ public class CarpetRedCraftExtension implements CarpetExtension {
     @Override
     public void onGameStarted() {
         CarpetServer.settingsManager.parseSettingsClass(CarpetRedCraftSettings.class);
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeable", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("ropes", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("sitanywhere", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("treecapitator", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("villagerleash", false));
     }
 
     @Override
     public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher) {
         DefaultConfig.register(dispatcher);
+    }
+
+    @Override
+    public void scarpetApi(CarpetExpression expression) {
+        StorageCarpetFunction.apply(expression.getExpr());
     }
 
     @Override

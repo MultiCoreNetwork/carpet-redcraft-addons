@@ -1,12 +1,14 @@
 {
   "schemaVersion": 1,
   "id": "carpet-redcraft-addons",
-  "version": "1.4.6",
+  "version": "1.4.21",
 
   "name": "Carpet RedCraft Addons",
   "description": "Addons for the RedCraft server",
   "authors": [
-    "BisUmTo ..."
+    "BisUmTo",
+    "replaceitem",
+    "..."
   ],
   "contact": {
     "homepage": "https://github.com/MultiCoreNetwork/carpet-redcraft-addons",
