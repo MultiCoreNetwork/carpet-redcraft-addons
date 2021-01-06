@@ -1,9 +1,8 @@
 _config() -> {'stay_loaded' -> true, 'scope'->'player'};
 
-_valid_item(player, block) -> (
+_valid_item(player) -> (
 	[item, count, nbt] = if(h=player~'holds', h, return(false));
-    g = player~'gamemode_id';
-    if(item ~ '_axe$' == null || g ==3 || g == 2 && !nbt:'CanDestroy' ~ ('"minecraft:'+block+'"'), return(false));
+    if(item ~ '_axe$' == null, return(false));
     if(max(nbt:'Enchantments[{id:"redcraft:treecapitator"}]'<1),
         if(nbt:'display.Lore[]' ~ '\\{"text":"TreeCapitator","color":"red","italic":false\\}' == null,
             return(false),
@@ -103,7 +102,7 @@ _detect_attached_leaves(logs) -> (
 );
 
 __on_player_breaks_block(player, block) -> (
-    if(!_valid_item(player, block) || !_valid_block(block) || !_valid_tree(block), return());
+    if(!_valid_item(player) || !_valid_block(block) || !_valid_tree(block), return());
     for(_detect_attached_leaves(logs = _detect_base_log(global_first_log = block)),
         [item, count, nbt] = player~'holds';
         destroy(_, item, nbt)

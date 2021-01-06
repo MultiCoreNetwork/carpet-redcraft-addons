@@ -2,7 +2,6 @@ package it.multicoredev.carpetredcraftaddons.commands;
 
 import carpet.CarpetServer;
 import carpet.script.bundled.BundledModule;
-import carpet.settings.SettingsManager;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import net.minecraft.server.command.ServerCommandSource;
@@ -17,11 +16,11 @@ import static net.minecraft.server.command.CommandManager.literal;
 
 ;
 
-public class DefaultConfig {
+public class DefaultConfigCommand {
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        LiteralArgumentBuilder<ServerCommandSource> command = literal("load-default-config").
-                requires((player) -> player.hasPermissionLevel(3)).
-                executes(c ->
+        LiteralArgumentBuilder<ServerCommandSource> command = literal("load-default-config")
+                .requires((player) -> player.hasPermissionLevel(3))
+                .executes(c ->
                 {
                     try {
                         String world = c.getSource().getMinecraftServer().getSavePath(WorldSavePath.ROOT).toString();
@@ -31,10 +30,10 @@ public class DefaultConfig {
                     CarpetServer.settingsManager.attachServer(CarpetServer.minecraft_server);
 
                     // GAMERULES
-                    dispatcher.execute("gamerule playersSleepingPercentage 0",c.getSource());
-                    dispatcher.execute("gamerule doFireTick false",c.getSource());
-                    dispatcher.execute("gamerule commandBlockOutput false",c.getSource());
-                    dispatcher.execute("gamerule spectatorsGenerateChunks false",c.getSource());
+                    dispatcher.execute("gamerule playersSleepingPercentage 0", c.getSource());
+                    dispatcher.execute("gamerule doFireTick false", c.getSource());
+                    dispatcher.execute("gamerule commandBlockOutput false", c.getSource());
+                    dispatcher.execute("gamerule spectatorsGenerateChunks false", c.getSource());
 
                     return 1;
                 });

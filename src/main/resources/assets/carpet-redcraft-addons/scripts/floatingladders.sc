@@ -13,6 +13,7 @@ _rope_ladders(player, item_tuple, hand, block, face) -> (
     );
     if(!air(b) && b != 'water', return());
     set(b, block, 'waterlogged', if(b == 'water', 'true', 'false'));
+    sound('block.ladder.place', pos(b), 1.0, 1, 'block');
     if(g == 'creative', return());
     inventory_set(player, if(hand=='mainhand',player~'selected_slot',-1), count - 1, item ,nbt)
 );

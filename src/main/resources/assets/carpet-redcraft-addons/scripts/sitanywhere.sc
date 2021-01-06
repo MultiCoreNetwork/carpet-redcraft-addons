@@ -13,7 +13,7 @@ __on_player_right_clicks_block(player, item_tuple, hand, block, face, hitvec) ->
     entity_event(entity, 'on_removed',
         _(e,outer(armor_stand)) -> modify(armor_stand,'remove')
     );
-    sound('entity.pig.saddle',pos(entity),1.0,1.5,'block');
+    sound('entity.pig.saddle',pos(armor_stand),1.0,1.5,'block');
     if(player ~ 'gamemode' != 'creative',
         inventory_set(player, if(hand == 'mainhand', player~'selected_slot', -1), count - 1, item, nbt)
     )

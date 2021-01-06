@@ -2,14 +2,14 @@ package it.multicoredev.carpetredcraftaddons;
 
 import carpet.CarpetExtension;
 import carpet.CarpetServer;
-import carpet.CarpetSettings;
 import carpet.script.CarpetExpression;
 import carpet.script.CarpetScriptServer;
 import carpet.script.bundled.BundledModule;
 import com.mojang.brigadier.CommandDispatcher;
-import it.multicoredev.carpetredcraftaddons.commands.DefaultConfig;
+import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
+import it.multicoredev.carpetredcraftaddons.commands.OpCommand;
+import it.multicoredev.carpetredcraftaddons.commands.PublishCommand;
 import it.multicoredev.carpetredcraftaddons.functions.StorageCarpetFunction;
-import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import org.apache.commons.io.IOUtils;
 
@@ -29,10 +29,14 @@ public class CarpetRedCraftExtension implements CarpetExtension {
     @Override
     public void onGameStarted() {
         CarpetServer.settingsManager.parseSettingsClass(CarpetRedCraftSettings.class);
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("dragoneggrespawns", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("graves", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("invisibleitemframe", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeable", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("ropes", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("silkyblockstates", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("sitanywhere", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("treecapitator", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("villagerleash", false));
@@ -40,7 +44,9 @@ public class CarpetRedCraftExtension implements CarpetExtension {
 
     @Override
     public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher) {
-        DefaultConfig.register(dispatcher);
+        DefaultConfigCommand.register(dispatcher);
+        OpCommand.register(dispatcher);
+        PublishCommand.register(dispatcher);
     }
 
     @Override
