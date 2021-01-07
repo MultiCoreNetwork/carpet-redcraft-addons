@@ -93,6 +93,13 @@ public class CarpetRedCraftSettings {
     )
     public static boolean horseStats = true;
 
+    @Rule(
+            desc = "Allows to dye Shulkers.",
+            appSource = "colorableshulkers",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean colorableShulkers = true;
+
     /* @Rule(
              desc = "Allows to have access to the /timebar command.",
              //appSource = "timebar",
@@ -100,12 +107,6 @@ public class CarpetRedCraftSettings {
      )
      public static boolean timebar = true;*/
 
-    /* @Rule(
-             desc = "Allows to dye Shulkers.",
-             //appSource = "coloredshulkers",
-             category = {SURVIVAL, FEATURE, REDCRAFT}
-     )
-     public static boolean coloredShulkers = true;*/
 
     @Rule(
             desc = "Allows to craft Cobwebs.",

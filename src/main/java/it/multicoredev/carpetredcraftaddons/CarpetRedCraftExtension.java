@@ -47,6 +47,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetServer.settingsManager.parseSettingsClass(CarpetRedCraftSettings.class);
 
         // SCRIPTS
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("colorableshulkers", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("dragoneggrespawns", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("graves", false));
