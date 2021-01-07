@@ -64,7 +64,7 @@ _remove_grave_position(player,tick) -> (
 
 _get_graves_positions(player) -> (
     nbt = parse_nbt(storage('redcraft:graves'));
-    if(!has(nbt,player~'uuid'), nbt:player~'uuid' = []);
+    if(!has(nbt,player~'uuid'), nbt:(player~'uuid') = []);
     return(nbt:(player~'uuid'))
 );
 
