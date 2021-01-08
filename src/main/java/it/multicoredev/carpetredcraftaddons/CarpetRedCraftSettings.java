@@ -100,12 +100,19 @@ public class CarpetRedCraftSettings {
     )
     public static boolean colorableShulkers = true;
 
+    @Rule(
+            desc = "Allows to have access to the /stats command.",
+            appSource = "stats",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean statsCommand = true;
+
     /* @Rule(
              desc = "Allows to have access to the /timebar command.",
              //appSource = "timebar",
              category = {SURVIVAL, FEATURE, REDCRAFT}
      )
-     public static boolean timebar = true;*/
+     public static boolean timebarCommand = true;*/
 
 
     @Rule(

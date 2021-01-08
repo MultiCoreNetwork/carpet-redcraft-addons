@@ -12,6 +12,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
 import it.multicoredev.carpetredcraftaddons.commands.OpCommand;
 import it.multicoredev.carpetredcraftaddons.commands.PublishCommand;
+import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
 import it.multicoredev.carpetredcraftaddons.functions.StorageCarpetFunction;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProfile;
@@ -58,6 +59,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("ropes", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("silkyblockstates", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("sitanywhere", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("stats", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("treecapitator", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("villagerleash", false));
     }
@@ -103,6 +105,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
     @Override
     public void scarpetApi(CarpetExpression expression) {
         StorageCarpetFunction.apply(expression.getExpr());
+        OfflineStatisticFunction.apply(expression.getExpr());
     }
 
     @Override
