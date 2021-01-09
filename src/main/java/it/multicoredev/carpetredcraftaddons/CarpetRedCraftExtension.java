@@ -52,6 +52,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("dragoneggrespawns", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("graves", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("handwaxing", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("horsestats", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("invisibleitemframe", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
@@ -59,9 +60,13 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("ropes", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("silkyblockstates", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("sitanywhere", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("skull", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("specialnametags", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("stats", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("timebar", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("treecapitator", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("villagerleash", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("waystone", false));
     }
 
     @Override

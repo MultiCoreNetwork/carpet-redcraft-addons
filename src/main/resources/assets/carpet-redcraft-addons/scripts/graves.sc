@@ -1,6 +1,10 @@
-__config() -> {'stay_loaded' -> true, 'scope' -> 'global'};
+__config() -> {
+    'stay_loaded' -> true,
+    'scope' -> 'global',
+    'commands' -> {'' -> '_command'}
+};
 
-__command() -> if((player=player())~'permission_level'>=1, _remove_grave(player, pos(player), null, true));
+_command() -> if((player=player())~'permission_level'>=1, _remove_grave(player, pos(player), null, true));
 
 scoreboard_add('gb.grave.time');
 
@@ -34,7 +38,7 @@ _make_grave(player, pos, items) -> (
         modify(_, 'pickup_delay', 32767);
         modify(_, 'gravity', false);
         modify(_, 'motion', [0,0,0]);
-        modify(_, 'age', 32767);
+        modify(_, 'nbt_merge', '{Age:-32768}');
         modify(_, 'mount', armor_stands:1);
         modify(_, 'tag', ['gb.grave_item', 'gb.grave']);
         scoreboard('gb.grave.time', _~'uuid', time)
@@ -47,10 +51,10 @@ _save_grave_position(player) -> (
     nbt:(player~'uuid') += {
         'Pos' -> player~'pos',
         'Dimension' -> player~'dimension',
-        'Tick' -> tick_time()
+        'Tick' -> world_time()
     };
     storage('redcraft:graves', encode_nbt(nbt));
-    tick_time()
+    world_time()
 );
 _remove_grave_position(player,tick) -> (
     nbt = parse_nbt(storage('redcraft:graves'));
@@ -74,7 +78,7 @@ __on_player_starts_sneaking(player) -> (
     if(player ~ 'gamemode' == 'spectator', return());
 	for(_get_graves_positions(player),
 		grave = _;
-		if(_distance(pos(player), grave:'Pos')<1,
+		if(player ~ 'dimension' == grave:'Dimension' && _distance(pos(player), grave:'Pos')<1,
 			_remove_grave(player, pos(player), grave:'Tick', false);
             _remove_grave_position(player,tick)
 		)
@@ -82,12 +86,12 @@ __on_player_starts_sneaking(player) -> (
 );
 
 _remove_grave(player, pos, tick, ignore_tick) -> (
-    for(filter(entity_area('armor_stand', pos, [1.5, 1.5, 1.5]), scoreboard('gb.grave.time', _~'uuid') == tick || ignore_tick),
+    for(filter(entity_area('armor_stand', pos, [1.5,1.5,1.5]), scoreboard('gb.grave.time', _~'uuid') == tick || ignore_tick),
         modify(_, 'remove')
     );
-    for(filter(entity_area('item', pos, [0.5, 0.5, 0.5]), scoreboard('gb.grave.time', _~'uuid') == tick || ignore_tick),
+    for(filter(entity_area('item', pos, [1,1,1]), scoreboard('gb.grave.time', _~'uuid') == tick || ignore_tick),
         modify(_, 'pickup_delay', 0);
-        modify(_, 'nbt_merge', str('{Owner:%s}',player~'nbt':'UUID'))
+        if(!ignore_tick, modify(_, 'nbt_merge', str('{Owner:%s}',player~'nbt':'UUID')))
     );
     sound('block.wart_block.fall', pos, 1.0, 0, 'block');
 )

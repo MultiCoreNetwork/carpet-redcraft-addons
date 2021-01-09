@@ -1,5 +1,6 @@
 package it.multicoredev.carpetredcraftaddons;
 
+import carpet.script.api.Entities;
 import carpet.settings.Rule;
 
 import static carpet.settings.RuleCategory.FEATURE;
@@ -107,13 +108,43 @@ public class CarpetRedCraftSettings {
     )
     public static boolean statsCommand = true;
 
-    /* @Rule(
-             desc = "Allows to have access to the /timebar command.",
-             //appSource = "timebar",
-             category = {SURVIVAL, FEATURE, REDCRAFT}
-     )
-     public static boolean timebarCommand = true;*/
+    @Rule(
+            desc = "Allows to have access to the /timebar command.",
+            appSource = "timebar",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean timebarCommand = true;
 
+    @Rule(
+            desc = "Adds many special Name Tags.",
+            extra = "'freeze', 'silent', 'invulnerable', 'nogravity', 'baby' ... ",
+            appSource = "specialnametags",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean specialNameTags = true;
+
+    @Rule(
+            desc = "Allows to have access to the /waystone command.",
+            appSource = "waystone",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean waystoneCommand = true;
+
+    @Rule(
+            desc = "Allows to have access to the /skull command.",
+            appSource = "skull",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean skullCommand = true;
+
+    @Rule(
+            desc = "Allows to wax Copper Blocks by right clicking them with Honeycomb.",
+            appSource = "handwaxing",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean handWaxing = true;
+
+    // ------------------------------------------------ //
 
     @Rule(
             desc = "Allows to craft Cobwebs.",

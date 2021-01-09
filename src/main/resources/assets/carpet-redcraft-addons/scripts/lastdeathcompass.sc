@@ -43,7 +43,7 @@ __on_player_dies(player) -> (
         },
         'Dimension' -> player~'dimension',
         'Date' -> unix_time(),
-        'Tick' -> tick_time()
+        'Tick' -> world_time()
     }};
     storage('redcraft:deaths', encode_nbt(nbt))
 )
