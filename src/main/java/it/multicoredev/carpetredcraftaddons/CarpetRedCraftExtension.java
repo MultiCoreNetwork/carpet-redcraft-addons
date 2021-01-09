@@ -56,6 +56,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("horsestats", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("invisibleitemframe", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("morewanderingtrades", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeableplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("prunedplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("ropes", false));

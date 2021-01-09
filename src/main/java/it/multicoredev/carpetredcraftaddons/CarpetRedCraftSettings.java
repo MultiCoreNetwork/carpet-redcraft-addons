@@ -151,6 +151,14 @@ public class CarpetRedCraftSettings {
     )
     public static boolean prunedPlants = true;
 
+    @Rule(
+            desc = "Adds more trades to the Wandering Trader.",
+            extra=  "Mini Blocks, TreeCapitator Axes and Silky Blockstate tools.",
+            appSource = "morewanderingtrades",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean moreWanderingTrades = true;
+
     // ------------------------------------------------ //
 
     @Rule(
