@@ -144,6 +144,13 @@ public class CarpetRedCraftSettings {
     )
     public static boolean handWaxing = true;
 
+    @Rule(
+            desc = "Allows to prune plants with shears.",
+            appSource = "prunedplants",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean prunedPlants = true;
+
     // ------------------------------------------------ //
 
     @Rule(

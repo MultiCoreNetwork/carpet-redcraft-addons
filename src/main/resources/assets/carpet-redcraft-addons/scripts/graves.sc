@@ -80,7 +80,7 @@ __on_player_starts_sneaking(player) -> (
 		grave = _;
 		if(player ~ 'dimension' == grave:'Dimension' && _distance(pos(player), grave:'Pos')<1,
 			_remove_grave(player, pos(player), grave:'Tick', false);
-            _remove_grave_position(player,tick)
+            _remove_grave_position(player,grave:'Tick')
 		)
 	)
 );
