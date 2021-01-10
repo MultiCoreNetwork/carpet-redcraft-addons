@@ -30,7 +30,7 @@ public class EntityMixin {
     private ServerWorld getCorrectWorld(MinecraftServer minecraftServer, RegistryKey<World> registryKey){
         System.out.println(registryKey);
         if(!CarpetRedCraftSettings.redcraft2Teleport) minecraftServer.getWorld(registryKey);
-        if (this.world.getRegistryKey() == World.NETHER && (Math.abs(pos.x) < 1000 || Math.abs(pos.z) < 1000))
+        if (this.world.getRegistryKey() == World.NETHER && (Math.abs(pos.x) < 1000 && Math.abs(pos.z) < 1000))
             registryKey = RegistryKey.of(Registry.DIMENSION, new Identifier("redcraft2", "overworld"));
         System.out.println(registryKey);
         return minecraftServer.getWorld(registryKey);
