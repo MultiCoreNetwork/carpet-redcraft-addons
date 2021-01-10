@@ -1,7 +1,7 @@
 __config() -> {'stay_loaded' -> true, 'scope' -> 'global'};
 
 __on_player_right_clicks_block(player, item_tuple, hand, block, face, hitvec) -> (
-    if(!item_tuple || !block~'^(?!waxed_|weathered_)\\w*copper\\w*?$' || player ~ 'gamemode' == 'spectator', return());
+    if(!item_tuple || (!block~'^(?!waxed_|weathered_)\\w*copper\\w*?$' && block!='copper_ore') || player ~ 'gamemode' == 'spectator', return());
     [item, count, nbt] = item_tuple;
     if(item!='honeycomb', return());
     set(block,'waxed_'+block-'_block',block_state(block));

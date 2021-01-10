@@ -21,7 +21,7 @@ _show_stat(stat) -> (
     if((stats = stat ~ '^minecraft.(\\w+):minecraft.(\\w+)$') == null, return());
     scoreboard_remove('redcraft.stats');
     scoreboard_add('redcraft.stats', stat);
-    save();
+    // save();
     run(str('scoreboard objectives modify redcraft.stats displayname {"text":"%s","color":"#ff0000"}',
         if(stats:0 != 'custom', title(stats:0+' '), '') + title(replace(stats:1, '_', ' '))
     ));

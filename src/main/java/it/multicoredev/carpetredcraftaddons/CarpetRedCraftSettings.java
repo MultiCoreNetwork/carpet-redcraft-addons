@@ -1,6 +1,5 @@
 package it.multicoredev.carpetredcraftaddons;
 
-import carpet.script.api.Entities;
 import carpet.settings.Rule;
 
 import static carpet.settings.RuleCategory.FEATURE;
@@ -9,6 +8,13 @@ import static carpet.settings.RuleCategory.SURVIVAL;
 public class CarpetRedCraftSettings {
     public static final String REDCRAFT = "redcraft";
     public static final String CRAFTING = "crafting";
+
+    @Rule(
+            desc = "Portals in RedCraft2 area will link to redcraft2 dimensions.",
+            appSource = "redcrafttwoteleport",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean redcraft2Teleport = false;
 
     @Rule(
             desc = "Allows to place plants on all blocks with flat top surface.",
@@ -153,13 +159,19 @@ public class CarpetRedCraftSettings {
 
     @Rule(
             desc = "Adds more trades to the Wandering Trader.",
-            extra=  "Mini Blocks, TreeCapitator Axes and Silky Blockstate tools.",
+            extra = "Mini Blocks, TreeCapitator Axes and Silky Blockstate tools.",
             appSource = "morewanderingtrades",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean moreWanderingTrades = true;
 
     // ------------------------------------------------ //
+
+    @Rule(
+            desc = "Drop items to Armor Stands to apply them some proprieties.",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+    )
+    public static boolean betterArmorStands = true;
 
     @Rule(
             desc = "Allows to craft Cobwebs.",
@@ -244,6 +256,13 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableTallGrass = true;
+
+    @Rule(
+            desc = "Reduced the blocks that an Enderman can hold.",
+            extra = "Podzol, Pumpkins, Melons and Mycelium.",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+    )
+    public static boolean endermanNoGrief = true;
 
     @Rule(
             desc = "Adds crafting compatibility with all types of Quartz Block.",

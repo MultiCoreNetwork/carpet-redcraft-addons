@@ -6,7 +6,6 @@ import carpet.script.CarpetExpression;
 import carpet.script.CarpetScriptServer;
 import carpet.script.bundled.BundledModule;
 import carpet.settings.ParsedRule;
-import carpet.settings.SettingsManager;
 import com.google.common.collect.Lists;
 import com.mojang.brigadier.CommandDispatcher;
 import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
@@ -17,20 +16,19 @@ import it.multicoredev.carpetredcraftaddons.functions.StorageCarpetFunction;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProfile;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.command.DatapackCommand;
 import net.minecraft.server.command.ReloadCommand;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.text.TranslatableText;
 import net.minecraft.util.WorldSavePath;
 import org.apache.commons.io.IOUtils;
-import org.apache.logging.log4j.util.TriConsumer;
 
 import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.util.*;
-import java.util.stream.Collectors;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Locale;
+import java.util.Map;
 
 import static java.util.stream.Collectors.toList;
 
@@ -59,6 +57,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("morewanderingtrades", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeableplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("prunedplants", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("redcrafttwoteleport", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("ropes", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("silkyblockstates", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("sitanywhere", false));
@@ -74,31 +73,33 @@ public class CarpetRedCraftExtension implements CarpetExtension {
     @Override
     public void onServerLoadedWorlds(MinecraftServer server) {
         // DATAPACKS
-        registerDatapackRule(server, "craftableCobwebs",                 "RedPack - Craftable Cobwebs.zip");
-        registerDatapackRule(server, "craftableColoredBlocks",           "RedPack - Craftable Colored Blocks.zip");
-        registerDatapackRule(server, "craftableCorals",                  "RedPack - Craftable Corals.zip");
-        registerDatapackRule(server, "craftableDeadBushes",              "RedPack - Craftable Dead Bushes.zip");
-        registerDatapackRule(server, "craftableElytra",                  "RedPack - Craftable Elytra.zip");
-        registerDatapackRule(server, "craftableIce",                     "RedPack - Craftable Ice.zip");
-        registerDatapackRule(server, "craftableLargeFern",               "RedPack - Craftable Large Fern.zip");
-        registerDatapackRule(server, "craftableNetherWarts",             "RedPack - Craftable Nether Warts.zip");
-        registerDatapackRule(server, "craftablePackedIce",               "RedPack - Craftable Packed Ice.zip");
-        registerDatapackRule(server, "craftablePlayerHead",              "RedPack - Craftable Player Heads.zip");
-        registerDatapackRule(server, "craftableQuartz",                  "RedPack - Craftable Quartz.zip");
-        registerDatapackRule(server, "craftableShulkerShells",           "RedPack - Craftable Shulker Shells.zip");
-        registerDatapackRule(server, "craftableStrippedWood",            "RedPack - Craftable Stripped Wood.zip");
-        registerDatapackRule(server, "craftableTallGrass",               "RedPack - Craftable Tall Grass.zip");
-        registerDatapackRule(server, "quartzCraftingCompatibility",      "RedPack - Quartz Crafting Compatibility.zip");
-        registerDatapackRule(server, "stonecutterQuartz",                "RedPack - Quartz Stonecutter.zip");
-        registerDatapackRule(server, "redSandstoneCraftingCompatibility","RedPack - Red Sandstone Crafting Compatibility.zip");
-        registerDatapackRule(server, "stonecutterRedSandstone",          "RedPack - Red Sandstone Stonecutter.zip");
-        registerDatapackRule(server, "craftableRedSand",                 "RedPack - Red Sandstone to Red Sand.zip");
-        registerDatapackRule(server, "sandstoneCraftingCompatibility",   "RedPack - Sandstone Crafting Compatibility.zip");
-        registerDatapackRule(server, "stonecutterSandstone",             "RedPack - Sandstone Stonecutter.zip");
-        registerDatapackRule(server, "craftableSand",                    "RedPack - Sandstone to Sand.zip");
-        registerDatapackRule(server, "slabToBlockCrafing",               "RedPack - Slab to Full Block.zip");
-        registerDatapackRule(server, "stonecutterStone",                 "RedPack - Stone Stonecutter.zip");
-        registerDatapackRule(server, "stonecutterWood",                  "RedPack - Wood Stonecutter.zip");
+        registerDatapackRule(server, "betterArmorStands", "RedPack - Better Armor Stands.zip");
+        registerDatapackRule(server, "craftableCobwebs", "RedPack - Craftable Cobwebs.zip");
+        registerDatapackRule(server, "craftableColoredBlocks", "RedPack - Craftable Colored Blocks.zip");
+        registerDatapackRule(server, "craftableCorals", "RedPack - Craftable Corals.zip");
+        registerDatapackRule(server, "craftableDeadBushes", "RedPack - Craftable Dead Bushes.zip");
+        registerDatapackRule(server, "craftableElytra", "RedPack - Craftable Elytra.zip");
+        registerDatapackRule(server, "craftableIce", "RedPack - Craftable Ice.zip");
+        registerDatapackRule(server, "craftableLargeFern", "RedPack - Craftable Large Fern.zip");
+        registerDatapackRule(server, "craftableNetherWarts", "RedPack - Craftable Nether Warts.zip");
+        registerDatapackRule(server, "craftablePackedIce", "RedPack - Craftable Packed Ice.zip");
+        registerDatapackRule(server, "craftablePlayerHead", "RedPack - Craftable Player Heads.zip");
+        registerDatapackRule(server, "craftableQuartz", "RedPack - Craftable Quartz.zip");
+        registerDatapackRule(server, "craftableShulkerShells", "RedPack - Craftable Shulker Shells.zip");
+        registerDatapackRule(server, "craftableStrippedWood", "RedPack - Craftable Stripped Wood.zip");
+        registerDatapackRule(server, "craftableTallGrass", "RedPack - Craftable Tall Grass.zip");
+        registerDatapackRule(server, "endermanNoGrief", "RedPack - Enderman No Grief.zip");
+        registerDatapackRule(server, "quartzCraftingCompatibility", "RedPack - Quartz Crafting Compatibility.zip");
+        registerDatapackRule(server, "stonecutterQuartz", "RedPack - Quartz Stonecutter.zip");
+        registerDatapackRule(server, "redSandstoneCraftingCompatibility", "RedPack - Red Sandstone Crafting Compatibility.zip");
+        registerDatapackRule(server, "stonecutterRedSandstone", "RedPack - Red Sandstone Stonecutter.zip");
+        registerDatapackRule(server, "craftableRedSand", "RedPack - Red Sandstone to Red Sand.zip");
+        registerDatapackRule(server, "sandstoneCraftingCompatibility", "RedPack - Sandstone Crafting Compatibility.zip");
+        registerDatapackRule(server, "stonecutterSandstone", "RedPack - Sandstone Stonecutter.zip");
+        registerDatapackRule(server, "craftableSand", "RedPack - Sandstone to Sand.zip");
+        registerDatapackRule(server, "slabToBlockCrafing", "RedPack - Slab to Full Block.zip");
+        registerDatapackRule(server, "stonecutterStone", "RedPack - Stone Stonecutter.zip");
+        registerDatapackRule(server, "stonecutterWood", "RedPack - Wood Stonecutter.zip");
         initializeDatapackRules(server);
     }
 
@@ -122,7 +123,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
 
     public static Map<String, String> datapackRules = new HashMap<>();
 
-    public void initializeDatapackRules(MinecraftServer server){
+    public void initializeDatapackRules(MinecraftServer server) {
         ResourcePackManager resourcePackManager = server.getCommandSource().getMinecraftServer().getDataPackManager();
         resourcePackManager.scanPacks();
         List<ResourcePackProfile> list = Lists.newArrayList(resourcePackManager.getEnabledProfiles());
@@ -156,6 +157,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
             }
         });
     }
+
     private void copyDatapackFolder(MinecraftServer server, String datapackName) {
         try {
             String datapacks = server.getSavePath(WorldSavePath.DATAPACKS).toString();

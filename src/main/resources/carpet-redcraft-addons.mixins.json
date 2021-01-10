@@ -3,7 +3,10 @@
   "package": "it.multicoredev.carpetredcraftaddons.mixins",
   "compatibilityLevel": "JAVA_8",
   "mixins": [
-    "CrashReport_noopMixin"
+    "AbstractFireBlockMixin",
+    "CrashReport_noopMixin",
+    "CustomPayloadC2SPacketMixin",
+    "EntityMixin"
   ],
   "client": [
   ],

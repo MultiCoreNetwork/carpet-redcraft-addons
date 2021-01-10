@@ -103,6 +103,12 @@ __need_forced_placement(item_tuple) -> (
     if(nbt:'Silked' && nbt:'BlockStateTag{}':'wall', true, false)
 );
 
+// return true if that item_tuple is a waterlogged silked item
+__waterlogged_silked(item_tuple) -> (
+    [item, count, nbt] = item_tuple;
+    if(nbt:'Silked' && nbt:'BlockStateTag{}':'waterlogged'=='true', true, false)
+);
+
 // is ti a valid item to use this feature?
 _valid_item(player) -> (
 	[item, count, nbt] = if(h=player~'holds', h, return(false));
@@ -153,5 +159,9 @@ if(__need_forced_placement(item_tuple),
     data = if(_match_any(item, global_preserve_block_data_blacklist), block_data(block), nbt:'BlockEntityTag{}');
     data = if(data, data, '');
     // sets the block with correct blockstate and data
-    set(block, block_id + blockstate + data)
+    set(block, block_id + blockstate + data),
+// else
+  __waterlogged_silked(item_tuple) && player~'dimension'=='the_nether',
+    set(block,block,'waterlogged','false');
+    sound('block.fire.extinguish', pos(block), 1, 1, 'block')
 )
