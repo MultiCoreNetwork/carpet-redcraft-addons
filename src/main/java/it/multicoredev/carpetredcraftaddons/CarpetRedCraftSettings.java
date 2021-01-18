@@ -17,7 +17,7 @@ public class CarpetRedCraftSettings {
     public static boolean redcraft2Teleport = false;
 
     @Rule(
-            desc = "Disable OPs Command Feedback.",
+            desc = "Disable Command Feedback for OPs level 1.",
             category = {FEATURE, REDCRAFT}
     )
     public static boolean disableOPsCommandFeedback = true;
