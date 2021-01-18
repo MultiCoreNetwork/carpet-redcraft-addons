@@ -34,6 +34,9 @@ public class DefaultConfigCommand {
                     dispatcher.execute("gamerule doFireTick false", c.getSource());
                     dispatcher.execute("gamerule commandBlockOutput false", c.getSource());
                     dispatcher.execute("gamerule spectatorsGenerateChunks false", c.getSource());
+                    // HEALTH
+                    dispatcher.execute("scoreboard objectives add health health", c.getSource());
+                    dispatcher.execute("scoreboard objectives setdisplay list health", c.getSource());
 
                     return 1;
                 });

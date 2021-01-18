@@ -17,6 +17,12 @@ public class CarpetRedCraftSettings {
     public static boolean redcraft2Teleport = false;
 
     @Rule(
+            desc = "Disable OPs Command Feedback.",
+            category = {FEATURE, REDCRAFT}
+    )
+    public static boolean disableOPsCommandFeedback = true;
+
+    @Rule(
             desc = "Allows to place plants on all blocks with flat top surface.",
             appSource = "placeableplants",
             category = {SURVIVAL, FEATURE, REDCRAFT}
@@ -256,6 +262,12 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableTallGrass = true;
+
+    @Rule(
+            desc = "Allows to craft Tuff and Calite.",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+    )
+    public static boolean craftableTuffAndCalcite = true;
 
     @Rule(
             desc = "Reduced the blocks that an Enderman can hold.",

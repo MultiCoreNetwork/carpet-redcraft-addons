@@ -10,7 +10,7 @@ _date(unix_time) -> (
 
 __on_player_uses_item(player, item_tuple, hand) -> (
     g = player ~ 'gamemode';
-    if(g == 'spectator' || !item_tuple, return());
+    if(g == 'spectator' || !player ~ 'sneaking' || !item_tuple, return());
     [item, count, nbt] = item_tuple;
     if(item != 'compass' || nbt:'LodestoneTracked', return());
     storage_nbt_map = parse_nbt(storage('redcraft:deaths')):(player~'uuid');
@@ -19,6 +19,11 @@ __on_player_uses_item(player, item_tuple, hand) -> (
         return(),
         sound('block.note_block.hat',pos(player),1.0,2,'player');
     );
+    nbt = _compass_nbt(storage_nbt_map, nbt);
+    inventory_set(player,if(hand=='mainhand',player~'selected_slot',-1),count,item,nbt);
+);
+
+_compass_nbt(storage_nbt_map, nbt) -> (
     nbt = encode_nbt(if(nbt,parse_nbt(nbt),{}) + {
         'LodestonePos'-> pos=storage_nbt_map:'Pos',
         'LodestoneDimension'-> storage_nbt_map:'Dimension',
@@ -28,9 +33,9 @@ __on_player_uses_item(player, item_tuple, hand) -> (
     lore += str('{"text":"%s","color":"gray"}', storage_nbt_map:'Dimension');
     lore += str('{"text":"%d %d %d","color":"gray"}', pos:'X', pos:'Y', pos:'Z');
     lore += str('{"text":"%s","color":"gray"}', _date(storage_nbt_map:'Date'));
-    nbt:'display.Lore'= encode_nbt(lore);
-    nbt:'display.Name'= nbt(str('\'{"text":"%s","italic":false}\'',global_name));
-    inventory_set(player,if(hand=='mainhand',player~'selected_slot',-1),count,item,nbt);
+    nbt:'display.Lore' = encode_nbt(lore);
+    nbt:'display.Name' = nbt(str('\'{"text":"%s","italic":false}\'',global_name));
+    nbt
 );
 
 __on_player_dies(player) -> (
@@ -46,4 +51,13 @@ __on_player_dies(player) -> (
         'Tick' -> world_time()
     }};
     storage('redcraft:deaths', encode_nbt(nbt))
+);
+
+__on_player_respawns(player) -> if(
+    player ~ 'gamemode' != 'spectator',
+    storage_nbt_map = parse_nbt(storage('redcraft:deaths')):(player~'uuid');
+    if (storage_nbt_map == null, return());
+    nbt = _compass_nbt(storage_nbt_map, null);
+    nbt:'Enchantments' = nbt('[{id:"vanishing_curse",lvl:1}]');
+    inventory_set(player, player~'selected_slot', 1, 'compass',nbt);
 )

@@ -27,7 +27,6 @@ _make_grave(player, pos, items) -> (
     ];
     for(armor_stands,
         modify(_, 'invulnerable', true);
-        modify(_, 'pickup_delay', 32767);
         modify(_, 'gravity', false);
         modify(_, 'tag', ['gb.grave_armor_stand', 'gb.grave']);
         scoreboard('gb.grave.time', _~'uuid', time)
@@ -91,6 +90,7 @@ _remove_grave(player, pos, tick, ignore_tick) -> (
     );
     for(filter(entity_area('item', pos, [1,1,1]), scoreboard('gb.grave.time', _~'uuid') == tick || ignore_tick),
         modify(_, 'pickup_delay', 0);
+        modify(_, 'gravity', true);
         if(!ignore_tick, modify(_, 'nbt_merge', str('{Owner:%s}',player~'nbt':'UUID')))
     );
     sound('block.wart_block.fall', pos, 1.0, 0, 'block');

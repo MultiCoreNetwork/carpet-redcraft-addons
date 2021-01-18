@@ -5,6 +5,7 @@ __config() -> {
 		'<statistic>' -> '_show_stat',
 		'hide' -> '_hide',
 		'show' -> '_show',
+		'' -> '_toggle'
 	},
     'arguments' -> {
        'statistic' -> {'type' -> 'criterion'}
@@ -13,11 +14,23 @@ __config() -> {
 
 scoreboard_add('redcraft.stats');
 
-_show() -> scoreboard_display('sidebar', 'redcraft.stats');
-_hide() -> scoreboard_display('sidebar', null);
+global_show = false;
+_show() -> (
+    scoreboard_display('sidebar', 'redcraft.stats');
+    global_show = true
+);
+_hide() -> (
+    scoreboard_display('sidebar', null);
+    global_show = false
+);
+_toggle() -> if(global_show = !global_show,
+    scoreboard_display('sidebar', 'redcraft.stats'),
+    scoreboard_display('sidebar', null)
+);
 
 _show_stat(stat) -> (
     _hide();
+    stat = _check_alias(stat);
     if((stats = stat ~ '^minecraft.(\\w+):minecraft.(\\w+)$') == null, return());
     scoreboard_remove('redcraft.stats');
     scoreboard_add('redcraft.stats', stat);
@@ -28,6 +41,11 @@ _show_stat(stat) -> (
     nbt = parse_nbt(storage('redcraft:players'));
     for(nbt,scoreboard('redcraft.stats', nbt:_, offline_statistic(_, stats:0, stats:1)));
     _show()
+);
+
+_check_alias(stat) -> if(
+    stat == 'deathCounter', 'minecraft.custom:minecraft.deaths',
+    stat
 );
 
 __on_player_connects(player) -> (

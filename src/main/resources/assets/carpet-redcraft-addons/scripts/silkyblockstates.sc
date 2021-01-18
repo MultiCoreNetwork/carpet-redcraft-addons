@@ -5,6 +5,7 @@ global_create_item_whitelist = ['^spawner$', '^cake$'];
 global_preserve_block_state_blacklist = ['_bed$', '_door$', '^sticky_piston$', '^piston$', '^bee_nest$', '_banner$', '^beehive$', '^redstone_wire$', '^sunflower$', '^lilac$', '^rose_bush$', '^peony$', '^tall_grass$', '^large_fern$'];
 global_preserve_block_data_blacklist = ['^bee_nest$', '^beehive$', '^campfire$', '^soul_campfire$', '^lectern$', '^jukebox$', '_banner$', '^player_head$', '_bed$'];
 global_need_forced_placement = ['^spawner$','_sign$'];
+global_plants = ['^kelp_plant$','^twisting_vines_plant$','^weeping_vines_plant$'];
 
 // returns the escaped version of the string (\->\\, d->\d)
 escape_string(string,d) -> (
@@ -36,21 +37,32 @@ _formatted_property(key, value) -> (
 
 // returns the list of dropped-items that could be dropped on this tick by mining the given block
 _block_item(block) -> (
+    block_str = str(block);
+    block_str = replace(block_str, 'wall_', '');
+    if(_match_any(block,global_plants), 
+        block_str = replace(block_str, '_plant', '')
+    );
     entity_selector(str(
         '@e[type=item,limit=1,x=%d,y=%d,z=%d,dx=1,dy=1,dz=1,sort=nearest,nbt={Item:{id:"minecraft:%s",Count:1b},Age:0s}]',
-        pos(block):0-1, pos(block):1-1, pos(block):2-1, replace(block, 'wall_', '')
+        pos(block):0-1, pos(block):1-1, pos(block):2-1, block_str
     ));
 );
 
 // returns the nbt to assign to spawn a dropped-item of the given block
 _nbt_block_item(block) -> (
-    str('{Item:{id:"minecraft:%s",Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', replace(block, 'wall_', ''), rand(0.2) - 0.1, rand(0.2) - 0.1)
+    block_str = str(block);
+    block_str = replace(block_str, 'wall_', '');
+    if(_match_any(block,global_plants), 
+        block_str = replace(block_str, '_plant', '')
+    );
+    str('{Item:{id:"minecraft:%s",Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', block_str, rand(0.2) - 0.1, rand(0.2) - 0.1)
 );
 
 // merges the block's blockstates into the dropped-item spawned
 _preserve_block_state(player, block) -> (
     blockstate = block_state(block);
     if(block ~ 'wall_' != null, blockstate:'wall'='true');
+    if(_match_any(block,global_plants), blockstate:'plant'='true');
     encode_blockstate = encode_nbt(if(blockstate, blockstate, return()));
     item = _block_item(block);
     if(!item,
@@ -100,7 +112,7 @@ _match_any(string, list) -> (
 __need_forced_placement(item_tuple) -> (
     [item, count, nbt] = item_tuple;
     if(_match_any(item, global_need_forced_placement) && nbt:'Silked', return(true));
-    if(nbt:'Silked' && nbt:'BlockStateTag{}':'wall', true, false)
+    if(nbt:'Silked' && (nbt:'BlockStateTag{}':'wall' || nbt:'BlockStateTag{}':'plant'), true, false)
 );
 
 // return true if that item_tuple is a waterlogged silked item
@@ -141,7 +153,7 @@ if(_valid_item(player),
     ))
 );
 
-// fixes the BlockEntityTag for deopped players and the wall_ version of blocks
+// fixes the BlockEntityTag for deopped players and the wall_/_plant version of blocks
 __on_player_places_block(player, item_tuple, hand, block) ->
 if(__need_forced_placement(item_tuple),
     [item, count, nbt] = item_tuple;
@@ -149,10 +161,16 @@ if(__need_forced_placement(item_tuple),
     // if not in blacklist, get the blockstate from item's nbt and format it correctly
     blockstate = if(_match_any(item, global_preserve_block_state_blacklist), encode_nbt(block_state(block)), nbt:'BlockStateTag{}');
     blockstate = if(blockstate, '[' + slice(replace(blockstate, ':', '='), 1, length(blockstate) - 1) + ']', '');
-    // handles the wall_ version of the block
-    block_id = if(blockstate ~ ',?wall="true"' != null,
+    // handles the wall_/_plant version of the block
+    block_id = if(
+       blockstate ~ ',?wall="true"' != null,
         blockstate = replace(blockstate, ',?wall="true"', '');
         replace(item,'(^|_)(?=[^_]+$)','$1wall_'),
+    // elif
+       blockstate ~ ',?plant="true"' != null,
+        blockstate = replace(blockstate, ',?plant="true"', '');
+        item+'_plant',
+    // else  
         item
     );
     // if not in blacklist, get the data from item's nbt and format it correctly

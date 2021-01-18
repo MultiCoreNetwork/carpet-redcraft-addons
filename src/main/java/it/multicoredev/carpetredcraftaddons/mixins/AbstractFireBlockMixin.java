@@ -1,6 +1,5 @@
 package it.multicoredev.carpetredcraftaddons.mixins;
 
-import it.multicoredev.carpetredcraftaddons.CarpetRedCraftSettings;
 import net.minecraft.block.AbstractFireBlock;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.registry.Registry;
