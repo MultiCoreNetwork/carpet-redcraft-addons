@@ -53,11 +53,11 @@ __on_player_dies(player) -> (
     storage('redcraft:deaths', encode_nbt(nbt))
 );
 
-__on_player_respawns(player) -> if(
+__on_player_respawns(player) -> schedule(0,_(outer(player)) -> if(
     player ~ 'gamemode' != 'spectator',
     storage_nbt_map = parse_nbt(storage('redcraft:deaths')):(player~'uuid');
     if (storage_nbt_map == null, return());
     nbt = _compass_nbt(storage_nbt_map, null);
     nbt:'Enchantments' = nbt('[{id:"vanishing_curse",lvl:1}]');
-    inventory_set(player, player~'selected_slot', 1, 'compass',nbt);
-)
+    inventory_set(player, 8, 1, 'compass',nbt);
+))

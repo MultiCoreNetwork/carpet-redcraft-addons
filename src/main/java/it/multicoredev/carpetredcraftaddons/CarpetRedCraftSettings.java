@@ -2,8 +2,7 @@ package it.multicoredev.carpetredcraftaddons;
 
 import carpet.settings.Rule;
 
-import static carpet.settings.RuleCategory.FEATURE;
-import static carpet.settings.RuleCategory.SURVIVAL;
+import static carpet.settings.RuleCategory.*;
 
 public class CarpetRedCraftSettings {
     public static final String REDCRAFT = "redcraft";
@@ -116,16 +115,16 @@ public class CarpetRedCraftSettings {
     @Rule(
             desc = "Allows to have access to the /stats command.",
             appSource = "stats",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
+            category = {SURVIVAL, FEATURE, REDCRAFT, COMMAND}
     )
-    public static boolean statsCommand = true;
+    public static boolean commandStats = true;
 
     @Rule(
             desc = "Allows to have access to the /timebar command.",
             appSource = "timebar",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
+            category = {SURVIVAL, FEATURE, REDCRAFT, COMMAND}
     )
-    public static boolean timebarCommand = true;
+    public static boolean commandTimebar = true;
 
     @Rule(
             desc = "Adds many special Name Tags.",
@@ -138,16 +137,16 @@ public class CarpetRedCraftSettings {
     @Rule(
             desc = "Allows to have access to the /waystone command.",
             appSource = "waystone",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
+            category = {SURVIVAL, FEATURE, REDCRAFT, COMMAND}
     )
-    public static boolean waystoneCommand = true;
+    public static boolean commandWaystone = true;
 
     @Rule(
             desc = "Allows to have access to the /skull command.",
             appSource = "skull",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
+            category = {SURVIVAL, FEATURE, REDCRAFT, COMMAND}
     )
-    public static boolean skullCommand = true;
+    public static boolean commandSkull = true;
 
     @Rule(
             desc = "Allows to wax Copper Blocks by right clicking them with Honeycomb.",
@@ -272,7 +271,7 @@ public class CarpetRedCraftSettings {
     @Rule(
             desc = "Reduced the blocks that an Enderman can hold.",
             extra = "Podzol, Pumpkins, Melons and Mycelium.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean endermanNoGrief = true;
 

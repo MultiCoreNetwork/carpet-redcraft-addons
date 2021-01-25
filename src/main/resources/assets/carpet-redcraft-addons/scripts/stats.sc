@@ -41,7 +41,6 @@ _toggle() -> if(global_show = !global_show,
 
 _show_stat(stat) -> (
     _hide();
-    stat = _check_alias(stat);
     if((stats = stat ~ '^minecraft.(\\w+):minecraft.(\\w+)$') == null, return());
     scoreboard_remove('redcraft.stats');
     scoreboard_add('redcraft.stats', stat);
@@ -52,11 +51,6 @@ _show_stat(stat) -> (
     nbt = parse_nbt(storage('redcraft:players'));
     for(nbt,scoreboard('redcraft.stats', nbt:_, offline_statistic(_, stats:0, stats:1)));
     _show()
-);
-
-_check_alias(stat) -> if(
-    stat == 'deathCounter', 'minecraft.custom:minecraft.deaths',
-    stat
 );
 
 __on_player_connects(player) -> (
