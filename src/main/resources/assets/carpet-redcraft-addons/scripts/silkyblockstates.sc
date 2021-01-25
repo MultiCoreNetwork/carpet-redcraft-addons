@@ -1,7 +1,7 @@
 __config() -> {'stay_loaded' -> true, 'scope' -> 'global'};
 
 global_drop_in_creative = true;
-global_create_item_whitelist = ['^spawner$', '^cake$'];
+global_create_item_whitelist = ['^cake$'];
 global_preserve_block_state_blacklist = ['_bed$', '_door$', '^sticky_piston$', '^piston$', '^bee_nest$', '_banner$', '^beehive$', '^redstone_wire$', '^sunflower$', '^lilac$', '^rose_bush$', '^peony$', '^tall_grass$', '^large_fern$'];
 global_preserve_block_data_blacklist = ['^bee_nest$', '^beehive$', '^campfire$', '^soul_campfire$', '^lectern$', '^jukebox$', '_banner$', '^player_head$', '_bed$'];
 global_need_forced_placement = ['^spawner$','_sign$'];

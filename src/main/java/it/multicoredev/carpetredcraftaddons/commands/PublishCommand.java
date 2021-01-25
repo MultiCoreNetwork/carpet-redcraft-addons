@@ -18,15 +18,14 @@ public class PublishCommand {
     private static final DynamicCommandExceptionType ALREADY_PUBLISHED_EXCEPTION = new DynamicCommandExceptionType((object) -> new TranslatableText("commands.publish.alreadyPublished", object));
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register((LiteralArgumentBuilder) ((LiteralArgumentBuilder) CommandManager.literal("publish")
-                .requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(4)))
-                .executes((commandContext) -> execute((ServerCommandSource) commandContext.getSource(), NetworkUtils.findLocalPort()))
+        dispatcher.register(CommandManager.literal("publish")
+                .executes((commandContext) -> execute(commandContext.getSource(), NetworkUtils.findLocalPort()))
                 .then(CommandManager.argument("port", IntegerArgumentType.integer(0, 65535))
                         .executes((commandContext) -> execute(commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "port")))
                         .then(CommandManager.argument("allowCheats", BoolArgumentType.bool())
+                                .requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(4)))
                                 .executes((commandContext) -> execute(commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "port"), BoolArgumentType.getBool(commandContext, "allowCheats")))
                         )
-                )
         );
     }
 
