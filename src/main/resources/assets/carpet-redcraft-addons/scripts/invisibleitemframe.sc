@@ -1,7 +1,7 @@
 __config() -> {'stay_loaded' -> true, 'scope' -> 'global'};
 
 __on_player_interacts_with_entity(player, entity, hand) -> (
-    if(player ~ 'gamemode' == 'spectator' || entity~'type' != 'item_frame' || !(entity~'nbt':'Item') || entity~'nbt':'Invisible', return());
+    if(player ~ 'gamemode' == 'spectator' || entity~'type'~'item_frame$'==null || !(entity~'nbt':'Item') || entity~'nbt':'Invisible', return());
     item_tuple = query(player, 'holds', hand);
     if(item_tuple == null, return());
     [item, count, nbt] = item_tuple;

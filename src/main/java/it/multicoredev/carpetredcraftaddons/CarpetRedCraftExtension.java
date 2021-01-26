@@ -12,7 +12,6 @@ import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
 import it.multicoredev.carpetredcraftaddons.commands.OpCommand;
 import it.multicoredev.carpetredcraftaddons.commands.PublishCommand;
 import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
-import it.multicoredev.carpetredcraftaddons.functions.StorageCarpetFunction;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProfile;
 import net.minecraft.server.MinecraftServer;
@@ -35,7 +34,7 @@ import static java.util.stream.Collectors.toList;
 public class CarpetRedCraftExtension implements CarpetExtension {
     public static final String MOD_ID = "carpet-redcraft-addons";
     public static final String MOD_NAME = "Carpet RedCraft Addons";
-    public static final String MOD_VERSION = "1.4.21";
+    public static final String MOD_VERSION = "1.4.24";
 
     static {
         CarpetServer.manageExtension(new CarpetRedCraftExtension());
@@ -49,6 +48,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("colorableshulkers", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("dragoneggrespawns", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("glowingsquid", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("graves", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("handwaxing", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("horsestats", false));
@@ -113,7 +113,6 @@ public class CarpetRedCraftExtension implements CarpetExtension {
 
     @Override
     public void scarpetApi(CarpetExpression expression) {
-        StorageCarpetFunction.apply(expression.getExpr());
         OfflineStatisticFunction.apply(expression.getExpr());
     }
 

@@ -1,6 +1,7 @@
 package it.multicoredev.carpetredcraftaddons;
 
 import carpet.settings.Rule;
+import net.minecraft.block.GlowLichenBlock;
 
 import static carpet.settings.RuleCategory.*;
 
@@ -14,6 +15,13 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean redcraft2Teleport = false;
+
+    @Rule(
+            desc = "Glowing squids spawns in deep ocean biomes.",
+            appSource = "glowingsquid",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean glowingSquid = true;
 
     @Rule(
             desc = "Disable Command Feedback for OPs level 1.",

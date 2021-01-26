@@ -13,7 +13,7 @@ __on_player_uses_item(player, item_tuple, hand) -> (
     if(g == 'spectator' || !player ~ 'sneaking' || !item_tuple, return());
     [item, count, nbt] = item_tuple;
     if(item != 'compass' || nbt:'LodestoneTracked', return());
-    storage_nbt_map = parse_nbt(storage('redcraft:deaths')):(player~'uuid');
+    storage_nbt_map = parse_nbt(nbt_storage(('redcraft:deaths')):(player~'uuid');
     if (storage_nbt_map == null,
         sound('block.note_block.hat',pos(player),1.0,0.5,'player');
         return(),
@@ -40,7 +40,7 @@ _compass_nbt(storage_nbt_map, nbt) -> (
 
 __on_player_dies(player) -> (
     if(player~'gamemode_id'==3,return());
-    nbt = parse_nbt(storage('redcraft:deaths')) + {player~'uuid' -> {
+    nbt = parse_nbt(nbt_storage('redcraft:deaths')) + {player~'uuid' -> {
         'Pos' -> {
             'X' -> floor(player~'x'),
             'Y' -> floor(player~'y'),
@@ -50,12 +50,12 @@ __on_player_dies(player) -> (
         'Date' -> unix_time(),
         'Tick' -> world_time()
     }};
-    storage('redcraft:deaths', encode_nbt(nbt))
+    nbt_storage('redcraft:deaths', encode_nbt(nbt))
 );
 
 __on_player_respawns(player) -> schedule(0,_(outer(player)) -> if(
     player ~ 'gamemode' != 'spectator',
-    storage_nbt_map = parse_nbt(storage('redcraft:deaths')):(player~'uuid');
+    storage_nbt_map = parse_nbt(nbt_storage('redcraft:deaths')):(player~'uuid');
     if (storage_nbt_map == null, return());
     nbt = _compass_nbt(storage_nbt_map, null);
     nbt:'Enchantments' = nbt('[{id:"vanishing_curse",lvl:1}]');

@@ -13,11 +13,11 @@ __config() -> {
 
 _command() -> if((player=player())~'permission_level'>=1, _remove_grave(player, pos(player), null, true));
 _graves_list(player_name) -> (
-    for(keys(uuid_storage = parse_nbt(storage('redcraft:players'))),
+    for(keys(uuid_storage = parse_nbt(nbt_storage('redcraft:players'))),
         if(lower(uuid_storage:_)==lower(player_name), player_uuid = _; break())
     );
     if(player_uuid || ((player = player(player_name)) && (player_uuid = player~'uuid')),
-        graves = parse_nbt(storage('redcraft:graves')):player_uuid;
+        graves = parse_nbt(nbt_storage('redcraft:graves')):player_uuid;
         if(graves,
             print('-'*20);
             print(player(), format(str('fb %s\'s graves:', player_name)));
@@ -70,28 +70,28 @@ _make_grave(player, pos, items) -> (
 );
 
 _save_grave_position(player) -> (
-    nbt = parse_nbt(storage('redcraft:graves'));
+    nbt = parse_nbt(nbt_storage('redcraft:graves'));
     if(!has(nbt,player~'uuid'), nbt:(player~'uuid') = []);
     nbt:(player~'uuid') += {
         'Pos' -> player~'pos',
         'Dimension' -> player~'dimension',
         'Tick' -> world_time()
     };
-    storage('redcraft:graves', encode_nbt(nbt));
+    nbt_storage('redcraft:graves', encode_nbt(nbt));
     world_time()
 );
 _remove_grave_position(player,tick) -> (
-    nbt = parse_nbt(storage('redcraft:graves'));
+    nbt = parse_nbt(nbt_storage('redcraft:graves'));
     if(!has(nbt,player~'uuid'), return(false));
     for(nbt:(player~'uuid'),if(_:'Tick' == tick, i=_i; break()));
     if(i==null, return(false));
     delete(nbt:(player~'uuid'):i);
-    storage('redcraft:graves', encode_nbt(nbt));
+    nbt_storage('redcraft:graves', encode_nbt(nbt));
     true
 );
 
 _get_graves_positions(player) -> (
-    nbt = parse_nbt(storage('redcraft:graves'));
+    nbt = parse_nbt(nbt_storage('redcraft:graves'));
     if(!has(nbt,player~'uuid'), nbt:(player~'uuid') = []);
     return(nbt:(player~'uuid'))
 );
