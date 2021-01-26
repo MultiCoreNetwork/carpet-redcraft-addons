@@ -1,10 +1,35 @@
 __config() -> {
     'stay_loaded' -> true,
     'scope' -> 'global',
-    'commands' -> {'' -> '_command'}
+    'commands' -> {
+        '' -> '_command',
+        'list' -> ['_graves_list', player()~'name'],
+        'list <player>' -> '_graves_list',
+    },
+    'arguments' -> {
+        'player' -> {'type'->'players','single'->true}
+    }
 };
 
 _command() -> if((player=player())~'permission_level'>=1, _remove_grave(player, pos(player), null, true));
+_graves_list(player_name) -> (
+    for(keys(uuid_storage = parse_nbt(storage('redcraft:players'))),
+        if(lower(uuid_storage:_)==lower(player_name), player_uuid = _; break())
+    );
+    if(player_uuid || ((player = player(player_name)) && (player_uuid = player~'uuid')),
+        graves = parse_nbt(storage('redcraft:graves')):player_uuid;
+        if(graves,
+            print('-'*20);
+            print(player(), format(str('fb %s\'s graves:', player_name)));
+            for(graves,
+                print(player(), format(str('g %s: %.00f %.00f %.00f',_:'Dimension',_:'Pos':0,_:'Pos':1,_:'Pos':2)))
+            );
+            print('-'*20),
+        // else
+            print(player(),format(str('ri No graves found for %s',player_name)))
+        )
+    )
+);
 
 scoreboard_add('gb.grave.time');
 
