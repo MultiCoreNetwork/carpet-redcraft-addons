@@ -3,7 +3,7 @@ __config() -> {
     'scope' -> 'global',
     'commands' -> {
         '' -> '_command',
-        'list' -> ['_graves_list', player()~'name'],
+        'list' -> _() -> _graves_list(player()~'name'),
         'list <player>' -> '_graves_list',
     },
     'arguments' -> {
@@ -16,18 +16,24 @@ _graves_list(player_name) -> (
     for(keys(uuid_storage = parse_nbt(nbt_storage('redcraft:players'))),
         if(lower(uuid_storage:_)==lower(player_name), player_uuid = _; break())
     );
-    if(player_uuid || ((player = player(player_name)) && (player_uuid = player~'uuid')),
+    if(!player_uuid,
+        p = player(player_name);
+        player_uuid = p~'uuid';
+    );
+    if(player_uuid,
         graves = parse_nbt(nbt_storage('redcraft:graves')):player_uuid;
         if(graves,
             print('-'*20);
             print(player(), format(str('fb %s\'s graves:', player_name)));
             for(graves,
-                print(player(), format(str('g %s: %.00f %.00f %.00f',_:'Dimension',_:'Pos':0,_:'Pos':1,_:'Pos':2)))
+                print(player(), format(str('g %s @ %.00f %.00f %.00f',_:'Dimension',_:'Pos':0,_:'Pos':1,_:'Pos':2)))
             );
             print('-'*20),
         // else
-            print(player(),format(str('ri No graves found for %s',player_name)))
-        )
+            print(player(),format(str('ri No grave found for %s',player_name)))
+        ),
+    // else
+        print(player(),format(str('ri No player found with name %s',player_name)))
     )
 );
 
