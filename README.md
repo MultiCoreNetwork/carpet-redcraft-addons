@@ -11,10 +11,7 @@ A [Carpet mod](https://github.com/gnembon/fabric-carpet) (fabric-carpet) extensi
 
 Use with carpet mod in the same Minecraft version. Use newer carpet mod versions whenever possible
 
-# Index
-
-## [Rules](#rule-list)
-
+## Rules
 - [betterArmorStands](#betterArmorStands)
 - [colorableShulkers](#colorableShulkers)
 - [commandStats](#commandStats)
