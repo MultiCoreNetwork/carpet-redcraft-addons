@@ -37,7 +37,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [craftableStrippedWood](#craftableStrippedWood)
 - [craftableShulkerShells](#craftableShulkerShells)
 - [craftableTallGrass](#craftableTallGrass)
-- [craftableTuffAndCalcite](#craftableTuffAndCalcite)Allows to craft Tuff and Calite
+- [craftableTuffAndCalcite](#craftableTuffAndCalcite)
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
 - [floatingLadders](#floatingLadders)
