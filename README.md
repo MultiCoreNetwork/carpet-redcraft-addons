@@ -388,7 +388,7 @@ Allows to place plants on all blocks with flat top surface
 - Type: `boolean`  
 - Default value: `true`  
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`- Type: `boolean` 
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## quartzCraftingCompatibility
 
