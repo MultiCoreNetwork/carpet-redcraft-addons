@@ -51,7 +51,7 @@ __on_player_dies(player) -> (
 _make_grave(player, pos, items) -> (
     time = _save_grave_position(player);
     armor_stands = [
-        spawn('armor_stand', pos+[0,-1.7,0.85],  '{ArmorItems:[{},{},{},{id:"minecraft:spruce_sign",Count:1b}],Invisible:true,DisabledSlots:2039583}'),
+        spawn('armor_stand', pos+[0,-1.7,0.85],  '{ArmorItems:[{},{},{},{id:"minecraft:spruce_sign",Count:1b,tag:{BlockEntityTag:{Text1:\'{"text":"=================="}\',Text2:\'{"text":"Qui Muorì"}\',Text3:\'{"text":"'+player+'"}\',Text4:\'{"text":"=================="}\'}}}]}],Invisible:true,DisabledSlots:2039583}'),
         spawn('armor_stand', pos+[0,-1.7,0],     '{ArmorItems:[{},{},{},{id:"minecraft:coarse_dirt",Count:1b}],Invisible:true,DisabledSlots:2039583}'),
         spawn('armor_stand', pos+[0,-1.7,0.625], '{ArmorItems:[{},{},{},{id:"minecraft:coarse_dirt",Count:1b}],Invisible:true,DisabledSlots:2039583}'),
         spawn('armor_stand', pos+[0,-1.1,0.75],  '{ArmorItems:[{},{},{},{id:"minecraft:cobblestone_wall",Count:1b}],Rotation:[90f,0f],Invisible:true,DisabledSlots:2039583}')
