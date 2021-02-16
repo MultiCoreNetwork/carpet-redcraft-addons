@@ -63,7 +63,7 @@ _add_random_trades(villager) -> (
 
     // TREECAPITATOR -> 10.5%
     if(rand(1/(1-0.105)),
-        item = if(global_luck,'iron_axe','diamond_axe');
+        item = if(rand(global_luck),'iron_axe','diamond_axe');
         trade = _new_trade([item,1],['emerald',floor(rand(8)+8)],[item,1]);
         trade:'sell.tag' = nbt('{display:{Lore:[\'{"text":"TreeCapitator","color":"red","italic":false}\']},Enchantments:[{id:"redcraft:treecapitator",lvl:1s}]}');
         _add_trade(villager, trade)
