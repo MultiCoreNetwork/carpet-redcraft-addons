@@ -64,6 +64,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [stonecutterWood](#stonecutterWood)
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
+- [playerme](#playerme)
 
 ## betterArmorStands
 
@@ -524,3 +525,12 @@ Allows to leash villagers
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## playerme
+
+Allows deopped player to run /player on themselves
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`  

@@ -64,6 +64,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [stonecutterWood](#stonecutterWood)
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
+- [playerme](#playerme)
 
 ## betterArmorStands
 
@@ -527,3 +528,12 @@ Permette di legare i villager al guinzaglio
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## playerme
+
+Permette ai giocatori non operatori di eseguire /player su sé stessi
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`  

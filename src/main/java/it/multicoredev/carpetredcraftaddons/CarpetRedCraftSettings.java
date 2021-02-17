@@ -349,4 +349,10 @@ public class CarpetRedCraftSettings {
     )
     public static boolean stonecutterWood = true;
 
+    @Rule(
+            desc = "Deopped players can do /player on themselves",
+            category = {SURVIVAL, FEATURE, REDCRAFT, COMMAND}
+    )
+    public static boolean deoppedPlayerme = true;
+
 }

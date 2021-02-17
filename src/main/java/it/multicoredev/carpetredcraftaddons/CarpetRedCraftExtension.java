@@ -68,6 +68,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("treecapitator", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("villagerleash", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("waystone", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("playerme", false));
     }
 
     @Override
