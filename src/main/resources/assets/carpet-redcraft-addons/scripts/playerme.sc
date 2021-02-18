@@ -126,13 +126,9 @@ __config() -> {
         (name = player()~'command_name';
         run('player '+name+' mount anything')),
 
-        'sneak' -> _() ->
+        'shadow' -> _() ->
         (name = player()~'command_name';
-        run('player '+name+' sneak')),
-
-        'sprint' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' sprint')),
+        run('player '+name+' shadow')),
 
         'stop' -> _() ->
         (name = player()~'command_name';
@@ -150,13 +146,21 @@ __config() -> {
         (name = player()~'command_name';
         run('player '+name+' swapHands once')),
 
-        'unsneak' -> _() ->
+        'turn back' -> _() ->
         (name = player()~'command_name';
-        run('player '+name+' unsneak')),
+        run('player '+name+' turn back')),
 
-        'unsprint' -> _() ->
+        'turn left' -> _() ->
         (name = player()~'command_name';
-        run('player '+name+' unsprint')),
+        run('player '+name+' turn left')),
+
+        'turn right' -> _() ->
+        (name = player()~'command_name';
+        run('player '+name+' turn right')),
+
+        'turn <rotation>' -> _(rn) ->
+        (name = player()~'command_name';
+        run('player '+name+' turn '+ rn)),
 
         'use continuous' -> _() ->
         (name = player()~'command_name';
