@@ -2,6 +2,7 @@
 
 __config() -> {
     'stay_loaded' -> true,
+    'scope' -> 'global',
     'commands' -> {
 
         'attack continuous' -> _() ->
@@ -127,7 +128,8 @@ __config() -> {
         run('player '+name+' mount anything')),
 
         'shadow' -> _() ->
-        (name = player()~'command_name';
+        if(system_info('world_carpet_rules'):'commandPlayer' == 'true',
+        name = player()~'command_name';
         run('player '+name+' shadow')),
 
         'stop' -> _() ->

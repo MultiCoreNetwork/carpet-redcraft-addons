@@ -1,9 +1,16 @@
 package it.multicoredev.carpetredcraftaddons;
 
+import carpet.CarpetSettings;
 import carpet.settings.Rule;
 import net.minecraft.block.GlowLichenBlock;
 
 import static carpet.settings.RuleCategory.*;
+
+import carpet.settings.Validator;
+import net.minecraft.server.command.ServerCommandSource;
+import carpet.settings.ParsedRule;
+import java.util.Locale;
+import carpet.settings.SettingsManager;
 
 public class CarpetRedCraftSettings {
     public static final String REDCRAFT = "redcraft";
@@ -22,6 +29,13 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean glowingSquid = true;
+
+    @Rule(
+            desc = "...",
+            category = {EXPERIMENTAL, FEATURE, REDCRAFT, COMMAND},
+            appSource = "playerme"
+    )
+    public static boolean commandPlayerMe = true;
 
     @Rule(
             desc = "Disable Command Feedback for OPs level 1.",
@@ -348,11 +362,5 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean stonecutterWood = true;
-
-    @Rule(
-            desc = "Deopped players can do /player on themselves",
-            category = {SURVIVAL, FEATURE, REDCRAFT, COMMAND}
-    )
-    public static boolean commandPlayerme = true;
 
 }
