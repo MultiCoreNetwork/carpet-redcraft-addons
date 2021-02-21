@@ -3,19 +3,18 @@ __config() -> {
     'stay_loaded' -> true,
     'scope' -> 'global',
 	'commands' -> {
-		//'<statistic>' -> '_show_stat',
-		//'hide' -> '_hide',
-		//'show' -> '_show',
 		'' -> '_toggle',
-        'broken <itemname>' -> _(in) -> _show_stat('minecraft.broken:minecraft.' + in),
-        'custom <customstats>' -> _(cs) -> _show_stat('minecraft.custom:minecraft.' + cs),
-        'killed <entityname>' -> _(en) -> _show_stat('minecraft.killed:minecraft.' + en),
-        'mined <blockname>' -> _(bn) -> _show_stat('minecraft.mined:minecraft.' + bn),
-        'picked_up <itemname>' -> _(in) -> _show_stat('minecraft.picked_up:minecraft.' + in),
-        'used <itemname>' -> _(in) -> _show_stat('minecraft.used:minecraft.' + in)
+        	'broken <itemname>' -> _(in) -> _show_stat('minecraft.broken:minecraft.' + in),
+		'crafted <itemname>' -> _(in) -> _show_stat('minecraft.crafted:minecraft.' + in),
+        	'custom <customstats>' -> _(cs) -> _show_stat('minecraft.custom:minecraft.' + cs),
+		'dropped <itemname>' -> _(in) -> _show_stat('minecraft.dropped:minecraft.' + in),
+        	'killed <entityname>' -> _(en) -> _show_stat('minecraft.killed:minecraft.' + en),
+		'killed_by <entityname>' -> _(en) -> _show_stat('minecraft.killed_by:minecraft.' + en),
+        	'mined <blockname>' -> _(bn) -> _show_stat('minecraft.mined:minecraft.' + bn),
+        	'picked_up <itemname>' -> _(in) -> _show_stat('minecraft.picked_up:minecraft.' + in),
+        	'used <itemname>' -> _(in) -> _show_stat('minecraft.used:minecraft.' + in)
 	},
     'arguments' -> {
-       //'statistic' -> {'type' -> 'criterion'},
        'blockname' -> {'type' -> 'term', 'suggest' -> block_list()},
        'itemname' -> {'type' -> 'term', 'suggest' -> item_list()},
        'entityname' -> {'type' -> 'term', 'suggest' -> entity_types()},
