@@ -31,7 +31,10 @@ public class CarpetRedCraftSettings {
     public static boolean glowingSquid = true;
 
     @Rule(
-            desc = "...",
+            desc = "Deopped players can do /player on themselves",
+            extra = {
+                    "and you can create Fake Player on themselves",
+            "If commandPlayer is set to False you can't create Fake Player on themselves"},
             category = {EXPERIMENTAL, FEATURE, REDCRAFT, COMMAND},
             appSource = "playerme"
     )
