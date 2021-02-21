@@ -90,7 +90,7 @@ Allows deopped player to run /player on themselves
 
 - Type: `boolean`  
 - Default value: `true`  
-- Suggested options: `true`, `false`, `no_shadow`
+- Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
 ## commandSkull
