@@ -37,6 +37,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [craftableTuffAndCalcite](#craftableTuffAndCalcite)
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
+- [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
 - [graves](#graves)
 - [glowingSquid](#glowingSquid)
@@ -299,6 +300,14 @@ Ogni drago dell'end rilascerà un uovo alla propria morte
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
+## fastRedstoneCrafting
+
+Aggiunge crafting alternativi di dispenser e repeater
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## floatingLadders
 
