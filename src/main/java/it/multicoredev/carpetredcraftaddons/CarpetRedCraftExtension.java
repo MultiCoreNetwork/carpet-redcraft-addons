@@ -74,6 +74,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
     public void onServerLoadedWorlds(MinecraftServer server) {
         // DATAPACKS
         registerDatapackRule(server, "betterArmorStands", "RedPack - Better Armor Stands.zip");
+        registerDatapackRule(server, "brickAndPrismarineBackCrafting", "RedPack - BrickAndPrismarine Back Crafting.zip");
         registerDatapackRule(server, "craftableCobwebs", "RedPack - Craftable Cobwebs.zip");
         registerDatapackRule(server, "craftableColoredBlocks", "RedPack - Craftable Colored Blocks.zip");
         registerDatapackRule(server, "craftableCorals", "RedPack - Craftable Corals.zip");
