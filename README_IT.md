@@ -13,6 +13,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 
 ## Regole
 - [betterArmorStands](#betterArmorStands)
+- [brickAndPrismarineBackCrafting](#brickAndPrismarineBackCrafting)
 - [colorableShulkers](#colorableShulkers)
 - [commandStats](#commandStats)
 - [commandTimebar](#commandTimebar)
@@ -73,6 +74,15 @@ Getta a terra degli oggetti al supporto per armature per modificargli alcune pro
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING` 
+
+## brickAndPrismarineBackCrafting
+
+Aggiunge retrocrafting del prismarino e dei mattoni normali e del nether
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## colorableShulkers
 
