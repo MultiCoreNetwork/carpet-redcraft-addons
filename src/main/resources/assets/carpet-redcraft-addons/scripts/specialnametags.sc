@@ -10,8 +10,8 @@ __on_player_interacts_with_entity(player, entity, hand) -> (
         if(entity ~ 'custom_name' == null, return());
         custom_name = lower(entity ~ 'custom_name');
         if(
-            ['freeze','ai','congela','congelato']~custom_name!=null,             modify(entity,'ai',false); modify(entity,'invulnerable',true),
-            ['unfreeze','noai','scongela','scongelato']~custom_name!=null,       modify(entity,'ai',true); modify(entity,'invulnerable',false),
+            ['freeze','noai','congela','congelato']~custom_name!=null,             modify(entity,'ai',false); modify(entity,'invulnerable',true),
+            ['unfreeze','ai','scongela','scongelato']~custom_name!=null,       modify(entity,'ai',true); modify(entity,'invulnerable',false),
             ['silent','silenzia','muta','mutato']~custom_name!=null,             modify(entity,'silent',true),
             ['unsilent','smuta','smutato']~custom_name!=null,                    modify(entity,'silent',false),
             ['baby','cucciolo','bambino']~custom_name!=null,                     modify(entity,'breeding_age',-32768); modify(entity,'nbt_merge','{IsBaby:true}');  modify(entity,'tag','gb.is_baby'),
