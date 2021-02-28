@@ -302,7 +302,7 @@ Ender Dragon always spawns a new dragon egg
 
 ## fastRedstoneCrafting
 
-Aggiunge crafting alternativi di dispenser e repeater
+Adds fast redstone crafting for Dispenser and Repeater
 
 - Type: `boolean`  
 - Default value: `true`  
