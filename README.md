@@ -45,6 +45,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
+- [mossyCobblestoneAndStoneBricksCrafting](#mossyCobblestoneAndStoneBricksCrafting)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
@@ -371,6 +372,15 @@ Adds more trades to the Wandering Trader
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## mossyCobblestoneAndStoneBricksCrafting
+
+Adds Mossy crafting with Nether Vines
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## prunedPlants
 

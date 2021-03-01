@@ -45,6 +45,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
+- [mossyCobblestoneAndStoneBricksCrafting](#mossyCobblestoneAndStoneBricksCrafting)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
@@ -373,6 +374,15 @@ Aggiunge nuovi scambi al mercante viandante
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## mossyCobblestoneAndStoneBricksCrafting
+
+Aggiunge il crafting delle varianti muschiose con le rampicanti del nether
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## prunedPlants
 

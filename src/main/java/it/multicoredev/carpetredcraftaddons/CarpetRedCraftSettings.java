@@ -349,4 +349,10 @@ public class CarpetRedCraftSettings {
     )
     public static boolean stonecutterWood = true;
 
+    @Rule(
+            desc = "Adds Mossy crafting with Nether Vines.",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+    )
+    public static boolean mossyCobblestoneAndStoneBricksCrafting = true;
+    
 }
