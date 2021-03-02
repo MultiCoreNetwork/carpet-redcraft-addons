@@ -13,6 +13,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 
 ## Rules
 - [betterArmorStands](#betterArmorStands)
+- [brickAndPrismarineBackCrafting](#brickAndPrismarineBackCrafting)
 - [colorableShulkers](#colorableShulkers)
 - [commandStats](#commandStats)
 - [commandTimebar](#commandTimebar)
@@ -73,6 +74,15 @@ Drop items to Armor Stands to apply them some proprieties
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING` 
+
+## brickAndPrismarineBackCrafting
+
+Adds retrocrafting of Prismarine and Brick, normal and nether variant
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## colorableShulkers
 

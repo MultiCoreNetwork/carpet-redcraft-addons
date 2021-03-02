@@ -348,4 +348,9 @@ public class CarpetRedCraftSettings {
     )
     public static boolean stonecutterWood = true;
 
+    @Rule(
+            desc= "Add Brick and Prismarine back crafting",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+    )
+    public static boolean brickAndPrismarineBackCrafting = true;
 }
