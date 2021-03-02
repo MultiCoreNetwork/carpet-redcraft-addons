@@ -13,7 +13,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 
 ## Regole
 - [betterArmorStands](#betterArmorStands)
-- [brickAndPrismarineBackCrafting](#brickAndPrismarineBackCrafting)
+- [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
 - [commandPlayerme](#commandPlayerme)
 - [commandSkull](#commandSkull)
@@ -72,17 +72,8 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 
 Getta a terra degli oggetti al supporto per armature per modificargli alcune proprietà
 
-- Type: `boolean`  
-- Default value: `true`  
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING` 
-
-## brickAndPrismarineBackCrafting
-
-Aggiunge retrocrafting del prismarino e dei mattoni normali e del nether
-
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -90,17 +81,17 @@ Aggiunge retrocrafting del prismarino e dei mattoni normali e del nether
 
 Permette di colorare le Shulker
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND` 
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
 
 ## commandPlayerme
 
 Permette ai giocatori non operatori di eseguire /player su sé stessi
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
@@ -108,8 +99,8 @@ Permette ai giocatori non operatori di eseguire /player su sé stessi
 
 Permette di avere accesso al comando /skull
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
 
@@ -117,8 +108,8 @@ Permette di avere accesso al comando /skull
 
 Permette di avere accesso al comando /stats
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
 
@@ -126,35 +117,44 @@ Permette di avere accesso al comando /stats
 
 Permette di avere accesso al comando /timebar
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND` 
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
 
 ## commandWaystone
 
 Permette di avere accesso al comando /waystone
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND` 
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
+
+## craftableBricks
+
+Aggiunge retrocrafting del prismarino, dei mattoni e mattoni del Nether
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableCobwebs
 
 Permette di craftare le ragnatele
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING` 
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableColoredBlocks
 
 Permette di craftare blocchi colorati partendo dalle altre varianti
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -162,8 +162,8 @@ Permette di craftare blocchi colorati partendo dalle altre varianti
 
 Permette di craftare i blocchi di corallo partendo da coralli o gorgonie
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -171,8 +171,8 @@ Permette di craftare i blocchi di corallo partendo da coralli o gorgonie
 
 Permette di far esiccare gli arboscelli nella fornace
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -180,8 +180,8 @@ Permette di far esiccare gli arboscelli nella fornace
 
 Permette di craftare le elytra
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -189,8 +189,8 @@ Permette di craftare le elytra
 
 Permette di craftare ghiaccio partendo dal ghiccio compatto
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -198,8 +198,8 @@ Permette di craftare ghiaccio partendo dal ghiccio compatto
 
 Permette di craftare le felci alte
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -207,8 +207,8 @@ Permette di craftare le felci alte
 
 Permette di craftare verruche del nether partendo dal relativo blocco
 
-- Type: `boolean`  
-- Default value: `false`  
+- Type: `boolean`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -216,8 +216,8 @@ Permette di craftare verruche del nether partendo dal relativo blocco
 
 Permette di craftare il ghiaccio compatto partendo dalla versione blu
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -225,8 +225,8 @@ Permette di craftare il ghiaccio compatto partendo dalla versione blu
 
 Permette di craftare le teste di giocatore partendo da una qualsiasi testa
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -234,8 +234,8 @@ Permette di craftare le teste di giocatore partendo da una qualsiasi testa
 
 Permette di craftare il quarzo partendo da una qualsiasi variante di blocco
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -243,8 +243,8 @@ Permette di craftare il quarzo partendo da una qualsiasi variante di blocco
 
 Permette di craftare la sabbia rossa partendo dall'arenaria rossa
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -252,8 +252,8 @@ Permette di craftare la sabbia rossa partendo dall'arenaria rossa
 
 Permette di craftare la sabbia partendo dall'arenaria
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -261,8 +261,8 @@ Permette di craftare la sabbia partendo dall'arenaria
 
 Permette di craftare i gusci di shulker partendo da quelli di tartaruga e un fiore di chorus scoppiato
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -270,8 +270,8 @@ Permette di craftare i gusci di shulker partendo da quelli di tartaruga e un fio
 
 Permette di craftare i blocchi di legno scortecciato partendo dai tronchi scortecciati
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -279,8 +279,8 @@ Permette di craftare i blocchi di legno scortecciato partendo dai tronchi scorte
 
 Permette di craftare l'erba alta
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -288,8 +288,8 @@ Permette di craftare l'erba alta
 
 Permette di craftare il tufo e la calcite
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -297,17 +297,17 @@ Permette di craftare il tufo e la calcite
 
 Disabilita il feedback dei coomandi per i giocatori OP di livello 1
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `FEATURE`, `REDCRAFT` 
+- Categories: `FEATURE`, `REDCRAFT`
 
 ## dragonEggRespawns
 
 Ogni drago dell'end rilascerà un uovo alla propria morte
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -315,8 +315,8 @@ Ogni drago dell'end rilascerà un uovo alla propria morte
 
 Riduce il numero di blocchi che gli enderman possono raccogliere
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -324,8 +324,8 @@ Riduce il numero di blocchi che gli enderman possono raccogliere
 
 Aggiunge crafting alternativi di dispenser e repeater
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -333,8 +333,8 @@ Aggiunge crafting alternativi di dispenser e repeater
 
 Permette di piazzare una scala a pioli fluttuante sotto ad una già piazzata
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -342,8 +342,8 @@ Permette di piazzare una scala a pioli fluttuante sotto ad una già piazzata
 
 Le piovre luminescenti avranno la possibilità di nascere nei biomi oceanici profondi
 
-- Type: `boolean`  
-- Default value: `false`  
+- Type: `boolean`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -351,8 +351,8 @@ Le piovre luminescenti avranno la possibilità di nascere nei biomi oceanici pro
 
 Crea una tomba personale alla morte del giocatore
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -360,8 +360,8 @@ Crea una tomba personale alla morte del giocatore
 
 Permette di cerare i blocchi di rame usando un favo sul blocco stesso
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -369,8 +369,8 @@ Permette di cerare i blocchi di rame usando un favo sul blocco stesso
 
 Accovacciandosi e premendo il tasto destro su un cavallo/mulo/asino verranno riportatate in chat le statistiche dell'animale
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -378,8 +378,8 @@ Accovacciandosi e premendo il tasto destro su un cavallo/mulo/asino verranno rip
 
 Usano una membrana di phantom su una cornice per oggetti, la renderà invisibile
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -389,8 +389,8 @@ Alla morte verrà consegnata una bussola che punta nel luogo di morte
 
 Sarà possibile riottenere tale bussola premendo con il tasto destro una bussola mentre ci si accovaccia
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -398,8 +398,8 @@ Sarà possibile riottenere tale bussola premendo con il tasto destro una bussola
 
 Aggiunge nuovi scambi al mercante viandante
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -407,8 +407,8 @@ Aggiunge nuovi scambi al mercante viandante
 
 Permette di piantare le piante su qualsiasi blocco con una superficie piana
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -416,8 +416,8 @@ Permette di piantare le piante su qualsiasi blocco con una superficie piana
 
 Permette di potare le piante
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -425,8 +425,8 @@ Permette di potare le piante
 
 Aggiunge maggiore compatibilità frai crafting dei blocchi di quarzo
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -434,8 +434,8 @@ Aggiunge maggiore compatibilità frai crafting dei blocchi di quarzo
 
 Gestisce il teletrasporto infradimensionale fra i 2 server
 
-- Type: `boolean`  
-- Default value: `false`  
+- Type: `boolean`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -443,8 +443,8 @@ Gestisce il teletrasporto infradimensionale fra i 2 server
 
 Aggiunge maggiore compatibilità frai crafting dei blocchi di arenaria rossa
 
-- Type: `boolean`  
-- Default value: `false`  
+- Type: `boolean`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -452,8 +452,8 @@ Aggiunge maggiore compatibilità frai crafting dei blocchi di arenaria rossa
 
 Permette di legare due staccionate
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -461,8 +461,8 @@ Permette di legare due staccionate
 
 Aggiunge maggiore compatibilità frai crafting dei blocchi di arenaria
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -470,8 +470,8 @@ Aggiunge maggiore compatibilità frai crafting dei blocchi di arenaria
 
 Permette di minare un blocco mantenendo il suo stato se viene utilizzato un attrezzo incantato con "Silky Blockstate"
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -479,8 +479,8 @@ Permette di minare un blocco mantenendo il suo stato se viene utilizzato un attr
 
 Permette di piazzare le selle a terra
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -488,8 +488,8 @@ Permette di piazzare le selle a terra
 
 Permette di craftare un blocco partendo da due lastre
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`,`CRAFTING`
 
@@ -497,8 +497,8 @@ Permette di craftare un blocco partendo da due lastre
 
 Aggiunge molte altre targhette speciali
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -506,8 +506,8 @@ Aggiunge molte altre targhette speciali
 
 Aggiunge i crafting dei blocchi di quarzo all'interno del tagliapietre
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -515,8 +515,8 @@ Aggiunge i crafting dei blocchi di quarzo all'interno del tagliapietre
 
 Aggiunge i crafting dei blocchi di arenaria rossa all'interno del tagliapietre
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -524,8 +524,8 @@ Aggiunge i crafting dei blocchi di arenaria rossa all'interno del tagliapietre
 
 Aggiunge i crafting dei blocchi di arenaria all'interno del tagliapietre
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -533,8 +533,8 @@ Aggiunge i crafting dei blocchi di arenaria all'interno del tagliapietre
 
 Aggiunge i crafting dei derivati del legno all'interno del tagliapietre
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -542,8 +542,8 @@ Aggiunge i crafting dei derivati del legno all'interno del tagliapietre
 
 Permette di abbattere un intero albero se tagliato alla base con un'ascia incantata con "TreeCapitator"
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -551,7 +551,7 @@ Permette di abbattere un intero albero se tagliato alla base con un'ascia incant
 
 Permette di legare i villager al guinzaglio
 
-- Type: `boolean`  
-- Default value: `true`  
+- Type: `boolean`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`

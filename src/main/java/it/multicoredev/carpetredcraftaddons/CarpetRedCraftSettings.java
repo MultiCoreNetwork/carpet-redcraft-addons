@@ -366,13 +366,13 @@ public class CarpetRedCraftSettings {
     public static boolean stonecutterWood = true;
 
     @Rule(
-            desc= "Add Brick and Prismarine back crafting",
+            desc= "Adds reverse crafting of Prismarine, Prismarine Bricks, Bricks and Nether Bricks",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
-    public static boolean brickAndPrismarineBackCrafting = true;
+    public static boolean craftableBricks = true;
 
     @Rule(
-            desc= "Adds fast redstone crafting for Dispenser and Repeater.",
+            desc= "Adds fast crafting for Dispenser and Repeater.",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean fastRedstoneCrafting = true;
