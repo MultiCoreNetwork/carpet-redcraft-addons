@@ -5,7 +5,8 @@ name: Datapacks Zipper
 # Controls when the action will run. 
 on:
   push:
-    branches: [ main ]
+    branches: 
+    - main
     paths:
     - "src/main/resources/assets/carpet-redcraft-addons/datapacks/**"
 
