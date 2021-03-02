@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:dark_oak_log"
+    },
+    {
+      "item": "minecraft:stripped_dark_oak_log"
+    },
+    {
+      "item": "minecraft:dark_oak_wood"
+    },
+    {
+      "item": "minecraft:stripped_dark_oak_wood"
+    },
+    {
+      "item": "minecraft:dark_oak_fence_gate"
+    }
+  ],
+  "result": "minecraft:dark_oak_door",
+  "count": 2
+}

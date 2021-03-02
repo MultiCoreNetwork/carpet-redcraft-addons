@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "glazed_terracotta",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "redpack:glazed_terracottas/not_black_glazed_terracottas"
+        },
+        "$": {
+            "item": "minecraft:black_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:black_glazed_terracotta",
+        "count": 8
+    }
+}

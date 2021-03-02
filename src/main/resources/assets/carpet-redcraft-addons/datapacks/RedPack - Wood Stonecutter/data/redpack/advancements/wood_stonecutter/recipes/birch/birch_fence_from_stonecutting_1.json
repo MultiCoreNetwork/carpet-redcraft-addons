@@ -1,0 +1,60 @@
+{
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+        "recipes": [
+            "redpack:wood_stonecutter/birch/birch_fence_from_stonecutting_1"
+        ]
+    },
+    "criteria": {
+        "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "redpack:wood_stonecutter/birch/birch_fence_from_stonecutting_1"
+            }
+        },
+        "has_item_0": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:birch_button"
+                    }
+                ]
+            }
+        },
+        "has_item_1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:birch_planks"
+                    }
+                ]
+            }
+        },
+        "has_item_2": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:birch_stairs"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "has_item_0",
+            "has_the_recipe"
+        ],
+        [
+            "has_item_1",
+            "has_the_recipe"
+        ],
+        [
+            "has_item_2",
+            "has_the_recipe"
+        ]
+    ]
+}

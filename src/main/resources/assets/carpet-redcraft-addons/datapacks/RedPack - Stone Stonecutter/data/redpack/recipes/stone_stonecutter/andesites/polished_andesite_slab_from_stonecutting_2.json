@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:polished_andesite"
+    },
+    {
+      "item": "minecraft:andesite_wall"
+    },
+    {
+      "item": "minecraft:andesite_stairs"
+    },
+    {
+      "item": "minecraft:polished_andesite_stairs"
+    },
+    {
+      "item": "minecraft:andesite"
+    }
+  ],
+  "result": "minecraft:polished_andesite_slab",
+  "count": 2
+}

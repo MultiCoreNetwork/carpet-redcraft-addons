@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Cobwebs v1.0.0",
+        "description": [{
+            "text": "Craftable Cobwebs by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:cobweb"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

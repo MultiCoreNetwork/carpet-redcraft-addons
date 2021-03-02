@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:jungle_door"
+    },
+    {
+      "item": "minecraft:jungle_pressure_plate"
+    },
+    {
+      "item": "minecraft:jungle_sign"
+    }
+  ],
+  "result": "minecraft:jungle_slab",
+  "count": 4
+}

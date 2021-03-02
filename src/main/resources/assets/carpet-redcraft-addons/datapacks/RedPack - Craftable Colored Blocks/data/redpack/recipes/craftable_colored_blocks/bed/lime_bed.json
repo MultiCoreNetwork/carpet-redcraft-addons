@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "group": "bed",
+    "result": {
+        "item": "minecraft:lime_bed",
+        "count": 1
+    },
+    "ingredients": [
+        {
+            "tag": "redpack:beds/not_lime_beds"
+        },
+        {
+            "item": "minecraft:lime_dye"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "coral_block",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "result": {
+        "item": "minecraft:tube_coral_block",
+        "count": 8
+    },
+    "key": {
+         "#": {
+            "tag": "redpack:corals/not_tube_coral_blocks"
+        },
+         "$": {
+            "item": "minecraft:blue_dye"
+        }
+    }
+}

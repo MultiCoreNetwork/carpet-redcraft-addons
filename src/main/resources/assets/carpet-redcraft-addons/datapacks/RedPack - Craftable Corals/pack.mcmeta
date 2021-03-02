@@ -1,0 +1,12 @@
+{
+    "pack": {
+        "pack_format": 7,
+        "description": "RedPack by BisUmTo & Gnottero - Craftable Corals v1.0.0"
+    },
+    "redpack": {
+        "id": "128339",
+        "video": "eBPwi2u58js",
+        "image": "https://img.youtube.com/vi/eBPwi2u58js/maxresdefault.jpg",
+        "group": "more_craftings"
+    }
+}

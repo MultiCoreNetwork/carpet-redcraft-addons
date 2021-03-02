@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:birch_trapdoor"
+    }
+  ],
+  "result": "minecraft:birch_stairs",
+  "count": 3
+}

@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "group": "bed",
+    "result": {
+        "item": "minecraft:light_gray_bed",
+        "count": 1
+    },
+    "ingredients": [
+        {
+            "tag": "redpack:beds/not_light_gray_beds"
+        },
+        {
+            "item": "minecraft:light_gray_dye"
+        }
+    ]
+}

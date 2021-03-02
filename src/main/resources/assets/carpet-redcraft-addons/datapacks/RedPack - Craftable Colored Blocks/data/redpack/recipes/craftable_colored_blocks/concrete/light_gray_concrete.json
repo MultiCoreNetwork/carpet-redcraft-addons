@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "concrete",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "redpack:concretes/not_light_gray_concretes"
+        },
+        "$": {
+            "item": "minecraft:light_gray_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:light_gray_concrete",
+        "count": 8
+    }
+}

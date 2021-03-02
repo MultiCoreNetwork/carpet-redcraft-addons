@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "minecraft:quartz_block"
+    },
+    {
+      "item": "minecraft:quartz_pillar"
+    },
+    {
+      "item": "minecraft:chiseled_quartz_block"
+    },
+    {
+      "item": "minecraft:quartz_bricks"
+    }
+  ],
+  "result": "minecraft:smooth_quartz",
+  "experience": 0.05,
+  "cookingtime": 200
+}

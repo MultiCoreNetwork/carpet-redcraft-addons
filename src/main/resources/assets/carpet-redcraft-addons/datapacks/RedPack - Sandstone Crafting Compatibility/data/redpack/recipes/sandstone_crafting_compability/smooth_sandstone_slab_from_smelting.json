@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": [
+    {
+      "item": "minecraft:sandstone_slab"
+    },
+    {
+      "item": "minecraft:cut_sandstone_slab"
+    }
+  ],
+  "result": "minecraft:smooth_sandstone_slab",
+  "experience": 0.05,
+  "cookingtime": 200
+}

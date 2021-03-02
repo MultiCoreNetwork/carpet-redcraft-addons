@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "stained_glass",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "redpack:stained_glasses/not_blue_stained_glasses"
+        },
+        "$": {
+            "item": "minecraft:blue_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:blue_stained_glass",
+        "count": 8
+    }
+}

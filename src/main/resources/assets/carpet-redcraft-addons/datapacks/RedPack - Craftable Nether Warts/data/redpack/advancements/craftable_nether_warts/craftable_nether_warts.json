@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Nether Warts v0.1.0",
+        "description": [{
+            "text": "Craftable Nether Warts by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:nether_wart"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

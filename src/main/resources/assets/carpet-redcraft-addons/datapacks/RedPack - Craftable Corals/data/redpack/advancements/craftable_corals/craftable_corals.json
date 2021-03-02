@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Corals v1.0.0",
+        "description": [{
+            "text": "Craftable Corals by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:bubble_coral"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

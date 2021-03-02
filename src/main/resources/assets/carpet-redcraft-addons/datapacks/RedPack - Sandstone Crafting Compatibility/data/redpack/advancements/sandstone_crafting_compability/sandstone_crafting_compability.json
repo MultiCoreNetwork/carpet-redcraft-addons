@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Sandstone Crafting Compatibility v0.1.0",
+        "description": [{
+            "text": "Use all sandstone type to craft derivates by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:sandstone"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

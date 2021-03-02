@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "group": "bed",
+    "result": {
+        "item": "minecraft:blue_bed",
+        "count": 1
+    },
+    "ingredients": [
+        {
+            "tag": "redpack:beds/not_blue_beds"
+        },
+        {
+            "item": "minecraft:blue_dye"
+        }
+    ]
+}

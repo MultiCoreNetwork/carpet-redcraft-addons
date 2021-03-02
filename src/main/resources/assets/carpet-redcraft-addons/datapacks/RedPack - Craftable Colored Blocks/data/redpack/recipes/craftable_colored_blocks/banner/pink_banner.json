@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "banner",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "result": {
+        "item": "minecraft:pink_banner",
+        "count": 8
+    },
+    "key": {
+        "#": {
+            "tag": "redpack:banners/not_pink_banners"
+        },
+        "$": {
+            "item": "minecraft:pink_dye"
+        }
+    }
+}

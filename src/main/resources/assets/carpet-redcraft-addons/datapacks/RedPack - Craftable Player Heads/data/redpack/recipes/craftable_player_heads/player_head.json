@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "redpack:heads"
+        }
+    ],
+    "result": {
+        "item": "minecraft:player_head",
+        "count": 1
+    }
+}

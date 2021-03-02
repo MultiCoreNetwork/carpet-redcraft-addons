@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "tag": "redpack:red_sandstones"
+    },
+    {
+      "item": "minecraft:red_sandstone_stairs"
+    },
+    {
+      "item": "minecraft:smooth_red_sandstone_stairs"
+    }
+  ],
+  "result": "minecraft:red_sandstone_wall",
+  "count": 1
+}

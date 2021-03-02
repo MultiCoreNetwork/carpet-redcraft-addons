@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "AG",
+    "GA"
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:andesite"
+    },
+    "G": {
+      "item": "minecraft:gravel"
+    }
+  },
+  "result": {
+    "item": "minecraft:tuff",
+    "count": 4
+  }
+}

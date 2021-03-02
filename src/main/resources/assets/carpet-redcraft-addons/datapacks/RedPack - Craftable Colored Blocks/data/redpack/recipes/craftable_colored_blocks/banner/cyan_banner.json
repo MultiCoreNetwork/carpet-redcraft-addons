@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "banner",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "result": {
+        "item": "minecraft:cyan_banner",
+        "count": 8
+    },
+    "key": {
+        "#": {
+            "tag": "redpack:banners/not_cyan_banners"
+        },
+        "$": {
+            "item": "minecraft:cyan_dye"
+        }
+    }
+}

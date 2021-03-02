@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Player Heads v0.1.0",
+        "description": [{
+            "text": "Craftable Player Heads by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:player_head"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

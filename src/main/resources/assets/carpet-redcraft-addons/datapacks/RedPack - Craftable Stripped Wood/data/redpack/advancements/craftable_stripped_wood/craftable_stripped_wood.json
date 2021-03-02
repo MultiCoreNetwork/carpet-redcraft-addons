@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Stripped Wood v0.1.0",
+        "description": [{
+            "text": "Craftable Stripped Wood by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:stripped_oak_wood"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

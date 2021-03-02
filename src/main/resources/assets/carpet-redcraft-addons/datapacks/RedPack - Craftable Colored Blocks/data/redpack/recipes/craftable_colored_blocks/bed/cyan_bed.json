@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "group": "bed",
+    "result": {
+        "item": "minecraft:cyan_bed",
+        "count": 1
+    },
+    "ingredients": [
+        {
+            "tag": "redpack:beds/not_cyan_beds"
+        },
+        {
+            "item": "minecraft:cyan_dye"
+        }
+    ]
+}

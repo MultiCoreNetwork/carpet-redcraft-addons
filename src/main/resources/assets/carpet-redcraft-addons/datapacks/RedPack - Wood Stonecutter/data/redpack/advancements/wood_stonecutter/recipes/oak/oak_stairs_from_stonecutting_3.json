@@ -1,0 +1,32 @@
+{
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+        "recipes": [
+            "redpack:wood_stonecutter/oak/oak_stairs_from_stonecutting_3"
+        ]
+    },
+    "criteria": {
+        "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "redpack:wood_stonecutter/oak/oak_stairs_from_stonecutting_3"
+            }
+        },
+        "has_item_0": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:oak_trapdoor"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "has_item_0",
+            "has_the_recipe"
+        ]
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "carpet",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "redpack:carpets/not_black_carpets"
+        },
+        "$": {
+            "item": "minecraft:black_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:black_carpet",
+        "count": 8
+    }
+}

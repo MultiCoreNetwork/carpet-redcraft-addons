@@ -1,0 +1,46 @@
+{
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+        "recipes": [
+            "redpack:wood_stonecutter/jungle/jungle_slab_from_stonecutting_10"
+        ]
+    },
+    "criteria": {
+        "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "redpack:wood_stonecutter/jungle/jungle_slab_from_stonecutting_10"
+            }
+        },
+        "has_item_0": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:jungle_wood"
+                    }
+                ]
+            }
+        },
+        "has_item_1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stripped_jungle_wood"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "has_item_0",
+            "has_the_recipe"
+        ],
+        [
+            "has_item_1",
+            "has_the_recipe"
+        ]
+    ]
+}

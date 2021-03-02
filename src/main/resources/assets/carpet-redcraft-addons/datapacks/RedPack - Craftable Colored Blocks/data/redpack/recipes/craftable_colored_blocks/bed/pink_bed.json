@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "group": "bed",
+    "result": {
+        "item": "minecraft:pink_bed",
+        "count": 1
+    },
+    "ingredients": [
+        {
+            "tag": "redpack:beds/not_pink_beds"
+        },
+        {
+            "item": "minecraft:pink_dye"
+        }
+    ]
+}

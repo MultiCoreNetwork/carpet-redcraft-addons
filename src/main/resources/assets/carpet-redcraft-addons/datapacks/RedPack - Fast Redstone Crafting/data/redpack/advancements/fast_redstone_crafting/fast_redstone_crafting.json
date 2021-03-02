@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Fast Redstone Crafting v0.1.0",
+        "description": [{
+            "text": "Some fast redstone crafting by BisUmTo, Gnottero & DukeEdivad05"
+        }],
+        "icon": {
+            "item": "minecraft:repeater"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

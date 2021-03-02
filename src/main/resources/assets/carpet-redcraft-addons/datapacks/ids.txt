@@ -51,3 +51,4 @@
 128352: craftable_tuff_and_calcite
 128353: craftable_brick
 128354: fast_redstone_crafting
+128355: craftable_bricks

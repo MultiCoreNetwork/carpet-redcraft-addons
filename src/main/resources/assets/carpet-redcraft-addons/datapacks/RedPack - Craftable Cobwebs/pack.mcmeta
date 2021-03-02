@@ -1,0 +1,12 @@
+{
+    "pack": {
+        "pack_format": 7,
+        "description": "RedPack by BisUmTo & Gnottero - Craftable Cobwebs v1.0.0"
+    },
+    "redpack": {
+        "id": "128329",
+        "video": "GltnzPxjUcg",
+        "image": "https://img.youtube.com/vi/GltnzPxjUcg/maxresdefault.jpg",
+        "group": "more_craftings"
+    }
+}

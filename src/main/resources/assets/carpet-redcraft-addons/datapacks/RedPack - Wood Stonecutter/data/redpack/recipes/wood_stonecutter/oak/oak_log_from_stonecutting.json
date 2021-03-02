@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:oak_wood"
+    }
+  ],
+  "result": "minecraft:oak_log",
+  "count": 1
+}

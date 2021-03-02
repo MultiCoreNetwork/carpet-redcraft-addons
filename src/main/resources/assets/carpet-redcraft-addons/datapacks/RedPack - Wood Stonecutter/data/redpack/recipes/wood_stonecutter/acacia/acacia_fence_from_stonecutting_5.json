@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:acacia_wood"
+    },
+    {
+      "item": "minecraft:stripped_acacia_wood"
+    }
+  ],
+  "result": "minecraft:acacia_fence",
+  "count": 5
+}

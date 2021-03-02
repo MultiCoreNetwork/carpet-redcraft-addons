@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Quartz Stonecutter v0.1.0",
+        "description": [{
+            "text": "Use stonecutter to cut quartz by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:quartz_pillar"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:stonecutter",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

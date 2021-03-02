@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:quartz_block"
+    },
+    {
+      "item": "minecraft:chiseled_quartz_block"
+    },
+    {
+      "item": "minecraft:smooth_quartz"
+    },
+    {
+      "item": "minecraft:quartz_stairs"
+    },
+    {
+      "item": "minecraft:smooth_quartz_stairs"
+    },
+    {
+      "item": "minecraft:quartz_bricks"
+    }
+  ],
+  "result": "minecraft:quartz_pillar",
+  "count": 1
+}

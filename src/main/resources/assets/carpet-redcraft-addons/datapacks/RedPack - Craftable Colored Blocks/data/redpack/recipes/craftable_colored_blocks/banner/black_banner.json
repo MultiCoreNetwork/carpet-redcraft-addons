@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "banner",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "result": {
+        "item": "minecraft:black_banner",
+        "count": 8
+    },
+    "key": {
+        "#": {
+            "tag": "redpack:banners/not_black_banners"
+        },
+        "$": {
+            "item": "minecraft:black_dye"
+        }
+    }
+}

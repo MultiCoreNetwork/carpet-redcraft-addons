@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:crimson_trapdoor"
+    }
+  ],
+  "result": "minecraft:crimson_stairs",
+  "count": 3
+}

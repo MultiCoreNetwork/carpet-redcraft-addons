@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Packed Ice v0.1.0",
+        "description": [{
+            "text": "Craftable Packed Ice by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:packed_ice"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

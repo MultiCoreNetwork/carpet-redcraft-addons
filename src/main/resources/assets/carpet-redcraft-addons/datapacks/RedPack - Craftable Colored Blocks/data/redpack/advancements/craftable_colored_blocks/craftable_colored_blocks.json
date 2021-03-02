@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Colored Blocks v1.0.0",
+        "description": [{
+            "text": "Craftable Colored Blocks by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:red_concrete_powder"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

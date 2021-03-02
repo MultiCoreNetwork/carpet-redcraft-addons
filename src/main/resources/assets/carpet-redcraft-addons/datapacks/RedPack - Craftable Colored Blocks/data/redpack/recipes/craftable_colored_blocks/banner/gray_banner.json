@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "banner",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "result": {
+        "item": "minecraft:gray_banner",
+        "count": 8
+    },
+    "key": {
+        "$": {
+            "item": "minecraft:gray_dye"
+        },
+        "#": {
+            "tag": "redpack:banners/not_gray_banners"
+        }
+    }
+}

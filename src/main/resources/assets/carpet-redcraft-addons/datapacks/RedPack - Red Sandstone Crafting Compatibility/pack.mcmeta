@@ -1,0 +1,12 @@
+{
+    "pack": {
+        "pack_format": 7,
+        "description": "RedPack by BisUmTo & Gnottero - Red Sandstone Crafting Compatibility v0.1.0"
+    },
+    "redpack": {
+        "id": "128310",
+        "video": "KVIxcL8rNC8",
+        "image": "https://www.videosolo.com/images/resources/youtube-video-is-not-available.jpg",
+        "group": "more_craftings"
+    }
+}

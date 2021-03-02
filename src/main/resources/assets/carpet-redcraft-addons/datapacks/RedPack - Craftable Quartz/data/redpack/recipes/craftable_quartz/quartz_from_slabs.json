@@ -1,0 +1,13 @@
+{
+    "group":"redpack:craftable_quartz",
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "redpack:craftable_quartz/quartz_slabs"
+        }
+    ],
+    "result": {
+        "item": "minecraft:quartz",
+        "count": 2
+    }
+}

@@ -1,0 +1,88 @@
+{
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+        "recipes": [
+            "redpack:stone_stonecutter/stones/mossy_stone_brick_slab_from_stonecutting_1"
+        ]
+    },
+    "criteria": {
+        "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "redpack:stone_stonecutter/stones/mossy_stone_brick_slab_from_stonecutting_1"
+            }
+        },
+        "has_item_0": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_slab"
+                    }
+                ]
+            }
+        },
+        "has_item_1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:smooth_stone_slab"
+                    }
+                ]
+            }
+        },
+        "has_item_2": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:cobblestone_slab"
+                    }
+                ]
+            }
+        },
+        "has_item_3": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:stone_brick_slab"
+                    }
+                ]
+            }
+        },
+        "has_item_4": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:mossy_cobblestone_slab"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "has_item_0",
+            "has_the_recipe"
+        ],
+        [
+            "has_item_1",
+            "has_the_recipe"
+        ],
+        [
+            "has_item_2",
+            "has_the_recipe"
+        ],
+        [
+            "has_item_3",
+            "has_the_recipe"
+        ],
+        [
+            "has_item_4",
+            "has_the_recipe"
+        ]
+    ]
+}

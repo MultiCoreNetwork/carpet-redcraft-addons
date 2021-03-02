@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "redpack:red_sandstones"
+    }
+  ],
+  "result": {
+    "item": "minecraft:red_sand",
+    "count": 4
+  }
+}

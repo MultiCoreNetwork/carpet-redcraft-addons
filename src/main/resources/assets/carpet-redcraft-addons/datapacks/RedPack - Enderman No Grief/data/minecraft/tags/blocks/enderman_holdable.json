@@ -1,0 +1,10 @@
+{
+    "replace": true,
+    "values": [
+      "minecraft:podzol",
+      "minecraft:pumpkin",
+      "minecraft:carved_pumpkin",
+      "minecraft:melon",
+      "minecraft:mycelium"
+    ]
+}

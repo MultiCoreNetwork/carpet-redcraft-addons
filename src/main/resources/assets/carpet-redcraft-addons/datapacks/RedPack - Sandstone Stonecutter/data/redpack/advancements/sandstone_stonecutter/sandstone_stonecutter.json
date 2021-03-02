@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Sandstone Stonecutter v0.1.0",
+        "description": [{
+            "text": "Use stonecutter to cut sandstone by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:cut_sandstone"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:stonecutter",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Bricks v0.1.0",
+        "description": [{
+            "text": "Craftable Bricks by BisUmTo, Gnottero & DukeEdivad05"
+        }],
+        "icon": {
+            "item": "minecraft:brick"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

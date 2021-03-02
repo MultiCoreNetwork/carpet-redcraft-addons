@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "group": "wool",
+    "result": {
+        "item": "minecraft:red_wool",
+        "count": 1
+    },
+    "ingredients": [
+        {
+            "tag": "redpack:wools/not_red_wools"
+        },
+        {
+            "item": "minecraft:red_dye"
+        }
+    ]
+}

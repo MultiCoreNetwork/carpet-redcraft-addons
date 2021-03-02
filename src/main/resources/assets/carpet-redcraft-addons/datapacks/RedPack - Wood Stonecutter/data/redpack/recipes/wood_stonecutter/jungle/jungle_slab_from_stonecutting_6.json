@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:jungle_trapdoor"
+    }
+  ],
+  "result": "minecraft:jungle_slab",
+  "count": 6
+}

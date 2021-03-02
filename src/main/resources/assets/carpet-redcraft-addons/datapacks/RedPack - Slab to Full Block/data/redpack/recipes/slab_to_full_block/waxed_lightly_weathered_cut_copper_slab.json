@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "#"
+    ],
+    "key": {
+        "#": {
+            "item": "waxed_lightly_weathered_cut_copper_slab"
+        }
+    },
+    "result": {
+        "item": "minecraft:waxed_lightly_weathered_cut_copper",
+        "count": 1
+    }
+}

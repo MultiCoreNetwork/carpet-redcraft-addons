@@ -1,0 +1,13 @@
+{
+    "type": "crafting_shapeless",
+    "group": "nether_brick",
+    "ingredients": [
+        {
+            "item": "minecraft:nether_bricks"
+        }
+    ],
+    "result": {
+        "item": "minecraft:nether_brick",
+        "count": 4
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "coral",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "result": {
+        "item": "minecraft:fire_coral",
+        "count": 8
+    },
+    "key": {
+        "#": {
+            "tag": "redpack:corals/not_fire_corals"
+        },
+        "$": {
+            "item": "minecraft:red_dye"
+        }
+    }
+}

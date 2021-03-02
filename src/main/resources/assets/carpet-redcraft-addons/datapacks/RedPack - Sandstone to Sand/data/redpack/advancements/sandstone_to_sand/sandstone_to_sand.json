@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Sandstone to Sand v0.1.0",
+        "description": [{
+            "text": "Use sandstone to craft sand by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:sand"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

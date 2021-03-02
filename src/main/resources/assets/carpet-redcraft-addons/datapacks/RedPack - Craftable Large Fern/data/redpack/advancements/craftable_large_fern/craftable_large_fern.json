@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Large Fern v1.0.0",
+        "description": [{
+            "text": "Craftable Large Fern by BisUmTo & Gnottero"
+        }],
+        "icon": {
+            "item": "minecraft:large_fern"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

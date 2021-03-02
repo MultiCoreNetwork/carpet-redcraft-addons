@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:crimson_stem"
+    },
+    {
+      "item": "minecraft:stripped_crimson_stem"
+    },
+    {
+      "item": "minecraft:crimson_hyphae"
+    },
+    {
+      "item": "minecraft:stripped_crimson_hyphae"
+    },
+    {
+      "item": "minecraft:crimson_fence_gate"
+    }
+  ],
+  "result": "minecraft:crimson_door",
+  "count": 2
+}

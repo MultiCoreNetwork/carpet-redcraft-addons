@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:acacia_pressure_plate"
+    },
+    {
+      "item": "minecraft:acacia_sign"
+    },
+    {
+      "item": "minecraft:acacia_trapdoor"
+    }
+  ],
+  "result": "minecraft:acacia_door",
+  "count": 1
+}

@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:stone_pressure_plate"
+    }
+  ],
+  "result": "minecraft:cobblestone_slab",
+  "count": 4
+}

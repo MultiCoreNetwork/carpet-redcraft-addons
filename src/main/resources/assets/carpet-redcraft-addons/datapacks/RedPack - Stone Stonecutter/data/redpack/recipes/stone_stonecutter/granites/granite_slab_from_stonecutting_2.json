@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "item": "minecraft:polished_granite"
+    },
+    {
+      "item": "minecraft:granite_wall"
+    },
+    {
+      "item": "minecraft:granite_stairs"
+    },
+    {
+      "item": "minecraft:polished_granite_stairs"
+    },
+    {
+      "item": "minecraft:granite"
+    }
+  ],
+  "result": "minecraft:granite_slab",
+  "count": 2
+}
