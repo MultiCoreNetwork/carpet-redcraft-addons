@@ -1,7 +1,6 @@
 package it.multicoredev.carpetredcraftaddons;
 
 import carpet.settings.Rule;
-import net.minecraft.block.GlowLichenBlock;
 
 import static carpet.settings.RuleCategory.*;
 
