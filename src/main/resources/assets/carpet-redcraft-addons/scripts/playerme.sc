@@ -4,6 +4,9 @@ __config() -> {
     'stay_loaded' -> true,
     'scope' -> 'global',
     'commands' -> {
+        'attack' -> _() ->
+        (name = player()~'command_name';
+        run('player '+name+' attack')),
 
         'attack continuous' -> _() ->
         (name = player()~'command_name';
@@ -20,6 +23,10 @@ __config() -> {
         'dismount' -> _() ->
         (name = player()~'command_name';
         run('player '+name+' dismount')),
+
+        'drop' -> _() ->
+        (name = player()~'command_name';
+        run('player '+name+' drop')),
 
         'drop <hotbarslot>' -> _(so) -> 
         (name = player()~'command_name'; 
@@ -49,6 +56,10 @@ __config() -> {
         'drop once' -> _() ->
         (name = player()~'command_name';
         run('player '+name+' drop once')),
+
+        'dropStack' -> _() ->
+        (name = player()~'command_name';
+        run('player '+name+' dropStack')),
 
         'dropStack <hotbarslot>' -> _(so) -> 
         (name = player()~'command_name'; 
@@ -82,6 +93,10 @@ __config() -> {
         'hotbar <hotbarslot>' -> _(so) ->
         (name = player()~'command_name';
         run('player '+name+' hotbar '+ so)),
+
+        'jump' -> _() ->
+        (name = player()~'command_name';
+        run('player '+name+' jump')),
 
         'jump continuous' -> _() ->
         (name = player()~'command_name';
@@ -123,6 +138,10 @@ __config() -> {
         (name = player()~'command_name';
         run('player '+name+' look west')),
 
+        'mount' -> _() ->
+        (name = player()~'command_name';
+        run('player '+name+' mount')),
+
         'mount anything' -> _() ->
         (name = player()~'command_name';
         run('player '+name+' mount anything')),
@@ -135,6 +154,10 @@ __config() -> {
         'stop' -> _() ->
         (name = player()~'command_name';
         run('player '+name+' stop')),
+
+        'swapHands' -> _() ->
+        (name = player()~'command_name';
+        run('player '+name+' swapHands')),
 
         'swapHands continuous' -> _() ->
         (name = player()~'command_name';
@@ -163,6 +186,10 @@ __config() -> {
         'turn <rotation>' -> _(rn) ->
         (name = player()~'command_name';
         run('player '+name+' turn '+ rn)),
+
+        'use' -> _() ->
+        (name = player()~'command_name';
+        run('player '+name+' use')),
 
         'use continuous' -> _() ->
         (name = player()~'command_name';
