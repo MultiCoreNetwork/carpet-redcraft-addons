@@ -30,11 +30,11 @@ jobs:
         run: |
           cd src/main/resources/assets/carpet-redcraft-addons/datapacks/
           for f in *; do
-              [ -d "$f" ] && (
+              if [ -d "$f" ]; then
                   pushd "$f"
                   zip -r "${f%/}.zip" . 
                   popd
-              )
+              fi
           done
           
       - name: Commit Datapacks
