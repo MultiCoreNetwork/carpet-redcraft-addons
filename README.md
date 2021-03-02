@@ -15,10 +15,11 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [betterArmorStands](#betterArmorStands)
 - [brickAndPrismarineBackCrafting](#brickAndPrismarineBackCrafting)
 - [colorableShulkers](#colorableShulkers)
+- [commandPlayerme](#commandPlayerme)
+- [commandSkull](#commandSkull)
 - [commandStats](#commandStats)
 - [commandTimebar](#commandTimebar)
 - [commandWaystone](#commandWaystone)
-- [commandSkull](#commandSkull)
 - [craftableCobwebs](#craftableCobwebs)
 - [craftableColoredBlocks](#craftableColoredBlocks)
 - [craftableCorals](#craftableCorals)
@@ -32,15 +33,16 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [craftableQuartz](#craftableQuartz)
 - [craftableRedSand](#craftableRedSand)
 - [craftableSand](#craftableSand)
-- [craftableStrippedWood](#craftableStrippedWood)
 - [craftableShulkerShells](#craftableShulkerShells)
+- [craftableStrippedWood](#craftableStrippedWood)
 - [craftableTallGrass](#craftableTallGrass)
 - [craftableTuffAndCalcite](#craftableTuffAndCalcite)
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
+- [endermanNoGrief](#endermanNoGrief)
 - [floatingLadders](#floatingLadders)
-- [graves](#graves)
 - [glowingSquid](#glowingSquid)
+- [graves](#graves)
 - [handWaxing](#handWaxing)
 - [horseStats](#horseStats)
 - [invisibleItemframe](#invisibleItemframe)
@@ -56,12 +58,11 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [silkyBlockstates](#silkyBlockstates)
 - [sitAnywhere](#sitAnywhere)
 - [slabToBlockCrafing](#slabToBlockCrafing)
-- [stonecutterQuartz](#stonecutterQuartz)
-- [stonecutterStone](#stonecutterStone)
-- [stonecutterSandstone](#stonecutterSandstone)
-- [stonecutterRedSandstone](#stonecutterRedSandstone)
 - [specialNameTags](#specialNameTags)
 - [stonecutterQuartz](#stonecutterQuartz)
+- [stonecutterRedSandstone](#stonecutterRedSandstone)
+- [stonecutterSandstone](#stonecutterSandstone)
+- [stonecutterStone](#stonecutterStone)
 - [stonecutterWood](#stonecutterWood)
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
@@ -93,6 +94,24 @@ Allows to dye Shulkers
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND` 
 
+## commandPlayerme
+
+Allows deopped player to run /player on themselves
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
+
+## commandSkull
+
+Allows to have access to the /skull command
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
+
 ## commandStats
 
 Allows to have access to the /stats command
@@ -119,15 +138,6 @@ Allows to have access to the /waystone command
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND` 
-
-## commandSkull
-
-Allows to have access to the /skull command
-
-- Type: `boolean`  
-- Default value: `true`  
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
 
 ## craftableCobwebs
 
@@ -228,18 +238,18 @@ Allows to craft Quartz from any kind of Quartz Block
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## craftableSand
+## craftableRedSand
 
-Allows to craft Red Sand from Sandstone
+Allows to craft Red Sand from Red Sandstone
 
 - Type: `boolean`  
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## craftableRedSand
+## craftableSand
 
-Allows to craft Red Sand from Red Sandstone
+Allows to craft Red Sand from Sandstone
 
 - Type: `boolean`  
 - Default value: `true`  
@@ -282,15 +292,6 @@ Allows to craft Tuff and Calite
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## endermanNoGrief
-
-Reduced the blocks that an Enderman can hold
-
-- Type: `boolean`  
-- Default value: `true`  
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
 ## disableOPsCommandFeedback
 
 Disable Command Feedback for OPs level 1
@@ -298,7 +299,7 @@ Disable Command Feedback for OPs level 1
 - Type: `boolean`  
 - Default value: `true`  
 - Suggested options: `true`, `false`
-- Categories: `FEATURE`, `REDCRAFT` 
+- Categories: `FEATURE`, `REDCRAFT`
 
 ## dragonEggRespawns
 
@@ -309,19 +310,18 @@ Ender Dragon always spawns a new dragon egg
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
+## endermanNoGrief
 
-## floatingLadders
-
-Allows to place ladders under other ladders
+Reduced the blocks that an Enderman can hold
 
 - Type: `boolean`  
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## graves
+## floatingLadders
 
-Create personal graves when the player dies
+Allows to place ladders under other ladders
 
 - Type: `boolean`  
 - Default value: `true`  
@@ -334,6 +334,15 @@ Glowing squids spawns in deep ocean biomes
 
 - Type: `boolean`  
 - Default value: `false`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## graves
+
+Create personal graves when the player dies
+
+- Type: `boolean`  
+- Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -382,18 +391,18 @@ Adds more trades to the Wandering Trader
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## prunedPlants
+## placeablePlants
 
-Allows to prune plants with shears
+Allows to place plants on all blocks with flat top surface
 
 - Type: `boolean`  
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## placeablePlants
+## prunedPlants
 
-Allows to place plants on all blocks with flat top surface
+Allows to prune plants with shears
 
 - Type: `boolean`  
 - Default value: `true`  
@@ -490,18 +499,18 @@ Adds stonecutter craftings for all types of Quartz Block
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## stonecutterSandstone
+## stonecutterRedSandstone
 
-Adds stonecutter craftings for all types of Sandstone
+Adds stonecutter craftings for all types of Red Sandstone
 
 - Type: `boolean`  
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## stonecutterRedSandstone
+## stonecutterSandstone
 
-Adds stonecutter craftings for all types of Red Sandstone
+Adds stonecutter craftings for all types of Sandstone
 
 - Type: `boolean`  
 - Default value: `true`  

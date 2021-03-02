@@ -15,10 +15,11 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [betterArmorStands](#betterArmorStands)
 - [brickAndPrismarineBackCrafting](#brickAndPrismarineBackCrafting)
 - [colorableShulkers](#colorableShulkers)
+- [commandPlayerme](#commandPlayerme)
+- [commandSkull](#commandSkull)
 - [commandStats](#commandStats)
 - [commandTimebar](#commandTimebar)
 - [commandWaystone](#commandWaystone)
-- [commandSkull](#commandSkull)
 - [craftableCobwebs](#craftableCobwebs)
 - [craftableColoredBlocks](#craftableColoredBlocks)
 - [craftableCorals](#craftableCorals)
@@ -32,15 +33,16 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [craftableQuartz](#craftableQuartz)
 - [craftableRedSand](#craftableRedSand)
 - [craftableSand](#craftableSand)
-- [craftableStrippedWood](#craftableStrippedWood)
 - [craftableShulkerShells](#craftableShulkerShells)
+- [craftableStrippedWood](#craftableStrippedWood)
 - [craftableTallGrass](#craftableTallGrass)
 - [craftableTuffAndCalcite](#craftableTuffAndCalcite)
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
+- [endermanNoGrief](#endermanNoGrief)
 - [floatingLadders](#floatingLadders)
-- [graves](#graves)
 - [glowingSquid](#glowingSquid)
+- [graves](#graves)
 - [handWaxing](#handWaxing)
 - [horseStats](#horseStats)
 - [invisibleItemframe](#invisibleItemframe)
@@ -56,12 +58,11 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [silkyBlockstates](#silkyBlockstates)
 - [sitAnywhere](#sitAnywhere)
 - [slabToBlockCrafing](#slabToBlockCrafing)
-- [stonecutterQuartz](#stonecutterQuartz)
-- [stonecutterStone](#stonecutterStone)
-- [stonecutterSandstone](#stonecutterSandstone)
-- [stonecutterRedSandstone](#stonecutterRedSandstone)
 - [specialNameTags](#specialNameTags)
 - [stonecutterQuartz](#stonecutterQuartz)
+- [stonecutterRedSandstone](#stonecutterRedSandstone)
+- [stonecutterSandstone](#stonecutterSandstone)
+- [stonecutterStone](#stonecutterStone)
 - [stonecutterWood](#stonecutterWood)
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
@@ -93,6 +94,24 @@ Permette di colorare le Shulker
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND` 
 
+## commandPlayerme
+
+Permette ai giocatori non operatori di eseguire /player su sé stessi
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
+
+## commandSkull
+
+Permette di avere accesso al comando /skull
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
+
 ## commandStats
 
 Permette di avere accesso al comando /stats
@@ -119,15 +138,6 @@ Permette di avere accesso al comando /waystone
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND` 
-
-## commandSkull
-
-Permette di avere accesso al comando /skull
-
-- Type: `boolean`  
-- Default value: `true`  
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
 
 ## craftableCobwebs
 
@@ -228,18 +238,18 @@ Permette di craftare il quarzo partendo da una qualsiasi variante di blocco
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## craftableSand
+## craftableRedSand
 
-Permette di craftare la sabbia partendo dall'arenaria
+Permette di craftare la sabbia rossa partendo dall'arenaria rossa
 
 - Type: `boolean`  
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## craftableRedSand
+## craftableSand
 
-Permette di craftare la sabbia rossa partendo dall'arenaria rossa
+Permette di craftare la sabbia partendo dall'arenaria
 
 - Type: `boolean`  
 - Default value: `true`  
@@ -282,15 +292,6 @@ Permette di craftare il tufo e la calcite
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## endermanNoGrief
-
-Riduce il numero di blocchi che gli enderman possono raccogliere
-
-- Type: `boolean`  
-- Default value: `true`  
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
 ## disableOPsCommandFeedback
 
 Disabilita il feedback dei coomandi per i giocatori OP di livello 1
@@ -309,19 +310,18 @@ Ogni drago dell'end rilascerà un uovo alla propria morte
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
+## endermanNoGrief
 
-## floatingLadders
-
-Permette di piazzare una scala a pioli fluttuante sotto ad una già piazzata
+Riduce il numero di blocchi che gli enderman possono raccogliere
 
 - Type: `boolean`  
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## graves
+## floatingLadders
 
-Crea una tomba personale alla morte del giocatore
+Permette di piazzare una scala a pioli fluttuante sotto ad una già piazzata
 
 - Type: `boolean`  
 - Default value: `true`  
@@ -334,6 +334,15 @@ Le piovre luminescenti avranno la possibilità di nascere nei biomi oceanici pro
 
 - Type: `boolean`  
 - Default value: `false`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## graves
+
+Crea una tomba personale alla morte del giocatore
+
+- Type: `boolean`  
+- Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -384,15 +393,6 @@ Aggiunge nuovi scambi al mercante viandante
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## prunedPlants
-
-Permette di potare le piante
-
-- Type: `boolean`  
-- Default value: `true`  
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
 ## placeablePlants
 
 Permette di piantare le piante su qualsiasi blocco con una superficie piana
@@ -402,6 +402,14 @@ Permette di piantare le piante su qualsiasi blocco con una superficie piana
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
+## prunedPlants
+
+Permette di potare le piante
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## quartzCraftingCompatibility
 
@@ -493,18 +501,18 @@ Aggiunge i crafting dei blocchi di quarzo all'interno del tagliapietre
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## stonecutterSandstone
+## stonecutterRedSandstone
 
-Aggiunge i crafting dei blocchi di arenaria all'interno del tagliapietre
+Aggiunge i crafting dei blocchi di arenaria rossa all'interno del tagliapietre
 
 - Type: `boolean`  
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## stonecutterRedSandstone
+## stonecutterSandstone
 
-Aggiunge i crafting dei blocchi di arenaria rossa all'interno del tagliapietre
+Aggiunge i crafting dei blocchi di arenaria all'interno del tagliapietre
 
 - Type: `boolean`  
 - Default value: `true`  
