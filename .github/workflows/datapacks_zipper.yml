@@ -27,7 +27,7 @@ jobs:
       # Runs a set of commands using the runners shell
       - name: Zip Datapacks
         run: |
-          for f in src/main/resources/assets/carpet-redcraft-addons/datapacks/*; do
+          for f in "src/main/resources/assets/carpet-redcraft-addons/datapacks/*"; do
             if [ -d "$f" ]; then
                 zip -r "$f.zip" "$f"
             fi
