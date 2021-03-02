@@ -40,6 +40,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
 - [endermanNoGrief](#endermanNoGrief)
+- [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
 - [glowingSquid](#glowingSquid)
 - [graves](#graves)
@@ -318,6 +319,15 @@ Riduce il numero di blocchi che gli enderman possono raccogliere
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## fastRedstoneCrafting
+
+Aggiunge crafting alternativi di dispenser e repeater
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## floatingLadders
 

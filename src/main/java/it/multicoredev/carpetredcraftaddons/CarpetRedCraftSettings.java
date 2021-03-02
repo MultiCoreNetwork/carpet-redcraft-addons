@@ -370,4 +370,10 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean brickAndPrismarineBackCrafting = true;
+
+    @Rule(
+            desc= "Adds fast redstone crafting for Dispenser and Repeater.",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+    )
+    public static boolean fastRedstoneCrafting = true;
 }

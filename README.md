@@ -40,6 +40,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
 - [endermanNoGrief](#endermanNoGrief)
+- [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
 - [glowingSquid](#glowingSquid)
 - [graves](#graves)
@@ -318,6 +319,15 @@ Reduced the blocks that an Enderman can hold
 - Default value: `true`  
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## fastRedstoneCrafting
+
+Adds fast redstone crafting for Dispenser and Repeater
+
+- Type: `boolean`  
+- Default value: `true`  
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## floatingLadders
 
