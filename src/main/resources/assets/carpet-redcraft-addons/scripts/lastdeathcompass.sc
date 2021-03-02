@@ -59,5 +59,7 @@ __on_player_respawns(player) -> schedule(0,_(outer(player)) -> if(
     if (storage_nbt_map == null, return());
     nbt = _compass_nbt(storage_nbt_map, null);
     nbt:'Enchantments' = nbt('[{id:"vanishing_curse",lvl:1}]');
-    inventory_set(player, 8, 1, 'compass',nbt);
+    if(!inventory_get(player, 8),
+        inventory_set(player, 8, 1, 'compass', nbt)
+    )
 ))
