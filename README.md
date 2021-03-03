@@ -42,11 +42,11 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [endermanNoGrief](#endermanNoGrief)
 - [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
-- [huskDropsSand](#huskDropsSand)
 - [glowingSquid](#glowingSquid)
 - [graves](#graves)
 - [handWaxing](#handWaxing)
 - [horseStats](#horseStats)
+- [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
@@ -339,15 +339,6 @@ Allows to place ladders under other ladders
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## huskDropsSand
-
-Husks drop sand on death
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
 ## glowingSquid
 
 Glowing squids spawns in deep ocean biomes
@@ -378,6 +369,15 @@ Allows to wax Copper Blocks by right clicking them with Honeycomb
 ## horseStats
 
 Right clicking while sneaking on a horse/donkey/mule, will display the stats of the mob in the chat
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## huskDropsSand
+
+Husks drop sand on death
 
 - Type: `boolean`
 - Default value: `true`
