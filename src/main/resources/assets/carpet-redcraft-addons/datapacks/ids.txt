@@ -52,3 +52,4 @@
 128353: craftable_brick
 128354: fast_redstone_crafting
 128355: craftable_bricks
+128356: husk_drops_sand

@@ -42,6 +42,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [endermanNoGrief](#endermanNoGrief)
 - [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
+- [huskDropsSand](#huskDropsSand)
 - [glowingSquid](#glowingSquid)
 - [graves](#graves)
 - [handWaxing](#handWaxing)
@@ -322,7 +323,7 @@ Reduced the blocks that an Enderman can hold
 
 ## fastRedstoneCrafting
 
-Adds fast crafting for Dispenser and Repeater.
+Adds fast crafting for Dispenser and Repeater
 
 - Type: `boolean`
 - Default value: `true`
@@ -332,6 +333,15 @@ Adds fast crafting for Dispenser and Repeater.
 ## floatingLadders
 
 Allows to place ladders under other ladders
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## huskDropsSand
+
+Husks drop sand on death
 
 - Type: `boolean`
 - Default value: `true`

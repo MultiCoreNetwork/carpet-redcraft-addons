@@ -15,6 +15,7 @@ import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProfile;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.server.command.DatapackCommand;
 import net.minecraft.server.command.ReloadCommand;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.WorldSavePath;
@@ -93,6 +94,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         registerDatapackRule(server, "craftableTuffAndCalcite", "RedPack - Craftable Tuff and Calcite");
         registerDatapackRule(server, "endermanNoGrief", "RedPack - Enderman No Grief");
         registerDatapackRule(server, "fastRedstoneCrafting", "RedPack - Fast Redstone Crafting");
+        registerDatapackRule(server, "huskDropsSand", "RedPack - Husk Drops Sand");
         registerDatapackRule(server, "quartzCraftingCompatibility", "RedPack - Quartz Crafting Compatibility");
         registerDatapackRule(server, "stonecutterQuartz", "RedPack - Quartz Stonecutter");
         registerDatapackRule(server, "redSandstoneCraftingCompatibility", "RedPack - Red Sandstone Crafting Compatibility");
@@ -134,9 +136,11 @@ public class CarpetRedCraftExtension implements CarpetExtension {
             ParsedRule<?> rule = CarpetServer.settingsManager.getRule(ruleName);
             ResourcePackProfile resourcePackProfile = resourcePackManager.getProfile("file/" + datapackName + ".zip");
             if (rule.getBoolValue() || (rule.type == String.class && !rule.get().equals("false"))) {
-                list.add(0, resourcePackProfile);
+                if(!list.contains(resourcePackProfile))
+                    resourcePackProfile.getInitialPosition().insert(list, resourcePackProfile, (pack) -> pack, false);
             } else {
-                list.remove(resourcePackProfile);
+                if(list.contains(resourcePackProfile))
+                    list.remove(resourcePackProfile);
             }
         });
         ReloadCommand.method_29480(list.stream().map(ResourcePackProfile::getName).collect(toList()), server.getCommandSource());
@@ -147,14 +151,16 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         copyDatapackFolder(server, datapackName);
         datapackRules.put(ruleName, datapackName);
         CarpetServer.settingsManager.addRuleObserver((source, rule, s) -> {
-            if (rule.categories.contains("crafting") && rule.name.equals(ruleName)) {
+            if (rule.categories.contains("datapack") && rule.name.equals(ruleName)) {
                 ResourcePackManager resourcePackManager = source.getMinecraftServer().getDataPackManager();
                 ResourcePackProfile resourcePackProfile = resourcePackManager.getProfile("file/" + datapackName + ".zip");
                 List<ResourcePackProfile> list = Lists.newArrayList(resourcePackManager.getEnabledProfiles());
                 if (rule.getBoolValue() || (rule.type == String.class && !rule.get().equals("false"))) {
-                    list.add(0, resourcePackProfile);
+                    if(!list.contains(resourcePackProfile))
+                        resourcePackProfile.getInitialPosition().insert(list, resourcePackProfile, (pack) -> pack, false);
                 } else {
-                    list.remove(resourcePackProfile);
+                    if(list.contains(resourcePackProfile))
+                        list.remove(resourcePackProfile);
                 }
                 ReloadCommand.method_29480(list.stream().map(ResourcePackProfile::getName).collect(toList()), source);
             }
