@@ -14,6 +14,7 @@ import carpet.settings.SettingsManager;
 public class CarpetRedCraftSettings {
     public static final String REDCRAFT = "redcraft";
     public static final String CRAFTING = "crafting";
+    public static final String DATAPACK = "datapack";
 
     @Rule(
             desc = "Portals in RedCraft2 area will link to redcraft2 dimensions.",
@@ -198,188 +199,188 @@ public class CarpetRedCraftSettings {
 
     @Rule(
             desc = "Drop items to Armor Stands to apply them some proprieties.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean betterArmorStands = true;
 
     @Rule(
             desc = "Allows to craft Cobwebs.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableCobwebs = true;
 
     @Rule(
             desc = "Allows to use colored blocks to craft other color variants.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableColoredBlocks = true;
 
     @Rule(
             desc = "Allows to craft Coral Blocks with 4 Coral Fans and Corals.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableCorals = true;
 
     @Rule(
             desc = "Allows to smelt saplings to get Dead Bushes.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableDeadBushes = true;
 
     @Rule(
             desc = "Allows to craft Elytras.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableElytra = true;
 
     @Rule(
             desc = "Allows to craft Ice from Packed Ice.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableIce = true;
 
     @Rule(
             desc = "Allows to craft Large Ferns.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableLargeFern = true;
 
     @Rule(
             desc = "Allows to craft Nether Warts from Nether Warts Block.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableNetherWarts = false;
 
     @Rule(
             desc = "Allows to craft Packed Ice from Blue Ice.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftablePackedIce = true;
 
     @Rule(
             desc = "Allows to craft Player Head from any kind of head.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftablePlayerHead = true;
 
     @Rule(
             desc = "Allows to craft Quartz from any kind of Quartz Block.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableQuartz = true;
 
     @Rule(
             desc = "Allows to craft Shulker Shells from Turle Shells and Popped Chorus Fruits.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableShulkerShells = true;
 
     @Rule(
             desc = "Allows to craft Stripped Woods/Hyphaes from Logs/Steams.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableStrippedWood = true;
 
     @Rule(
             desc = "Allows to craft Tall Grass.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableTallGrass = true;
 
     @Rule(
             desc = "Allows to craft Tuff and Calite.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableTuffAndCalcite = true;
 
     @Rule(
             desc = "Reduced the blocks that an Enderman can hold.",
             extra = "Podzol, Pumpkins, Melons and Mycelium.",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
+            category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
     public static boolean endermanNoGrief = true;
 
     @Rule(
             desc = "Adds crafting compatibility with all types of Quartz Block.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean quartzCraftingCompatibility = true;
 
     @Rule(
             desc = "Adds stonecutter craftings for all types of Quartz Block.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean stonecutterQuartz = true;
 
     @Rule(
             desc = "Adds crafting compatibility with all types of Red Sandstone.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean redSandstoneCraftingCompatibility = true;
 
     @Rule(
             desc = "Adds stonecutter craftings for all types of Red Sandstone.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean stonecutterRedSandstone = true;
 
     @Rule(
             desc = "Allows to craft Red Sand from Red Sandstone.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableRedSand = true;
 
     @Rule(
             desc = "Adds crafting compatibility with all types of Sandstone.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean sandstoneCraftingCompatibility = true;
 
     @Rule(
             desc = "Adds stonecutter craftings for all types of Sandstone.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean stonecutterSandstone = true;
 
     @Rule(
             desc = "Allows to craft Red Sand from Sandstone.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableSand = true;
 
     @Rule(
             desc = "Allows to use 2 slabs to craft the block back.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean slabToBlockCrafing = true;
 
     @Rule(
             desc = "Adds stonecutter craftings for all variants of Stone.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean stonecutterStone = false;
 
     @Rule(
             desc = "Adds stonecutter craftings for all types of Wooden Block.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean stonecutterWood = true;
 
     @Rule(
             desc= "Adds reverse crafting of Prismarine, Prismarine Bricks, Bricks and Nether Bricks.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableBricks = true;
 
     @Rule(
             desc= "Adds fast crafting for Dispenser and Repeater.",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean fastRedstoneCrafting = true;
 
     @Rule(
             desc= "Husks drop sand on death.",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
+            category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
     public static boolean huskDropsSand = true;
 }
