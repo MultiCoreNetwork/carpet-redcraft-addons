@@ -76,7 +76,7 @@ Getta a terra degli oggetti al supporto per armature per modificargli alcune pro
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## colorableShulkers
 
@@ -85,7 +85,7 @@ Permette di colorare le Shulker
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
 ## commandPlayerme
 
@@ -103,7 +103,7 @@ Permette di avere accesso al comando /skull
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
 ## commandStats
 
@@ -112,7 +112,7 @@ Permette di avere accesso al comando /stats
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
 ## commandTimebar
 
@@ -121,7 +121,7 @@ Permette di avere accesso al comando /timebar
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
 ## commandWaystone
 
@@ -130,7 +130,7 @@ Permette di avere accesso al comando /waystone
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
 ## craftableBricks
 
@@ -139,7 +139,7 @@ Aggiunge retrocrafting del prismarino, dei mattoni e mattoni del Nether
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableCobwebs
 
@@ -148,7 +148,7 @@ Permette di craftare le ragnatele
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableColoredBlocks
 
@@ -157,7 +157,7 @@ Permette di craftare blocchi colorati partendo dalle altre varianti
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableCorals
 
@@ -166,7 +166,7 @@ Permette di craftare i blocchi di corallo partendo da coralli o gorgonie
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableDeadBushes
 
@@ -175,7 +175,7 @@ Permette di far esiccare gli arboscelli nella fornace
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableElytra
 
@@ -184,7 +184,7 @@ Permette di craftare le elytra
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableIce
 
@@ -193,7 +193,7 @@ Permette di craftare ghiaccio partendo dal ghiccio compatto
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableLargeFern
 
@@ -202,7 +202,7 @@ Permette di craftare le felci alte
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableNetherWarts
 
@@ -211,7 +211,7 @@ Permette di craftare verruche del nether partendo dal relativo blocco
 - Type: `boolean`
 - Default value: `false`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftablePackedIce
 
@@ -220,7 +220,7 @@ Permette di craftare il ghiaccio compatto partendo dalla versione blu
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftablePlayerHead
 
@@ -229,7 +229,7 @@ Permette di craftare le teste di giocatore partendo da una qualsiasi testa
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableQuartz
 
@@ -238,7 +238,7 @@ Permette di craftare il quarzo partendo da una qualsiasi variante di blocco
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableRedSand
 
@@ -247,7 +247,7 @@ Permette di craftare la sabbia rossa partendo dall'arenaria rossa
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableSand
 
@@ -256,7 +256,7 @@ Permette di craftare la sabbia partendo dall'arenaria
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableShulkerShells
 
@@ -265,7 +265,7 @@ Permette di craftare i gusci di shulker partendo da quelli di tartaruga e un fio
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableStrippedWood
 
@@ -274,7 +274,7 @@ Permette di craftare i blocchi di legno scortecciato partendo dai tronchi scorte
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableTallGrass
 
@@ -283,7 +283,7 @@ Permette di craftare l'erba alta
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## craftableTuffAndCalcite
 
@@ -292,7 +292,7 @@ Permette di craftare il tufo e la calcite
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## disableOPsCommandFeedback
 
@@ -319,7 +319,7 @@ Riduce il numero di blocchi che gli enderman possono raccogliere
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
 
 ## fastRedstoneCrafting
 
@@ -328,7 +328,7 @@ Aggiunge crafting alternativi di dispenser e repeater
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## floatingLadders
 
@@ -382,7 +382,7 @@ Gli zombi secchi rilasciano sabbia alla loro morte
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
 
 ## invisibleItemframe
 
@@ -438,7 +438,7 @@ Aggiunge maggiore compatibilità frai crafting dei blocchi di quarzo
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## redcraft2Teleport
 
@@ -456,7 +456,7 @@ Aggiunge maggiore compatibilità frai crafting dei blocchi di arenaria rossa
 - Type: `boolean`
 - Default value: `false`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## ropes
 
@@ -474,7 +474,7 @@ Aggiunge maggiore compatibilità frai crafting dei blocchi di arenaria
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## silkyBlockstates
 
@@ -501,7 +501,7 @@ Permette di craftare un blocco partendo da due lastre
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`,`CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## specialNameTags
 
@@ -519,7 +519,7 @@ Aggiunge i crafting dei blocchi di quarzo all'interno del tagliapietre
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## stonecutterRedSandstone
 
@@ -528,7 +528,7 @@ Aggiunge i crafting dei blocchi di arenaria rossa all'interno del tagliapietre
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## stonecutterSandstone
 
@@ -537,7 +537,7 @@ Aggiunge i crafting dei blocchi di arenaria all'interno del tagliapietre
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## stonecutterWood
 
@@ -546,7 +546,7 @@ Aggiunge i crafting dei derivati del legno all'interno del tagliapietre
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## treecapitator
 
