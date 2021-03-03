@@ -42,11 +42,11 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [endermanNoGrief](#endermanNoGrief)
 - [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
-- [huskDropsSand](#huskDropsSand)
 - [glowingSquid](#glowingSquid)
 - [graves](#graves)
 - [handWaxing](#handWaxing)
 - [horseStats](#horseStats)
+- [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
@@ -339,15 +339,6 @@ Permette di piazzare una scala a pioli fluttuante sotto ad una già piazzata
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## huskDropsSand
-
-Gli zombi secchi rilasciano sabbia alla loro morte
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
 ## glowingSquid
 
 Le piovre luminescenti avranno la possibilità di nascere nei biomi oceanici profondi
@@ -378,6 +369,15 @@ Permette di cerare i blocchi di rame usando un favo sul blocco stesso
 ## horseStats
 
 Accovacciandosi e premendo il tasto destro su un cavallo/mulo/asino verranno riportatate in chat le statistiche dell'animale
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## huskDropsSand
+
+Gli zombi secchi rilasciano sabbia alla loro morte
 
 - Type: `boolean`
 - Default value: `true`
