@@ -42,6 +42,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [endermanNoGrief](#endermanNoGrief)
 - [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
+- [huskDropsSand](#huskDropsSand)
 - [glowingSquid](#glowingSquid)
 - [graves](#graves)
 - [handWaxing](#handWaxing)
@@ -332,6 +333,15 @@ Aggiunge crafting alternativi di dispenser e repeater
 ## floatingLadders
 
 Permette di piazzare una scala a pioli fluttuante sotto ad una già piazzata
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## huskDropsSand
+
+Gli zombi secchi rilasciano sabbia alla loro morte
 
 - Type: `boolean`
 - Default value: `true`

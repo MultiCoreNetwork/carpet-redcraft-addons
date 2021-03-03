@@ -366,7 +366,7 @@ public class CarpetRedCraftSettings {
     public static boolean stonecutterWood = true;
 
     @Rule(
-            desc= "Adds reverse crafting of Prismarine, Prismarine Bricks, Bricks and Nether Bricks",
+            desc= "Adds reverse crafting of Prismarine, Prismarine Bricks, Bricks and Nether Bricks.",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableBricks = true;
@@ -376,4 +376,10 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean fastRedstoneCrafting = true;
+
+    @Rule(
+            desc= "Husks drop sand on death.",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean huskDropsSand = true;
 }

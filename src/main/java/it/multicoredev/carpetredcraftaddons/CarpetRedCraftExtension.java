@@ -93,6 +93,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         registerDatapackRule(server, "craftableTuffAndCalcite", "RedPack - Craftable Tuff and Calcite");
         registerDatapackRule(server, "endermanNoGrief", "RedPack - Enderman No Grief");
         registerDatapackRule(server, "fastRedstoneCrafting", "RedPack - Fast Redstone Crafting");
+        registerDatapackRule(server, "huskDropsSand", "RedPack - Husk Drops Sand");
         registerDatapackRule(server, "quartzCraftingCompatibility", "RedPack - Quartz Crafting Compatibility");
         registerDatapackRule(server, "stonecutterQuartz", "RedPack - Quartz Stonecutter");
         registerDatapackRule(server, "redSandstoneCraftingCompatibility", "RedPack - Red Sandstone Crafting Compatibility");
