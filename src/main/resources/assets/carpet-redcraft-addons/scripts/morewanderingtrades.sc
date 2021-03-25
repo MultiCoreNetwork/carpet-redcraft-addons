@@ -37,6 +37,14 @@ global_tools = ['_axe','_pickaxe','_hoe','_shovel'];
 global_luck = 1/(1-4/7);
 
 _add_random_trades(villager) -> (
+
+    // SPORE_BLOSSOMS -> 10%
+    if(rand(1/(1-0.1)),
+        trade = _new_trade(['glow_berries',1],['emerald',1],['spore_blossom',1]);
+        _add_trade(villager, trade);
+    );
+
+    // SKULLS
     trade_ids = {};
     trade_keys = keys(global_skull_trades);
     loop(5, trade_ids += trade_keys:floor(rand(length(trade_keys))));
