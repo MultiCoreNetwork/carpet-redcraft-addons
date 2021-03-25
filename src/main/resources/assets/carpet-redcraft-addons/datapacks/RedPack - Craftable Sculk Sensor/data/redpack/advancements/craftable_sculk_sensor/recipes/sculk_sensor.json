@@ -1,0 +1,46 @@
+{
+    "parent": "minecraft:recipes/root",
+    "rewards": {
+        "recipes": [
+            "redpack:craftable_sculk_sensor/sculk_sensor"
+        ]
+    },
+    "criteria": {
+        "has_the_recipe": {
+            "trigger": "minecraft:recipe_unlocked",
+            "conditions": {
+                "recipe": "redpack:craftable_sculk_sensor/sculk_sensor"
+            }
+        },
+        "has_item_0": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:observer"
+                    }
+                ]
+            }
+        },
+        "has_item_1": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:ender_pearl"
+                    }
+                ]
+            }
+        }
+    },
+    "requirements": [
+        [
+            "has_item_0",
+            "has_the_recipe"
+        ],
+        [
+            "has_item_1",
+            "has_the_recipe"
+        ]
+    ]
+}

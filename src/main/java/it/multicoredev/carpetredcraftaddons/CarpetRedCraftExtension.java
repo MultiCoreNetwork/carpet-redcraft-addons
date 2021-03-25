@@ -90,6 +90,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         registerDatapackRule(server, "craftablePackedIce", "RedPack - Craftable Packed Ice");
         registerDatapackRule(server, "craftablePlayerHead", "RedPack - Craftable Player Heads");
         registerDatapackRule(server, "craftableQuartz", "RedPack - Craftable Quartz");
+        registerDatapackRule(server, "craftableSculkSensor", "RedPack - Craftable Sculk Sensor");
         registerDatapackRule(server, "craftableShulkerShells", "RedPack - Craftable Shulker Shells");
         registerDatapackRule(server, "craftableStrippedWood", "RedPack - Craftable Stripped Wood");
         registerDatapackRule(server, "craftableTallGrass", "RedPack - Craftable Tall Grass");
