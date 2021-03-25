@@ -14,6 +14,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 ## Rules
 - [betterArmorStands](#betterArmorStands)
 - [craftableBricks](#craftableBricks)
+- [craftableDeepslateOre](#craftableDeepslateOre)
 - [colorableShulkers](#colorableShulkers)
 - [commandPlayerme](#commandPlayerme)
 - [commandSkull](#commandSkull)
@@ -171,6 +172,14 @@ Allows to craft Coral Blocks with 4 Coral Fans and Corals
 
 Allows to smelt saplings to get Dead Bushes
 
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## craftableDeepslateOre
+
+Allow to craft deepslate ore
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`

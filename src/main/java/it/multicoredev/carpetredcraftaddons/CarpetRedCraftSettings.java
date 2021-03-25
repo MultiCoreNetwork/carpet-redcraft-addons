@@ -376,4 +376,10 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
     public static boolean huskDropsSand = true;
+
+    @Rule(
+            desc = "You can craft deepslate ore.",
+            category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
+    )
+    public static boolean craftableDeepslateOre = true;
 }

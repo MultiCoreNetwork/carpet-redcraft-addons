@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "minecraft:gold_ores"
+  },
+  "addition": {
+    "item": "minecraft:netherrack"
+  },
+  "result": {
+    "item": "minecraft:nether_gold_ore"
+  }
+}

@@ -14,6 +14,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 ## Regole
 - [betterArmorStands](#betterArmorStands)
 - [craftableBricks](#craftableBricks)
+- [craftableDeepslateOre](#craftableDeepslateOre)
 - [colorableShulkers](#colorableShulkers)
 - [commandPlayerme](#commandPlayerme)
 - [commandSkull](#commandSkull)
@@ -170,6 +171,15 @@ Permette di craftare i blocchi di corallo partendo da coralli o gorgonie
 ## craftableDeadBushes
 
 Permette di far esiccare gli arboscelli nella fornace
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## craftableDeepslateOre
+
+Permette di craftare gli ore in deepslate
 
 - Type: `boolean`
 - Default value: `true`

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:deepslate_emerald_ore"
+  },
+  "addition": {
+    "item": "minecraft:stone"
+  },
+  "result": {
+    "item": "minecraft:emerald_ore"
+  }
+}

@@ -24,3 +24,4 @@ local.properties
 # fabric
 
 run/
+logs/latest.log
