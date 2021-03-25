@@ -2,7 +2,7 @@
     "display": {
         "title": "Ore Upgrade v0.1.0",
         "description": [{
-            "text": "Use smithing_table to upgrade ore in there variant by BisUmTo & Gnottero"
+            "text": "Use smithing_table to upgrade ore in there variant by BisUmTo, Gnottero & DukeEdivad05"
         }],
         "icon": {
             "item": "minecraft:deepslate_diamond_ore"
