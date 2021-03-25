@@ -49,6 +49,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
+- [moss](#moss)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
@@ -397,6 +398,15 @@ Sarà possibile riottenere tale bussola premendo con il tasto destro una bussola
 ## moreWanderingTrades
 
 Aggiunge nuovi scambi al mercante viandante
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## moss
+
+Permette di ottenere i blocchi moss cliccando con la farina d'ossa sui blocchi muschiati
 
 - Type: `boolean`
 - Default value: `true`
