@@ -10,6 +10,7 @@ import net.minecraft.util.WorldSavePath;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 
 import static it.multicoredev.carpetredcraftaddons.CarpetRedCraftExtension.MOD_ID;
 import static net.minecraft.server.command.CommandManager.literal;
@@ -24,7 +25,12 @@ public class DefaultConfigCommand {
                 {
                     try {
                         String world = c.getSource().getMinecraftServer().getSavePath(WorldSavePath.ROOT).toString();
-                        Files.copy(BundledModule.class.getClassLoader().getResourceAsStream("assets/" + MOD_ID + "/default.conf"), new File(world, "carpet.conf").toPath());
+                        Files.copy(
+                                BundledModule.class.getClassLoader().getResourceAsStream("assets/" + MOD_ID + "/default.conf"),
+                                new File(world, "carpet.conf").toPath(),
+                                StandardCopyOption.REPLACE_EXISTING
+                        );
+
                     } catch (IOException ignored) {
                     }
                     CarpetServer.settingsManager.attachServer(CarpetServer.minecraft_server);

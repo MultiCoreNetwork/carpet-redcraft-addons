@@ -6,11 +6,11 @@
     ],
     "key": {
         "#": {
-            "item": "minecraft:cut_red_sandstone_slab"
+            "item": "minecraft:polished_deepslate_slab"
         }
     },
     "result": {
-        "item": "minecraft:cut_red_sandstone",
+        "item": "minecraft:polished_deepslate",
         "count": 1
     }
 }

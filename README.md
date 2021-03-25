@@ -44,7 +44,6 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [floatingLadders](#floatingLadders)
 - [glowingSquid](#glowingSquid)
 - [graves](#graves)
-- [handWaxing](#handWaxing)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
@@ -85,7 +84,7 @@ Allows to dye Shulkers
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT,COMMAND`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
 ## commandPlayerme
 
@@ -351,15 +350,6 @@ Glowing squids spawns in deep ocean biomes
 ## graves
 
 Create personal graves when the player dies
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
-## handWaxing
-
-Allows to wax Copper Blocks by right clicking them with Honeycomb
 
 - Type: `boolean`
 - Default value: `true`

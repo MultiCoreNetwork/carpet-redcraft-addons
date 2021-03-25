@@ -6,11 +6,11 @@
     ],
     "key": {
         "#": {
-            "item": "waxed_semi_weathered_cut_copper_slab"
+            "item": "minecraft:polished_blackstone_slab"
         }
     },
     "result": {
-        "item": "minecraft:waxed_semi_weathered_cut_copper",
+        "item": "minecraft:polished_blackstone",
         "count": 1
     }
 }

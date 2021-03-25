@@ -25,17 +25,20 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
+import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
 public class CarpetRedCraftExtension implements CarpetExtension {
     public static final String MOD_ID = "carpet-redcraft-addons";
     public static final String MOD_NAME = "Carpet RedCraft Addons";
-    public static final String MOD_VERSION = "1.4.24";
+    public static final String MOD_VERSION = "1.4.29";
 
     static {
         CarpetServer.manageExtension(new CarpetRedCraftExtension());
@@ -51,7 +54,6 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("glowingsquid", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("graves", false));
-        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("handwaxing", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("horsestats", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("invisibleitemframe", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
@@ -172,7 +174,8 @@ public class CarpetRedCraftExtension implements CarpetExtension {
             String datapacks = server.getSavePath(WorldSavePath.DATAPACKS).toString();
             Files.copy(
                     BundledModule.class.getClassLoader().getResourceAsStream("assets/" + MOD_ID + "/datapacks/" + datapackName + "/" + datapackName + ".zip"),
-                    new File(datapacks, datapackName + ".zip").toPath()
+                    new File(datapacks, datapackName + ".zip").toPath(),
+                    StandardCopyOption.REPLACE_EXISTING
             );
         } catch (IOException ignored) {
         }

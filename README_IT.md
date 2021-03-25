@@ -44,7 +44,6 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [floatingLadders](#floatingLadders)
 - [glowingSquid](#glowingSquid)
 - [graves](#graves)
-- [handWaxing](#handWaxing)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
@@ -351,15 +350,6 @@ Le piovre luminescenti avranno la possibilità di nascere nei biomi oceanici pro
 ## graves
 
 Crea una tomba personale alla morte del giocatore
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
-## handWaxing
-
-Permette di cerare i blocchi di rame usando un favo sul blocco stesso
 
 - Type: `boolean`
 - Default value: `true`
