@@ -9,7 +9,7 @@
 
     # Getting the version of the player and sending an error message if it is outdated
         execute store result score $gb.game_version gb.configs run data get entity @a[limit=1] DataVersion
-        execute if score $gb.game_version gb.configs matches ..2576 run tellraw @a[tag=!global.ignore.gui] {"text":"[Craftable Sculk Sensor (RedPack)]> This datapack is not compatible with all the versions before 20w49a!\n","color":"red"}
+        execute if score $gb.game_version gb.configs matches ..2683 run tellraw @a[tag=!global.ignore.gui] {"text":"[Craftable Sculk Sensor (RedPack)]> This datapack is not compatible with all the versions before 20w49a!\n","color":"red"}
 
     # Checking if the server uses a different jar from the vanilla one
         execute if score $gb.check_jar gb.configs matches 0 store success score $gb.check_jar gb.configs run data get entity @a[limit=1] "Spigot.ticksLived"
