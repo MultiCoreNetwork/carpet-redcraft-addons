@@ -1,13 +1,15 @@
 {
   "schemaVersion": 1,
   "id": "carpet-redcraft-addons",
-  "version": "1.4.24",
+  "version": "1.4.29",
 
   "name": "Carpet RedCraft Addons",
   "description": "Addons for the RedCraft server",
   "authors": [
     "BisUmTo",
     "replaceitem",
+    "Gnottero",
+    "DukeEdivad05",
     "..."
   ],
   "contact": {

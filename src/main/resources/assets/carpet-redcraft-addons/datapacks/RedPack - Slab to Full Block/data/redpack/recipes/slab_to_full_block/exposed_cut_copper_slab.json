@@ -6,11 +6,11 @@
     ],
     "key": {
         "#": {
-            "item": "lightly_weathered_cut_copper_slab"
+            "item": "minecraft:exposed_cut_copper_slab"
         }
     },
     "result": {
-        "item": "minecraft:lightly_weathered_cut_copper",
+        "item": "minecraft:exposed_cut_copper",
         "count": 1
     }
 }

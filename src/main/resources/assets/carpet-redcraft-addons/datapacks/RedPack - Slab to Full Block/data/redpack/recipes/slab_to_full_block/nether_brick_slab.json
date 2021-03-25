@@ -6,11 +6,11 @@
     ],
     "key": {
         "#": {
-            "item": "waxed_lightly_weathered_cut_copper_slab"
+            "item": "minecraft:nether_brick_slab"
         }
     },
     "result": {
-        "item": "minecraft:waxed_lightly_weathered_cut_copper",
+        "item": "minecraft:nether_bricks",
         "count": 1
     }
 }

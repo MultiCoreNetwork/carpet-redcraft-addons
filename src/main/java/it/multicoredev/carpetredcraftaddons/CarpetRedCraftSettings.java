@@ -174,13 +174,6 @@ public class CarpetRedCraftSettings {
     public static boolean commandSkull = true;
 
     @Rule(
-            desc = "Allows to wax Copper Blocks by right clicking them with Honeycomb.",
-            appSource = "handwaxing",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
-    )
-    public static boolean handWaxing = true;
-
-    @Rule(
             desc = "Allows to prune plants with shears.",
             appSource = "prunedplants",
             category = {SURVIVAL, FEATURE, REDCRAFT}

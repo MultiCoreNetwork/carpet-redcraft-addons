@@ -6,11 +6,11 @@
     ],
     "key": {
         "#": {
-            "item": "minecraft:cut_red_sandstone_slab"
+            "item": "minecraft:stone_brick_slab"
         }
     },
     "result": {
-        "item": "minecraft:cut_red_sandstone",
+        "item": "minecraft:stone_bricks",
         "count": 1
     }
 }

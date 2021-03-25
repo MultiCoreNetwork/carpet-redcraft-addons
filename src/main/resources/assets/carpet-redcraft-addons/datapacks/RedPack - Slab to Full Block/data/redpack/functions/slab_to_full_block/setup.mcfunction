@@ -2,7 +2,7 @@
 
     # Adding the pack name and version to the redpack storage
         data remove storage redpack:config versions[{id:128316}]
-        data modify storage redpack:config versions append value {"id":128316,"name":"RedPack - Slab to Full Block","version":"0.1.0"}
+        data modify storage redpack:config versions append value {"id":128316,"name":"RedPack - Slab to Full Block","version":"0.2.0"}
 
     # Initializing the scoreboards
         scoreboard objectives add gb.configs dummy

@@ -6,11 +6,11 @@
     ],
     "key": {
         "#": {
-            "item": "semi_weathered_cut_copper_slab"
+            "item": "minecraft:cobbled_deepslate_slab"
         }
     },
     "result": {
-        "item": "minecraft:semi_weathered_cut_copper",
+        "item": "minecraft:cobbled_deepslate",
         "count": 1
     }
 }

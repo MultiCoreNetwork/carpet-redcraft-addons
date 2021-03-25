@@ -6,11 +6,11 @@
     ],
     "key": {
         "#": {
-            "item": "minecraft:cut_red_sandstone_slab"
+            "item": "minecraft:waxed_weathered_cut_copper_slab"
         }
     },
     "result": {
-        "item": "minecraft:cut_red_sandstone",
+        "item": "minecraft:waxed_weathered_cut_copper",
         "count": 1
     }
 }
