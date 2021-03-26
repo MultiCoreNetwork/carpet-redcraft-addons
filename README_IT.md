@@ -14,7 +14,6 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 ## Regole
 - [betterArmorStands](#betterArmorStands)
 - [craftableBricks](#craftableBricks)
-- [craftableDeepslateOre](#craftableDeepslateOre)
 - [colorableShulkers](#colorableShulkers)
 - [commandPlayerme](#commandPlayerme)
 - [commandSkull](#commandSkull)
@@ -25,6 +24,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [craftableColoredBlocks](#craftableColoredBlocks)
 - [craftableCorals](#craftableCorals)
 - [craftableDeadBushes](#craftableDeadBushes)
+- [craftableDeepslateOres](#craftableDeepslateOres)
 - [craftableElytra](#craftableElytra)
 - [craftableIce](#craftableIce)
 - [craftableLargeFern](#craftableLargeFern)
@@ -177,9 +177,9 @@ Permette di far esiccare gli arboscelli nella fornace
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## craftableDeepslateOre
+## craftableDeepslateOres
 
-Permette di craftare gli ore in deepslate
+Permette di craftare gli ore in deepslate nel banco da forgiatura
 
 - Type: `boolean`
 - Default value: `true`
