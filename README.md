@@ -179,7 +179,7 @@ Allows to smelt saplings to get Dead Bushes
 
 ## craftableDeepslateOre
 
-Allow to craft deepslate ore
+You can craft deepslate ore in smithing table.
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
