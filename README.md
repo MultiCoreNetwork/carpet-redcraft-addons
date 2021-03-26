@@ -14,7 +14,6 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 ## Rules
 - [betterArmorStands](#betterArmorStands)
 - [craftableBricks](#craftableBricks)
-- [craftableDeepslateOre](#craftableDeepslateOre)
 - [colorableShulkers](#colorableShulkers)
 - [commandPlayerme](#commandPlayerme)
 - [commandSkull](#commandSkull)
@@ -25,6 +24,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [craftableColoredBlocks](#craftableColoredBlocks)
 - [craftableCorals](#craftableCorals)
 - [craftableDeadBushes](#craftableDeadBushes)
+- [craftableDeepslateOres](#craftableDeepslateOres)
 - [craftableElytra](#craftableElytra)
 - [craftableIce](#craftableIce)
 - [craftableLargeFern](#craftableLargeFern)
