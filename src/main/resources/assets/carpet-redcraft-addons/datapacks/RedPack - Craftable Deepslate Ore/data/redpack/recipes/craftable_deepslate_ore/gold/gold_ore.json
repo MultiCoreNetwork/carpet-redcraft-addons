@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "tag": "minecraft:gold_ores"
+    "tag": "redpack:not_gold_ores"
   },
   "addition": {
     "item": "minecraft:stone"
