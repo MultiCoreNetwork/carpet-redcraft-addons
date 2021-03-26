@@ -7,4 +7,4 @@
         data remove storage redpack:config versions[{id:128358}]
 
     # Disabling the datapack
-        datapack disable "file/RedPack - Ore Upgrade"
+        datapack disable "file/RedPack - Craftable Deepslate Ore"
