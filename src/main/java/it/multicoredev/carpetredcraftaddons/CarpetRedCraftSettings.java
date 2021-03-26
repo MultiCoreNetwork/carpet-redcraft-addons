@@ -189,7 +189,7 @@ public class CarpetRedCraftSettings {
     public static boolean moreWanderingTrades = true;
 
     @Rule(
-            desc="bonemealing a mossy block will became a moss_block.",
+            desc="Allow to obtain moss by bonemealing mossy blocks.",
             appSource = "moss",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
