@@ -177,7 +177,7 @@ Allows to smelt saplings to get Dead Bushes
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## craftableDeepslateOre
+## craftableDeepslateOres
 
 You can craft deepslate ore in smithing table.
 - Type: `boolean`
