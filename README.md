@@ -24,6 +24,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [craftableColoredBlocks](#craftableColoredBlocks)
 - [craftableCorals](#craftableCorals)
 - [craftableDeadBushes](#craftableDeadBushes)
+- [craftableDeepslateOres](#craftableDeepslateOres)
 - [craftableElytra](#craftableElytra)
 - [craftableIce](#craftableIce)
 - [craftableLargeFern](#craftableLargeFern)
@@ -172,6 +173,14 @@ Allows to craft Coral Blocks with 4 Coral Fans and Corals
 
 Allows to smelt saplings to get Dead Bushes
 
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## craftableDeepslateOres
+
+You can craft deepslate ore in smithing table.
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
