@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Deepslate Ore v0.1.0",
+        "description": [{
+            "text": "Use smithing_table to upgrade ore in there variant by BisUmTo, Gnottero & DukeEdivad05"
+        }],
+        "icon": {
+            "item": "minecraft:deepslate_emerald_ore"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:smithing_table",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

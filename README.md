@@ -24,6 +24,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [craftableColoredBlocks](#craftableColoredBlocks)
 - [craftableCorals](#craftableCorals)
 - [craftableDeadBushes](#craftableDeadBushes)
+- [craftableDeepslateOres](#craftableDeepslateOres)
 - [craftableElytra](#craftableElytra)
 - [craftableIce](#craftableIce)
 - [craftableLargeFern](#craftableLargeFern)
@@ -50,6 +51,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
+- [moss](#moss)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
@@ -172,6 +174,14 @@ Allows to craft Coral Blocks with 4 Coral Fans and Corals
 
 Allows to smelt saplings to get Dead Bushes
 
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## craftableDeepslateOres
+
+You can craft deepslate ore in smithing table.
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
@@ -405,6 +415,15 @@ Allows to right click a compass to make it point towards the last death point
 ## moreWanderingTrades
 
 Adds more trades to the Wandering Trader
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## moss
+
+Allow to obtain moss by bonemealing mossy blocks
 
 - Type: `boolean`
 - Default value: `true`

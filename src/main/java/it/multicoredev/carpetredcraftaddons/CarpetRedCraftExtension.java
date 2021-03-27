@@ -58,6 +58,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("invisibleitemframe", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("morewanderingtrades", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("moss", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeableplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("playerme", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("prunedplants", false));
@@ -83,6 +84,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         registerDatapackRule(server, "craftableColoredBlocks", "RedPack - Craftable Colored Blocks");
         registerDatapackRule(server, "craftableCorals", "RedPack - Craftable Corals");
         registerDatapackRule(server, "craftableDeadBushes", "RedPack - Craftable Dead Bushes");
+        registerDatapackRule(server, "craftableDeepslateOres", "RedPack - Craftable Deepslate Ore");
         registerDatapackRule(server, "craftableElytra", "RedPack - Craftable Elytra");
         registerDatapackRule(server, "craftableIce", "RedPack - Craftable Ice");
         registerDatapackRule(server, "craftableLargeFern", "RedPack - Craftable Large Fern");

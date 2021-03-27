@@ -53,3 +53,5 @@
 128354: fast_redstone_crafting
 128355: craftable_bricks
 128356: husk_drops_sand
+128357: craftable_sculk_sensor
+128358: craftable_deepslate_ore

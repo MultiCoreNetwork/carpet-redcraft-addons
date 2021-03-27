@@ -24,6 +24,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [craftableColoredBlocks](#craftableColoredBlocks)
 - [craftableCorals](#craftableCorals)
 - [craftableDeadBushes](#craftableDeadBushes)
+- [craftableDeepslateOres](#craftableDeepslateOres)
 - [craftableElytra](#craftableElytra)
 - [craftableIce](#craftableIce)
 - [craftableLargeFern](#craftableLargeFern)
@@ -50,6 +51,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
+- [moss](#moss)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
@@ -171,6 +173,15 @@ Permette di craftare i blocchi di corallo partendo da coralli o gorgonie
 ## craftableDeadBushes
 
 Permette di far esiccare gli arboscelli nella fornace
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## craftableDeepslateOres
+
+Permette di craftare gli ore in deepslate nel banco da forgiatura
 
 - Type: `boolean`
 - Default value: `true`
@@ -407,6 +418,15 @@ Sarà possibile riottenere tale bussola premendo con il tasto destro una bussola
 ## moreWanderingTrades
 
 Aggiunge nuovi scambi al mercante viandante
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## moss
+
+Permette di ottenere i blocchi moss cliccando con la farina d'ossa sui blocchi muschiati
 
 - Type: `boolean`
 - Default value: `true`

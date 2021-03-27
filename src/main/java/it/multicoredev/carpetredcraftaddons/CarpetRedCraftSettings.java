@@ -188,6 +188,13 @@ public class CarpetRedCraftSettings {
     )
     public static boolean moreWanderingTrades = true;
 
+    @Rule(
+            desc="Allow to obtain moss by bonemealing mossy blocks.",
+            appSource = "moss",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean moss = true;
+
     // ------------------------------------------------ //
 
     @Rule(
@@ -382,4 +389,10 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableSculkSensor = true;
+
+    @Rule(
+            desc = "You can craft deepslate ore in smithing table.",
+            category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
+    )
+    public static boolean craftableDeepslateOre = true;
 }
