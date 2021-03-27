@@ -78,7 +78,7 @@ Drop items to Armor Stands to apply them some proprieties
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## colorableShulkers
 
@@ -141,7 +141,7 @@ Adds reverse crafting of Prismarine and Brick, normal and nether variant
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableCobwebs
 
@@ -150,7 +150,7 @@ Allows to craft Cobwebs
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableColoredBlocks
 
@@ -159,7 +159,7 @@ Allows to use colored blocks to craft other color variants
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableCorals
 
@@ -168,7 +168,7 @@ Allows to craft Coral Blocks with 4 Coral Fans and Corals
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableDeadBushes
 
@@ -177,7 +177,7 @@ Allows to smelt saplings to get Dead Bushes
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableDeepslateOres
 
@@ -185,7 +185,7 @@ You can craft deepslate ore in smithing table.
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableElytra
 
@@ -194,7 +194,7 @@ Allows to craft Elytras
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableIce
 
@@ -203,7 +203,7 @@ Allows to craft Ice from Packed Ice
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableLargeFern
 
@@ -212,7 +212,7 @@ Allows to craft Large Ferns
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableNetherWarts
 
@@ -221,7 +221,7 @@ Allows to craft Nether Warts from Nether Warts Block
 - Type: `boolean`
 - Default value: `false`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftablePackedIce
 
@@ -230,7 +230,7 @@ Allows to craft Packed Ice from Blue Ice
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftablePlayerHead
 
@@ -239,7 +239,7 @@ Allows to craft Player Head from any kind of head
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableQuartz
 
@@ -248,7 +248,7 @@ Allows to craft Quartz from any kind of Quartz Block
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableRedSand
 
@@ -257,7 +257,7 @@ Allows to craft Red Sand from Red Sandstone
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableSand
 
@@ -266,7 +266,7 @@ Allows to craft Red Sand from Sandstone
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableSculkSensor
 
@@ -275,7 +275,7 @@ Allow to craft Sculk Sensor with endeperals and observers
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableShulkerShells
 
@@ -284,7 +284,7 @@ Allows to craft Shulker Shells from Turle Shells and Popped Chorus Fruits
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableStrippedWood
 
@@ -293,7 +293,7 @@ Allows to craft Stripped Woods/Hyphaes from Logs/Steams
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableTallGrass
 
@@ -302,7 +302,7 @@ Allows to craft Tall Grass
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## craftableTuffAndCalcite
 
@@ -311,7 +311,7 @@ Allows to craft Tuff and Calite
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## disableOPsCommandFeedback
 
@@ -338,7 +338,7 @@ Reduced the blocks that an Enderman can hold
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## fastRedstoneCrafting
 
@@ -347,7 +347,7 @@ Adds fast crafting for Dispenser and Repeater
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## floatingLadders
 
@@ -392,7 +392,7 @@ Husks drop sand on death
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## invisibleItemframe
 
@@ -455,7 +455,7 @@ Adds crafting compatibility with all types of Quartz Block
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## redcraft2Teleport
 
@@ -473,7 +473,7 @@ Adds crafting compatibility with all types of Red Sandstone
 - Type: `boolean`
 - Default value: `false`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## ropes
 
@@ -491,7 +491,7 @@ Adds crafting compatibility with all types of Sandstone
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## silkyBlockstates
 
@@ -518,7 +518,7 @@ Allows to use 2 slabs to craft the block back
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## specialNameTags
 
@@ -536,7 +536,7 @@ Adds stonecutter craftings for all types of Quartz Block
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## stonecutterRedSandstone
 
@@ -545,7 +545,7 @@ Adds stonecutter craftings for all types of Red Sandstone
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## stonecutterSandstone
 
@@ -554,7 +554,7 @@ Adds stonecutter craftings for all types of Sandstone
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## stonecutterWood
 
@@ -563,7 +563,7 @@ Adds stonecutter craftings for all types of Wooden Block
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## treecapitator
 
