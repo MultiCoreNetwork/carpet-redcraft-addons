@@ -34,6 +34,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [craftableQuartz](#craftableQuartz)
 - [craftableRedSand](#craftableRedSand)
 - [craftableSand](#craftableSand)
+- [craftableSculkSensor](#craftableSculkSensor)
 - [craftableShulkerShells](#craftableShulkerShells)
 - [craftableStrippedWood](#craftableStrippedWood)
 - [craftableTallGrass](#craftableTallGrass)
@@ -261,6 +262,15 @@ Allows to craft Red Sand from Red Sandstone
 ## craftableSand
 
 Allows to craft Red Sand from Sandstone
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## craftableSculkSensor
+
+Allow to craft Sculk Sensor with endeperals and observers
 
 - Type: `boolean`
 - Default value: `true`

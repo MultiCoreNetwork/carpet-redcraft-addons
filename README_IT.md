@@ -34,6 +34,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [craftableQuartz](#craftableQuartz)
 - [craftableRedSand](#craftableRedSand)
 - [craftableSand](#craftableSand)
+- [craftableSculkSensor](#craftableSculkSensor)
 - [craftableShulkerShells](#craftableShulkerShells)
 - [craftableStrippedWood](#craftableStrippedWood)
 - [craftableTallGrass](#craftableTallGrass)
@@ -262,6 +263,15 @@ Permette di craftare la sabbia rossa partendo dall'arenaria rossa
 ## craftableSand
 
 Permette di craftare la sabbia partendo dall'arenaria
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## craftableSculkSensor
+
+Permette di craftare Sculk Sensor con endeperal e osservatori
 
 - Type: `boolean`
 - Default value: `true`
