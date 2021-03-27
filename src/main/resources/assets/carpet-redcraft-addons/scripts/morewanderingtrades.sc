@@ -40,15 +40,15 @@ _add_random_trades(villager) -> (
 
     // SPORE_BLOSSOMS -> 10%
     if(rand(1/(1-0.1)),
-        trade = nbt(str('{maxUses:8,xp:50,rewardExp:1b,buy:{id:"minecraft:emerald",Count:1b},sell:{id:"minecraft:spore_blossom",Count:1b}}',buy_left:0,buy_left:1,buy_right:0,buy_right:1,result:0,result:1));
+        trade = nbt('{maxUses:8,xp:50,rewardExp:1b,buy:{id:"minecraft:emerald",Count:1b},sell:{id:"minecraft:spore_blossom",Count:1b}}');
         _add_trade(villager, trade);
     );
 
     // GLOW_BERRIES -> 10%
-        if(rand(1/(1-0.1)),
-            trade = nbt(str('{maxUses:8,xp:50,rewardExp:1b,buy:{id:"minecraft:emerald",Count:1b},sell:{id:"minecraft:glow_berries",Count:1b}}',buy_left:0,buy_left:1,buy_right:0,buy_right:1,result:0,result:1));
-            _add_trade(villager, trade);
-        );
+    if(rand(1/(1-0.1)),
+        trade = nbt('{maxUses:8,xp:50,rewardExp:1b,buy:{id:"minecraft:emerald",Count:1b},sell:{id:"minecraft:glow_berries",Count:1b}}');
+        _add_trade(villager, trade);
+    );
 
     // SKULLS
     trade_ids = {};
