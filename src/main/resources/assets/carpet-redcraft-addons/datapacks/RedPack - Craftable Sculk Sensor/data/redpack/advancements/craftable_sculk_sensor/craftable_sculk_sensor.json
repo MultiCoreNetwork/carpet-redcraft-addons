@@ -1,0 +1,19 @@
+{
+    "display": {
+        "title": "Craftable Sculk Sensor v0.1.0",
+        "description": [{
+            "text": "Sculk Sensor Crafting by BisUmTo, Gnottero & DukeEdivad05"
+        }],
+        "icon": {
+            "item": "minecraft:sculk_sensor"
+        },
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "parent": "redpack:crafting",
+    "criteria": {
+        "trigger": {
+            "trigger": "minecraft:tick"
+        }
+    }
+}

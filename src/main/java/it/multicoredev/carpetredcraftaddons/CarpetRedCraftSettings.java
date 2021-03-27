@@ -385,6 +385,12 @@ public class CarpetRedCraftSettings {
     public static boolean huskDropsSand = true;
 
     @Rule(
+            desc= "Allow to craft Sculk Sensor with endeperals and observers",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
+    )
+    public static boolean craftableSculkSensor = true;
+
+    @Rule(
             desc = "You can craft deepslate ore in smithing table.",
             category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
