@@ -49,6 +49,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
+- [moss](#moss)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
@@ -395,6 +396,15 @@ Allows to right click a compass to make it point towards the last death point
 ## moreWanderingTrades
 
 Adds more trades to the Wandering Trader
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## moss
+
+Allow to obtain moss by bonemealing mossy blocks
 
 - Type: `boolean`
 - Default value: `true`
