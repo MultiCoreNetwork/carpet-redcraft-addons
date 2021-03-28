@@ -195,6 +195,13 @@ public class CarpetRedCraftSettings {
     )
     public static boolean moss = true;
 
+    @Rule(
+            desc="Allow Flowering Azalea to grow by bonemealing it.",
+            appSource = "azaleatree",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean azaleaTree = true;
+
     // ------------------------------------------------ //
 
     @Rule(

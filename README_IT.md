@@ -12,6 +12,7 @@ Un'estensione della [Carpet mod](https://github.com/gnembon/fabric-carpet) (fabr
 Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usare versioni aggiornate della Carpet Mod non appena possibile
 
 ## Regole
+- [azaleaTree](#azaleaTree)
 - [betterArmorStands](#betterArmorStands)
 - [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
@@ -70,6 +71,17 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [stonecutterWood](#stonecutterWood)
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
+
+## azeleaTree
+
+Permette di far crescere le Azalee fiorite, usando la farina d'ossa
+
+NON FUNZIONA CON IL DISTRIBUTORE!
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## betterArmorStands
 

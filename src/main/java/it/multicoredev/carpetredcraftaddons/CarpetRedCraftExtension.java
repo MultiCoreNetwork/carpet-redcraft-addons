@@ -12,6 +12,7 @@ import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
 import it.multicoredev.carpetredcraftaddons.commands.OpCommand;
 import it.multicoredev.carpetredcraftaddons.commands.PublishCommand;
 import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
+import net.minecraft.item.BoneMealItem;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProfile;
 import net.minecraft.server.MinecraftServer;
@@ -49,6 +50,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetServer.settingsManager.parseSettingsClass(CarpetRedCraftSettings.class);
 
         // SCRIPTS
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("azaleatree", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("colorableshulkers", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("dragoneggrespawns", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
