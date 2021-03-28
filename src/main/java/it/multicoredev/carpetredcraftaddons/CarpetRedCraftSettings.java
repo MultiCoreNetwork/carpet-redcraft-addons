@@ -394,5 +394,5 @@ public class CarpetRedCraftSettings {
             desc = "You can craft deepslate ore in smithing table.",
             category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
-    public static boolean craftableDeepslateOre = true;
+    public static boolean craftableDeepslateOres = true;
 }

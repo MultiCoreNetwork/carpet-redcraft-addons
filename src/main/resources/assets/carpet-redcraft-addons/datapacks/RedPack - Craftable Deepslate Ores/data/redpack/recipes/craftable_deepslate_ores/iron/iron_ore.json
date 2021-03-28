@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:deepslate_iron_ore"
+  },
+  "addition": {
+    "item": "minecraft:stone"
+  },
+  "result": {
+    "item": "minecraft:iron_ore"
+  }
+}

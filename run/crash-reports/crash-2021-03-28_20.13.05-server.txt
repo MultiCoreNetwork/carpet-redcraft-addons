@@ -1,0 +1,39 @@
+---- Minecraft Crash Report ----
+// Don't be sad, have a hug! <3
+
+Time: 28/03/21 20.13
+Description: Exception in server tick loop
+
+java.lang.NullPointerException: Exception in server tick loop
+	at it.multicoredev.carpetredcraftaddons.CarpetRedCraftExtension.lambda$initializeDatapackRules$1(CarpetRedCraftExtension.java:144)
+	at java.util.HashMap.forEach(HashMap.java:1289)
+	at it.multicoredev.carpetredcraftaddons.CarpetRedCraftExtension.initializeDatapackRules(CarpetRedCraftExtension.java:140)
+	at it.multicoredev.carpetredcraftaddons.CarpetRedCraftExtension.onServerLoadedWorlds(CarpetRedCraftExtension.java:114)
+	at carpet.CarpetServer.lambda$onServerLoadedWorlds$1(CarpetServer.java:108)
+	at java.util.ArrayList.forEach(ArrayList.java:1255)
+	at carpet.CarpetServer.onServerLoadedWorlds(CarpetServer.java:108)
+	at net.minecraft.server.MinecraftServer.handler$zbb000$serverLoadedWorlds(MinecraftServer.java:2233)
+	at net.minecraft.server.MinecraftServer.loadWorld(MinecraftServer.java:341)
+	at net.minecraft.server.integrated.IntegratedServer.setupServer(IntegratedServer.java:69)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:648)
+	at net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:260)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- System Details --
+Details:
+	Minecraft Version: 21w11a
+	Minecraft Version ID: 21w11a
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_151, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 652647400 bytes (622 MB) / 2401239040 bytes (2290 MB) up to 3808428032 bytes (3632 MB)
+	CPUs: 8
+	JVM Flags: 0 total; 
+	Player Count: 0 / 8; []
+	Data Packs: vanilla, file/RedCraft3Gen.zip, file/RedPack - Better Armor Stands.zip, file/RedPack - Craftable Bricks.zip, file/RedPack - Craftable Cobwebs.zip, file/RedPack - Craftable Colored Blocks.zip, file/RedPack - Craftable Corals.zip, file/RedPack - Craftable Dead Bushes.zip, file/RedPack - Craftable Deepslate Ore.zip, file/RedPack - Craftable Elytra.zip, file/RedPack - Craftable Ice.zip, file/RedPack - Craftable Large Fern.zip, file/RedPack - Craftable Nether Warts.zip, file/RedPack - Craftable Packed Ice.zip, file/RedPack - Craftable Player Heads.zip, file/RedPack - Craftable Quartz.zip, file/RedPack - Craftable Sculk Sensor.zip, file/RedPack - Craftable Shulker Shells.zip, file/RedPack - Craftable Stripped Wood.zip, file/RedPack - Craftable Tall Grass.zip, file/RedPack - Craftable Tuff and Calcite.zip, file/RedPack - Enderman No Grief.zip, file/RedPack - Fast Redstone Crafting.zip, file/RedPack - Husk Drops Sand.zip, file/RedPack - Quartz Crafting Compatibility.zip, file/RedPack - Quartz Stonecutter.zip, file/RedPack - Red Sandstone Crafting Compatibility.zip, file/RedPack - Red Sandstone Stonecutter.zip, file/RedPack - Red Sandstone to Red Sand.zip, file/RedPack - Sandstone Crafting Compatibility.zip, file/RedPack - Sandstone Stonecutter.zip, file/RedPack - Sandstone to Sand.zip, file/RedPack - Slab to Full Block.zip, file/RedPack - Stone Stonecutter.zip, file/RedPack - Wood Stonecutter.zip
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'fabric'
