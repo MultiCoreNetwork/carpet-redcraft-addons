@@ -2,7 +2,7 @@
 
     # Adding the pack name and version to the redpack storage
         data remove storage redpack:config versions[{id:128352}]
-        data modify storage redpack:config versions append value {"id":128352,"name":"RedPack - Craftable Tuff and Calcite","version":"0.1.0"}
+        data modify storage redpack:config versions append value {"id":128352,"name":"RedPack - Craftable Tuff and Calcite","version":"0.2.0"}
 
     # Getting the version of the player and sending an error message if it is outdated
         execute store result score $gb.game_version gb.configs run data get entity @a[limit=1] DataVersion

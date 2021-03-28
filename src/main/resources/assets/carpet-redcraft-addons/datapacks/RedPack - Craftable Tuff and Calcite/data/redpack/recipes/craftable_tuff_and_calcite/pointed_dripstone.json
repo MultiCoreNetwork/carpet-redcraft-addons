@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DDD",
+    " D "
+  ],
+  "key": {
+    "D": {
+      "item": "minecraft:dripstone_block"
+    }
+  },
+  "result": {
+    "item": "minecraft:pointed_dripstone",
+    "count": 4
+  }
+}

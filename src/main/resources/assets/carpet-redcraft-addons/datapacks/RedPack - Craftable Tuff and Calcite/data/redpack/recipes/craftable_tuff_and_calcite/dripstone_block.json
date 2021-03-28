@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "CG",
+    "GC"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:granite"
+    },
+    "C": {
+      "item": "minecraft:calcite"
+    }
+  },
+  "result": {
+    "item": "minecraft:dripstone_block",
+    "count": 4
+  }
+}
