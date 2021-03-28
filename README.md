@@ -12,6 +12,7 @@ A [Carpet mod](https://github.com/gnembon/fabric-carpet) (fabric-carpet) extensi
 Use with carpet mod in the same Minecraft version. Use newer carpet mod versions whenever possible
 
 ## Rules
+- [azaleaTree](#azaleaTree)
 - [betterArmorStands](#betterArmorStands)
 - [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
@@ -70,6 +71,17 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [stonecutterWood](#stonecutterWood)
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
+
+## azeleaTree
+
+Allow Flowering Azalea to grow by bonemealing it
+
+DOESN'T WORK WITH DISPENSER!
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## betterArmorStands
 
