@@ -45,14 +45,12 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [endermanNoGrief](#endermanNoGrief)
 - [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
-- [glowingSquid](#glowingSquid)
 - [graves](#graves)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
-- [moss](#moss)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
@@ -72,7 +70,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
 
-## azeleaTree
+## azaleaTree
 
 Permette di far crescere le Azalee fiorite, usando la farina d'ossa
 
@@ -371,15 +369,6 @@ Permette di piazzare una scala a pioli fluttuante sotto ad una già piazzata
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## glowingSquid
-
-Le piovre luminescenti avranno la possibilità di nascere nei biomi oceanici profondi
-
-- Type: `boolean`
-- Default value: `false`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
 ## graves
 
 Crea una tomba personale alla morte del giocatore
@@ -430,15 +419,6 @@ Sarà possibile riottenere tale bussola premendo con il tasto destro una bussola
 ## moreWanderingTrades
 
 Aggiunge nuovi scambi al mercante viandante
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
-## moss
-
-Permette di ottenere i blocchi moss cliccando con la farina d'ossa sui blocchi muschiati
 
 - Type: `boolean`
 - Default value: `true`

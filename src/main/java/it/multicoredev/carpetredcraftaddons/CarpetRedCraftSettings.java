@@ -24,13 +24,6 @@ public class CarpetRedCraftSettings {
     public static boolean redcraft2Teleport = false;
 
     @Rule(
-            desc = "Glowing squids spawns in deep ocean biomes.",
-            appSource = "glowingsquid",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
-    )
-    public static boolean glowingSquid = true;
-
-    @Rule(
             desc = "Deopped players can do /player on themselves",
             extra = {
                     "and you can create Fake Player on themselves",
@@ -187,13 +180,6 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean moreWanderingTrades = true;
-
-    @Rule(
-            desc="Allow to obtain moss by bonemealing mossy blocks.",
-            appSource = "moss",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
-    )
-    public static boolean moss = true;
 
     @Rule(
             desc="Allow Flowering Azalea to grow by bonemealing it.",
@@ -402,4 +388,11 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
     public static boolean craftableDeepslateOres = true;
+
+    @Rule(
+            desc = "Allows to craft light block.",
+            appSource = "light",
+            category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
+    )
+    public static boolean craftableLight = true;
 }

@@ -45,14 +45,12 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [endermanNoGrief](#endermanNoGrief)
 - [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
-- [glowingSquid](#glowingSquid)
 - [graves](#graves)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
-- [moss](#moss)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
@@ -72,7 +70,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
 
-## azeleaTree
+## azaleaTree
 
 Allow Flowering Azalea to grow by bonemealing it
 
@@ -370,15 +368,6 @@ Allows to place ladders under other ladders
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## glowingSquid
-
-Glowing squids spawns in deep ocean biomes
-
-- Type: `boolean`
-- Default value: `false`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
 ## graves
 
 Create personal graves when the player dies
@@ -427,15 +416,6 @@ Allows to right click a compass to make it point towards the last death point
 ## moreWanderingTrades
 
 Adds more trades to the Wandering Trader
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
-## moss
-
-Allow to obtain moss by bonemealing mossy blocks
 
 - Type: `boolean`
 - Default value: `true`

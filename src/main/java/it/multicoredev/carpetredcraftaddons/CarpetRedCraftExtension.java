@@ -12,11 +12,9 @@ import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
 import it.multicoredev.carpetredcraftaddons.commands.OpCommand;
 import it.multicoredev.carpetredcraftaddons.commands.PublishCommand;
 import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
-import net.minecraft.item.BoneMealItem;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProfile;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.command.DatapackCommand;
 import net.minecraft.server.command.ReloadCommand;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.WorldSavePath;
@@ -26,13 +24,11 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
-import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.toList;
 
@@ -54,13 +50,12 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("colorableshulkers", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("dragoneggrespawns", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
-        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("glowingsquid", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("graves", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("horsestats", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("invisibleitemframe", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("light", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("morewanderingtrades", false));
-        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("moss", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeableplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("playerme", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("prunedplants", false));
@@ -90,6 +85,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         registerDatapackRule(server, "craftableElytra", "RedPack - Craftable Elytra");
         registerDatapackRule(server, "craftableIce", "RedPack - Craftable Ice");
         registerDatapackRule(server, "craftableLargeFern", "RedPack - Craftable Large Fern");
+        registerDatapackRule(server, "craftableLight", "RedPack - Craftable Light");
         registerDatapackRule(server, "craftableNetherWarts", "RedPack - Craftable Nether Warts");
         registerDatapackRule(server, "craftablePackedIce", "RedPack - Craftable Packed Ice");
         registerDatapackRule(server, "craftablePlayerHead", "RedPack - Craftable Player Heads");
@@ -143,14 +139,14 @@ public class CarpetRedCraftExtension implements CarpetExtension {
             ParsedRule<?> rule = CarpetServer.settingsManager.getRule(ruleName);
             ResourcePackProfile resourcePackProfile = resourcePackManager.getProfile("file/" + datapackName + ".zip");
             if (rule.getBoolValue() || (rule.type == String.class && !rule.get().equals("false"))) {
-                if(!list.contains(resourcePackProfile))
+                if (!list.contains(resourcePackProfile))
                     resourcePackProfile.getInitialPosition().insert(list, resourcePackProfile, (pack) -> pack, false);
             } else {
-                if(list.contains(resourcePackProfile))
+                if (list.contains(resourcePackProfile))
                     list.remove(resourcePackProfile);
             }
         });
-        ReloadCommand.method_29480(list.stream().map(ResourcePackProfile::getName).collect(toList()), server.getCommandSource());
+        ReloadCommand.tryReloadDataPacks(list.stream().map(ResourcePackProfile::getName).collect(toList()), server.getCommandSource());
     }
 
 
@@ -163,13 +159,13 @@ public class CarpetRedCraftExtension implements CarpetExtension {
                 ResourcePackProfile resourcePackProfile = resourcePackManager.getProfile("file/" + datapackName + ".zip");
                 List<ResourcePackProfile> list = Lists.newArrayList(resourcePackManager.getEnabledProfiles());
                 if (rule.getBoolValue() || (rule.type == String.class && !rule.get().equals("false"))) {
-                    if(!list.contains(resourcePackProfile))
+                    if (!list.contains(resourcePackProfile))
                         resourcePackProfile.getInitialPosition().insert(list, resourcePackProfile, (pack) -> pack, false);
                 } else {
-                    if(list.contains(resourcePackProfile))
+                    if (list.contains(resourcePackProfile))
                         list.remove(resourcePackProfile);
                 }
-                ReloadCommand.method_29480(list.stream().map(ResourcePackProfile::getName).collect(toList()), source);
+                ReloadCommand.tryReloadDataPacks(list.stream().map(ResourcePackProfile::getName).collect(toList()), source);
             }
         });
     }

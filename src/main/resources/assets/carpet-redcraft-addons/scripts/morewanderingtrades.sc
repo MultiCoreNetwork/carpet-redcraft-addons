@@ -44,12 +44,6 @@ _add_random_trades(villager) -> (
         _add_trade(villager, trade);
     );
 
-    // GLOW_BERRIES -> 10%
-    if(rand(1/(1-0.1)),
-        trade = nbt(str('{maxUses:8,xp:50,rewardExp:1b,buy:{id:"minecraft:emerald",Count:%db},sell:{id:"minecraft:glow_berries",Count:1b}}',floor(rand(4))+1));
-        _add_trade(villager, trade);
-    );
-
     // SKULLS
     trade_ids = {};
     trade_keys = keys(global_skull_trades);

@@ -41,8 +41,7 @@ _toggle() -> if(global_show = !global_show,
 _show_stat(stat) -> (
     _hide();
     if((stats = stat ~ '^minecraft.(\\w+):minecraft.(\\w+)$') == null, return());
-    scoreboard_remove('redcraft.stats');
-    scoreboard_add('redcraft.stats', stat);
+    scoreboard_property('redcraft.stats', 'criterion', stat);
     // save();
     run(str('scoreboard objectives modify redcraft.stats displayname {"text":"%s","color":"#ff0000"}',
         if(stats:0 != 'custom', title(stats:0+' '), '') + title(replace(stats:1, '_', ' '))

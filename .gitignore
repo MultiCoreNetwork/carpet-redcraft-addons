@@ -2,6 +2,7 @@
 
 .gradle/
 build/
+run/
 out/
 classes/
 
@@ -23,3 +24,4 @@ local.properties
 
 # fabric
 logs/latest.log
+
