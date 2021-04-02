@@ -136,22 +136,26 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         resourcePackManager.scanPacks();
         List<ResourcePackProfile> list = Lists.newArrayList(resourcePackManager.getEnabledProfiles());
         datapackRules.forEach((ruleName, datapackName) -> {
+            ResourcePackProfile resourcePackProfile = resourcePackManager.getProfile("file/" + datapackName + ".zip");
+            if (resourcePackProfile != null) list.remove(resourcePackProfile);
+        });
+        ReloadCommand.tryReloadDataPacks(list.stream().map(ResourcePackProfile::getName).collect(toList()), server.getCommandSource());
+        datapackRules.forEach((ruleName, datapackName) -> copyDatapackFolder(server, datapackName));
+        resourcePackManager.scanPacks();
+        datapackRules.forEach((ruleName, datapackName) -> {
             ParsedRule<?> rule = CarpetServer.settingsManager.getRule(ruleName);
             ResourcePackProfile resourcePackProfile = resourcePackManager.getProfile("file/" + datapackName + ".zip");
             if (rule.getBoolValue() || (rule.type == String.class && !rule.get().equals("false"))) {
                 if (!list.contains(resourcePackProfile))
                     resourcePackProfile.getInitialPosition().insert(list, resourcePackProfile, (pack) -> pack, false);
             } else {
-                if (list.contains(resourcePackProfile))
-                    list.remove(resourcePackProfile);
+                list.remove(resourcePackProfile);
             }
         });
         ReloadCommand.tryReloadDataPacks(list.stream().map(ResourcePackProfile::getName).collect(toList()), server.getCommandSource());
     }
 
-
     public void registerDatapackRule(MinecraftServer server, String ruleName, String datapackName) {
-        copyDatapackFolder(server, datapackName);
         datapackRules.put(ruleName, datapackName);
         CarpetServer.settingsManager.addRuleObserver((source, rule, s) -> {
             if (rule.categories.contains("datapack") && rule.name.equals(ruleName)) {
@@ -162,8 +166,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
                     if (!list.contains(resourcePackProfile))
                         resourcePackProfile.getInitialPosition().insert(list, resourcePackProfile, (pack) -> pack, false);
                 } else {
-                    if (list.contains(resourcePackProfile))
-                        list.remove(resourcePackProfile);
+                    list.remove(resourcePackProfile);
                 }
                 ReloadCommand.tryReloadDataPacks(list.stream().map(ResourcePackProfile::getName).collect(toList()), source);
             }
