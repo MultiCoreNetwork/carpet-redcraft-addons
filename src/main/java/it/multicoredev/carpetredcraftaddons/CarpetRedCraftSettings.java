@@ -1,15 +1,8 @@
 package it.multicoredev.carpetredcraftaddons;
 
-import carpet.CarpetSettings;
 import carpet.settings.Rule;
 
 import static carpet.settings.RuleCategory.*;
-
-import carpet.settings.Validator;
-import net.minecraft.server.command.ServerCommandSource;
-import carpet.settings.ParsedRule;
-import java.util.Locale;
-import carpet.settings.SettingsManager;
 
 public class CarpetRedCraftSettings {
     public static final String REDCRAFT = "redcraft";
@@ -27,7 +20,7 @@ public class CarpetRedCraftSettings {
             desc = "Deopped players can do /player on themselves",
             extra = {
                     "and you can create Fake Player on themselves",
-            "If commandPlayer is set to False you can't create Fake Player on themselves"},
+                    "If commandPlayer is set to False you can't create Fake Player on themselves"},
             category = {EXPERIMENTAL, FEATURE, REDCRAFT, COMMAND},
             appSource = "playerme"
     )
@@ -182,7 +175,7 @@ public class CarpetRedCraftSettings {
     public static boolean moreWanderingTrades = true;
 
     @Rule(
-            desc="Allow Flowering Azalea to grow by bonemealing it.",
+            desc = "Allow Flowering Azalea to grow by bonemealing it.",
             appSource = "azaleatree",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
@@ -360,25 +353,25 @@ public class CarpetRedCraftSettings {
     public static boolean stonecutterWood = true;
 
     @Rule(
-            desc= "Adds reverse crafting of Prismarine, Prismarine Bricks, Bricks and Nether Bricks.",
+            desc = "Adds reverse crafting of Prismarine, Prismarine Bricks, Bricks and Nether Bricks.",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableBricks = true;
 
     @Rule(
-            desc= "Adds fast crafting for Dispenser and Repeater.",
+            desc = "Adds fast crafting for Dispenser and Repeater.",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean fastRedstoneCrafting = true;
 
     @Rule(
-            desc= "Husks drop sand on death.",
+            desc = "Husks drop sand on death.",
             category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
     public static boolean huskDropsSand = true;
 
     @Rule(
-            desc= "Allow to craft Sculk Sensor with endeperals and observers",
+            desc = "Allow to craft Sculk Sensor with endeperals and observers",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableSculkSensor = true;

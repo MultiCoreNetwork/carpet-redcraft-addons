@@ -17,7 +17,7 @@
             "conditions": {
                 "items": [
                     {
-                        "item": "minecraft:dipstone_block"
+                        "item": "minecraft:dripstone_block"
                     }
                 ]
             }

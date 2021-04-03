@@ -42,7 +42,7 @@ scoreboard_add('gb.grave.time');
 __on_player_dies(player) -> (
 	if(inventory_has_items(player),
         schedule(0, _(outer(player)) -> if(
-            (items = filter(entity_area('item', (pos=pos(player)) + [0,player~'eye_height',0], [0.5, 0.5, 0.5]), _~'age'==0)) != [],
+            (items = filter(entity_area('item', (pos=pos(player)) + [0,player~'eye_height',0], [3, 3, 3]), _~'age'==0)) != [],
             _make_grave(player, pos, items)
         ))
     )

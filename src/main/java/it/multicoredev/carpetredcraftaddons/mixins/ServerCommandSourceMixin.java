@@ -15,7 +15,7 @@ import org.spongepowered.asm.mixin.injection.Redirect;
 import java.util.UUID;
 
 @Mixin(ServerCommandSource.class)
-public abstract class   ServerCommandSourceMixin {
+public abstract class ServerCommandSourceMixin {
     @Redirect(method = "sendToOps(Lnet/minecraft/text/Text;)V", at = @At(value = "INVOKE",
         target = "Lnet/minecraft/server/network/ServerPlayerEntity;sendSystemMessage(Lnet/minecraft/text/Text;Ljava/util/UUID;)V")
     )
