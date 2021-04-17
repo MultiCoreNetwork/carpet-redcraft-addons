@@ -5,7 +5,6 @@
   "mixins": [
     "AbstractFireBlockMixin",
     "CrashReport_noopMixin",
-    "CustomPayloadC2SPacketMixin",
     "EntityMixin",
     "ServerCommandSourceMixin"
   ],

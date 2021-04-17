@@ -9,12 +9,14 @@ public class CarpetRedCraftSettings {
     public static final String CRAFTING = "crafting";
     public static final String DATAPACK = "datapack";
 
+    /* 1.17
     @Rule(
             desc = "Portals in RedCraft2 area will link to redcraft2 dimensions.",
             appSource = "redcrafttwoteleport",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean redcraft2Teleport = false;
+     */
 
     @Rule(
             desc = "Deopped players can do /player on themselves",
@@ -174,12 +176,14 @@ public class CarpetRedCraftSettings {
     )
     public static boolean moreWanderingTrades = true;
 
+    /* 1.17
     @Rule(
             desc = "Allow Flowering Azalea to grow by bonemealing it.",
             appSource = "azaleatree",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean azaleaTree = true;
+     */
 
     // ------------------------------------------------ //
 
@@ -273,11 +277,13 @@ public class CarpetRedCraftSettings {
     )
     public static boolean craftableTallGrass = true;
 
+    /* 1.17
     @Rule(
             desc = "Allows to craft Tuff and Calite.",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableTuffAndCalcite = true;
+     */
 
     @Rule(
             desc = "Reduced the blocks that an Enderman can hold.",
@@ -370,22 +376,28 @@ public class CarpetRedCraftSettings {
     )
     public static boolean huskDropsSand = true;
 
+    /* 1.17
     @Rule(
             desc = "Allow to craft Sculk Sensor with endeperals and observers",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableSculkSensor = true;
+     */
 
+    /* 1.17
     @Rule(
             desc = "You can craft deepslate ore in smithing table.",
             category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
     public static boolean craftableDeepslateOres = true;
+     */
 
+    /* 1.17
     @Rule(
             desc = "Allows to craft light block.",
             appSource = "light",
             category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
     public static boolean craftableLight = true;
+     */
 }

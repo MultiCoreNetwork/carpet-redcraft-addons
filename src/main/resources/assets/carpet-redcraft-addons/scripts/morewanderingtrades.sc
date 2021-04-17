@@ -38,11 +38,11 @@ global_luck = 1/(1-4/7);
 
 _add_random_trades(villager) -> (
 
-    // SPORE_BLOSSOMS -> 10%
-    if(rand(1/(1-0.1)),
-        trade = nbt(str('{maxUses:8,xp:50,rewardExp:1b,buy:{id:"minecraft:emerald",Count:%db},sell:{id:"minecraft:spore_blossom",Count:1b}}',floor(rand(4))+1));
-        _add_trade(villager, trade);
-    );
+    // 1.17 SPORE_BLOSSOMS -> 10%
+    // if(rand(1/(1-0.1)),
+    //     trade = nbt(str('{maxUses:8,xp:50,rewardExp:1b,buy:{id:"minecraft:emerald",Count:%db},sell:{id:"minecraft:spore_blossom",Count:1b}}',floor(rand(4))+1));
+    //     _add_trade(villager, trade);
+    // );
 
     // SKULLS
     trade_ids = {};

@@ -15,7 +15,7 @@ public class AbstractFireBlockMixin {
      * @reason RedCraft2 World Compability
      */
     @Overwrite
-    private static boolean isOverworldOrNether(World world) {
+    private static boolean method_30366(World world) {
         return world.getRegistryKey() == World.OVERWORLD || world.getRegistryKey() == World.NETHER || world.getRegistryKey() == RegistryKey.of(Registry.DIMENSION, new Identifier("redcraft2", "overworld"));
     }
 }

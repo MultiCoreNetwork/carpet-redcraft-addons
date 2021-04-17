@@ -7,7 +7,7 @@ os.chdir(current_directory)
 blocks = []
 slabs = []
 
-with urllib.request.urlopen("https://raw.githubusercontent.com/Arcensoth/mcdata/master/processed/reports/blocks/simplified/data.json") as url:
+with urllib.request.urlopen("https://raw.githubusercontent.com/Arcensoth/mcdata/branch-1.16/processed/reports/blocks/data.min.json") as url:
     data = json.loads(url.read().decode())
     blocks = data.keys()
     for block in blocks:

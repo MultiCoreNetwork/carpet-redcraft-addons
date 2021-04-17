@@ -46,7 +46,9 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetServer.settingsManager.parseSettingsClass(CarpetRedCraftSettings.class);
 
         // SCRIPTS
-        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("azaleatree", false));
+        /* 1.17
+         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("azaleatree", false));
+         */
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("colorableshulkers", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("dragoneggrespawns", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
@@ -54,7 +56,9 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("horsestats", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("invisibleitemframe", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
+        /* 1.17
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("light", false));
+         */
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("morewanderingtrades", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeableplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("playerme", false));
@@ -81,20 +85,28 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         registerDatapackRule(server, "craftableColoredBlocks", "RedPack - Craftable Colored Blocks");
         registerDatapackRule(server, "craftableCorals", "RedPack - Craftable Corals");
         registerDatapackRule(server, "craftableDeadBushes", "RedPack - Craftable Dead Bushes");
+        /* 1.17
         registerDatapackRule(server, "craftableDeepslateOres", "RedPack - Craftable Deepslate Ores");
+         */
         registerDatapackRule(server, "craftableElytra", "RedPack - Craftable Elytra");
         registerDatapackRule(server, "craftableIce", "RedPack - Craftable Ice");
         registerDatapackRule(server, "craftableLargeFern", "RedPack - Craftable Large Fern");
+        /* 1.17
         registerDatapackRule(server, "craftableLight", "RedPack - Craftable Light");
+         */
         registerDatapackRule(server, "craftableNetherWarts", "RedPack - Craftable Nether Warts");
         registerDatapackRule(server, "craftablePackedIce", "RedPack - Craftable Packed Ice");
         registerDatapackRule(server, "craftablePlayerHead", "RedPack - Craftable Player Heads");
         registerDatapackRule(server, "craftableQuartz", "RedPack - Craftable Quartz");
+        /* 1.17
         registerDatapackRule(server, "craftableSculkSensor", "RedPack - Craftable Sculk Sensor");
+         */
         registerDatapackRule(server, "craftableShulkerShells", "RedPack - Craftable Shulker Shells");
         registerDatapackRule(server, "craftableStrippedWood", "RedPack - Craftable Stripped Wood");
         registerDatapackRule(server, "craftableTallGrass", "RedPack - Craftable Tall Grass");
+        /* 1.17
         registerDatapackRule(server, "craftableTuffAndCalcite", "RedPack - Craftable Tuff and Calcite");
+         */
         registerDatapackRule(server, "endermanNoGrief", "RedPack - Enderman No Grief");
         registerDatapackRule(server, "fastRedstoneCrafting", "RedPack - Fast Redstone Crafting");
         registerDatapackRule(server, "huskDropsSand", "RedPack - Husk Drops Sand");
@@ -139,7 +151,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
             ResourcePackProfile resourcePackProfile = resourcePackManager.getProfile("file/" + datapackName + ".zip");
             if (resourcePackProfile != null) list.remove(resourcePackProfile);
         });
-        ReloadCommand.tryReloadDataPacks(list.stream().map(ResourcePackProfile::getName).collect(toList()), server.getCommandSource());
+        ReloadCommand.method_29480(list.stream().map(ResourcePackProfile::getName).collect(toList()), server.getCommandSource());
         datapackRules.forEach((ruleName, datapackName) -> copyDatapackFolder(server, datapackName));
         resourcePackManager.scanPacks();
         datapackRules.forEach((ruleName, datapackName) -> {
@@ -152,7 +164,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
                 list.remove(resourcePackProfile);
             }
         });
-        ReloadCommand.tryReloadDataPacks(list.stream().map(ResourcePackProfile::getName).collect(toList()), server.getCommandSource());
+        ReloadCommand.method_29480(list.stream().map(ResourcePackProfile::getName).collect(toList()), server.getCommandSource());
     }
 
     public void registerDatapackRule(MinecraftServer server, String ruleName, String datapackName) {
@@ -168,7 +180,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
                 } else {
                     list.remove(resourcePackProfile);
                 }
-                ReloadCommand.tryReloadDataPacks(list.stream().map(ResourcePackProfile::getName).collect(toList()), source);
+                ReloadCommand.method_29480(list.stream().map(ResourcePackProfile::getName).collect(toList()), source);
             }
         });
     }
