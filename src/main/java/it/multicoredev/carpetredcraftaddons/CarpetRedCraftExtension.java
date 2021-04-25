@@ -59,7 +59,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeableplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("playerme", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("prunedplants", false));
-        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("redcrafttwoteleport", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("redcraft", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("ropes", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("silkyblockstates", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("sitanywhere", false));

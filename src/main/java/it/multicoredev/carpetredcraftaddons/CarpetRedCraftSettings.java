@@ -11,10 +11,10 @@ public class CarpetRedCraftSettings {
 
     @Rule(
             desc = "Portals in RedCraft2 area will link to redcraft2 dimensions.",
-            appSource = "redcrafttwoteleport",
+            appSource = "redcraft",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
-    public static boolean redcraft2Teleport = false;
+    public static boolean redcraft = false;
 
     @Rule(
             desc = "Deopped players can do /player on themselves",

@@ -1,4 +1,29 @@
-__config() -> {'stay_loaded' -> true, 'scope' -> 'global'};
+__config() -> {
+    'stay_loaded' -> true,
+    'scope' -> 'global',
+    'command_permission' -> 'ops',
+    'commands' -> {
+        '' -> _() -> _enchant(player())
+    }
+};
+
+_enchant(player) -> (
+    item_tuple = player ~ 'holds' || ['diamond_axe',1,null];
+    [item, count, nbt] = item_tuple;
+    if(!(item ~ '_axe$' || item ~ '_pickaxe$' || item ~ '_axe$') || nbt:'Enchantments[{id:"redcraft:silkyblockstate"}]',
+        print(format('r Unable to apply the silkyblockstate enchantment'));
+        return()
+    );
+    if(!nbt, nbt = nbt('{}'));
+    nbt:'display.Lore' = nbt:'display.Lore' || nbt('[]');
+    nbt:'Enchantments' = nbt:'Enchantments' || nbt('[]');
+    nbt_map = parse_nbt(nbt);
+    nbt_map:'display':'Lore' += '{"text":"Silky Blockstate","color":"red","italic":false}';
+    nbt_map:'Enchantments' += {'id' -> 'redcraft:silkyblockstate'};
+    nbt = encode_nbt(nbt_map);
+    nbt:'Enchantments[{id:"redcraft:silkyblockstate"}].lvl' = nbt('1s');
+    inventory_set(player, player ~ 'selected_slot', count, item, nbt)
+);
 
 global_drop_in_creative = true;
 global_create_item_whitelist = ['^cake$'];

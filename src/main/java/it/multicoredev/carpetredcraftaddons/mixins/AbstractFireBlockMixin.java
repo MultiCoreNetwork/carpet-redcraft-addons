@@ -16,6 +16,6 @@ public class AbstractFireBlockMixin {
      */
     @Overwrite
     private static boolean isOverworldOrNether(World world) {
-        return world.getRegistryKey() == World.OVERWORLD || world.getRegistryKey() == World.NETHER || world.getRegistryKey() == RegistryKey.of(Registry.DIMENSION, new Identifier("redcraft2", "overworld"));
+        return world.getRegistryKey() == World.OVERWORLD || world.getRegistryKey() == World.NETHER || world.getRegistryKey() == RegistryKey.of(Registry.WORLD_KEY, new Identifier("redcraft2", "overworld"));
     }
 }

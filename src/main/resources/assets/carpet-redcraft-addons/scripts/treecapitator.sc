@@ -1,4 +1,29 @@
-_config() -> {'stay_loaded' -> true, 'scope'->'player'};
+__config() -> {
+    'stay_loaded' -> true,
+    'scope' -> 'global',
+    'command_permission' -> 'ops',
+    'commands' -> {
+        '' -> _() -> _enchant(player())
+    }
+};
+
+_enchant(player) -> (
+    item_tuple = player ~ 'holds' || ['diamond_axe',1,null];
+    [item, count, nbt] = item_tuple;
+    if(!item ~ '_axe$' || nbt:'Enchantments[{id:"redcraft:treecapitator"}]',
+        print(format('r Unable to apply the treecapitator enchantment'));
+        return()
+    );
+    if(!nbt, nbt = nbt('{}'));
+    nbt:'display.Lore' = nbt:'display.Lore' || nbt('[]');
+    nbt:'Enchantments' = nbt:'Enchantments' || nbt('[]');
+    nbt_map = parse_nbt(nbt);
+    nbt_map:'display':'Lore' += '{"text":"TreeCapitator","color":"red","italic":false}';
+    nbt_map:'Enchantments' += {'id' -> 'redcraft:treecapitator'};
+    nbt = encode_nbt(nbt_map);
+    nbt:'Enchantments[{id:"redcraft:treecapitator"}].lvl' = nbt('1s');
+    inventory_set(player, player ~ 'selected_slot', count, item, nbt)
+);
 
 _valid_item(player) -> (
 	[item, count, nbt] = if(h=player~'holds', h, return(false));
@@ -6,10 +31,10 @@ _valid_item(player) -> (
     if(max(nbt:'Enchantments[{id:"redcraft:treecapitator"}]'<1),
         if(nbt:'display.Lore[]' ~ '\\{"text":"TreeCapitator","color":"red","italic":false\\}' == null,
             return(false),
-            ench = parse_nbt(if(t=nbt:'Enchantments',t,'[]'));
-            ench += {'id'->'redcraft:treecapitator', 'lvl'->1};
+            ench = parse_nbt(if(t = nbt:'Enchantments', t, '[]'));
+            ench += {'id' -> 'redcraft:treecapitator', 'lvl'->1};
             nbt:'Enchantments' = encode_nbt(ench);
-            inventory_set(player,player~'selected_slot',count,item,nbt);
+            inventory_set(player, player ~ 'selected_slot', count, item, nbt);
             return(true)
         ),
         return(true)
@@ -23,22 +48,22 @@ _valid_block(block) -> reduce(global_blocks, _a || bool(block ~ _), false);
 
 _log_area(log, ... large_oak) -> if(
     log ~ '^birch_' || log ~ '^spruce_' || log ~ '_stem$', [block(pos_offset(log,'up'))],
-    has(large_oak:0) && large_oak:0, t=[rect(log,[1,0,1][1,1,1])]; delete(t:4); t,
+    has(large_oak:0) && large_oak:0, t = [rect(log, [1,0,1][1,1,1])]; delete(t:4); t,
     [rect(pos_offset(log,'up'),[1,0,1])]
 );
 
 _leaves_area(leaves) -> if(
-    leaves ~ '_block$', t=[rect(leaves,[1,1,1])]; delete(t:13); t,
+    leaves ~ '_block$', t = [rect(leaves, [1,1,1])]; delete(t:13); t,
     neighbours(leaves)
 );
 
 global_large_trees = {'dark_oak','spruce','jungle'};
 _log_base_area(log) -> if(
     !has(global_large_trees,_type(log)), [log],
-    reduce([rect(log,[0,0,0],[1,1,1])], _a && str(_) == str(log), true), [rect(log,[0,0,0],[1,1,1])],
-    reduce([rect(log,[0,0,1],[1,1,0])], _a && str(_) == str(log), true), [rect(log,[0,0,1],[1,1,0])],
-    reduce([rect(log,[1,0,0],[0,1,1])], _a && str(_) == str(log), true), [rect(log,[1,0,0],[0,1,1])],
-    reduce([rect(log,[1,0,1],[0,1,0])], _a && str(_) == str(log), true), [rect(log,[1,0,1],[0,1,0])],
+    reduce([rect(log, [0,0,0], [1,1,1])], _a && str(_) == str(log), true), [rect(log, [0,0,0], [1,1,1])],
+    reduce([rect(log, [0,0,1], [1,1,0])], _a && str(_) == str(log), true), [rect(log, [0,0,1], [1,1,0])],
+    reduce([rect(log, [1,0,0], [0,1,1])], _a && str(_) == str(log), true), [rect(log, [1,0,0], [0,1,1])],
+    reduce([rect(log, [1,0,1], [0,1,0])], _a && str(_) == str(log), true), [rect(log, [1,0,1], [0,1,0])],
     [log]
 );
 
