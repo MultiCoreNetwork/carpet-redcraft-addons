@@ -7,10 +7,19 @@ __config() -> {
     }
 };
 
+global_drop_in_creative = true;
+global_create_item_whitelist = ['^cake$'];
+global_convert_item_whitelist = ['^dirt_path$', '^farmland$'];
+global_preserve_block_state_blacklist = ['_bed$', '_door$', '^sticky_piston$', '^piston$', '^bee_nest$', '_banner$', '^beehive$', '^redstone_wire$', '^sunflower$', '^lilac$', '^rose_bush$', '^peony$', '^tall_grass$', '^large_fern$'];
+global_preserve_block_data_blacklist = ['^bee_nest$', '^beehive$', '^campfire$', '^soul_campfire$', '^lectern$', '^jukebox$', '_banner$', '^player_head$', '_bed$'];
+global_need_forced_placement = ['^spawner$','_sign$'];
+global_plants = ['^kelp_plant$','^twisting_vines_plant$','^weeping_vines_plant$'];
+
+// Enchants player's tool with silkyblockstate
 _enchant(player) -> (
     item_tuple = player ~ 'holds' || ['diamond_axe',1,null];
     [item, count, nbt] = item_tuple;
-    if(!(item ~ '_axe$' || item ~ '_pickaxe$' || item ~ '_axe$') || nbt:'Enchantments[{id:"redcraft:silkyblockstate"}]',
+    if(!(item ~ '_axe$' || item ~ '_pickaxe$' || item ~ '_hoe$' || item ~ '_shovel$') || nbt:'Enchantments[{id:"redcraft:silkyblockstate"}]',
         print(format('r Unable to apply the silkyblockstate enchantment'));
         return()
     );
@@ -24,13 +33,6 @@ _enchant(player) -> (
     nbt:'Enchantments[{id:"redcraft:silkyblockstate"}].lvl' = nbt('1s');
     inventory_set(player, player ~ 'selected_slot', count, item, nbt)
 );
-
-global_drop_in_creative = true;
-global_create_item_whitelist = ['^cake$'];
-global_preserve_block_state_blacklist = ['_bed$', '_door$', '^sticky_piston$', '^piston$', '^bee_nest$', '_banner$', '^beehive$', '^redstone_wire$', '^sunflower$', '^lilac$', '^rose_bush$', '^peony$', '^tall_grass$', '^large_fern$'];
-global_preserve_block_data_blacklist = ['^bee_nest$', '^beehive$', '^campfire$', '^soul_campfire$', '^lectern$', '^jukebox$', '_banner$', '^player_head$', '_bed$'];
-global_need_forced_placement = ['^spawner$','_sign$'];
-global_plants = ['^kelp_plant$','^twisting_vines_plant$','^weeping_vines_plant$'];
 
 // returns the escaped version of the string (\->\\, d->\d)
 escape_string(string,d) -> (
@@ -64,8 +66,12 @@ _formatted_property(key, value) -> (
 _block_item(block) -> (
     block_str = str(block);
     block_str = replace(block_str, 'wall_', '');
-    if(_match_any(block,global_plants), 
+    if(_match_any(block,global_plants),
         block_str = replace(block_str, '_plant', '')
+    );
+    if(
+        block_str == 'farmland', block_str = 'dirt',
+        block_str == 'dirt_path', block_str = 'dirt'
     );
     entity_selector(str(
         '@e[type=item,limit=1,x=%d,y=%d,z=%d,dx=1,dy=1,dz=1,sort=nearest,nbt={Item:{id:"minecraft:%s",Count:1b},Age:0s}]',
@@ -77,7 +83,7 @@ _block_item(block) -> (
 _nbt_block_item(block) -> (
     block_str = str(block);
     block_str = replace(block_str, 'wall_', '');
-    if(_match_any(block,global_plants), 
+    if(_match_any(block,global_plants),
         block_str = replace(block_str, '_plant', '')
     );
     str('{Item:{id:"minecraft:%s",Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', block_str, rand(0.2) - 0.1, rand(0.2) - 0.1)
@@ -88,17 +94,20 @@ _preserve_block_state(player, block) -> (
     blockstate = block_state(block);
     if(block ~ 'wall_' != null, blockstate:'wall'='true');
     if(_match_any(block,global_plants), blockstate:'plant'='true');
-    encode_blockstate = encode_nbt(if(blockstate, blockstate, return()));
+    if(!blockstate && !_match_any(block, global_convert_item_whitelist), return());
+    encode_blockstate = encode_nbt(if(blockstate, blockstate, {}));
     item = _block_item(block);
     if(!item,
-        if((_match_any(block, global_create_item_whitelist) || (global_drop_in_creative && player ~ 'gamemode' == 'creative')),
+        if(_match_any(block, global_create_item_whitelist) || (global_drop_in_creative && player ~ 'gamemode' == 'creative'),
             item = [spawn('item', block, _nbt_block_item(block))],
             return()
         )
     );
     modify(item:0, 'nbt_merge', str('{Item:{tag:{Silked:1b,BlockStateTag:%s}}}', encode_blockstate));
     uuid = item:0 ~ 'command_name';
-    //_add_item_lore(uuid, '\\u00a7lBlockStateTag:\\u00a7r', 'gray');
+    if(_match_any(block, global_convert_item_whitelist),
+        modify(item:0, 'nbt_merge', str('{Item:{id:"minecraft:%s"}}', block))
+    );
     for(blockstate, _add_item_lore(uuid, _formatted_property(_, blockstate:_), 'gray'))
 );
 
@@ -107,7 +116,7 @@ _preserve_block_data(player, block, blockdata) -> (
     if(!blockdata, return());
     item = _block_item(block);
     if(!item,
-        if((_match_any(block, global_create_item_whitelist) || (global_drop_in_creative && player ~ 'gamemode' == 'creative')),
+        if(_match_any(block, global_create_item_whitelist) || (global_drop_in_creative && player ~ 'gamemode' == 'creative'),
             item = [spawn('item', block, _nbt_block_item(block))],
             return()
         )
@@ -180,31 +189,29 @@ if(_valid_item(player),
 
 // fixes the BlockEntityTag for deopped players and the wall_/_plant version of blocks
 __on_player_places_block(player, item_tuple, hand, block) ->
-if(__need_forced_placement(item_tuple),
-    [item, count, nbt] = item_tuple;
-    if(!nbt || (!nbt:'BlockStateTag{}' && !nbt:'BlockEntityTag{}'), return());
-    // if not in blacklist, get the blockstate from item's nbt and format it correctly
-    blockstate = if(_match_any(item, global_preserve_block_state_blacklist), encode_nbt(block_state(block)), nbt:'BlockStateTag{}');
-    blockstate = if(blockstate, '[' + slice(replace(blockstate, ':', '='), 1, length(blockstate) - 1) + ']', '');
-    // handles the wall_/_plant version of the block
-    block_id = if(
-       blockstate ~ ',?wall="true"' != null,
-        blockstate = replace(blockstate, ',?wall="true"', '');
-        replace(item,'(^|_)(?=[^_]+$)','$1wall_'),
-    // elif
-       blockstate ~ ',?plant="true"' != null,
-        blockstate = replace(blockstate, ',?plant="true"', '');
-        item+'_plant',
-    // else  
-        item
-    );
-    // if not in blacklist, get the data from item's nbt and format it correctly
-    data = if(_match_any(item, global_preserve_block_data_blacklist), block_data(block), nbt:'BlockEntityTag{}');
-    data = if(data, data, '');
-    // sets the block with correct blockstate and data
-    set(block, block_id + blockstate + data),
-// else
+if(
+    __need_forced_placement(item_tuple),
+        [item, count, nbt] = item_tuple;
+        if(!nbt || (!nbt:'BlockStateTag{}' && !nbt:'BlockEntityTag{}'), return());
+        // if not in blacklist, get the blockstate from item's nbt and format it correctly
+        blockstate = if(_match_any(item, global_preserve_block_state_blacklist), encode_nbt(block_state(block)), nbt:'BlockStateTag{}');
+        blockstate = if(blockstate, '[' + slice(replace(blockstate, ':', '='), 1, length(blockstate) - 1) + ']', '');
+        // handles the wall_/_plant version of the block
+        block_id = if(
+            blockstate ~ ',?wall="true"' != null,
+                blockstate = replace(blockstate, ',?wall="true"', '');
+                replace(item,'(^|_)(?=[^_]+$)','$1wall_'),
+            blockstate ~ ',?plant="true"' != null,
+                blockstate = replace(blockstate, ',?plant="true"', '');
+                item+'_plant',
+            item
+        );
+        // if not in blacklist, get the data from item's nbt and format it correctly
+        data = if(_match_any(item, global_preserve_block_data_blacklist), block_data(block), nbt:'BlockEntityTag{}');
+        data = if(data, data, '');
+        // sets the block with correct blockstate and data
+        set(block, block_id + blockstate + data),
   __waterlogged_silked(item_tuple) && player~'dimension'=='the_nether',
-    set(block,block,'waterlogged','false');
-    sound('block.fire.extinguish', pos(block), 1, 1, 'block')
+        set(block,block,'waterlogged','false');
+        sound('block.fire.extinguish', pos(block), 1, 1, 'block')
 )

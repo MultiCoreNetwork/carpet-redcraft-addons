@@ -7,6 +7,7 @@ __config() -> {
     }
 };
 
+// Enchants player's tool with treecapitator
 _enchant(player) -> (
     item_tuple = player ~ 'holds' || ['diamond_axe',1,null];
     [item, count, nbt] = item_tuple;
