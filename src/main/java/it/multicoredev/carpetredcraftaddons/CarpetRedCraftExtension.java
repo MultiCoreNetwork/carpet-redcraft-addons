@@ -12,6 +12,7 @@ import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
 import it.multicoredev.carpetredcraftaddons.commands.OpCommand;
 import it.multicoredev.carpetredcraftaddons.commands.PublishCommand;
 import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
+import it.multicoredev.carpetredcraftaddons.functions.StructuresFunctions;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProfile;
 import net.minecraft.server.MinecraftServer;
@@ -122,6 +123,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
     @Override
     public void scarpetApi(CarpetExpression expression) {
         OfflineStatisticFunction.apply(expression.getExpr());
+        StructuresFunctions.apply(expression.getExpr());
     }
 
     @Override
