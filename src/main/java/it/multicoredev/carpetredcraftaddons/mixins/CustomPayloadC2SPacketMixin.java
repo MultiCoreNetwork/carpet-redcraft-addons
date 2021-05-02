@@ -20,6 +20,6 @@ public class CustomPayloadC2SPacketMixin {
             target = "Lnet/minecraft/network/PacketByteBuf;readIdentifier()Lnet/minecraft/util/Identifier;")
     )
     public Identifier readIdentifier(PacketByteBuf buf) {
-        return new Identifier(buf.readString(32767).toLowerCase().replaceAll("[^a-z0-9_/.-]",""));
+        return new Identifier(buf.readString(32767).toLowerCase().replaceAll("[^a-z0-9_/.-:]",""));
     }
 }
