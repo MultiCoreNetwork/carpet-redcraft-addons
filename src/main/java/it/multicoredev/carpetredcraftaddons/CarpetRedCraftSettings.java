@@ -181,6 +181,13 @@ public class CarpetRedCraftSettings {
     )
     public static boolean azaleaTree = true;
 
+    @Rule(
+            desc = "Allow you to locate player.",
+            appSource = "locateplayer",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean locatePlayer = true;
+
     // ------------------------------------------------ //
 
     @Rule(
