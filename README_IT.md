@@ -56,6 +56,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
 - [redcraft2Teleport](#redcraft2Teleport)
 - [redSandstoneCraftingCompatibility](#redSandstoneCraftingCompatibility)
+- [reviveCoral](#reviveCoral)
 - [ropes](#ropes)
 - [sandstoneCraftingCompatibility](#sandstoneCraftingCompatibility)
 - [silkyBlockstates](#silkyBlockstates)
@@ -469,6 +470,15 @@ Aggiunge maggiore compatibilità frai crafting dei blocchi di arenaria rossa
 - Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## reviveCoral
+
+Permette di resuscitare i coralli con le bottiglie d'acqua
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## ropes
 

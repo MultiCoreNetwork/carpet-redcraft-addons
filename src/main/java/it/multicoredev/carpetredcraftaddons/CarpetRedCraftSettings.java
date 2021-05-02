@@ -181,6 +181,13 @@ public class CarpetRedCraftSettings {
     )
     public static boolean azaleaTree = true;
 
+    @Rule(
+            desc = "Allow to revive dead coral with water bottle",
+            appSource = "revivecoral",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean reviveCoral = true;
+
     // ------------------------------------------------ //
 
     @Rule(
