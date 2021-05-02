@@ -46,6 +46,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
 - [graves](#graves)
+- [honeyStickyPistonCrafting](#honeyStickyPistonCrafting)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
@@ -376,6 +377,15 @@ Create personal graves when the player dies
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## honeyStickyPistonCrafting
+
+Allow you to craft sticky piston with honey bottle
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## horseStats
 
