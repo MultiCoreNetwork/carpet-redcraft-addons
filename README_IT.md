@@ -46,7 +46,6 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
 - [graves](#graves)
-- [honeyStickyPistonCrafting](#honeyStickyPistonCrafting)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
@@ -378,15 +377,6 @@ Crea una tomba personale alla morte del giocatore
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
-## honeyStickyPistonCrafting
-
-Permette di craftare i pistoni appiccicosi con le bottiglie di miele
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## horseStats
 
