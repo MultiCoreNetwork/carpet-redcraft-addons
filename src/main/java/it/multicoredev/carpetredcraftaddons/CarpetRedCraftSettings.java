@@ -388,4 +388,10 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
     public static boolean craftableLight = true;
+
+    @Rule(
+            desc = "Allow you to craft sticky piston with honey bottle.",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
+    )
+    public static boolean honeyStickyPistonCrafting = true;
 }

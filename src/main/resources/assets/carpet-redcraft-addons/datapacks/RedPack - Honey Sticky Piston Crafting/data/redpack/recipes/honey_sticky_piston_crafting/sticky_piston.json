@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+      {
+          "item": "minecraft:piston"
+      },
+      {
+        "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+      "item": "minecraft:sticky_piston"
+  }
+}
