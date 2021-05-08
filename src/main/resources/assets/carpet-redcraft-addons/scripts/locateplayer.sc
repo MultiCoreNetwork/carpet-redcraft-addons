@@ -15,18 +15,14 @@ __config() -> {
     distanza = floor(_euclidean(executorposition, playerposition));
     if (executrdimension == dimensione,
     print(executorname, format('w The player ' + locatedplayer + ' is at ', 'l [' + posizione + ']', '^di Click to tp', '!/execute in ' + dimensione + ' run tp ' + executorname + ' ' + locatedplayer, 'w  (' + distanza + ' blocks away)')),
-    print(executorname, format('w The player ' + locatedplayer + ' is at ', 'l [' + posizione + ']', '^di Click to tp', '!/execute in ' + dimensione + ' run tp ' + executorname + ' ' + locatedplayer, 'w  (' + dimensionew  + ')'))
+    print(executorname, format('w The player ' + locatedplayer + ' is at ', 'l [' + posizione + ']', '^di Click to tp', '!/execute in ' + dimensione + ' run tp ' + executorname + ' ' + locatedplayer, 'w  (' + dimensione  + ')'))
     )
     )
     },
     'arguments' -> {
         'locatedplayer' -> {
-           'type' -> 'term',
-           'suggester' -> _(args) -> (
-              nameset = {''};
-              for(player('all'), nameset += _);
-              keys(nameset)
-           ),
+           'type' -> 'players',
+           'single' -> true,
         }
     }
 }
