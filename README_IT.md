@@ -51,6 +51,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
+- [locatePlayer](#locatePlayer)
 - [moreWanderingTrades](#moreWanderingTrades)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
@@ -420,6 +421,15 @@ Usano una membrana di phantom su una cornice per oggetti, la renderà invisibile
 Alla morte verrà consegnata una bussola che punta nel luogo di morte
 
 Sarà possibile riottenere tale bussola premendo con il tasto destro una bussola mentre ci si accovaccia
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## locatePlayer
+
+Permette di localizzare i giocatori
 
 - Type: `boolean`
 - Default value: `true`

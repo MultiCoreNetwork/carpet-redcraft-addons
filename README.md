@@ -51,6 +51,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
+- [locatePlayer](#locatePlayer)
 - [moreWanderingTrades](#moreWanderingTrades)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
@@ -417,6 +418,15 @@ Right clicking with a Phantom Membrane on an Item Frame will make it invisible
 ## lastDeathCompass
 
 Allows to right click a compass to make it point towards the last death point
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## locatePlayer
+
+Allow you to locate player
 
 - Type: `boolean`
 - Default value: `true`
