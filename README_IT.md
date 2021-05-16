@@ -14,6 +14,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 ## Regole
 - [azaleaTree](#azaleaTree)
 - [betterArmorStands](#betterArmorStands)
+- [betterItemFrames](#betterItemFrames)
 - [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
 - [commandPlayerme](#commandPlayerme)
@@ -40,6 +41,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [craftableStrippedWood](#craftableStrippedWood)
 - [craftableTallGrass](#craftableTallGrass)
 - [craftableTuffAndCalcite](#craftableTuffAndCalcite)
+- [crumbleConcrete](#crumbleConcrete)
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
 - [endermanNoGrief](#endermanNoGrief)
@@ -50,6 +52,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
+- [locatePlayer](#locatePlayer)
 - [moreWanderingTrades](#moreWanderingTrades)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
@@ -90,6 +93,15 @@ Getta a terra degli oggetti al supporto per armature per modificargli alcune pro
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## betterArmorStands
+
+Usano una membrana di phantom o un pannello di vetro su una cornice per oggetti, la renderà invisibile o fissa
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## colorableShulkers
 
@@ -325,6 +337,15 @@ Permette di craftare il tufo e la calcite
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
+## crumbleConcrete
+
+Permette di trasformare il calcestruzzo in polvere di calcestruzzo riempiendo una bottiglia d'acqua
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
 ## disableOPsCommandFeedback
 
 Disabilita il feedback dei coomandi per i giocatori OP di livello 1
@@ -397,20 +418,20 @@ Gli zombi secchi rilasciano sabbia alla loro morte
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
 
-## invisibleItemframe
+## lastDeathCompass
 
-Usano una membrana di phantom su una cornice per oggetti, la renderà invisibile
+Alla morte verrà consegnata una bussola che punta nel luogo di morte
+
+Sarà possibile riottenere tale bussola premendo con il tasto destro una bussola mentre ci si accovaccia
 
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## lastDeathCompass
+## locatePlayer
 
-Alla morte verrà consegnata una bussola che punta nel luogo di morte
-
-Sarà possibile riottenere tale bussola premendo con il tasto destro una bussola mentre ci si accovaccia
+Permette di localizzare i giocatori
 
 - Type: `boolean`
 - Default value: `true`
@@ -453,7 +474,7 @@ Aggiunge maggiore compatibilità frai crafting dei blocchi di quarzo
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## redcraft2Teleport
+## redcraft
 
 Gestisce il teletrasporto infradimensionale fra i 2 server
 

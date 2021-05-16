@@ -14,6 +14,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 ## Rules
 - [azaleaTree](#azaleaTree)
 - [betterArmorStands](#betterArmorStands)
+- [betterItemFrames](#betterItemFrames)
 - [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
 - [commandPlayerme](#commandPlayerme)
@@ -40,6 +41,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [craftableStrippedWood](#craftableStrippedWood)
 - [craftableTallGrass](#craftableTallGrass)
 - [craftableTuffAndCalcite](#craftableTuffAndCalcite)
+- [crumbleConcrete](#crumbleConcrete)
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
 - [endermanNoGrief](#endermanNoGrief)
@@ -48,8 +50,8 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [graves](#graves)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
-- [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
+- [locatePlayer](#locatePlayer)
 - [moreWanderingTrades](#moreWanderingTrades)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
@@ -90,6 +92,15 @@ Drop items to Armor Stands to apply them some proprieties
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## betterItemFrames
+
+Right clicking with a Phantom Membrane or Glass Pane on an Item Frame will make it invisible or fixed
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## colorableShulkers
 
@@ -324,6 +335,15 @@ Allows to craft Tuff and Calite
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
+## crumbleConcrete
+
+Allow you to transform concrete to concrete powder filling a glass bottle
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
 ## disableOPsCommandFeedback
 
 Disable Command Feedback for OPs level 1
@@ -396,18 +416,18 @@ Husks drop sand on death
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
 
-## invisibleItemframe
+## lastDeathCompass
 
-Right clicking with a Phantom Membrane on an Item Frame will make it invisible
+Allows to right click a compass to make it point towards the last death point
 
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## lastDeathCompass
+## locatePlayer
 
-Allows to right click a compass to make it point towards the last death point
+Allow you to locate player
 
 - Type: `boolean`
 - Default value: `true`
@@ -450,9 +470,9 @@ Adds crafting compatibility with all types of Quartz Block
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## redcraft2Teleport
+## redcraft
 
-Glowing squids spawns in deep ocean biomes
+Portals in RedCraft2 area will link to redcraft2 dimensions
 
 - Type: `boolean`
 - Default value: `false`

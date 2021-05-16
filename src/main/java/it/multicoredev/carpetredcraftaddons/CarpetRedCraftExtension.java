@@ -48,14 +48,16 @@ public class CarpetRedCraftExtension implements CarpetExtension {
 
         // SCRIPTS
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("azaleatree", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("betteritemframes", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("colorableshulkers", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("crumbleconcrete", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("dragoneggrespawns", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("graves", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("horsestats", false));
-        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("invisibleitemframe", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("light", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("locateplayer", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("morewanderingtrades", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeableplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("playerme", false));

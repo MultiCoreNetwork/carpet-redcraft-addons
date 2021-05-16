@@ -103,11 +103,11 @@ public class CarpetRedCraftSettings {
     public static boolean silkyBlockstates = true;
 
     @Rule(
-            desc = "Right clicking with a Phantom Membrane on an Item Frame will make it invisible.",
-            appSource = "invisibleitemframe",
+            desc = "Right clicking with a Phantom Membrane or Glass Pane on an Item Frame will make it invisible or fixed.",
+            appSource = "betteritemframes",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
-    public static boolean invisibleItemframe = true;
+    public static boolean betterItemFrames = true;
 
     @Rule(
             desc = "Right clicking while sneaking on a horse/donkey/mule, will display the stats of the mob in the chat.",
@@ -187,6 +187,20 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean reviveCoral = true;
+
+    @Rule(
+            desc = "Allow you to locate player.",
+            appSource = "locateplayer",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean locatePlayer = true;
+
+    @Rule(
+            desc = "Allow you to transform concrete to concrete powder filling a glass bottle",
+            appSource = "crumbleconcrete",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean crumbleConcrete = true;
 
     // ------------------------------------------------ //
 
