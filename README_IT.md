@@ -40,6 +40,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [craftableStrippedWood](#craftableStrippedWood)
 - [craftableTallGrass](#craftableTallGrass)
 - [craftableTuffAndCalcite](#craftableTuffAndCalcite)
+- [crumbleConcrete](#crumbleConcrete)
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
 - [endermanNoGrief](#endermanNoGrief)
@@ -323,6 +324,15 @@ Permette di craftare il tufo e la calcite
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## crumbleConcrete
+
+Permette di trasformare il calcestruzzo in polvere di calcestruzzo riempiendo una bottiglia d'acqua
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## disableOPsCommandFeedback
 
