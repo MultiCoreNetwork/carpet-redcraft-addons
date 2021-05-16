@@ -58,6 +58,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
 - [redcraft2Teleport](#redcraft2Teleport)
 - [redSandstoneCraftingCompatibility](#redSandstoneCraftingCompatibility)
+- [reviveCoral](#reviveCoral)
 - [ropes](#ropes)
 - [sandstoneCraftingCompatibility](#sandstoneCraftingCompatibility)
 - [silkyBlockstates](#silkyBlockstates)
@@ -486,6 +487,15 @@ Adds crafting compatibility with all types of Red Sandstone
 - Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## reviveCoral
+
+Allow to revive dead coral with water bottle
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## ropes
 
