@@ -14,6 +14,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 ## Rules
 - [azaleaTree](#azaleaTree)
 - [betterArmorStands](#betterArmorStands)
+- [betterItemFrames](#betterItemFrames)
 - [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
 - [commandPlayerme](#commandPlayerme)
@@ -48,7 +49,6 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [graves](#graves)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
-- [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
 - [placeablePlants](#placeablePlants)
@@ -89,6 +89,15 @@ Drop items to Armor Stands to apply them some proprieties
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## betterItemFrames
+
+Right clicking with a Phantom Membrane or Glass Pane on an Item Frame will make it invisible or fixed
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## colorableShulkers
 
@@ -395,15 +404,6 @@ Husks drop sand on death
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
 
-## invisibleItemframe
-
-Right clicking with a Phantom Membrane on an Item Frame will make it invisible
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
 ## lastDeathCompass
 
 Allows to right click a compass to make it point towards the last death point
@@ -449,9 +449,9 @@ Adds crafting compatibility with all types of Quartz Block
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## redcraft2Teleport
+## redcraft
 
-Glowing squids spawns in deep ocean biomes
+Portals in RedCraft2 area will link to redcraft2 dimensions
 
 - Type: `boolean`
 - Default value: `false`

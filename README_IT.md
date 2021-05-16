@@ -14,6 +14,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 ## Regole
 - [azaleaTree](#azaleaTree)
 - [betterArmorStands](#betterArmorStands)
+- [betterItemFrames](#betterItemFrames)
 - [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
 - [commandPlayerme](#commandPlayerme)
@@ -89,6 +90,15 @@ Getta a terra degli oggetti al supporto per armature per modificargli alcune pro
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## betterArmorStands
+
+Usano una membrana di phantom o un pannello di vetro su una cornice per oggetti, la renderà invisibile o fissa
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## colorableShulkers
 
@@ -396,15 +406,6 @@ Gli zombi secchi rilasciano sabbia alla loro morte
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
 
-## invisibleItemframe
-
-Usano una membrana di phantom su una cornice per oggetti, la renderà invisibile
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
 ## lastDeathCompass
 
 Alla morte verrà consegnata una bussola che punta nel luogo di morte
@@ -452,7 +453,7 @@ Aggiunge maggiore compatibilità frai crafting dei blocchi di quarzo
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## redcraft2Teleport
+## redcraft
 
 Gestisce il teletrasporto infradimensionale fra i 2 server
 

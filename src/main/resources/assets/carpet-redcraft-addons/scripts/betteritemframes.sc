@@ -8,10 +8,10 @@ __on_player_interacts_with_entity(player, entity, hand) -> (
     rotation = (7 + entity~'nbt':'ItemRotation') % 8;
     if(
         item == 'phantom_membrane' && !entity~'nbt':'Invisible',
-            modify(entity, 'nbt_merge', str('{ItemRotation:%s,Invisible:true}', rotation));
+            modify(entity, 'nbt_merge', '{Invisible:true' + if(!entity~'nbt':'Fixed', ',ItemRotation:'+rotation, '') + '}');
             _drop_phantom_membrane_on_remove(entity),
         item == 'glass_pane' && !entity~'nbt':'Fixed',
-            modify(entity, 'nbt_merge', str('{ItemRotation:%s,Fixed:true}', rotation)),
+            modify(entity, 'nbt_merge', '{Fixed:true}'),
         item ~ '_axe$' && entity~'nbt':'Fixed',
             modify(entity, 'nbt_merge', str('{ItemRotation:%s,Fixed:false}', rotation));
             spawn('item', pos(entity), str('{Item:{id:"minecraft:glass_pane",Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', rand(0.2) - 0.1, rand(0.2) - 0.1));
