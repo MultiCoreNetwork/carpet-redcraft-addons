@@ -40,6 +40,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [craftableStrippedWood](#craftableStrippedWood)
 - [craftableTallGrass](#craftableTallGrass)
 - [craftableTuffAndCalcite](#craftableTuffAndCalcite)
+- [crumbleConcrete](#crumbleConcrete)
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
 - [endermanNoGrief](#endermanNoGrief)
@@ -323,6 +324,15 @@ Allows to craft Tuff and Calite
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## crumbleConcrete
+
+Allow you to transform concrete to concrete powder filling a glass bottle
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## disableOPsCommandFeedback
 

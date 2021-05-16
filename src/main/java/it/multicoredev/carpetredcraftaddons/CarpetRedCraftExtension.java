@@ -49,6 +49,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         // SCRIPTS
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("azaleatree", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("colorableshulkers", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("crumbleconcrete", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("dragoneggrespawns", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("graves", false));

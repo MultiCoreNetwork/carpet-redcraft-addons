@@ -188,6 +188,13 @@ public class CarpetRedCraftSettings {
     )
     public static boolean locatePlayer = true;
 
+    @Rule(
+            desc = "Allow you to transform concrete to concrete powder filling a glass bottle",
+            appSource = "crumbleconcrete",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean crumbleConcrete = true;
+
     // ------------------------------------------------ //
 
     @Rule(
