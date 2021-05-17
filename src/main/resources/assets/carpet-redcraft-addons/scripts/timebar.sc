@@ -37,4 +37,8 @@ fast_looper();
 
 __on_player_connects(players) -> (
     bossbar('redcraft:timebar','add_player',players)
+);
+
+__on_close() -> (
+    bossbar('redcraft:timebar', 'visible', false)
 )

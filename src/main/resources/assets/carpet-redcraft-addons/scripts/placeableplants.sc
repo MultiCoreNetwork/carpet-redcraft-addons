@@ -13,6 +13,12 @@ flat_surface(block) ->
     block ~ '_stairs$' && block_state(block, 'half') == 'top' ||
     block ~ '_slab$' && (block_state(block, 'type') == 'top' || block_state(block, 'type') == 'double');
 
+_item_to_block(item) ->
+if(
+    item == 'sweet_berries', 'sweet_berry_bush',
+    item
+);
+
 _placeable(player, item_tuple, hand, block, face) -> (
     g = player ~ 'gamemode';
     if(g == 'spectator' || !item_tuple, return());
@@ -22,13 +28,13 @@ _placeable(player, item_tuple, hand, block, face) -> (
     b1 = pos_offset(block, face);
     if(!air(b1), return());
     without_updates(
-        if(has(global_placeable_tall_items, item),
-            b2 = pos_offset(b1, face);
-            if(!air(b2), return());
-            set(b1, item, 'half', 'lower');
-            set(b2, item, 'half', 'upper');
-        else,
-            set(b1, item)
+        if(
+            has(global_placeable_tall_items, item),
+                b2 = pos_offset(b1, face);
+                if(!air(b2), return());
+                set(b1, item, 'half', 'lower');
+                set(b2, item, 'half', 'upper'),
+            set(b1, _item_to_block(item))
         )
     );
     sound(str('block.%s.place', block_sound(block(b1))), b1, 1, 1, 'block');

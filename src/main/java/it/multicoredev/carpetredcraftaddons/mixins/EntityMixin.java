@@ -24,7 +24,7 @@ public class EntityMixin {
     @Redirect(method = "tickNetherPortal", at = @At(value = "INVOKE", target = "Lnet/minecraft/server/MinecraftServer;getWorld(Lnet/minecraft/util/registry/RegistryKey;)Lnet/minecraft/server/world/ServerWorld;"))
     private ServerWorld getCorrectWorld(MinecraftServer minecraftServer, RegistryKey<World> registryKey){
         /* 1.17
-        if(!CarpetRedCraftSettings.redcraft2Teleport)
+        if(!CarpetRedCraftSettings.redcraft)
             return minecraftServer.getWorld(registryKey);
         if (this.world.getRegistryKey() == World.NETHER && (Math.abs(pos.x) < 1000 && Math.abs(pos.z) < 1000))
             registryKey = RegistryKey.of(Registry.DIMENSION, new Identifier("redcraft2", "overworld"));

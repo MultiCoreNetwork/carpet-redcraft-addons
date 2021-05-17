@@ -12,6 +12,7 @@ import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
 import it.multicoredev.carpetredcraftaddons.commands.OpCommand;
 import it.multicoredev.carpetredcraftaddons.commands.PublishCommand;
 import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
+import it.multicoredev.carpetredcraftaddons.functions.StructuresFunctions;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProfile;
 import net.minecraft.server.MinecraftServer;
@@ -49,21 +50,24 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         /* 1.17
          CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("azaleatree", false));
          */
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("betteritemframes", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("colorableshulkers", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("crumbleconcrete", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("dragoneggrespawns", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("floatingladders", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("graves", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("horsestats", false));
-        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("invisibleitemframe", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
         /* 1.17
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("light", false));
          */
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("locateplayer", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("morewanderingtrades", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeableplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("playerme", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("prunedplants", false));
-        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("redcrafttwoteleport", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("redcraft", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("revivecoral", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("ropes", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("silkyblockstates", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("sitanywhere", false));
@@ -134,6 +138,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
     @Override
     public void scarpetApi(CarpetExpression expression) {
         OfflineStatisticFunction.apply(expression.getExpr());
+        StructuresFunctions.apply(expression.getExpr());
     }
 
     @Override

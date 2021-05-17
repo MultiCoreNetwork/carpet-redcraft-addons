@@ -37,6 +37,7 @@ global_tools = ['_axe','_pickaxe','_hoe','_shovel'];
 global_luck = 1/(1-4/7);
 
 _add_random_trades(villager) -> (
+    modify(villager, 'tag', 'gb.moretrades');
 
     // 1.17 SPORE_BLOSSOMS -> 10%
     // if(rand(1/(1-0.1)),
@@ -71,11 +72,13 @@ _add_random_trades(villager) -> (
 
     // TREECAPITATOR -> 10.5%
     if(rand(1/(1-0.105)),
-        item = if(rand(global_luck),'iron_axe','diamond_axe');
-        trade = _new_trade([item,1],['emerald',floor(rand(8)+8)],[item,1]);
+        item = if(rand(global_luck), 'iron_axe', 'diamond_axe');
+        trade = _new_trade([item,1], ['emerald', floor(rand(8) + 8)], [item,1]);
         trade:'sell.tag' = nbt('{display:{Lore:[\'{"text":"TreeCapitator","color":"red","italic":false}\']},Enchantments:[{id:"redcraft:treecapitator",lvl:1s}]}');
         _add_trade(villager, trade)
     )
 );
 
-entity_load_handler('wandering_trader', '_add_random_trades');
+entity_load_handler('wandering_trader', _(villager) ->
+    if(!villager ~ ['has_scoreboard_tag', 'gb.moretrades'], _add_random_trades(villager))
+);

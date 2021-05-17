@@ -33,7 +33,7 @@ _store_waystone(player, nbt) -> (
     if(!nbt, nbt = nbt('{}'));
     nbt:'waystone_pos' = encode_nbt(player~'pos');
     nbt:'waystone' = nbt('-1b');
-    nbt:'waystone_dimension' = player~'dimension';
+    nbt:'waystone_dimension' = encode_nbt(player~'dimension');
     if(lore=nbt:'display.Lore', lore = parse_nbt(lore), lore = []);
     lore += str('{"text":"Coordinates: %.02f %.02f %.02f","color":"white","italic":false}', player~'pos');
     lore += str('{"text":"Dimension: %s","color":"white","italic":false}', title(replace(player~'dimension','_',' ')));
@@ -93,7 +93,8 @@ __on_player_trades(player, entity, buy_left, buy_right, sell) -> if(sell:2:'ways
     ));
     print(player,format('l The teleportation has been completed successfully.'));
     sound('entity.enderman.teleport', pos(player), 1.0, 1, 'player');
-    schedule(0, _(outer(player),outer(sell)) -> 
-        run(str('clear %s %s{waystone:1b}',player~'command_name',sell:0))
-    )
+    schedule(0, _(outer(player),outer(sell)) -> (
+        run(str('clear %s %s{waystone:1b}',player~'command_name',sell:0));
+        run('kill @e[type=item,nbt={Item:{tag:{waystone:1b}}}]')
+    ))
 )
