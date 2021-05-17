@@ -94,7 +94,7 @@ Getta a terra degli oggetti al supporto per armature per modificargli alcune pro
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## betterArmorStands
+## betterItemFrames
 
 Usano una membrana di phantom o un pannello di vetro su una cornice per oggetti, la renderà invisibile o fissa
 
