@@ -38,6 +38,3 @@ if(entity~'nbt':'Invisible',
 
 entity_load_handler('item_frame', '_check_custom_drop');
 for(entity_list('item_frame'), _check_custom_drop(_));
-
-entity_load_handler('glow_item_frame', '_check_custom_drop');
-for(entity_list('glow_item_frame'), _check_custom_drop(_))
