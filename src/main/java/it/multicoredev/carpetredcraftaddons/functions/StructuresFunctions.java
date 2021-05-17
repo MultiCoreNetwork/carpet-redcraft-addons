@@ -91,7 +91,7 @@ public class StructuresFunctions {
             }
 
             structure.setAuthor(cc.s.getName());
-            structure.saveFromWorld(cc.s.getWorld(), new BlockPos(minx, miny, minz), new Vec3i(sizex, sizey, sizez), params.get(pos2Locator.offset).getBoolean(), ignoredBlock);
+            structure.saveFromWorld(cc.s.getWorld(), new BlockPos(x1, y1, z1), new BlockPos(x2, y2, z2), params.get(pos2Locator.offset).getBoolean(), ignoredBlock);
 
             if(params.get(pos2Locator.offset + 2).getBoolean())
                 structureManager.saveStructure(structureIdentifier);
