@@ -36,7 +36,7 @@ import static java.util.stream.Collectors.toList;
 public class CarpetRedCraftExtension implements CarpetExtension {
     public static final String MOD_ID = "carpet-redcraft-addons";
     public static final String MOD_NAME = "Carpet RedCraft Addons";
-    public static final String MOD_VERSION = "1.4.29";
+    public static final String MOD_VERSION = "1.4.34";
 
     static {
         CarpetServer.manageExtension(new CarpetRedCraftExtension());
