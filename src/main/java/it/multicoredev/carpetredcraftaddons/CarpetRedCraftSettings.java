@@ -1,7 +1,6 @@
 package it.multicoredev.carpetredcraftaddons;
 
 import carpet.settings.Rule;
-import net.minecraft.block.SpongeBlock;
 
 import static carpet.settings.RuleCategory.*;
 
@@ -182,13 +181,6 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean moreWanderingTrades = true;
-
-    @Rule(
-            desc = "Allow Flowering Azalea to grow by bonemealing it.",
-            appSource = "azaleatree",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
-    )
-    public static boolean azaleaTree = true;
 
     @Rule(
             desc = "Allow to revive dead coral with water bottle",

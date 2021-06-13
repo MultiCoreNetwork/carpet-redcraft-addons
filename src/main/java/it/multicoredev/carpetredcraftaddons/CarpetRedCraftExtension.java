@@ -47,7 +47,6 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetServer.settingsManager.parseSettingsClass(CarpetRedCraftSettings.class);
 
         // SCRIPTS
-        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("azaleatree", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("betteritemframes", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("colorableshulkers", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("crumbleconcrete", false));
