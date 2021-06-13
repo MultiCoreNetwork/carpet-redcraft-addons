@@ -30,7 +30,7 @@ _valid_item(player) -> (
 	[item, count, nbt] = if(h=player~'holds', h, return(false));
     if(item ~ '_axe$' == null, return(false));
     if(max(nbt:'Enchantments[{id:"redcraft:treecapitator"}]'<1),
-        if(nbt:'display.Lore[]' ~ '\\{"text":"TreeCapitator","color":"red","italic":false\\}' == null,
+        if(str(nbt:'display.Lore[]') ~ '\\{"text":"TreeCapitator","color":"red","italic":false\\}' == null,
             return(false),
             ench = parse_nbt(if(t = nbt:'Enchantments', t, '[]'));
             ench += {'id' -> 'redcraft:treecapitator', 'lvl'->1};

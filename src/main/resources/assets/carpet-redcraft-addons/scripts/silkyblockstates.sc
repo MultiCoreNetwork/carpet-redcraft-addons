@@ -92,6 +92,7 @@ _nbt_block_item(block) -> (
 // merges the block's blockstates into the dropped-item spawned
 _preserve_block_state(player, block) -> (
     blockstate = block_state(block);
+    if(block == 'composter' && block_state(block, 'level') == 8, return());
     if(block ~ 'wall_' != null, blockstate:'wall'='true');
     if(_match_any(block,global_plants), blockstate:'plant'='true');
     if(!blockstate && !_match_any(block, global_convert_item_whitelist), return());
@@ -159,7 +160,7 @@ __waterlogged_silked(item_tuple) -> (
 _valid_item(player) -> (
 	[item, count, nbt] = if(h=player~'holds', h, return(false));
     if(max(nbt:'Enchantments[{id:"redcraft:silkyblockstate"}]'<1),
-        if(nbt:'display.Lore[]' ~ '\\{"text":"Silky Blockstate","color":"red","italic":false\\}' == null,
+        if(str(nbt:'display.Lore[]') ~ '\\{"text":"Silky Blockstate","color":"red","italic":false\\}' == null,
             return(false),
             ench = parse_nbt(if(t=nbt:'Enchantments',t,'[]'));
             ench += {'id'->'redcraft:silkyblockstate', 'lvl'->1};

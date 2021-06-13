@@ -24,6 +24,7 @@ import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.registry.Registry;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.Random;
 
 import static java.lang.Math.max;
@@ -112,12 +113,12 @@ public class StructuresFunctions {
             if (lv.size() < pos1Locator.offset + 1) params.add(Value.FALSE);
 
             StructureManager structureManager = cc.s.getMinecraftServer().getStructureManager();
-            Structure structure;
+            Optional<Structure> structure;
 
             try {
                 Identifier identifier = new Identifier(params.get(0).getString());
                 structure = structureManager.getStructure(identifier);
-                if (structure == null) throw new ThrowStatement(identifier.toString(), Throwables.UNKNOWN_STRUCTURE);
+                if (!structure.isPresent()) throw new ThrowStatement(identifier.toString(), Throwables.UNKNOWN_STRUCTURE);
             } catch (InvalidIdentifierException ignored) {
                 return LazyValue.NULL;
             }
@@ -130,11 +131,11 @@ public class StructuresFunctions {
             StructurePlacementData structurePlacementData = new StructurePlacementData().setIgnoreEntities(!params.get(pos1Locator.offset).getBoolean());
 
             if (!CarpetSettings.fillUpdates)
-                CarpetSettings.impendingFillSkipUpdates = true;
+                CarpetSettings.impendingFillSkipUpdates.set(true);
             try {
-                return (_c, _t) -> BooleanValue.of(structure.place(cc.s.getWorld(), pos1, pos1, structurePlacementData, new Random(Util.getMeasuringTimeMs()), 2));
+                return (_c, _t) -> BooleanValue.of(structure.get().place(cc.s.getWorld(), pos1, pos1, structurePlacementData, new Random(Util.getMeasuringTimeMs()), 2));
             } finally {
-                CarpetSettings.impendingFillSkipUpdates = false;
+                CarpetSettings.impendingFillSkipUpdates.set(false);
             }
         });
     }
