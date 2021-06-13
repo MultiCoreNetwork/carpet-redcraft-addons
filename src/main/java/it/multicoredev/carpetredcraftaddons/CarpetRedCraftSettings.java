@@ -194,7 +194,7 @@ public class CarpetRedCraftSettings {
             appSource = "locateplayer",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
-    public static boolean locatePlayer = true;
+    public static boolean commandLocatePlayer = true;
 
     @Rule(
             desc = "Allow you to transform concrete to concrete powder filling a glass bottle",
