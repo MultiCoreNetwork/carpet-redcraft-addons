@@ -50,6 +50,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [graves](#graves)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
+- [lavaSponges](#lavaSponges)
 - [lastDeathCompass](#lastDeathCompass)
 - [locatePlayer](#locatePlayer)
 - [moreWanderingTrades](#moreWanderingTrades)
@@ -422,6 +423,15 @@ Allows to right click a compass to make it point towards the last death point
 
 - Type: `boolean`
 - Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## lavaSponges
+
+Sponges work on lava too, but they will burn.
+
+- Type: `boolean`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 

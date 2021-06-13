@@ -52,6 +52,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [huskDropsSand](#huskDropsSand)
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
+- [lavaSponges](#lavaSponges)
 - [locatePlayer](#locatePlayer)
 - [moreWanderingTrades](#moreWanderingTrades)
 - [placeablePlants](#placeablePlants)
@@ -426,6 +427,15 @@ Sarà possibile riottenere tale bussola premendo con il tasto destro una bussola
 
 - Type: `boolean`
 - Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## lavaSponges
+
+Le spugne funzioneranno anche con la lava, ma bruceranno.
+
+- Type: `boolean`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 

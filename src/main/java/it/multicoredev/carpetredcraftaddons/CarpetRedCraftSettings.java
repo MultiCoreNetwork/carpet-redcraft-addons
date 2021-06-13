@@ -1,6 +1,7 @@
 package it.multicoredev.carpetredcraftaddons;
 
 import carpet.settings.Rule;
+import net.minecraft.block.SpongeBlock;
 
 import static carpet.settings.RuleCategory.*;
 
@@ -15,6 +16,14 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean redcraft = false;
+
+    @Rule(
+            desc = "Sponges work on lava too, but they will burn.",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean lavaSponges = false;
+
+    // ------------------------------------------------ //
 
     @Rule(
             desc = "Deopped players can do /player on themselves",
