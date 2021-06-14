@@ -211,6 +211,13 @@ public class CarpetRedCraftSettings {
     )
     public static boolean commandLookme = true;
 
+    @Rule(
+            desc = "Allows ArmorStand editing with Hoe",
+            appSource = "armorstandeditor",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean armorStandEditor = true;
+
     // ------------------------------------------------ //
 
     @Rule(

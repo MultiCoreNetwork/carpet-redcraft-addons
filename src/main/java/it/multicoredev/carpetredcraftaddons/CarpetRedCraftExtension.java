@@ -47,6 +47,7 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
         CarpetServer.settingsManager.parseSettingsClass(CarpetRedCraftSettings.class);
 
         // SCRIPTS
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("armorstandeditor", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("betteritemframes", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("colorableshulkers", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("crumbleconcrete", false));

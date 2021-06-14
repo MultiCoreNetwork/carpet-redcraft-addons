@@ -12,6 +12,7 @@ A [Carpet mod](https://github.com/gnembon/fabric-carpet) (fabric-carpet) extensi
 Use with carpet mod in the same Minecraft version. Use newer carpet mod versions whenever possible
 
 ## Rules
+- [armorStandEditor](#armorStandEditor)
 - [betterArmorStands](#betterArmorStands)
 - [betterItemFrames](#betterItemFrames)
 - [craftableBricks](#craftableBricks)
@@ -74,6 +75,15 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
 
+## armorStandEditor [BETA]
+
+Allows ArmorStand editing with Hoe
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
 ## betterArmorStands
 
 Drop items to Armor Stands to apply them some proprieties
@@ -81,7 +91,7 @@ Drop items to Armor Stands to apply them some proprieties
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
 
 ## betterItemFrames
 

@@ -12,6 +12,7 @@ Un'estensione della [Carpet mod](https://github.com/gnembon/fabric-carpet) (fabr
 Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usare versioni aggiornate della Carpet Mod non appena possibile
 
 ## Regole
+- [armorStandEditor](#armorStandEditor)
 - [betterArmorStands](#betterArmorStands)
 - [betterItemFrames](#betterItemFrames)
 - [craftableBricks](#craftableBricks)
@@ -74,6 +75,15 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [stonecutterWood](#stonecutterWood)
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
+
+## armorStandEditor [BETA]
+
+Premette di modificare la posa del support oper armature con la zappa
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## betterArmorStands
 
