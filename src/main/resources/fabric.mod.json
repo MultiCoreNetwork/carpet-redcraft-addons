@@ -23,6 +23,7 @@
   "environment": "*",
   "entrypoints": {
     "main": [
+        "it.multicoredev.carpetredcraftaddons.CarpetRedCraftAddons"
     ]
   },
   "mixins": [
