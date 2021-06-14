@@ -2,8 +2,8 @@
 
 [![License](https://img.shields.io/github/license/MultiCoreNetwork/carpet-redcraft-addons.svg)](http://www.gnu.org/licenses/lgpl-3.0.html)
 [![Issues](https://img.shields.io/github/issues/MultiCoreNetwork/carpet-redcraft-addons.svg)](https://github.com/MultiCoreNetwork/carpet-redcraft-addons/issues)
-<!--[![MC Versions](http://cf.way2muchnoise.eu/versions/For%20MC_carpet-redcraft-addons_all.svg)](https://www.curseforge.com/minecraft/mc-mods/carpet-redcraft-addons)-->
-<!--[![CurseForge](http://cf.way2muchnoise.eu/full_carpet-redcraft-addons_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/carpet-redcraft-addons)-->
+[![MC Versions](http://cf.way2muchnoise.eu/versions/For%20MC_carpet-redcraft-addons_all.svg)](https://www.curseforge.com/minecraft/mc-mods/carpet-redcraft-addons)
+[![CurseForge](http://cf.way2muchnoise.eu/full_carpet-redcraft-addons_downloads.svg)](https://www.curseforge.com/minecraft/mc-mods/carpet-redcraft-addons)
 
 [>>> ENGLISH <<<](https://github.com/MultiCoreNetwork/carpet-redcraft-addons/blob/master/README.md)
 
