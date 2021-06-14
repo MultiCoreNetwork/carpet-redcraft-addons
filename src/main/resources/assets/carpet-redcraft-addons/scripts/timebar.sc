@@ -16,7 +16,7 @@ _command() -> (
 
 bossbar('redcraft:timebar');
 bossbar('redcraft:timebar', 'max', 24000);
-bossbar('redcraft:timebar', 'visible', true)
+bossbar('redcraft:timebar', 'visible', true);
 
 _date(tick) -> str('%dg %02d:%02d:%02d',
     floor(tick/1728000),
