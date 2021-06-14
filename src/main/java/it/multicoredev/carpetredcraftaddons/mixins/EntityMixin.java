@@ -1,5 +1,6 @@
 package it.multicoredev.carpetredcraftaddons.mixins;
 
+import carpet.network.CarpetClient;
 import it.multicoredev.carpetredcraftaddons.CarpetRedCraftSettings;
 import net.minecraft.entity.Entity;
 import net.minecraft.server.MinecraftServer;

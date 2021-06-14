@@ -16,6 +16,8 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [betterItemFrames](#betterItemFrames)
 - [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
+- [commandLocatePlayer](#commandLocatePlayer)
+- [commandLookme](#commandLookme)
 - [commandPlayerme](#commandPlayerme)
 - [commandSkull](#commandSkull)
 - [commandStats](#commandStats)
@@ -51,7 +53,6 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [huskDropsSand](#huskDropsSand)
 - [lavaSponges](#lavaSponges)
 - [lastDeathCompass](#lastDeathCompass)
-- [locatePlayer](#locatePlayer)
 - [moreWanderingTrades](#moreWanderingTrades)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
@@ -94,6 +95,24 @@ Right clicking with a Phantom Membrane or Glass Pane on an Item Frame will make 
 ## colorableShulkers
 
 Allows to dye Shulkers
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## commandLocatePlayer
+
+Allow you to locate player
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
+
+## commandLookme
+
+Adds the /lookme command to rotate entities
 
 - Type: `boolean`
 - Default value: `true`
@@ -192,7 +211,8 @@ Allows to smelt saplings to get Dead Bushes
 
 ## craftableDeepslateOres
 
-You can craft deepslate ore in smithing table.
+You can craft deepslate ore in smithing table
+
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
@@ -416,19 +436,10 @@ Allows to right click a compass to make it point towards the last death point
 
 ## lavaSponges
 
-Sponges work on lava too, but they will burn.
+Sponges work on lava too, but they will burn
 
 - Type: `boolean`
 - Default value: `false`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
-## locatePlayer
-
-Allow you to locate player
-
-- Type: `boolean`
-- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 

@@ -11,8 +11,10 @@ import com.mojang.brigadier.CommandDispatcher;
 import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
 import it.multicoredev.carpetredcraftaddons.commands.OpCommand;
 import it.multicoredev.carpetredcraftaddons.commands.PublishCommand;
+import it.multicoredev.carpetredcraftaddons.events.CarpetRedCraftEvents;
 import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
 import it.multicoredev.carpetredcraftaddons.functions.StructuresFunctions;
+import net.fabricmc.api.ModInitializer;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProfile;
 import net.minecraft.server.MinecraftServer;
@@ -20,6 +22,8 @@ import net.minecraft.server.command.ReloadCommand;
 import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.util.WorldSavePath;
 import org.apache.commons.io.IOUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.File;
 import java.io.IOException;
@@ -33,14 +37,10 @@ import java.util.Map;
 
 import static java.util.stream.Collectors.toList;
 
-public class CarpetRedCraftExtension implements CarpetExtension {
+public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer {
     public static final String MOD_ID = "carpet-redcraft-addons";
     public static final String MOD_NAME = "Carpet RedCraft Addons";
     public static final String MOD_VERSION = "1.4.34";
-
-    static {
-        CarpetServer.manageExtension(new CarpetRedCraftExtension());
-    }
 
     @Override
     public void onGameStarted() {
@@ -57,6 +57,7 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lastdeathcompass", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("light", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("locateplayer", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lookme", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("morewanderingtrades", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeableplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("playerme", false));
@@ -202,6 +203,9 @@ public class CarpetRedCraftExtension implements CarpetExtension {
         return module;
     }
 
-    public static void noop() {
+    @Override
+    public void onInitialize() {
+        CarpetRedCraftEvents.noop();
+        CarpetServer.manageExtension(new CarpetRedCraftExtension());
     }
 }

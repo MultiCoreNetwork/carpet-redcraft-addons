@@ -16,6 +16,8 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [betterItemFrames](#betterItemFrames)
 - [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
+- [commandLocatePlayer](#commandLocatePlayer)
+- [commandLookme](#commandLookme)
 - [commandPlayerme](#commandPlayerme)
 - [commandSkull](#commandSkull)
 - [commandStats](#commandStats)
@@ -52,7 +54,6 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [lavaSponges](#lavaSponges)
-- [locatePlayer](#locatePlayer)
 - [moreWanderingTrades](#moreWanderingTrades)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
@@ -95,6 +96,24 @@ Usano una membrana di phantom o un pannello di vetro su una cornice per oggetti,
 ## colorableShulkers
 
 Permette di colorare le Shulker
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
+
+## commandLocatePlayer
+
+Permette di localizzare i giocatori
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
+
+## commandLookme
+
+Aggiunge il comando /lookme per ruotare le entità
 
 - Type: `boolean`
 - Default value: `true`
@@ -424,15 +443,6 @@ Le spugne funzioneranno anche con la lava, ma bruceranno.
 
 - Type: `boolean`
 - Default value: `false`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
-## locatePlayer
-
-Permette di localizzare i giocatori
-
-- Type: `boolean`
-- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 

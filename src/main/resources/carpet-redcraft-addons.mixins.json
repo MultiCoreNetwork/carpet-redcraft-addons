@@ -4,7 +4,7 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AbstractFireBlockMixin",
-    "CrashReport_noopMixin",
+    "ArmorStandEntityMixin",
     "CustomPayloadC2SPacketMixin",
     "EntityMixin",
     "ServerCommandSourceMixin",
