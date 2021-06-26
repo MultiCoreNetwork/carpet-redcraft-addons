@@ -27,7 +27,9 @@
     ]
   },
   "mixins": [
-    "carpet-redcraft-addons.mixins.json"
+    "carpet-redcraft-addons.mixins.json",
+    "carpetextra.mixins.json",
+    "carpetaddons.mixins.json"
   ],
 
   "depends": {

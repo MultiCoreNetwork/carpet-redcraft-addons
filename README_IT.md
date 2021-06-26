@@ -626,3 +626,45 @@ Permette di legare i villager al guinzaglio
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## accurateBlockPlacement
+I client possono fornire un diverso sistema di piazzamento per i blocchi
+
+Da Carpet Extra di Gnembon
+
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `EXTRAS`, `SURVIVAL`
+
+## blockStateSyncing
+Risolve problemi di sincronizzazione delle informazioni in F3 per alcuni blocchi
+Potrebbe aumentare il traffico di rete
+Funziona con cactus, canne da zucchero, arboscelli, tramogge, distributori e gettatori
+
+Da Carpet Extra di Gnembon
+
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `EXTRAS`, `EXPERIMENTAL`
+
+## updateSuppressionCrashFix
+Risolve i crash del server dovuti alla soppressione di aggiornamenti
+
+Da Carpet Extra di Gnembon 
+
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `BUGFIX`, `EXTRAS`
+
+## carefulBreak
+Piazza i blocchi direttamente nell'inventario quando rotti accovacciandosi
+
+Da Carpet Addons di whoImT
+
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `SURVIVAL`, `FEATURE`, `EXPERIMENTAL`, `ADDONS`

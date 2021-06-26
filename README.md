@@ -75,6 +75,14 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
 
+## Rules from other Extensions
+### [Gnembon's Carpet Extra](https://github.com/gnembon/carpet-extra/)
+- [accurateBlockPlacement](#accurateBlockPlacement)
+- [blockStateSyncing](#blockStateSyncing)
+- [updateSuppressionCrashFix](#updateSuppressionCrashFix)
+### [whoImT's Carpet Addons](https://github.com/whoImT/carpet-addons/)
+- [carefulBreak](#carefulBreak)
+
 ## armorStandEditor [BETA]
 
 Allows ArmorStand editing with Hoe
@@ -623,3 +631,45 @@ Allows to leash villagers
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## accurateBlockPlacement
+Client can provide alternative block placement.
+
+From Gnembon's Carpet Extra
+
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `EXTRAS`, `SURVIVAL`
+
+## blockStateSyncing
+Fixes block states in F3 debug mode not updating for some blocks.  
+May cause increased network traffic.  
+Works with cactus, sugar cane, saplings, hoppers, dispensers and droppers.
+
+From Gnembon's Carpet Extra
+
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `EXTRAS`, `EXPERIMENTAL`  
+
+## updateSuppressionCrashFix
+Fixes updates suppression causing server crashes.
+
+From Gnembon's Carpet Extra
+
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `BUGFIX`, `EXTRAS`
+
+## carefulBreak
+Places the mined block in the player inventory when sneaking.
+
+From whoImT's Carpet Addons
+
+* Type: `boolean`
+* Default value: `false`
+* Required options: `true`, `false`
+* Categories: `SURVIVAL`, `FEATURE`, `EXPERIMENTAL`, `ADDONS`

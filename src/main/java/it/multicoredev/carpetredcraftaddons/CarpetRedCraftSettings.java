@@ -425,4 +425,35 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
     )
     public static boolean craftableLight = true;
+
+    // ------------------------------------------------ //
+
+    public static final String EXTRA = "extras";
+    public static final String ADDONS = "carpetaddons";
+    @Rule(
+            desc = "Client can provide alternative block placement.",
+            extra = {"From Gnembon's Carpet Extra"},
+            category = {EXTRA, SURVIVAL}
+    )
+    public static boolean accurateBlockPlacement = true;
+
+    @Rule(
+            desc = "Fixes updates suppression causing server crashes.",
+            extra = {"From Gnembon's Carpet Extra"},
+            category = {BUGFIX, EXTRA}
+    )
+    public static boolean updateSuppressionCrashFix = true;
+
+    @Rule(
+            desc = "Fixes block states in F3 debug mode not updating for some blocks.",
+            category = {EXTRA, EXPERIMENTAL},
+            extra = {"May cause increased network traffic.", "Works with cactus, sugar cane, saplings, hoppers, dispensers and droppers.", "From Gnembon's Carpet Extra" }
+    )
+    public static boolean blockStateSyncing = true;
+
+    @Rule(
+            desc = "Places the mined block in the player inventory when sneaking",
+            category = {SURVIVAL, FEATURE, EXPERIMENTAL, ADDONS}
+    )
+    public static boolean carefulBreak = true;
 }

@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "package": "carpetaddons.mixins",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "BlockMixin_carefulBreak"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

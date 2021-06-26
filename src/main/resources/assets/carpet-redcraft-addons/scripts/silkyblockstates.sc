@@ -90,44 +90,73 @@ _nbt_block_item(block) -> (
 );
 
 // merges the block's blockstates into the dropped-item spawned
-_preserve_block_state(player, block) -> (
+_preserve_block_state(item, player, block) -> (
     blockstate = block_state(block);
     if(block == 'composter' && block_state(block, 'level') == 8, return());
     if(block ~ 'wall_' != null, blockstate:'wall'='true');
     if(_match_any(block,global_plants), blockstate:'plant'='true');
     if(!blockstate && !_match_any(block, global_convert_item_whitelist), return());
     encode_blockstate = encode_nbt(if(blockstate, blockstate, {}));
-    item = _block_item(block);
     if(!item,
         if(_match_any(block, global_create_item_whitelist) || (global_drop_in_creative && player ~ 'gamemode' == 'creative'),
-            item = [spawn('item', block, _nbt_block_item(block))],
+            item = spawn('item', block, _nbt_block_item(block)),
             return()
         )
     );
-    modify(item:0, 'nbt_merge', str('{Item:{tag:{Silked:1b,BlockStateTag:%s}}}', encode_blockstate));
-    uuid = item:0 ~ 'command_name';
+    modify(item, 'nbt_merge', str('{Item:{tag:{Silked:1b,BlockStateTag:%s}}}', encode_blockstate));
+    uuid = item ~ 'command_name';
     if(_match_any(block, global_convert_item_whitelist),
-        modify(item:0, 'nbt_merge', str('{Item:{id:"minecraft:%s"}}', block))
+        modify(item, 'nbt_merge', str('{Item:{id:"minecraft:%s"}}', block))
     );
     for(blockstate, _add_item_lore(uuid, _formatted_property(_, blockstate:_), 'gray'))
 );
 
 // merges the block's blockdata into the dropped-item spawned
-_preserve_block_data(player, block, blockdata) -> (
+_preserve_block_data(item, player, block, blockdata) -> (
     if(!blockdata, return());
-    item = _block_item(block);
     if(!item,
         if(_match_any(block, global_create_item_whitelist) || (global_drop_in_creative && player ~ 'gamemode' == 'creative'),
-            item = [spawn('item', block, _nbt_block_item(block))],
+            item = spawn('item', block, _nbt_block_item(block)),
             return()
         )
     );
-    modify(item:0, 'nbt_merge', str('{Item:{tag:{Silked:1b,BlockEntityTag:%s}}}', blockdata));
-    uuid = item:0 ~ 'command_name';
+    modify(item, 'nbt_merge', str('{Item:{tag:{Silked:1b,BlockEntityTag:%s}}}', blockdata));
+    uuid = item ~ 'command_name';
     //_add_item_lore(uuid, '\\u00a7lBlockEntityTag:\\u00a7r', 'gray');
     c_for(i = 0, i < length(blockdata), i += 50,
         _add_item_lore(uuid, slice(blockdata, i, i + 50), 'dark_gray')
     )
+);
+
+// moves item to player
+_move_to_player(item, player) -> (
+    modify(item, 'pos', pos(player));
+    modify(item, 'pickup_delay', 0);
+);
+
+// returns item entities near the pos
+_items_near_pos(pos) -> (
+    entity_selector(str(
+        '@e[type=item,limit=1,x=%d,y=%d,z=%d,dx=1,dy=1,dz=1,sort=nearest,nbt={Age:0s}]',
+        pos - 1
+    ));
+);
+
+// returns true if the player has space to pick up the given item
+_inventory_space(item_entity, player) -> (
+    slot = inventory_find(player, null);
+    if(slot != null && slot < 36, return(true));
+    item_entity_info = item_entity ~ 'nbt':'Item';
+    item = item_entity_info:'id';
+    count = item_entity_info:'Count';
+    nbt = item_entity_info:'tag';
+
+    slot = -1;
+    while((slot = inventory_find(player, item, slot+1)) != null, 41,
+        [item1, count1, nbt1] = inventory_get(player, slot);
+        if(nbt1 == nbt, count += count1 - stack_limit(item))
+    );
+    count <= 0
 );
 
 // returns true if the player holds a tool enchanted with the given enchant
@@ -179,11 +208,23 @@ if(_valid_item(player),
     container_size = inventory_size(block);
     // wait for the dropped-item to spawn
     schedule(0, _(outer(player), outer(block), outer(blockdata), outer(container_size)) -> (
-        if(!_match_any(block, global_preserve_block_state_blacklist),
-            _preserve_block_state(player, block);
+        if(item = _block_item(block),
+            item = item:0;
+            if(!_match_any(block, global_preserve_block_state_blacklist),
+                _preserve_block_state(item, player, block);
+            );
+            if(!_match_any(block, global_preserve_block_data_blacklist) && !container_size,
+                _preserve_block_data(item, player, block, blockdata);
+            )
         );
-        if(!_match_any(block, global_preserve_block_data_blacklist) && !container_size,
-            _preserve_block_data(player, block, blockdata);
+
+        if(system_info('world_carpet_rules'):'carefulBreak' && player ~ 'sneaking',
+            items = _items_near_pos(pos(block) + 0.5);
+            for(items,
+                if(_inventory_space(_, player),
+                    _move_to_player(_, player)
+                )
+            )
         )
     ))
 );
