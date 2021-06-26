@@ -82,17 +82,22 @@ _valid_tree(log) -> (
     )
 );
 
-_detect_leaves(leaves, ... map) -> (
+_detect_leaves(log, leaves, ... map) -> (
     if(map == [] || (map = map:0) == null, map = {});
     map += pos(leaves);
     distance = number(block_state(leaves, 'distance')) + 1;
     for(_leaves_area(leaves),
-        if(str(leaves) == str(_) && (_ ~ '_block$' || block_state(_, 'distance') == distance) && !has(map:pos(_)),
-            map = _detect_leaves(_, map)
+        if(str(leaves) == str(_) && ((_ ~ '_block$' && _distance(pos(log), pos(_)) <= 6) || block_state(_, 'distance') == distance) && !has(map:pos(_)),
+            map = _detect_leaves(log, _, map)
+        );
+        if(str(leaves) ~ '_wart_block$' && _ == 'shroomlight' && !has(map:pos(_)),
+            map += pos(_)
         )
     );
     map
 );
+
+_distance(vec1, vec2) -> sqrt(reduce(vec1 - vec2, _a + _*_, 0));
 
 _not_far(log) -> (
     [x,y,z] = pos(log) - pos(global_first_log);
@@ -122,7 +127,7 @@ _detect_log(log, ... map) -> (
 _detect_attached_leaves(logs) -> (
     map = {};
     for(logs, for(neighbours(log = block(_)),
-        if(_valid_leaves(log,_), map = map + _detect_leaves(_))
+        if(_valid_leaves(log,_), map = map + _detect_leaves(log, _))
     ));
     map
 );
