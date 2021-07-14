@@ -5,7 +5,6 @@
   "mixins": [
     "AbstractFireBlockMixin",
     "ArmorStandEntityMixin",
-    "CarpetSettingsManagerMixin",
     "CustomPayloadC2SPacketMixin",
     "EntityMixin",
     "ServerCommandSourceMixin",
