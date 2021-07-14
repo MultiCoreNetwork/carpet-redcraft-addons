@@ -34,9 +34,9 @@ public class PublishCommand {
     }
 
     private static int execute(ServerCommandSource source, int port, boolean allowCheats) throws CommandSyntaxException {
-        if (source.getMinecraftServer().isRemote()) {
-            throw ALREADY_PUBLISHED_EXCEPTION.create(source.getMinecraftServer().getServerPort());
-        } else if (!source.getMinecraftServer().openToLan(null, allowCheats, port)) {
+        if (source.getServer().isRemote()) {
+            throw ALREADY_PUBLISHED_EXCEPTION.create(source.getServer().getServerPort());
+        } else if (!source.getServer().openToLan(null, allowCheats, port)) {
             throw FAILED_EXCEPTION.create();
         } else {
             source.sendFeedback(new TranslatableText("commands.publish.success", port), true);

@@ -26,7 +26,7 @@ public class OpCommand {
                         .requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(3)))
                 .then(CommandManager.argument("targets", GameProfileArgumentType.gameProfile())
                         .suggests((commandContext, suggestionsBuilder) -> {
-                            PlayerManager playerManager = commandContext.getSource().getMinecraftServer().getPlayerManager();
+                            PlayerManager playerManager = commandContext.getSource().getServer().getPlayerManager();
                             return CommandSource.suggestMatching(playerManager.getPlayerList().stream().filter((serverPlayerEntity) -> {
                                 return !playerManager.isOperator(serverPlayerEntity.getGameProfile());
                             }).map((serverPlayerEntity) -> {
@@ -43,7 +43,7 @@ public class OpCommand {
     }
 
     private static int op(ServerCommandSource source, Collection<GameProfile> targets) throws CommandSyntaxException {
-        PlayerManager playerManager = source.getMinecraftServer().getPlayerManager();
+        PlayerManager playerManager = source.getServer().getPlayerManager();
         int i = 0;
 
         for (GameProfile gameProfile : targets) {
@@ -62,7 +62,7 @@ public class OpCommand {
     }
 
     private static int op(ServerCommandSource source, Collection<GameProfile> targets, int level) throws CommandSyntaxException {
-        PlayerManager playerManager = source.getMinecraftServer().getPlayerManager();
+        PlayerManager playerManager = source.getServer().getPlayerManager();
         int i = 0;
         for (GameProfile gameProfile : targets) {
             if (!playerManager.isOperator(gameProfile)) {
