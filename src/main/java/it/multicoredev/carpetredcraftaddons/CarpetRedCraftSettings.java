@@ -1,6 +1,8 @@
 package it.multicoredev.carpetredcraftaddons;
 
+import carpet.settings.Condition;
 import carpet.settings.Rule;
+import net.fabricmc.loader.api.FabricLoader;
 
 import static carpet.settings.RuleCategory.*;
 
@@ -226,9 +228,17 @@ public class CarpetRedCraftSettings {
     )
     public static boolean betterArmorStands = true;
 
+    public static class craftableCobwebsCondition implements Condition {
+        @Override
+        public boolean isTrue() {
+            return !FabricLoader.getInstance().isModLoaded("rug");
+        }
+    }
+
     @Rule(
             desc = "Allows to craft Cobwebs",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK},
+            condition = craftableCobwebsCondition.class
     )
     public static boolean craftableCobwebs = true;
 

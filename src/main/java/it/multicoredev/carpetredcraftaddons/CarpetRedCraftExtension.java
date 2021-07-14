@@ -15,6 +15,7 @@ import it.multicoredev.carpetredcraftaddons.events.CarpetRedCraftEvents;
 import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
 import it.multicoredev.carpetredcraftaddons.functions.StructuresFunctions;
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.resource.ResourcePackManager;
 import net.minecraft.resource.ResourcePackProfile;
 import net.minecraft.server.MinecraftServer;
@@ -82,7 +83,9 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
         // DATAPACKS
         registerDatapackRule(server, "betterArmorStands", "RedPack - Better Armor Stands");
         registerDatapackRule(server, "craftableBricks", "RedPack - Craftable Bricks");
-        registerDatapackRule(server, "craftableCobwebs", "RedPack - Craftable Cobwebs");
+        if (!FabricLoader.getInstance().isModLoaded("rug")) {
+            registerDatapackRule(server, "craftableCobwebs", "RedPack - Craftable Cobwebs");
+        }
         registerDatapackRule(server, "craftableColoredBlocks", "RedPack - Craftable Colored Blocks");
         registerDatapackRule(server, "craftableCorals", "RedPack - Craftable Corals");
         registerDatapackRule(server, "craftableDeadBushes", "RedPack - Craftable Dead Bushes");
@@ -138,7 +141,7 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
     public static Map<String, String> datapackRules = new HashMap<>();
 
     public void initializeDatapackRules(MinecraftServer server) {
-        ResourcePackManager resourcePackManager = server.getCommandSource().getMinecraftServer().getDataPackManager();
+        ResourcePackManager resourcePackManager = server.getCommandSource().getServer().getDataPackManager();
         resourcePackManager.scanPacks();
         List<ResourcePackProfile> list = Lists.newArrayList(resourcePackManager.getEnabledProfiles());
         datapackRules.forEach((ruleName, datapackName) -> {
@@ -165,7 +168,7 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
         datapackRules.put(ruleName, datapackName);
         CarpetServer.settingsManager.addRuleObserver((source, rule, s) -> {
             if (rule.categories.contains("datapack") && rule.name.equals(ruleName)) {
-                ResourcePackManager resourcePackManager = source.getMinecraftServer().getDataPackManager();
+                ResourcePackManager resourcePackManager = source.getServer().getDataPackManager();
                 ResourcePackProfile resourcePackProfile = resourcePackManager.getProfile("file/" + datapackName + ".zip");
                 List<ResourcePackProfile> list = Lists.newArrayList(resourcePackManager.getEnabledProfiles());
                 if (rule.getBoolValue() || (rule.type == String.class && !rule.get().equals("false"))) {

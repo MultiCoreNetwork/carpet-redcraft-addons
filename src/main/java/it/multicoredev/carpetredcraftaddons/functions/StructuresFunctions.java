@@ -51,7 +51,7 @@ public class StructuresFunctions {
             if (lv.size() < pos2Locator.offset + 2) params.add(Value.NULL);
             if (lv.size() < pos2Locator.offset + 3) params.add(Value.FALSE);
 
-            StructureManager structureManager = cc.s.getMinecraftServer().getStructureManager();
+            StructureManager structureManager = cc.s.getServer().getStructureManager();
             Structure structure;
 
             Identifier structureIdentifier;
@@ -112,7 +112,7 @@ public class StructuresFunctions {
 
             if (lv.size() < pos1Locator.offset + 1) params.add(Value.FALSE);
 
-            StructureManager structureManager = cc.s.getMinecraftServer().getStructureManager();
+            StructureManager structureManager = cc.s.getServer().getStructureManager();
             Optional<Structure> structure;
 
             try {

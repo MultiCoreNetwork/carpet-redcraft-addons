@@ -21,7 +21,7 @@ public class OfflineStatisticFunction {
         expression.addLazyFunction("offline_statistic", 3, (c, t, lv) -> {
             CarpetContext cc = (CarpetContext) c;
             String uuid = lv.get(0).evalValue(c).getString();
-            File worldFolder = new File(cc.s.getMinecraftServer().getSavePath(WorldSavePath.ROOT).toFile(), "stats");
+            File worldFolder = new File(cc.s.getServer().getSavePath(WorldSavePath.ROOT).toFile(), "stats");
             File statFile = new File(worldFolder, uuid + ".json");
             if (!statFile.exists()) {
                 return LazyValue.NULL;
@@ -42,7 +42,7 @@ public class OfflineStatisticFunction {
                     if (stat == null) {
                         return LazyValue.NULL;
                     } else {
-                        ServerStatHandler ssh = new ServerStatHandler(cc.s.getMinecraftServer(), statFile);
+                        ServerStatHandler ssh = new ServerStatHandler(cc.s.getServer(), statFile);
                         return (_c, _t) -> new NumericValue(ssh.getStat(stat));
                     }
                 }

@@ -24,7 +24,7 @@ public class DefaultConfigCommand {
                 .executes(c ->
                 {
                     try {
-                        String world = c.getSource().getMinecraftServer().getSavePath(WorldSavePath.ROOT).toString();
+                        String world = c.getSource().getServer().getSavePath(WorldSavePath.ROOT).toString();
                         Files.copy(
                                 BundledModule.class.getClassLoader().getResourceAsStream("assets/" + MOD_ID + "/default.conf"),
                                 new File(world, "carpet.conf").toPath(),
