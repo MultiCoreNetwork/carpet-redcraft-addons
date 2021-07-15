@@ -56,6 +56,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [lastDeathCompass](#lastDeathCompass)
 - [lavaSponges](#lavaSponges)
 - [moreWanderingTrades](#moreWanderingTrades)
+- [pillagerLeash](#pillagerLeash)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
@@ -459,6 +460,15 @@ Le spugne funzioneranno anche con la lava, ma bruceranno.
 ## moreWanderingTrades
 
 Aggiunge nuovi scambi al mercante viandante
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## pillagerLeash
+
+Permette di legare i pillager con le mani vuote
 
 - Type: `boolean`
 - Default value: `true`
