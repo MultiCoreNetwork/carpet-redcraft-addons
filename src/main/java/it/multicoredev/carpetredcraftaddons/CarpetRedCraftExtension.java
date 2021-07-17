@@ -61,6 +61,7 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("locateplayer", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("lookme", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("morewanderingtrades", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("pillagerleash", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("placeableplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("playerme", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("prunedplants", false));

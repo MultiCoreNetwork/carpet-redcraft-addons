@@ -55,6 +55,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [lavaSponges](#lavaSponges)
 - [lastDeathCompass](#lastDeathCompass)
 - [moreWanderingTrades](#moreWanderingTrades)
+- [pillagerLeash](#pillagerLeash)
 - [placeablePlants](#placeablePlants)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
@@ -464,6 +465,15 @@ Sponges work on lava too, but they will burn
 ## moreWanderingTrades
 
 Adds more trades to the Wandering Trader
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## pillagerLeash
+
+Allows to tie pillager with empty hands
 
 - Type: `boolean`
 - Default value: `true`

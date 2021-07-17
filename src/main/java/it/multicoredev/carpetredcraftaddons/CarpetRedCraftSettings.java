@@ -220,6 +220,13 @@ public class CarpetRedCraftSettings {
     )
     public static boolean armorStandEditor = true;
 
+    @Rule(
+            desc = "Allows to tie pillager with empty hands",
+            appSource = "pillagerleash",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean pillagerLeash = true;
+
     // ------------------------------------------------ //
 
     @Rule(
