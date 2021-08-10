@@ -439,9 +439,21 @@ public class CarpetRedCraftSettings {
     @Rule(
             desc = "Allows to craft light block",
             appSource = "light",
-            category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
     )
     public static boolean craftableLight = true;
+
+    @Rule(
+            desc = "Allows to craft rooted dirt",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
+    )
+    public static boolean craftableRootedDirt = true;
+
+    @Rule(
+            desc = "Allows to craft amethyst clusters from amethyst block",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING, DATAPACK}
+    )
+    public static boolean craftableAmethysts = true;
 
     // ------------------------------------------------ //
 

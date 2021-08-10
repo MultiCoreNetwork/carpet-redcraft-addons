@@ -83,6 +83,7 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
     public void onServerLoadedWorlds(MinecraftServer server) {
         // DATAPACKS
         registerDatapackRule(server, "betterArmorStands", "RedPack - Better Armor Stands");
+        registerDatapackRule(server, "craftableAmethysts", "RedPack - Craftable Amethysts");
         registerDatapackRule(server, "craftableBricks", "RedPack - Craftable Bricks");
         if (!FabricLoader.getInstance().isModLoaded("rug")) {
             registerDatapackRule(server, "craftableCobwebs", "RedPack - Craftable Cobwebs");
@@ -99,6 +100,7 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
         registerDatapackRule(server, "craftablePackedIce", "RedPack - Craftable Packed Ice");
         registerDatapackRule(server, "craftablePlayerHead", "RedPack - Craftable Player Heads");
         registerDatapackRule(server, "craftableQuartz", "RedPack - Craftable Quartz");
+        registerDatapackRule(server, "craftableRootedDirt", "RedPack - Craftable Rooted Dirt");
         registerDatapackRule(server, "craftableSculkSensor", "RedPack - Craftable Sculk Sensor");
         registerDatapackRule(server, "craftableShulkerShells", "RedPack - Craftable Shulker Shells");
         registerDatapackRule(server, "craftableStrippedWood", "RedPack - Craftable Stripped Wood");
