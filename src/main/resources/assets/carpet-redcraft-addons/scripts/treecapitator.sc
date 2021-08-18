@@ -54,7 +54,7 @@ _log_area(log, ... large_oak) -> if(
 );
 
 _leaves_area(leaves) -> if(
-    leaves ~ '_block$', t = [rect(leaves, [1,1,1])]; delete(t:13); t,
+    leaves ~ '_block$' || leaves ~ 'azalea_leaves$', t = [rect(leaves, [1,1,1])]; delete(t:13); t,
     neighbours(leaves)
 );
 
@@ -71,6 +71,7 @@ _log_base_area(log) -> if(
 _valid_leaves(log, leaves) -> if(
     log == 'warped_stem', leaves == 'warped_wart_block',
     log == 'crimson_stem', leaves == 'nether_wart_block',
+    log == 'oak_log', leaves == 'oak_leaves' || leaves ~ 'azalea_leaves$',
     log == 'mushroom_stem', bool(leaves ~ '_mushroom_block$'),
     block_tags(leaves, 'leaves') && leaves ~ _type(log) && !bool(block_state(leaves,'persistent'))
 );
@@ -91,6 +92,9 @@ _detect_leaves(log, leaves, ... map) -> (
             map = _detect_leaves(log, _, map)
         );
         if(str(leaves) ~ '_wart_block$' && _ == 'shroomlight' && !has(map:pos(_)),
+            map += pos(_)
+        );
+        if(str(leaves) ~ 'azalea_leaves$' && _ ~ 'azalea_leaves$' && !has(map:pos(_)),
             map += pos(_)
         )
     );

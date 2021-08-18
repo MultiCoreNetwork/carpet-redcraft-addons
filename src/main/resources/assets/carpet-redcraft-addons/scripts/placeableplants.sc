@@ -19,6 +19,9 @@ if(
     item
 );
 
+_block_sound(block) -> if(block == 'sweet_berry_bush', 'sweet_berry_bush', block_sound(block));
+
+
 _placeable(player, item_tuple, hand, block, face) -> (
     g = player ~ 'gamemode';
     if(g == 'spectator' || !item_tuple, return());
@@ -37,7 +40,7 @@ _placeable(player, item_tuple, hand, block, face) -> (
             set(b1, _item_to_block(item))
         )
     );
-    sound(str('block.%s.place', block_sound(block(b1))), b1, 1, 1, 'block');
+    sound(str('block.%s.place', _block_sound(block(b1))), b1, 1, 1, 'block');
     if(g == 'creative', return()); 
     inventory_set(player, if(hand=='mainhand',player~'selected_slot',-1), count - 1, item ,nbt)
 );

@@ -63,7 +63,7 @@ _add_random_trades(villager) -> (
     );
 
     // SILKY -> 14%
-    if(rand(1/(1-0.14)),
+    if(system_info('world_carpet_rules'):'silkyBlockstates' && rand(1/(1-0.14)),
         item = if(rand(global_luck),'iron','diamond') + global_tools:rand(4);
         trade = _new_trade([item,1],['emerald',floor(rand(16)+16)],[item,1]);
         trade:'sell.tag' = nbt('{display:{Lore:[\'{"text":"Silky Blockstate","color":"red","italic":false}\']},Enchantments:[{id:"redcraft:silkyblockstate",lvl:1s}]}');
@@ -71,7 +71,7 @@ _add_random_trades(villager) -> (
     );
 
     // TREECAPITATOR -> 10.5%
-    if(rand(1/(1-0.105)),
+    if(system_info('world_carpet_rules'):'treecapitator' && rand(1/(1-0.105)),
         item = if(rand(global_luck), 'iron_axe', 'diamond_axe');
         trade = _new_trade([item,1], ['emerald', floor(rand(8) + 8)], [item,1]);
         trade:'sell.tag' = nbt('{display:{Lore:[\'{"text":"TreeCapitator","color":"red","italic":false}\']},Enchantments:[{id:"redcraft:treecapitator",lvl:1s}]}');
