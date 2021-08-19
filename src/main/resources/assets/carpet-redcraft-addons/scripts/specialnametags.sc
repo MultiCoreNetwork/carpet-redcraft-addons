@@ -6,6 +6,9 @@ __on_player_interacts_with_entity(player, entity, hand) -> (
     if(item_tuple == null, return());
     [item, count, nbt] = item_tuple;
     if(item != 'name_tag', return());
+    if(entity ~ 'type' == 'armor_stand',
+        modify(entity, 'nbt_merge', '{CustomNameVisible:true}')
+    );
     schedule(0, _(outer(entity)) -> (
         if(entity ~ 'custom_name' == null, return());
         custom_name = lower(entity ~ 'custom_name');

@@ -12,6 +12,7 @@ Un'estensione della [Carpet mod](https://github.com/gnembon/fabric-carpet) (fabr
 Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usare versioni aggiornate della Carpet Mod non appena possibile
 
 ## Regole
+- [anvilRepairCostLimit](#anvilRepairCostLimit)
 - [armorStandEditor](#armorStandEditor)
 - [betterArmorStands](#betterArmorStands)
 - [betterItemFrames](#betterItemFrames)
@@ -40,7 +41,6 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [craftableSand](#craftableSand)
 - [craftableSculkSensor](#craftableSculkSensor)
 - [craftableShulkerShells](#craftableShulkerShells)
-- [craftableStrippedWood](#craftableStrippedWood)
 - [craftableTallGrass](#craftableTallGrass)
 - [craftableTuffAndCalcite](#craftableTuffAndCalcite)
 - [crumbleConcrete](#crumbleConcrete)
@@ -58,10 +58,12 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [moreWanderingTrades](#moreWanderingTrades)
 - [pillagerLeash](#pillagerLeash)
 - [placeablePlants](#placeablePlants)
+- [protectionStacking](#protectionStacking)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
 - [redcraft2Teleport](#redcraft2Teleport)
 - [redSandstoneCraftingCompatibility](#redSandstoneCraftingCompatibility)
+- [repairableAnvil](#repairableAnvil)
 - [reviveCoral](#reviveCoral)
 - [ropes](#ropes)
 - [sandstoneCraftingCompatibility](#sandstoneCraftingCompatibility)
@@ -77,8 +79,20 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
 
-## armorStandEditor [BETA]
+## anvilRepairCostLimit
 
+Permette di scegliere il massimo costo di riparazione all'interno dell'incudine
+
+- Type: `int`
+- Default value: `40`
+- Suggested options: `40`, `1024`, `24791`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+- Additional notes:
+    - Devi scegliere valori da 1 a 32767
+    
+## armorStandEditor
+
+[BETA]
 Premette di modificare la posa del support oper armature con la zappa
 
 - Type: `boolean`
@@ -329,15 +343,6 @@ Permette di craftare i gusci di shulker partendo da quelli di tartaruga e un fio
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## craftableStrippedWood
-
-Permette di craftare i blocchi di legno scortecciato partendo dai tronchi scortecciati
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
-
 ## craftableTallGrass
 
 Permette di craftare l'erba alta
@@ -484,6 +489,15 @@ Permette di piantare le piante su qualsiasi blocco con una superficie piana
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
+## protectionStacking
+
+Permette di unire protezioni di tipo differente
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
 ## prunedPlants
 
 Permette di potare le piante
@@ -520,7 +534,16 @@ Aggiunge maggiore compatibilità frai crafting dei blocchi di arenaria rossa
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## reviveCoral
+## repairableAnvil
+
+Permette di riparare l'incudine con i lingotti di ferro
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+# reviveCoral
 
 Permette di resuscitare i coralli con le bottiglie d'acqua
 

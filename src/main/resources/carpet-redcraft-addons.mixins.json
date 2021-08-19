@@ -4,9 +4,12 @@
   "compatibilityLevel": "JAVA_8",
   "mixins": [
     "AbstractFireBlockMixin",
+    "AnvilScreenHandlerMinin",
+    "AnvilScreenMinin",
     "ArmorStandEntityMixin",
     "CustomPayloadC2SPacketMixin",
     "EntityMixin",
+    "ProtectionEnchantmentMixin",
     "ServerCommandSourceMixin",
     "SpongeBlockMixin"
   ],

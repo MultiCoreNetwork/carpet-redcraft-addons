@@ -16,6 +16,7 @@ __on_player_interacts_with_entity(player, entity, hand) -> (
 
     __leash_to(player,entity);
 
+    modify(player, 'swing', hand);
     if(player~'gamemode' != 'creative',
         slot = if(hand=='mainhand',player~'selected_slot',-1);
         prev = inventory_get(player,slot);

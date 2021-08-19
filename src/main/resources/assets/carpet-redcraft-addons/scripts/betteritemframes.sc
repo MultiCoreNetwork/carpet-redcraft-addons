@@ -32,7 +32,7 @@ entity_event(entity, 'on_removed',
 );
 
 _check_custom_drop(entity) -> 
-if(entity~'nbt':'Invisible', 
+if(entity~'nbt':'Invisible',
     _drop_phantom_membrane_on_remove(entity),
 );
 

@@ -12,6 +12,7 @@ A [Carpet mod](https://github.com/gnembon/fabric-carpet) (fabric-carpet) extensi
 Use with carpet mod in the same Minecraft version. Use newer carpet mod versions whenever possible
 
 ## Rules
+- [anvilRepairCostLimit](#anvilRepairCostLimit)
 - [armorStandEditor](#armorStandEditor)
 - [betterArmorStands](#betterArmorStands)
 - [betterItemFrames](#betterItemFrames)
@@ -40,7 +41,6 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [craftableSand](#craftableSand)
 - [craftableSculkSensor](#craftableSculkSensor)
 - [craftableShulkerShells](#craftableShulkerShells)
-- [craftableStrippedWood](#craftableStrippedWood)
 - [craftableTallGrass](#craftableTallGrass)
 - [craftableTuffAndCalcite](#craftableTuffAndCalcite)
 - [crumbleConcrete](#crumbleConcrete)
@@ -57,10 +57,12 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [moreWanderingTrades](#moreWanderingTrades)
 - [pillagerLeash](#pillagerLeash)
 - [placeablePlants](#placeablePlants)
+- [protectionStacking](#protectionStacking)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
 - [redcraft2Teleport](#redcraft2Teleport)
 - [redSandstoneCraftingCompatibility](#redSandstoneCraftingCompatibility)
+- [repairableAnvil](#repairableAnvil)
 - [reviveCoral](#reviveCoral)
 - [ropes](#ropes)
 - [sandstoneCraftingCompatibility](#sandstoneCraftingCompatibility)
@@ -84,8 +86,20 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 ### [whoImT's Carpet Addons](https://github.com/whoImT/carpet-addons/)
 - [carefulBreak](#carefulBreak)
 
-## armorStandEditor [BETA]
+## anvilRepairCostLimit
 
+Allows to choose the anvil repair cost limit
+
+- Type: `int`
+- Default value: `40`
+- Suggested options: `40`, `1024`, `24791`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+- Additional notes:
+    - You must choose a value from 1 to 32767
+
+## armorStandEditor 
+
+[BETA]
 Allows ArmorStand editing with Hoe
 
 - Type: `boolean`
@@ -336,15 +350,6 @@ Allows to craft Shulker Shells from Turle Shells and Popped Chorus Fruits
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## craftableStrippedWood
-
-Allows to craft Stripped Woods/Hyphaes from Logs/Steams
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
-
 ## craftableTallGrass
 
 Allows to craft Tall Grass
@@ -489,6 +494,15 @@ Allows to place plants on all blocks with flat top surface
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
+## protectionStacking
+
+Allows to stack multiple protection types
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
 ## prunedPlants
 
 Allows to prune plants with shears
@@ -524,6 +538,15 @@ Adds crafting compatibility with all types of Red Sandstone
 - Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## repairableAnvil
+
+Allow to repair anvil with iron ingot
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## reviveCoral
 

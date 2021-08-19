@@ -66,6 +66,7 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("playerme", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("prunedplants", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("redcraft", false));
+        CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("repairableanvil", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("revivecoral", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("ropes", false));
         CarpetScriptServer.registerSettingsApp(redcraftDefaultScript("silkyblockstates", false));
@@ -103,7 +104,6 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
         registerDatapackRule(server, "craftableRootedDirt", "RedPack - Craftable Rooted Dirt");
         registerDatapackRule(server, "craftableSculkSensor", "RedPack - Craftable Sculk Sensor");
         registerDatapackRule(server, "craftableShulkerShells", "RedPack - Craftable Shulker Shells");
-        registerDatapackRule(server, "craftableStrippedWood", "RedPack - Craftable Stripped Wood");
         registerDatapackRule(server, "craftableTallGrass", "RedPack - Craftable Tall Grass");
         registerDatapackRule(server, "craftableTuffAndCalcite", "RedPack - Craftable Tuff and Calcite");
         registerDatapackRule(server, "endermanNoGrief", "RedPack - Enderman No Grief");
