@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "banner",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "result": {
+        "item": "minecraft:purple_banner",
+        "count": 8
+    },
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/banners/not_purple_banners"
+        },
+        "$": {
+            "item": "minecraft:purple_dye"
+        }
+    }
+}

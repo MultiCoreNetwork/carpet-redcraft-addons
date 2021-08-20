@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "concrete",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/concretes/not_gray_concretes"
+        },
+        "$": {
+            "item": "minecraft:gray_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:gray_concrete",
+        "count": 8
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "candle",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/candles/not_lime_candles"
+        },
+        "$": {
+            "item": "minecraft:lime_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:lime_candle",
+        "count": 8
+    }
+}

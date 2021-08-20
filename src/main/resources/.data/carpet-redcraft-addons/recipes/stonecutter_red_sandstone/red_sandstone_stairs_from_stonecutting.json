@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "tag": "carpet-redcraft-addons:stonecutter_red_sandstone/red_sandstones"
+    },
+    {
+      "item": "minecraft:smooth_red_sandstone_stairs"
+    },
+    {
+      "item": "minecraft:red_sandstone_wall"
+    }
+  ],
+  "result": "minecraft:red_sandstone_stairs",
+  "count": 1
+}

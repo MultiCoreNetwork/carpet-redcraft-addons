@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "concrete",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/concretes/not_magenta_concretes"
+        },
+        "$": {
+            "item": "minecraft:magenta_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:magenta_concrete",
+        "count": 8
+    }
+}

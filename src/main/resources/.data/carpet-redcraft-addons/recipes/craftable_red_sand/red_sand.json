@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "carpet-redcraft-addons:craftable_red_sand/red_sandstones"
+    }
+  ],
+  "result": {
+    "item": "minecraft:red_sand",
+    "count": 4
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "tag": "carpet-redcraft-addons:craftable_deepslate_ores/not_nether_gold_ores"
+  },
+  "addition": {
+    "item": "minecraft:netherrack"
+  },
+  "result": {
+    "item": "minecraft:nether_gold_ore"
+  }
+}

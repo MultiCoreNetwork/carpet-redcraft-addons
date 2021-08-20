@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "concrete_powder",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/concrete_powders/not_cyan_concrete_powders"
+        },
+        "$": {
+            "item": "minecraft:cyan_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:cyan_concrete_powder",
+        "count": 8
+    }
+}

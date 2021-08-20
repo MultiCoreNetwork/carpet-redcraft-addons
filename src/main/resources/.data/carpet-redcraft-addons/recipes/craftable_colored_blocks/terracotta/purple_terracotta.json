@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "terracotta",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/terracottas/not_purple_terracottas"
+        },
+        "$": {
+            "item": "minecraft:purple_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:purple_terracotta",
+        "count": 8
+    }
+}

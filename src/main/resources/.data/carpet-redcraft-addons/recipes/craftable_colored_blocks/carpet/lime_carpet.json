@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "carpet",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/carpets/not_lime_carpets"
+        },
+        "$": {
+            "item": "minecraft:lime_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:lime_carpet",
+        "count": 8
+    }
+}

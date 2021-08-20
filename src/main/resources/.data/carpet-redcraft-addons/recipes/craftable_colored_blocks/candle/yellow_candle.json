@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "candle",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/candles/not_yellow_candles"
+        },
+        "$": {
+            "item": "minecraft:yellow_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:yellow_candle",
+        "count": 8
+    }
+}

@@ -14,7 +14,6 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 ## Regole
 - [anvilRepairCostLimit](#anvilRepairCostLimit)
 - [armorStandEditor](#armorStandEditor)
-- [betterArmorStands](#betterArmorStands)
 - [betterItemFrames](#betterItemFrames)
 - [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
@@ -89,25 +88,38 @@ Permette di scegliere il massimo costo di riparazione all'interno dell'incudine
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 - Additional notes:
     - Devi scegliere valori da 1 a 32767
-    
+
 ## armorStandEditor
 
-[BETA]
-Premette di modificare la posa del support oper armature con la zappa
+**[BETA]**<br/>
+Quandi si picchia un supporto per armature con una `zappa` entrerà in modalità modifica.<br/>
+Quando un supporto per armatura è in modalità modifica, tu potrai:
+- Premere tasto destro per mettergli l'oggetto impugnato in testa.
+- Premere shift tasto destro per muovere il supporto per armatura in giro.<br/>
+  Rilasciando il tasto shift, si applicheranno le modifiche.<br/>
+  Cambiando slot dell'inventario, le modifiche verranno annullate.
+- Premere tasto destro con una `zappa` per cambiare modalità di modifica:
+  `PITCH`, `YAW`, `ROLL`, `TEST`
+- Premere shift tasto destro con una `zappa` per muovere la parte del supporto per armatura che stai inquadrando.<br/>
+  Rilasciando il tasto shift, si applicheranno le modifiche.<br/>
+  Cambiando slot dell'inventario, le modifiche verranno annullate.
+- Premere shift tasto destro con due `bastoni` per dare le braccia al supporto per armature.
+- Premere shift tasto destro con una `lastra di pietra levigata` per togliere al supporto per armature la propria base.
+- Premere shift tasto destro con una `piuma` per togliere la gravità al supporto per armature.
+- Premere shift tasto destro con una `membrana di phantom` per rendere invisibile il supporto per armature.
+- Premere shift tasto destro con una `occhio dell'end` per rendere di nuovo visibile il supporto per armature.
+- Premere shift tasto destro con una `occhio dell'end` per rendere di nuovo visibile il supporto per armature.
+- Premere shift tasto destro con una `fuoco da campeggio` per creare nuvole di fumo nella posizione del supporto per armature.
+- Premere shift tasto destro con una `bottone di pietra` o un `bottone di pietra scura` per creare rendere piccolo il supporto per armature.
+- Premere shift tasto destro con una `pedana a pressione di pietra` o un `pedana a pressione di pietra scura` per rendere nuovamente grande il supporto per armature.
+- Premere shift tasto destro con una `polvere di vampo` per creare fiamme nella posizione del supporto per armature.
+
 
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
-## betterArmorStands
-
-Getta a terra degli oggetti al supporto per armature per modificargli alcune proprietà
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
 ## betterItemFrames
 

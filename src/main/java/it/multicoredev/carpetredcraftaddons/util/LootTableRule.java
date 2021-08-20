@@ -8,11 +8,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface LootTableRule {
-    String name() default "";
+    String[] overrideLoottables() default "";
 
     String[] loottables() default "";
-
-    String loottableNamespace() default "carpet-redcraft-addons";
-
-    String loottablesFolder() default "";
 }

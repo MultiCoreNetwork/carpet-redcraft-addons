@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "banner",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "result": {
+        "item": "minecraft:white_banner",
+        "count": 8
+    },
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/banners/not_white_banners"
+        },
+        "$": {
+            "item": "minecraft:white_dye"
+        }
+    }
+}

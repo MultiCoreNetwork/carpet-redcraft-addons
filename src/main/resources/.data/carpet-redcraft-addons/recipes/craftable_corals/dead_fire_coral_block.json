@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shaped",
+    "pattern": [
+        "##",
+        "##"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_corals/dead_fire_corals"
+        }
+    },
+    "result": {
+        "item": "minecraft:dead_fire_coral_block",
+        "count": 1
+    }
+}

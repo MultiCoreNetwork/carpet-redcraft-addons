@@ -10,6 +10,7 @@
     "replaceitem",
     "Gnottero",
     "DukeEdivad05",
+    "RubixDev",
     "..."
   ],
   "contact": {
@@ -17,7 +18,7 @@
     "sources": "https://github.com/MultiCoreNetwork/carpet-redcraft-addons"
   },
 
-  "license": "CC0-1.0",
+  "license": "GNU-3.0",
   "icon": "assets/carpet-redcraft-addons/icon.png",
 
   "environment": "*",

@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "stained_glass_pane",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/stained_glass_panes/not_pink_stained_glass_panes"
+        },
+        "$": {
+            "item": "minecraft:pink_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:pink_stained_glass_pane",
+        "count": 8
+    }
+}

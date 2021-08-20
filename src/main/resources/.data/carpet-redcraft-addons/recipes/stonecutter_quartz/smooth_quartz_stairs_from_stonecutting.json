@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "tag": "carpet-redcraft-addons:stonecutter_quartz/quartz_blocks"
+    },
+    {
+      "item": "minecraft:quartz_stairs"
+    }
+  ],
+  "result": "minecraft:smooth_quartz_stairs",
+  "count": 1
+}

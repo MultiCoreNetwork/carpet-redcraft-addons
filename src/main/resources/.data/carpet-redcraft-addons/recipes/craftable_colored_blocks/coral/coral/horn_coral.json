@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "coral",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "result": {
+        "item": "minecraft:horn_coral",
+        "count": 8
+    },
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/corals/not_horn_corals"
+        },
+        "$": {
+            "item": "minecraft:yellow_dye"
+        }
+    }
+}

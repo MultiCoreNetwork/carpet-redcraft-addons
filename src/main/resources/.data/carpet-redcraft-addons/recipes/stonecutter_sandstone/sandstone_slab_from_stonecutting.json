@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": [
+    {
+      "tag": "carpet-redcraft-addons:stonecutter_sandstone/sandstones"
+    },
+    {
+      "item": "minecraft:sandstone_stairs"
+    },
+    {
+      "item": "minecraft:smooth_sandstone_stairs"
+    },
+    {
+      "item": "minecraft:sandstone_wall"
+    }
+  ],
+  "result": "minecraft:sandstone_slab",
+  "count": 2
+}

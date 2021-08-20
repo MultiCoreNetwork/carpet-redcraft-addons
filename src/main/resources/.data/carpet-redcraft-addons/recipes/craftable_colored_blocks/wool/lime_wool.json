@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "group": "wool",
+    "result": {
+        "item": "minecraft:lime_wool",
+        "count": 1
+    },
+    "ingredients": [
+        {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/wools/not_lime_wools"
+        },
+        {
+            "item": "minecraft:lime_dye"
+        }
+    ]
+}

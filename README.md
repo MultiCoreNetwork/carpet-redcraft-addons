@@ -14,7 +14,6 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 ## Rules
 - [anvilRepairCostLimit](#anvilRepairCostLimit)
 - [armorStandEditor](#armorStandEditor)
-- [betterArmorStands](#betterArmorStands)
 - [betterItemFrames](#betterItemFrames)
 - [craftableBricks](#craftableBricks)
 - [colorableShulkers](#colorableShulkers)
@@ -86,6 +85,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 ### [whoImT's Carpet Addons](https://github.com/whoImT/carpet-addons/)
 - [carefulBreak](#carefulBreak)
 
+---
 ## anvilRepairCostLimit
 
 Allows to choose the anvil repair cost limit
@@ -99,22 +99,33 @@ Allows to choose the anvil repair cost limit
 
 ## armorStandEditor 
 
-[BETA]
-Allows ArmorStand editing with Hoe
+**[BETA]**<br/>
+When punching an ArmorStand with a `hoe` it will go in edit mode.<br/>
+When an ArmorStand is in edit mode, you can: 
+- Right click it to put the item you're holding on its head.
+- Shift right click to move the ArmorStand around.<br/>
+  Releasing the shift button it will apply the changes.<br/>
+  Changing slot it will undo the changes.
+- Right click with a `hoe` to change editing mode:<br/>
+  `PITCH`, `YAW`, `ROLL`, `TEST`
+- Shift right click with a `hoe` to move the ArmorStand's part you are looking at.<br/>
+  Releasing the shift button it will apply the changes.<br/>
+  Changing slot it will undo the changes.
+- Shift right click with two `sticks` to give arms to the ArmorStand.
+- Shift right click with a `smooth stone slab` to remove to the ArmorStand its base plate.
+- Shift right click with a `feather` to remove gravity to the ArmorStand.
+- Shift right click with a `phantom_membrane` to make the ArmorStand invisible.
+- Shift right click with a `ender_eye` to make the ArmorStand visible again.
+- Shift right click with a `campfire` or a `soul campfire` to summon smoke particle at ArmorStand position.
+- Shift right click with a `stone button` or a `blackstone button` to make the ArmorStand small.
+- Shift right click with a `stone pressure plate` or a `blackstone pressure plate` to make the ArmorStand big again.
+- Shift right click with a `blaze powder` to summon fire particle at ArmorStand position.
+
 
 - Type: `boolean`
 - Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
-
-## betterArmorStands
-
-Drop items to Armor Stands to apply them some proprieties
-
-- Type: `boolean`
-- Default value: `true`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
 
 ## betterItemFrames
 

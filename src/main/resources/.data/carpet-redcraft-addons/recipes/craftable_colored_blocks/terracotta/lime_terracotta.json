@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "terracotta",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/terracottas/not_lime_terracottas"
+        },
+        "$": {
+            "item": "minecraft:lime_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:lime_terracotta",
+        "count": 8
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "coral_block",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "result": {
+        "item": "minecraft:bubble_coral_block",
+        "count": 8
+    },
+    "key": {
+         "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/corals/not_bubble_coral_blocks"
+        },
+         "$": {
+            "item": "minecraft:magenta_dye"
+        }
+    }
+}

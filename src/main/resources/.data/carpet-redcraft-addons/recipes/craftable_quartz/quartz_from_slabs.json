@@ -1,0 +1,13 @@
+{
+    "group":"carpet-redcraft-addons:craftable_quartz",
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "tag": "carpet-redcraft-addons:craftable_quartz/quartz_slabs"
+        }
+    ],
+    "result": {
+        "item": "minecraft:quartz",
+        "count": 2
+    }
+}

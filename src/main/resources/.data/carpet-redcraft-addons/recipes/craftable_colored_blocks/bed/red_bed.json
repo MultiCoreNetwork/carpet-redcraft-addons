@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "group": "bed",
+    "result": {
+        "item": "minecraft:red_bed",
+        "count": 1
+    },
+    "ingredients": [
+        {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/beds/not_red_beds"
+        },
+        {
+            "item": "minecraft:red_dye"
+        }
+    ]
+}

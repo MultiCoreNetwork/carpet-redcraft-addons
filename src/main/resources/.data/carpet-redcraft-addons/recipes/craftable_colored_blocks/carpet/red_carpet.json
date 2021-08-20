@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "carpet",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/carpets/not_red_carpets"
+        },
+        "$": {
+            "item": "minecraft:red_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:red_carpet",
+        "count": 8
+    }
+}

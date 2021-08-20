@@ -1,0 +1,16 @@
+{
+    "type": "crafting_shapeless",
+    "group": "wool",
+    "result": {
+        "item": "minecraft:black_wool",
+        "count": 1
+    },
+    "ingredients": [
+        {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/wools/not_black_wools"
+        },
+        {
+            "item": "minecraft:black_dye"
+        }
+    ]
+}

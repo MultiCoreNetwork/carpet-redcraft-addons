@@ -1,0 +1,21 @@
+{
+    "type": "crafting_shaped",
+    "group": "stained_glass_pane",
+    "pattern": [
+        "###",
+        "#$#",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "tag": "carpet-redcraft-addons:craftable_colored_blocks/stained_glass_panes/not_light_blue_stained_glass_panes"
+        },
+        "$": {
+            "item": "minecraft:light_blue_dye"
+        }
+    },
+    "result": {
+        "item": "minecraft:light_blue_stained_glass_pane",
+        "count": 8
+    }
+}

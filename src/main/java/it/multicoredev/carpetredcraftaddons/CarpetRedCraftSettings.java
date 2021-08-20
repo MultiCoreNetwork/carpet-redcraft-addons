@@ -5,6 +5,7 @@ import carpet.settings.Rule;
 import carpet.settings.Validator;
 import it.multicoredev.carpetredcraftaddons.util.CraftingRule;
 import it.multicoredev.carpetredcraftaddons.util.LootTableRule;
+import it.multicoredev.carpetredcraftaddons.util.TagRule;
 import it.multicoredev.carpetredcraftaddons.util.modconditions.CarpetAddonsCompatibleCondition;
 import it.multicoredev.carpetredcraftaddons.util.modconditions.CarpetExtraCompatibleCondition;
 import it.multicoredev.carpetredcraftaddons.util.modconditions.RugCompatibleCondition;
@@ -96,195 +97,206 @@ public class CarpetRedCraftSettings {
     public static boolean commandWaystone = true;
 
     // ------------------CRAFTINGS--------------------- //
-    @CraftingRule(recipesFolder = "craftable_amethysts")
+    @CraftingRule(recipes = "craftable_amethysts")
     @Rule(
             desc = "Allows to craft amethyst clusters from amethyst block",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableAmethysts = true;
-    @CraftingRule(recipesFolder = "craftable_bricks")
+    @CraftingRule(recipes = "craftable_bricks")
     @Rule(
             desc = "Adds reverse crafting of Prismarine, Prismarine Bricks, Bricks and Nether Bricks",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableBricks = true;
-    @CraftingRule(recipesFolder = "craftable_cobwebs")
+    @CraftingRule(recipes = "craftable_cobwebs")
     @Rule(
             desc = "Allows to craft Cobwebs",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING},
             condition = RugCompatibleCondition.class
     )
     public static boolean craftableCobwebs = true;
-    @CraftingRule(recipesFolder = "craftable_colored_blocks")
+    @TagRule(tags = "items/craftable_colored_blocks")
+    @CraftingRule(recipes = "craftable_colored_blocks")
     @Rule(
             desc = "Allows to use colored blocks to craft other color variants",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
-    public static boolean craftableColoredBlocks = true; //todo: candele
-    @CraftingRule(recipesFolder = "craftable_corals")
+    public static boolean craftableColoredBlocks = true;
+    @TagRule(tags = "items/craftable_corals")
+    @CraftingRule(recipes = "craftable_corals")
     @Rule(
             desc = "Allows to craft Coral Blocks with 4 Coral Fans and Corals",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableCorals = true;
-    @CraftingRule(recipesFolder = "craftable_dead_bushes")
+    @CraftingRule(recipes = "craftable_dead_bushes")
     @Rule(
             desc = "Allows to smelt saplings to get Dead Bushes",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableDeadBushes = true;
-    @CraftingRule(recipesFolder = "craftable_deepslate_ores")
+    @TagRule(tags = "items/craftable_deepslate_ores")
+    @CraftingRule(recipes = "craftable_deepslate_ores")
     @Rule(
             desc = "You can craft deepslate ore in smithing table",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean craftableDeepslateOres = true;
-    @CraftingRule(recipesFolder = "craftable_elytra")
+    @CraftingRule(recipes = "craftable_elytra")
     @Rule(
             desc = "Allows to craft Elytras",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableElytra = true;
-    @CraftingRule(recipesFolder = "craftable_ice")
+    @CraftingRule(recipes = "craftable_ice")
     @Rule(
             desc = "Allows to craft Ice from Packed Ice",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableIce = true;
-    @CraftingRule(recipesFolder = "craftable_large_fern")
+    @CraftingRule(recipes = "craftable_large_fern")
     @Rule(
             desc = "Allows to craft Large Ferns",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableLargeFern = true;
-    @CraftingRule(recipesFolder = "craftable_light")
+    @TagRule(tags = "items/craftable_light")
+    @CraftingRule(recipes = "craftable_light")
     @Rule(
             desc = "Allows to craft light block",
             appSource = "light",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableLight = true;
-    @CraftingRule(recipesFolder = "craftable_nether_warts")
+    @CraftingRule(recipes = "craftable_nether_warts")
     @Rule(
             desc = "Allows to craft Nether Warts from Nether Warts Block",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableNetherWarts = false;
-    @CraftingRule(recipesFolder = "craftable_packed_ice")
+    @CraftingRule(recipes = "craftable_packed_ice")
     @Rule(
             desc = "Allows to craft Packed Ice from Blue Ice",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftablePackedIce = true;
-    @CraftingRule(recipesFolder = "craftable_player_heads")
+    @TagRule(tags = "items/craftable_player_heads")
+    @CraftingRule(recipes = "craftable_player_heads")
     @Rule(
             desc = "Allows to craft Player Head from any kind of head",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftablePlayerHead = true;
-    @CraftingRule(recipesFolder = "craftable_quartz")
+    @TagRule(tags = "items/craftable_quartz")
+    @CraftingRule(recipes = "craftable_quartz")
     @Rule(
             desc = "Allows to craft Quartz from any kind of Quartz Block",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableQuartz = true;
-    @CraftingRule(recipesFolder = "craftable_red_sand")
+    @TagRule(tags = "items/craftable_red_sand")
+    @CraftingRule(recipes = "craftable_red_sand")
     @Rule(
             desc = "Allows to craft Red Sand from Red Sandstone",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableRedSand = true;
-    @CraftingRule(recipesFolder = "craftable_rooted_dirt")
+    @CraftingRule(recipes = "craftable_rooted_dirt")
     @Rule(
             desc = "Allows to craft rooted dirt",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableRootedDirt = true;
-    @CraftingRule(recipesFolder = "craftable_sand")
+    @TagRule(tags = "items/craftable_sand")
+    @CraftingRule(recipes = "craftable_sand")
     @Rule(
             desc = "Allows to craft Red Sand from Sandstone",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableSand = true;
-    @CraftingRule(recipesFolder = "craftable_sculk_sensor")
+    @CraftingRule(recipes = "craftable_sculk_sensor")
     @Rule(
             desc = "Allow to craft Sculk Sensor with endeperals and observers",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableSculkSensor = true;
-    @CraftingRule(recipesFolder = "craftable_shulker_shells")
+    @CraftingRule(recipes = "craftable_shulker_shells")
     @Rule(
             desc = "Allows to craft Shulker Shells from Turle Shells and Popped Chorus Fruits",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableShulkerShells = true;
-    @CraftingRule(recipesFolder = "craftable_tall_grass")
+    @CraftingRule(recipes = "craftable_tall_grass")
     @Rule(
             desc = "Allows to craft Tall Grass",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableTallGrass = true;
-    @CraftingRule(recipesFolder = "craftable_tuff_and_calcite")
+    @CraftingRule(recipes = "craftable_tuff_and_calcite")
     @Rule(
             desc = "Allows to craft Tuff and Calite",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableTuffAndCalcite = true;
-    @CraftingRule(recipesFolder = "fast_redstone_crafting")
+    @CraftingRule(recipes = "fast_redstone_crafting")
     @Rule(
             desc = "Adds fast crafting for Dispenser and Repeater",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean fastRedstoneCrafting = true;
-    @CraftingRule(recipesFolder = "craftable_colored_blocks")
+    @CraftingRule(recipes = "quartz_crafting_compatibility")
     @Rule(
             desc = "Adds crafting compatibility with all types of Quartz Block",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean quartzCraftingCompatibility = true;
-    @CraftingRule(recipesFolder = "red_sandstone_crafting_compatibility")
+    @CraftingRule(recipes = "red_sandstone_crafting_compatibility")
     @Rule(
             desc = "Adds crafting compatibility with all types of Red Sandstone",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean redSandstoneCraftingCompatibility = true;
-    @CraftingRule(recipesFolder = "sandstone_crafting_compatibility")
+    @CraftingRule(recipes = "sandstone_crafting_compatibility")
     @Rule(
             desc = "Adds crafting compatibility with all types of Sandstone",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean sandstoneCraftingCompatibility = true;
-    @CraftingRule(recipesFolder = "slab_to_full_block")
+    @CraftingRule(recipes = "slab_to_block_crafting")
     @Rule(
             desc = "Allows to use 2 slabs to craft the block back",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
-    public static boolean slabToBlockCrafing = true;
-    @CraftingRule(recipesFolder = "stonecutter_quartz")
+    public static boolean slabToBlockCrafting = true;
+    @TagRule(tags = "items/stonecutter_quartz")
+    @CraftingRule(recipes = "stonecutter_quartz")
     @Rule(
             desc = "Adds stonecutter craftings for all types of Quartz Block",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean stonecutterQuartz = true;
-    @CraftingRule(recipesFolder = "stonecutter_red_sandstone")
+    @TagRule(tags = "items/stonecutter_red_sandstone")
+    @CraftingRule(recipes = "stonecutter_red_sandstone")
     @Rule(
             desc = "Adds stonecutter craftings for all types of Red Sandstone",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean stonecutterRedSandstone = true;
-    @CraftingRule(recipesFolder = "stonecutter_sandstone")
+    @TagRule(tags = "items/stonecutter_sandstone")
+    @CraftingRule(recipes = "stonecutter_sandstone")
     @Rule(
             desc = "Adds stonecutter craftings for all types of Sandstone",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean stonecutterSandstone = true;
-    @CraftingRule(recipesFolder = "stonecutter_stone")
+    @CraftingRule(recipes = "stonecutter_stone")
     @Rule(
             desc = "Adds stonecutter craftings for all variants of Stone",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean stonecutterStone = false;
-    @CraftingRule(recipesFolder = "stonecutter_wood")
+    @CraftingRule(recipes = "stonecutter_wood")
     @Rule(
             desc = "Adds stonecutter craftings for all types of Wooden Block",
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
@@ -292,7 +304,7 @@ public class CarpetRedCraftSettings {
     public static boolean stonecutterWood = true;
 
     // ---------------------TAGS----------------------- //
-    @LootTableRule(loottablesFolder = "enderman_no_grief")
+    @TagRule(overrideTags = "blocks/enderman_holdable.json")
     @Rule(
             desc = "Reduced the blocks that an Enderman can hold",
             extra = "Podzol, Pumpkins, Melons and Mycelium",
@@ -301,7 +313,7 @@ public class CarpetRedCraftSettings {
     public static boolean endermanNoGrief = true;
 
     // ------------------LOOT-TABLES------------------- //
-    @LootTableRule(loottablesFolder = "husk_drops_sand")
+    @LootTableRule(overrideLoottables = "entities/husk.json")
     @Rule(
             desc = "Husks drop sand on death",
             category = {SURVIVAL, FEATURE, REDCRAFT, LOOTTABLE}
@@ -309,17 +321,13 @@ public class CarpetRedCraftSettings {
     public static boolean huskDropsSand = true;
 
     // ------------------SCRIPTS----------------------- //
+    @LootTableRule(overrideLoottables = "entities/armor_stand.json")
     @Rule(
             desc = "Allows ArmorStand editing with Hoe",
             appSource = "armorstandeditor",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean armorStandEditor = true; //todo: editing intuitivo
-    @Rule(
-            desc = "Drop items to Armor Stands to apply them some proprieties",
-            category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
-    )
-    public static boolean betterArmorStands = true; //todo: converti in script
     @Rule(
             desc = "Right clicking with a Phantom Membrane or Glass Pane on an Item Frame will make it invisible or fixed",
             appSource = "betteritemframes",

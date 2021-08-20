@@ -8,11 +8,7 @@ import java.lang.annotation.Target;
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface CraftingRule {
-    String name() default "";
+    String[] overrideRecipes() default "";
 
     String[] recipes() default "";
-
-    String recipeNamespace() default "carpet-redcraft-addons";
-
-    String recipesFolder() default "";
 }
