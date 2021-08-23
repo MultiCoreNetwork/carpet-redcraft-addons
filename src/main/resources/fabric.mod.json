@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "carpet-redcraft-addons",
-  "version": "1.4.40",
+  "version": "${version}",
 
   "name": "Carpet RedCraft Addons",
   "description": "Addons for the RedCraft server",
@@ -37,7 +37,7 @@
     "minecraft": "1.17.x",
     "fabricloader": ">=0.11.3",
     "java": ">=16",
-    "carpet": ">=1.4.44"
+    "carpet": ">=1.4.40"
   },
   "suggests": {
     "flamingo": "*"

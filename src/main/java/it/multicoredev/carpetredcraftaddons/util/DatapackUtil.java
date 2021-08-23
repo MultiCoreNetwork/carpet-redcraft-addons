@@ -6,6 +6,7 @@ import carpet.settings.ParsedRule;
 import com.google.common.collect.Lists;
 import com.google.gson.JsonObject;
 import com.mojang.bridge.game.PackType;
+import it.multicoredev.carpetredcraftaddons.CarpetRedCraftExtension;
 import it.multicoredev.carpetredcraftaddons.CarpetRedCraftSettings;
 import net.minecraft.SharedConstants;
 import net.minecraft.resource.ResourcePackManager;
@@ -18,13 +19,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
-import java.net.URI;
 import java.net.URL;
-import java.nio.file.Files;
-import java.nio.file.NoSuchFileException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.*;
 import java.util.Collection;
+import java.util.Enumeration;
+import java.util.jar.JarEntry;
+import java.util.jar.JarFile;
 
 import static it.multicoredev.carpetredcraftaddons.CarpetRedCraftExtension.*;
 
@@ -37,7 +37,11 @@ public class DatapackUtil {
                 LOG.error(e);
             }
         } else {
-            file.delete();
+            try {
+                Files.deleteIfExists(file.toPath());
+            } catch (IOException e) {
+                LOG.error(e);
+            }
         }
     }
 
@@ -132,7 +136,7 @@ public class DatapackUtil {
                 );
                 needsReload = true;
             }
-            if(needsReload){
+            if (needsReload) {
                 CarpetServer.settingsManager.addRuleObserver((source, rule, s) -> {
                     if (rule.name.equals(ruleName)) {
                         reload();
@@ -153,14 +157,14 @@ public class DatapackUtil {
 
     private static void updateRule(ParsedRule<?> rule, String[] elements, String[] overrideElements, Path dataPath, String type) {
         if (rule.getBoolValue()) {
-            for (String element : elements) if(!element.equals("")) copyElement(element, dataPath, type, false);
-            for (String element : overrideElements) if(!element.equals("")) copyElement(element, dataPath, type, true);
+            for (String element : elements) if (!element.equals("")) copyElement(element, dataPath, type, false);
+            for (String element : overrideElements) if (!element.equals("")) copyElement(element, dataPath, type, true);
         } else {
             for (String element : elements)
-                if(!element.equals(""))
+                if (!element.equals(""))
                     deleteFile(dataPath.resolve(MOD_ID).resolve(type).resolve(element).toFile());
             for (String overrideElement : overrideElements)
-                if(!overrideElement.equals(""))
+                if (!overrideElement.equals(""))
                     deleteFile(dataPath.resolve("minecraft").resolve(type).resolve(overrideElement).toFile());
         }
     }
@@ -179,23 +183,56 @@ public class DatapackUtil {
     }
 
     public static void copyElement(String element, Path dataPath, String type, boolean overrideVanilla) {
-        try {
-            String parent = overrideVanilla ? "minecraft" : MOD_ID;
+        String parent = overrideVanilla ? "minecraft" : MOD_ID;
 
-            String resourcePath = ".data/" + parent + "/" + type + "/" + element;
+        String target = parent + "/" + type + "/" + element;
+        String resourcePath = ".data/" + target;
+
+        final File jarFile = new File(CarpetRedCraftExtension.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+        if (jarFile.isFile()) copyElementFromJar(jarFile, dataPath, resourcePath);
+        else copyElementFromIDE(resourcePath, dataPath.resolve(target));
+    }
+
+    public static void copyElementFromJar(File jarFile, Path dataPath, String resourcePath) {
+        try {
+
+            final JarFile jar = new JarFile(jarFile);
+            final Enumeration<JarEntry> entries = jar.entries();
+            while (entries.hasMoreElements()) {
+                final String filePath = entries.nextElement().getName();
+                if (filePath.endsWith(".json") && (filePath.startsWith(resourcePath + "/") || filePath.equals(resourcePath))) {
+                    InputStream source = BundledModule.class.getClassLoader().getResourceAsStream(filePath);
+                    try {
+                        assert source != null;
+                        Path targetPath = dataPath.resolve(filePath.replace(".data/", ""));
+                        Files.createDirectories(targetPath.getParent());
+                        Files.copy(source, targetPath, StandardCopyOption.REPLACE_EXISTING);
+                    } catch (IOException e) {
+                        LOG.error(e);
+                    } catch (NullPointerException e) {
+                        LOG.error("Resource '" + filePath + "' is null:");
+                        e.printStackTrace();
+                    }
+                }
+            }
+            jar.close();
+        } catch (IOException e) {
+            LOG.error(e);
+        }
+    }
+
+    public static void copyElementFromIDE(String resourcePath, Path targetPath) {
+        try {
             URL resourceURL = BundledModule.class.getClassLoader().getResource(resourcePath);
-            if(resourceURL == null) throw new NoSuchFileException("Impossible to find " + element);
+            if (resourceURL == null) throw new NoSuchFileException("Impossible to find " + resourcePath);
 
             File resourceFile = Paths.get(resourceURL.toURI()).toFile();
-
-            File datapackFile = dataPath.resolve(parent).resolve(type).resolve(element).toFile();
-
-            if(!resourceFile.exists()) throw new NoSuchFileException("Impossible to find " + element);
-            if(resourceFile.isDirectory()){
-                FileUtils.copyDirectory(resourceFile, datapackFile);
-            } else if(resourceFile.isFile()) {
-                Files.createDirectories(datapackFile.toPath().getParent());
-                Files.copy(resourceFile.toPath(), datapackFile.toPath());
+            if (!resourceFile.exists()) throw new NoSuchFileException("Impossible to find " + resourceFile);
+            if (resourceFile.isDirectory()) {
+                FileUtils.copyDirectory(resourceFile, targetPath.toFile());
+            } else if (resourceFile.isFile()) {
+                Files.createDirectories(targetPath.getParent());
+                Files.copy(resourceFile.toPath(), targetPath, StandardCopyOption.REPLACE_EXISTING);
             }
         } catch (Exception e) {
             LOG.error(e);
