@@ -15,7 +15,8 @@
   ],
   "contact": {
     "homepage": "https://www.curseforge.com/minecraft/mc-mods/carpet-redcraft-addons",
-    "sources": "https://github.com/MultiCoreNetwork/carpet-redcraft-addons/issues"
+    "issues": "https://github.com/MultiCoreNetwork/carpet-redcraft-addons/issues",
+    "sources": "https://github.com/MultiCoreNetwork/carpet-redcraft-addons"
   },
   "license": "GNU-3.0",
   "icon": "assets/carpet-redcraft-addons/icon.png",
