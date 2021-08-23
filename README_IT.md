@@ -60,7 +60,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [protectionStacking](#protectionStacking)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
-- [redcraft2Teleport](#redcraft2Teleport)
+- [redcraft](#redcraft)
 - [redSandstoneCraftingCompatibility](#redSandstoneCraftingCompatibility)
 - [repairableAnvil](#repairableAnvil)
 - [reviveCoral](#reviveCoral)

@@ -59,7 +59,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [protectionStacking](#protectionStacking)
 - [prunedPlants](#prunedPlants)
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
-- [redcraft2Teleport](#redcraft2Teleport)
+- [redcraft](#redcraft)
 - [redSandstoneCraftingCompatibility](#redSandstoneCraftingCompatibility)
 - [repairableAnvil](#repairableAnvil)
 - [reviveCoral](#reviveCoral)
