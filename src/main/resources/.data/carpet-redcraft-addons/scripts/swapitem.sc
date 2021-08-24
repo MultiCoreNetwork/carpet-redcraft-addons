@@ -4,11 +4,14 @@ __config() -> {
 	'commands' -> {
         '<fromslot>' -> _(fromSlot) -> swap(player(), fromSlot, player(), 'mainhand'),
         '<fromslot> <toslot>' -> _(fromSlot, toSlot) -> swap(player(), fromSlot, player(), toSlot),
-        'entity' -> _() -> swap(player() ~ ['trace',5,'entities'], 'mainhand', player(), 'mainhand'),
-        'entity <fromslot>' -> _(fromSlot) -> swap(player() ~ ['trace',5,'entities'], fromSlot, player(), 'mainhand'),
-        'entity <fromslot> <toslot>' -> _(fromSlot, toSlot) -> swap(player() ~ ['trace',5,'entities'], fromSlot, player(), toSlot),
+        '<fromslot> entity' -> _(fromSlot) -> swap(player(), fromSlot, player() ~ ['trace',5,'entities'], 'mainhand'),
         '<fromslot> entity <toslot>' -> _(fromSlot, toSlot) -> swap(player(), fromSlot, player() ~ ['trace',5,'entities'], toSlot),
-        'entity <fromslot> entity <toslot>' -> _(fromSlot, toSlot) -> swap(player() ~ ['trace',5,'entities'], fromSlot, player() ~ ['trace',5,'entities'], toSlot)
+        'entity' -> _() -> swap(player() ~ ['trace',5,'entities'], 'mainhand', player(), 'mainhand'),
+        'entity <fromslot>' -> _(fromslot) -> swap(player() ~ ['trace',5,'entities'], fromslot, player(), 'mainhand'),
+        'entity <fromslot> <toslot>' -> _(fromSlot, toSlot) -> swap(player() ~ ['trace',5,'entities'], fromSlot, player(), toSlot),
+        'entity <fromslot> entity' -> _(fromSlot) -> swap(player() ~ ['trace',5,'entities'], fromSlot, player() ~ ['trace',5,'entities'], 'mainhand'),
+        'entity <fromslot> entity <toslot>' -> _(fromSlot, toSlot) -> swap(player() ~ ['trace',5,'entities'], fromSlot, player() ~ ['trace',5,'entities'], toSlot),
+        'entity entity <toslot>' -> _(toSlot) -> swap(player() ~ ['trace',5,'entities'], 'mainhand', player() ~ ['trace',5,'entities'], toSlot),
     },
     'arguments' -> {
         'fromslot' -> {
@@ -23,7 +26,7 @@ __config() -> {
 };
 
 swap(fromEntity, fromSlot, toEntity, toSlot) -> (
-    if(!fromEntity || !toEntity, 
+    if(!fromEntity || !toEntity,
         return(print(player(), format('n Look an entity to run this command.')))
     );
     if(!player() ~ 'permission_level' && (isOtherPlayer(player(), fromEntity) || isOtherPlayer(player(), toEntity)),
@@ -72,7 +75,7 @@ if(entity ~ 'type' == 'player',
 _inventory_set(entity, slot, count, item, nbt) -> (
     item = if(!count || !item, 'air', item);
     count = count || 1;
-    nbt = nbt || '{}';
+    nbt = nbt || '';
     slot = if(slot ~ 'hand', 'weapon.' + slot, 'armor.' + slot);
 
     run(str('item replace entity %s %s with %s%s %d',
