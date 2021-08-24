@@ -40,8 +40,13 @@ swap(fromEntity, fromSlot, toEntity, toSlot) -> (
     if(toItem == fromItem,
         return(print(player(), format('n You can\'t swap two identical items.')))
     );
-    _inventory_set(toEntity, toSlot, fromItem:1, fromItem:0, fromItem:2);
-    _inventory_set(fromEntity, fromSlot, toItem:1, toItem:0, toItem:2);
+    success = _inventory_set(toEntity, toSlot, fromItem:1, fromItem:0, fromItem:2) &&
+              _inventory_set(fromEntity, fromSlot, toItem:1, toItem:0, toItem:2);
+    if(!success,
+        _inventory_set(fromEntity, fromSlot, fromItem:1, fromItem:0, fromItem:2);
+        _inventory_set(toEntity, toSlot, toItem:1, toItem:0, toItem:2);
+        return(print(player(), format('n You can\'t swap this two items.')))
+    );
     sound('minecraft:item.armor.equip_generic', pos(fromEntity), 1, 1, 'player');
 );
 
@@ -76,5 +81,5 @@ _inventory_set(entity, slot, count, item, nbt) -> (
         item,
         nbt,
         count
-    ))
+    )):0
 )
