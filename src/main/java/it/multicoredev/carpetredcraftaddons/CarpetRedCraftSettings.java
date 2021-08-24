@@ -84,6 +84,12 @@ public class CarpetRedCraftSettings {
     )
     public static boolean commandStats = true;
     @Rule(
+            desc = "Allows to have access to the /swapitem command",
+            appSource = "swapitem",
+            category = {SURVIVAL, FEATURE, REDCRAFT, COMMAND}
+    )
+    public static boolean commandSwapitem = true;
+    @Rule(
             desc = "Allows to have access to the /timebar command",
             appSource = "timebar",
             category = {SURVIVAL, FEATURE, REDCRAFT, COMMAND}

@@ -22,6 +22,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [commandPlayerme](#commandPlayerme)
 - [commandSkull](#commandSkull)
 - [commandStats](#commandStats)
+- [commandSwapitem](#commandSwapitem)
 - [commandTimebar](#commandTimebar)
 - [commandWaystone](#commandWaystone)
 - [craftableCobwebs](#craftableCobwebs)
@@ -184,6 +185,15 @@ Allows to have access to the /skull command
 ## commandStats
 
 Allows to have access to the /stats command
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
+
+## commandSwapitem
+
+Allows to have access to the /swapitem command
 
 - Type: `boolean`
 - Default value: `true`

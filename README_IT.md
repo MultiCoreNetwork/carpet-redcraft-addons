@@ -22,6 +22,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [commandPlayerme](#commandPlayerme)
 - [commandSkull](#commandSkull)
 - [commandStats](#commandStats)
+- [commandSwapitem](#commandSwapitem)
 - [commandTimebar](#commandTimebar)
 - [commandWaystone](#commandWaystone)
 - [craftableCobwebs](#craftableCobwebs)
@@ -178,6 +179,15 @@ Permette di avere accesso al comando /skull
 ## commandStats
 
 Permette di avere accesso al comando /stats
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
+
+## commandSwapitem
+
+Permette di avere accesso al comando /swapitem
 
 - Type: `boolean`
 - Default value: `true`
