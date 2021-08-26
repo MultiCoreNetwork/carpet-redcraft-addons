@@ -6,7 +6,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
-@Mixin(SugarCaneBlock.class)
+@Mixin(priority = 999, value = SugarCaneBlock.class)
 public abstract class SugarCaneBlock_syncMixin
 {
     @ModifyConstant(method = "randomTick", require = 2, constant = @Constant(intValue = 4))

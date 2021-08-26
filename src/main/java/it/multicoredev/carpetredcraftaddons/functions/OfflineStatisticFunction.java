@@ -1,6 +1,5 @@
 package it.multicoredev.carpetredcraftaddons.functions;
 
-import carpet.fakes.StatTypeInterface;
 import carpet.script.CarpetContext;
 import carpet.script.Expression;
 import carpet.script.LazyValue;
@@ -52,6 +51,6 @@ public class OfflineStatisticFunction {
 
     private static <T> Stat<T> getStat(StatType<T> type, Identifier id) {
         T key = type.getRegistry().get(id);
-        return key != null && ((StatTypeInterface) type).hasStatCreated(key) ? type.getOrCreateStat(key) : null;
+        return key != null && type.hasStat(key) ? type.getOrCreateStat(key) : null;
     }
 }

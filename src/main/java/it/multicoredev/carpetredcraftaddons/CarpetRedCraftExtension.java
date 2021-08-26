@@ -5,9 +5,7 @@ import carpet.CarpetServer;
 import carpet.script.CarpetExpression;
 import carpet.script.CarpetScriptServer;
 import carpet.script.bundled.BundledModule;
-import carpet.settings.ParsedRule;
 import carpet.settings.Rule;
-import com.google.common.collect.Lists;
 import com.mojang.brigadier.CommandDispatcher;
 import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
 import it.multicoredev.carpetredcraftaddons.commands.OpCommand;
@@ -16,29 +14,18 @@ import it.multicoredev.carpetredcraftaddons.events.CarpetRedCraftEvents;
 import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
 import it.multicoredev.carpetredcraftaddons.functions.StructuresFunctions;
 import net.fabricmc.api.ModInitializer;
-import net.minecraft.resource.ResourcePackManager;
-import net.minecraft.resource.ResourcePackProfile;
 import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.command.ReloadCommand;
 import net.minecraft.server.command.ServerCommandSource;
-import net.minecraft.util.WorldSavePath;
 import org.apache.commons.io.IOUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Locale;
-import java.util.Map;
 
 import static it.multicoredev.carpetredcraftaddons.util.DatapackUtil.*;
-import static java.util.stream.Collectors.toList;
 
 public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer {
     public static final String MOD_ID = "carpet-redcraft-addons";

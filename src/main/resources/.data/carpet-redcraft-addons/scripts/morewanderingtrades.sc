@@ -79,8 +79,6 @@ _add_random_trades(villager) -> (
     )
 );
 
-entity_load_handler('wandering_trader', _(e, new) -> (
-    if(new && !query(new, 'has_scoreboard_tag', 'gb.moretrades'),
-        _add_random_trades(new)
-    );
-));
+entity_load_handler('wandering_trader',
+    _(e, new) -> if(new, _add_random_trades(e));
+);

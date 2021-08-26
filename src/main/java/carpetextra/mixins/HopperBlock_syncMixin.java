@@ -7,7 +7,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Constant;
 import org.spongepowered.asm.mixin.injection.ModifyConstant;
 
-@Mixin(HopperBlock.class)
+@Mixin(priority = 999, value = HopperBlock.class)
 public abstract class HopperBlock_syncMixin
 {
     @ModifyConstant(method = "updateEnabled", constant = @Constant(intValue = 4))

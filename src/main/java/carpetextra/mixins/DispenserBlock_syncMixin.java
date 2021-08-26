@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(DispenserBlock.class)
+@Mixin(priority = 999, value = DispenserBlock.class)
 public abstract class DispenserBlock_syncMixin
 {
     @Redirect(method = "neighborUpdate", at = @At(
