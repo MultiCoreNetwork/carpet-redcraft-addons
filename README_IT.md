@@ -476,7 +476,7 @@ Gli zombi secchi rilasciano sabbia alla loro morte
 
 ## illusionersSpawnInRaids
 
-Permette agli illusionisti di generarsi all'interno delle invasioni (Necessita un restart per disabilitare)
+Permette agli illusionisti di generarsi all'interno delle invasioni (Necessita un riavvio)
 
 - Type: `boolean`
 - Default value: `false`

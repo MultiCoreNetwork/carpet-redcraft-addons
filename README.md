@@ -483,7 +483,7 @@ Husks drop sand on death
 
 ## illusionersSpawnInRaids
 
-Allows illusioners to spawn in raids (It needs restart to turn it off)
+Allows illusioners to spawn in raids (It needs restart)
 
 - Type: `boolean`
 - Default value: `false`
