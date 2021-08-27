@@ -17,6 +17,7 @@ version = project.minecraft_version+'-'+project.mod_version+'+v'+new Date().form
 group = project.maven_group
 
 loom {
+	accessWidenerPath = file("src/main/resources/carpet-redcraft-addons.accesswidener")
 }
 
 dependencies {

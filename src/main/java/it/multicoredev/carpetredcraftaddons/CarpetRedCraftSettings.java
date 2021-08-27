@@ -16,8 +16,6 @@ import static carpet.settings.RuleCategory.*;
 public class CarpetRedCraftSettings {
     public static final String REDCRAFT = "redcraft";
     public static final String CRAFTING = "crafting";
-    public static final String LOOTTABLE = "loottable";
-    public static final String DATAPACK = "datapack";
     public static final String EXTRA = "extras";
     public static final String ADDONS = "carpetaddons";
 
@@ -314,7 +312,7 @@ public class CarpetRedCraftSettings {
     @Rule(
             desc = "Reduced the blocks that an Enderman can hold",
             extra = "Podzol, Pumpkins, Melons and Mycelium",
-            category = {SURVIVAL, FEATURE, REDCRAFT, DATAPACK}
+            category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean endermanNoGrief = true;
 
@@ -322,7 +320,7 @@ public class CarpetRedCraftSettings {
     @LootTableRule(overrideLoottables = "entities/husk.json")
     @Rule(
             desc = "Husks drop sand on death",
-            category = {SURVIVAL, FEATURE, REDCRAFT, LOOTTABLE}
+            category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean huskDropsSand = true;
 
@@ -462,28 +460,6 @@ public class CarpetRedCraftSettings {
     )
     public static boolean villagerLeash = true;
     // ---------------------MIXINS--------------------- //
-    @Rule(
-            desc = "Disable Command Feedback for OPs level 1",
-            category = {FEATURE, REDCRAFT}
-    )
-    public static boolean disableOPsCommandFeedback = true;
-    @Rule(
-            desc = "Portals in RedCraft2 area will link to redcraft2 dimensions",
-            appSource = "redcraft",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
-    )
-    public static boolean redcraft = false;
-    @Rule(
-            desc = "Allows to stack multiple protection types",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
-    )
-    public static boolean protectionStacking = true;
-    @Rule(
-            desc = "Ghasts will no grief the world",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
-    )
-    public static boolean ghastNoGrief = false;
-
     private static class AnvilRepairCostLimitValidator extends Validator<Integer> {
         @Override public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue, String string) {
             return (newValue > 0 && newValue <= 32767) ? newValue : null;
@@ -499,4 +475,31 @@ public class CarpetRedCraftSettings {
             validate = AnvilRepairCostLimitValidator.class
     )
     public static int anvilRepairCostLimit = 40;
+    @Rule(
+            desc = "Disable Command Feedback for OPs level 1",
+            category = {FEATURE, REDCRAFT}
+    )
+    public static boolean disableOPsCommandFeedback = true;
+    @Rule(
+            desc = "Ghasts will no grief the world",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean ghastNoGrief = false;
+    @Rule(
+            desc = "Allows to stack multiple protection types",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean protectionStacking = true;
+    @LootTableRule(overrideLoottables = "entities/illusioner.json")
+    @Rule(
+            desc = "Allows illusioners to spawn in raids (It needs restart to turn it off)",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean illusionersSpawnInRaids = false;
+    @Rule(
+            desc = "Portals in RedCraft2 area will link to redcraft2 dimensions",
+            appSource = "redcraft",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean redcraft = false;
 }

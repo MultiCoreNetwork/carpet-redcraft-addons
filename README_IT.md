@@ -52,6 +52,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [graves](#graves)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
+- [illusionersSpawnInRaids](#illusionersSpawnInRaids)
 - [invisibleItemframe](#invisibleItemframe)
 - [lastDeathCompass](#lastDeathCompass)
 - [lavaSponges](#lavaSponges)
@@ -470,6 +471,15 @@ Gli zombi secchi rilasciano sabbia alla loro morte
 
 - Type: `boolean`
 - Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
+
+## illusionersSpawnInRaids
+
+Permette agli illusionisti di generarsi all'interno delle invasioni (Necessita un restart per disabilitare)
+
+- Type: `boolean`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `DATAPACK`
 

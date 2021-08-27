@@ -1,0 +1,110 @@
+{
+  "type": "minecraft:entity",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{HideFlags:32,display:{Name:{\"text\":\"Illusioner's Potion\",\"color\":\"gold\",\"italic\":false}},CustomPotionEffects:[{Id:32b,Amplifier:0b,Duration:6000}],CustomPotionColor:11590404}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{HideFlags:32,display:{Name:{\"text\":\"Illusioner's Potion\",\"color\":\"gold\",\"italic\":false}},CustomPotionEffects:[{Id:31b,Amplifier:0b,Duration:6000}],CustomPotionColor:11590404}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{HideFlags:32,display:{Name:{\"text\":\"Illusioner's Potion\",\"color\":\"gold\",\"italic\":false}},CustomPotionEffects:[{Id:31b,Amplifier:1b,Duration:6000}],CustomPotionColor:11590404}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{HideFlags:32,display:{Name:{\"text\":\"Illusioner's Potion\",\"color\":\"gold\",\"italic\":false}},CustomPotionEffects:[{Id:31b,Amplifier:2b,Duration:6000}],CustomPotionColor:11590404}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{HideFlags:32,display:{Name:{\"text\":\"Illusioner's Potion\",\"color\":\"gold\",\"italic\":false}},CustomPotionEffects:[{Id:31b,Amplifier:3b,Duration:6000}],CustomPotionColor:11590404}"
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 1,
+          "name": "minecraft:potion",
+          "functions": [
+            {
+              "function": "minecraft:set_nbt",
+              "tag": "{HideFlags:32,display:{Name:{\"text\":\"Illusioner's Potion\",\"color\":\"gold\",\"italic\":false}},CustomPotionEffects:[{Id:31b,Amplifier:4b,Duration:6000}],CustomPotionColor:11590404}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "bonus_rolls": 0.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 0.0,
+                "max": 1.0
+              },
+              "add": false
+            },
+            {
+              "function": "minecraft:looting_enchant",
+              "count": {
+                "type": "minecraft:uniform",
+                "min": 0.0,
+                "max": 1.0
+              }
+            }
+          ],
+          "name": "minecraft:emerald"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:killed_by_player"
+        }
+      ]
+    }
+  ]
+}
