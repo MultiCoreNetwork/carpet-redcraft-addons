@@ -11,6 +11,13 @@ __on_player_interacts_with_entity(player, entity, hand) -> (
     );
     schedule(0, _(outer(entity)) -> (
         if(entity ~ 'custom_name' == null, return());
+        // COLORED NAME
+        custom_name = entity ~ 'custom_name';
+        if(custom_name ~ '^\\&',
+            parti = slice(split('&', custom_name),1);
+            modify(entity, 'custom_name', format(parti), true)
+        );
+        // SPECIAL ACTIONS
         custom_name = lower(entity ~ 'custom_name');
         if(
             ['freeze','noai','congela','congelato']~custom_name!=null,           modify(entity,'ai',false); modify(entity,'invulnerable',true),
@@ -32,7 +39,7 @@ __on_player_interacts_with_entity(player, entity, hand) -> (
             ['noclip']~custom_name!=null,                                        modify(entity,'no_clip',true),
             ['clip']~custom_name!=null,                                          modify(entity,'no_clip',false),
             ['sit','seduto']~custom_name!=null,                                  sit(entity),
-            ['unsleep','unsit','alzato']~custom_name!=null,                      modify(entity,'clear_tag','gb.is_sleeping'); modify(entity,'dismount'); modify(entity,'gravity', true); ,
+            ['unsleep','unsit','alzato']~custom_name!=null,                      modify(entity,'clear_tag','gb.is_sleeping'); modify(entity,'dismount'); modify(entity,'gravity', true); modify(entity,'move', [0,0.5,0]);,
             ['sleep','sdraiato']~custom_name!=null,                              modify(entity,'gravity',false); modify(entity,'tag','gb.is_sleeping')
         )
     ))
@@ -62,6 +69,38 @@ slow_looper() -> (
 );
 slow_looper();
 
+__on_player_right_clicks_block(player, item_tuple, hand, block, face, hitvec) -> (
+    if(player ~ 'gamemode' == 'spectator' || !player ~ 'sneaking' || !block ~ 'anvil$', return());
+    item_tuple = query(player, 'holds', hand);
+    if(item_tuple == null || item_tuple:0 != 'name_tag', return());
+    print(format(
+        'b Styles:\n',
+        ' ● ', 'i i', '  ➜ ', 'i Italic\n',
+        ' ● ', 'i b', '  ➜ ', 'b Bold\n',
+        ' ● ', 'i s', '  ➜ ', 's Strikethrough\n',
+        ' ● ', 'i u', '  ➜ ', 'u Underline\n',
+        ' ● ', 'i o', '  ➜ ', 'o Obfuscated\n\n',
+        'b Colours:\n',
+        ' ● ', 'i w', '  ➜ ', 'bw White\n',
+        ' ● ', 'i y', '  ➜ ', 'by Yellow\n',
+        ' ● ', 'i m', '  ➜ ', 'bm Magenta\n',
+        ' ● ', 'i r', '  ➜ ', 'br Red\n',
+        ' ● ', 'i c', '  ➜ ', 'bc Cyan\n',
+        ' ● ', 'i l', '  ➜ ', 'bl Lime\n',
+        ' ● ', 'i t', '  ➜ ', 'bt lighT blue\n',
+        ' ● ', 'i f', '  ➜ ', 'bf dark grayF\n',
+        ' ● ', 'i g', '  ➜ ', 'bg Gray\n',
+        ' ● ', 'i d', '  ➜ ', 'bd golD\n',
+        ' ● ', 'i p', '  ➜ ', 'bp Purple\n',
+        ' ● ', 'i n', '  ➜ ', 'bn browN\n',
+        ' ● ', 'i q', '  ➜ ', 'bq turQuoise\n',
+        ' ● ', 'i e', '  ➜ ', 'be grEEn\n',
+        ' ● ', 'i v', '  ➜ ', 'bv naVy blue\n',
+        ' ● ', 'i k', '  ➜ ', 'bk blacK\n',
+        ' ● ', 'i #FFAACC', '  ➜ ',
+            ... map(split('', 'arbitrary RGB color'), str('b#%06X %s', rand(16777215), _))
+    ))
+);
 
 __on_tick() -> (
     for(entity_selector('@e[tag=gb.is_sleeping]'),

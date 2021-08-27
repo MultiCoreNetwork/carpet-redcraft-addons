@@ -49,6 +49,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [endermanNoGrief](#endermanNoGrief)
 - [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
+- [ghastNoGrief](#ghastNoGrief)
 - [graves](#graves)
 - [horseStats](#horseStats)
 - [huskDropsSand](#huskDropsSand)
@@ -440,6 +441,15 @@ Allows to place ladders under other ladders
 
 - Type: `boolean`
 - Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## ghastNoGrief
+
+Ghasts will no grief the world
+
+- Type: `boolean`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 

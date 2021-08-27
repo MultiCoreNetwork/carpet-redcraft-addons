@@ -437,6 +437,15 @@ Permette di piazzare una scala a pioli fluttuante sotto ad una già piazzata
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
+## ghastNoGrief
+
+I ghast non danneggeranno più il mondo
+
+- Type: `boolean`
+- Default value: `false`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
 ## graves
 
 Crea una tomba personale alla morte del giocatore

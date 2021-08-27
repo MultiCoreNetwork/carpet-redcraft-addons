@@ -478,6 +478,11 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean protectionStacking = true;
+    @Rule(
+            desc = "Ghasts will no grief the world",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean ghastNoGrief = false;
 
     private static class AnvilRepairCostLimitValidator extends Validator<Integer> {
         @Override public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue, String string) {

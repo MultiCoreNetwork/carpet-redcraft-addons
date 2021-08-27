@@ -9,6 +9,7 @@
     "ArmorStandEntityMixin",
     "CustomPayloadC2SPacketMixin",
     "EntityMixin",
+    "FireballEntityMixin",
     "ProtectionEnchantmentMixin",
     "ServerCommandSourceMixin",
     "SpongeBlockMixin"
