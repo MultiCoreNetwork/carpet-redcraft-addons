@@ -4,207 +4,59 @@ __config() -> {
     'stay_loaded' -> true,
     'scope' -> 'global',
     'commands' -> {
-        'attack' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' attack')),
-
-        'attack continuous' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' attack continuous')),
-
-        'attack interval <ticks>' -> _(tk) -> 
-        (name = player()~'command_name';  
-        run('player '+name+' attack interval '+ tk)),
-
-        'attack once' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' attack once')),
-
-        'dismount' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' dismount')),
-
-        'drop' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' drop')),
-
-        'drop <hotbarslot>' -> _(so) -> 
-        (name = player()~'command_name'; 
-        st = so - 1; 
-        run('player '+name+' drop '+ st)),
-
-        'drop all' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' drop all')),
-
-        'drop continuous' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' drop continuous')),
-
-        'drop interval <ticks>' -> _(tk) -> 
-        (name = player()~'command_name';  
-        run('player '+name+' drop interval '+ tk)),
-
-        'drop mainhand' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' drop mainhand')),
-
-        'drop offhand' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' drop offhand')),
-
-        'drop once' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' drop once')),
-
-        'dropStack' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' dropStack')),
-
-        'dropStack <hotbarslot>' -> _(so) -> 
-        (name = player()~'command_name'; 
-        st = so - 1; 
-        run('player '+name+' dropStack '+ st)),
-
-        'dropStack all' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' dropStack all')),
-
-        'dropStack continuous' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' dropStack continuous')),
-
-        'dropStack interval <ticks>' -> _(tk) -> 
-        (name = player()~'command_name';  
-        run('player '+name+' dropStack interval '+ tk)),
-
-        'dropStack mainhand' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' dropStack mainhand')),
-
-        'dropStack offhand' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' dropStack offhand')),
-
-        'dropStack once' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' dropStack once')),
-
-        'hotbar <hotbarslot>' -> _(so) ->
-        (name = player()~'command_name';
-        run('player '+name+' hotbar '+ so)),
-
-        'jump' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' jump')),
-
-        'jump continuous' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' jump continuous')),
-
-        'jump interval <ticks>' -> _(tk) -> 
-        (name = player()~'command_name';  
-        run('player '+name+' jump interval '+ tk)),
-
-        'jump once' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' jump once')),
-
-        'look at <rotation>' -> _(rn) ->
-        (name = player()~'command_name';
-        run('player '+name+' look at'+ rn)),
-
-        'look down' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' look down')),
-
-        'look east' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' look east')),
-
-        'look north' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' look north')),
-
-        'look south' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' look south')),
-
-        'look up' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' look up')),
-
-        'look west' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' look west')),
-
-        'mount' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' mount')),
-
-        'mount anything' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' mount anything')),
-
-        'shadow' -> _() ->
-        if(system_info('world_carpet_rules'):'commandPlayer' == 'true',
-        name = player()~'command_name';
-        run('player '+name+' shadow')),
-
-        'stop' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' stop')),
-
-        'swapHands' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' swapHands')),
-
-        'swapHands continuous' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' swapHands continuous')),
-
-        'swapHands interval <ticks>' -> _(tk) -> 
-        (name = player()~'command_name';  
-        run('player '+name+' swapHands interval '+ tk)),
-
-        'swapHands once' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' swapHands once')),
-
-        'turn back' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' turn back')),
-
-        'turn left' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' turn left')),
-
-        'turn right' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' turn right')),
-
-        'turn <rotation>' -> _(rn) ->
-        (name = player()~'command_name';
-        run('player '+name+' turn '+ rn)),
-
-        'use' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' use')),
-
-        'use continuous' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' use continuous')),
-
-        'use interval <ticks>' -> _(tk) -> 
-        (name = player()~'command_name';  
-        run('player '+name+' use interval '+ tk)),
-
-        'use once' -> _() ->
-        (name = player()~'command_name';
-        run('player '+name+' use once')),
+        'attack' ->                     _() ->   _player('attack'),
+        'attack continuous' ->          _() ->   _player('attack continuous'),
+        'attack interval <ticks>' ->    _(tk) -> _player('attack continuous ' + tk),
+        'attack once' ->                _() ->   _player('attack once'),
+        'dismount' ->                   _() ->   _player('dismount'),
+        'drop' ->                       _() ->   _player('drop'),
+        'drop <hotbarslot>' ->          _(so) -> _player('drop ' + so),
+        'drop all' ->                   _() ->   _player('drop all'),
+        'drop continuous' ->            _() ->   _player('drop continuous'),
+        'drop interval <ticks>' ->      _(tk) -> _player('drop interval ' + tk),
+        'drop mainhand' ->              _() ->   _player('drop mainhand'),
+        'drop offhand' ->               _() ->   _player('drop offhand'),
+        'drop once' ->                  _() ->   _player('drop once'),
+        'dropStack' ->                  _() ->   _player('dropStack'),
+        'dropStack <hotbarslot>' ->     _(so) -> _player('dropStack '+so),
+        'dropStack all' ->              _() ->   _player('dropStack all'),
+        'dropStack continuous' ->       _() ->   _player('dropStack continuous'),
+        'dropStack mainhand' ->         _() ->   _player('dropStack mainhand'),
+        'dropStack offhand' ->          _() ->   _player('dropStack offhand'),
+        'dropStack once' ->             _() ->   _player('dropStack once'),
+        'hotbar <hotbarslot>' ->        _(so) -> _player('hotbar ' + so),
+        'jump' ->                       _() ->   _player('jump'),
+        'jump continuous' ->            _() ->   _player('jump continuous'),
+        'jump interval <ticks>' ->      _(tk) -> _player('jump interval ' + tk),
+        'jump once' ->                  _() ->   _player('jump once'),
+        'look at <rotation>' ->         _(rn) -> _player('look at ' + rn),
+        'look down' ->                  _() ->   _player('look down'),
+        'look east' ->                  _() ->   _player('look east'),
+        'look north' ->                 _() ->   _player('look north'),
+        'look south' ->                 _() ->   _player('look south'),
+        'look up' ->                    _() ->   _player('look up'),
+        'look west' ->                  _() ->   _player('look west'),
+        'mount' ->                      _() ->   _player('mount'),
+        'mount anything' ->             _() ->   _player('mount anything'),
+        'shadow' ->                     _() ->   _player('shadow'),
+        'stop' ->                       _() ->   _player('stop'),
+        'swapHands' ->                  _() ->   _player('swapHands'),
+        'swapHands continuous' ->       _() ->   _player('swapHands continuous'),
+        'swapHands interval <ticks>' -> _(tk) -> _player('swapHands interval' + tk),
+        'swapHands once' ->             _() ->   _player('swapHands once'),
+        'turn back' ->                  _() ->   _player('turn back'),
+        'turn left' ->                  _() ->   _player('turn left'),
+        'turn right' ->                 _() ->   _player('turn right'),
+        'turn <rotation>' ->            _(rn) -> _player('turn ' + rn),
+        'use' ->                        _() ->   _player('use'),
+        'use continuous' ->             _() ->   _player('use continuous'),
+        'use interval <ticks>' ->       _(tk) -> _player('use interval ' + tk),
+        'use once' ->                   _() ->   _player('use once')
     },
     'arguments' -> {
         'ticks' -> {'type' -> 'int', 'min' -> 2, 'max' -> 72000, 'suggest' -> [20]},
-        'hotbarslot' -> {'type' -> 'int', 'min' -> 1, 'max' -> 9, 'suggest' -> [1,2,3,4,5,6,7,8,9]},
+        'hotbarslot' -> {'type' -> 'int', 'min' -> 0, 'max' -> 8, 'suggest' -> [1,2,3,4,5,6,7,8,9]},
     }
-}
+};
+
+_player(argument) -> run(str('player %s %s', player(), argument))
