@@ -11,7 +11,7 @@ global_tool = '_hoe$';
 
 global_parts = {
     'Body' -> [0, 21, 0],
-    'Head' -> [0, 22, 0],
+    'Head' -> [0, 23, 0],
     'LeftArm' -> [5, 21.5, 0],
     'RightArm' -> [-5, 21.5, 0],
     'LeftLeg' -> [1.9, 12, 0],
@@ -61,60 +61,49 @@ _clear_matching_tag(entity, match) -> (
     )
 );
 
-
 // MATRIX UTILS
 global_identity = [[1,0,0],[0,1,0],[0,0,1]];
-
+// Returns unit vector of given yaw and pitch
 direction(yaw, pitch) -> [-sin(yaw)*cos(pitch), -sin(pitch), cos(pitch)*cos(yaw)];
-
-_r_matrix(r, yaw) -> (
-    if(!r, r = [0,0]);
-    d = -sin(yaw)*(1-cos(r:1));
-    [[
-        [1+d*sin(yaw),-cos(yaw)*sin(r:1),d*cos(yaw)],
-        [cos(yaw)*sin(r:1),cos(r:1),sin(yaw)*sin(r:1)],
-        [d*cos(yaw),-sin(yaw)*sin(r:1),1+d*sin(yaw)]
-    ],[
-        [cos(r:0),0,sin(r:0)],
-        [0,1,0],
-        [-sin(r:0),0,cos(r:0)]
-    ]]
-);
-
-_t_matrix(r) -> ( // Rotation to traslation matrix
-    if(!r, r = [0,0,0]);
+// Returns an array of transformation matrices
+// to apply a rotation on pitch, yaw, roll axes
+_t_matrix(pitch, yaw, roll) -> (
     [[
         [1,0,0],
-        [0,cos(r:0),sin(r:0)],
-        [0,-sin(r:0),cos(r:0)]
+        [0,cos(pitch),sin(pitch)],
+        [0,-sin(pitch),cos(pitch)]
     ],[
-        [cos(r:1),0,sin(r:1)],
+        [cos(yaw),0,sin(yaw)],
         [0,1,0],
-        [-sin(r:1),0,cos(r:1)]
+        [-sin(yaw),0,cos(yaw)]
     ],[
-        [cos(r:2),-sin(r:2),0],
-        [sin(r:2),cos(r:2),0],
+        [cos(roll),-sin(roll),0],
+        [sin(roll),cos(roll),0],
         [0,0,1],
     ]];
 );
-
-_t(v, m) -> reduce(m, _a + v:_i * _, v * 0); // Traslate vector
-
-_t_apply(v, m) -> map(v,reduce(m, _t(_a, _), _)); // Apply traslation matrix to vectors
-
-_to_euler_angles(matrix, i_yaw) -> (
-    print('x: ' + (x = matrix:0));
-    print('y: ' + (y = matrix:1));
-    print('z: ' + (z = matrix:2));
-    print('dx: ' + sqrt(reduce(x, _a + _*_, 0)));
-    print('dy: ' + sqrt(reduce(y, _a + _*_, 0)));
-    print('dz: ' + sqrt(reduce(z, _a + _*_, 0)));
-
-    ret = _rotation_matrix_to_euler_angles(matrix);
-    print('pitch: ' + ret:0);
-    print('yaw: ' +   ret:1);
-    print('roll: ' +  ret:2);
-    ret
+// Traslate vector
+_t(v, m) -> reduce(m, _a + v:_i * _, v * 0);
+// Apply all traslation matrices to vectors
+_t_apply(v, m) -> map(v,reduce(m, _t(_a, _), _));
+// Return [pitch, yaw, roll] array from a rotation matrix
+_rotation_matrix_to_euler_angles(matrix) -> (
+    if(matrix:0:2 == 1 || matrix:0:2 == -1,
+        yaw = 0;
+        dlta = atan2(matrix:0:1, matrix:0:2);
+        if(matrix:0:2 == -1,
+            yaw = 180;
+            pitch = roll + dlta,
+        // Else
+            yaw = -180;
+            pitch = -roll + dlta;
+        ),
+    // Else
+        yaw = -asin(matrix:0:2);
+        pitch = atan2(matrix:1:2/cos(E2), matrix:2:2/cos(E2));
+        roll = atan2(matrix:0:1/cos(E2), matrix:0:0/cos(E2));
+    );
+    [pitch, -yaw, -roll]
 );
 
 // ARMORSTAND GETTER
@@ -236,10 +225,11 @@ _stop_moving(entity) -> (
 
 _change_pose(player, entity, mode, part) -> (
     init_pose = parse_nbt(entity ~ 'nbt':'Pose':part);
-    init_rotation = [player ~ 'yaw', player ~ 'pitch'];
-    init_orientation = _t_apply(f = _t_apply(global_identity, _t_matrix(init_pose)), _r_matrix([entity ~ 'yaw', 0], 0));
+    if(!init_pose || init_pose == 'null', init_pose =  [0,0,0]);
 
-    if(init_pose == 'null', init_pose = [0,0,0]);
+    init_orientation = _t_apply(global_identity, _t_matrix(...init_pose));
+    init_orientation = _t_apply(init_orientation, _t_matrix(null, entity ~ 'yaw', null));
+
     modify(entity, 'tag',
         'gb.armorstandeditor.moving',
         'gb.armorstandeditor.moving.player.' + lower(player ~ 'command_name'),
@@ -248,12 +238,12 @@ _change_pose(player, entity, mode, part) -> (
         str('gb.armorstandeditor.moving.z.%.03f', init_pose:2)
     );
     // Ticking
-    entity_event(entity, 'on_tick', '_change_pose_tick', player, mode, part, init_orientation, init_rotation);
+    entity_event(entity, 'on_tick', '_change_pose_tick', player, mode, part, init_orientation, player ~ 'yaw', player ~ 'pitch');
     // Feedback
     _sound(player, pos(entity), 'click');
 );
 
-_change_pose_tick(entity, player, mode, part, init_orientation, init_rotation) -> (
+_change_pose_tick(entity, player, mode, part, init_orientation, init_yaw, init_pitch) -> (
     // Undo (changing item)
     if(!_has_tool(player), _undo_pose(player, entity, part); return());
     // Confirm (unsneaking)
@@ -268,20 +258,11 @@ _change_pose_tick(entity, player, mode, part, init_orientation, init_rotation) -
     , mode == 'roll', // elif
         args = [pos:0, pos:1, player ~ 'yaw']
     , // else
-        p = pos(entity)+_parts(entity):part;
-        l = player ~ 'look';
-        ln = direction(...init_rotation);
-        draw_shape('line',2,'from',p,'to',p + ln);
-        draw_shape('line',2,'from',p,'to',p + l,'color', 0xFFFFFF);
-
-        dv = [player ~ 'yaw', player ~ 'pitch'] - init_rotation;
-
-        v = _t_apply(init_orientation, _r_matrix(dv, 90 + init_rotation:0));
-        //v = _t_apply(global_identity, _r_matrix(dv, 90 + init_rotation:0));
-
-        c = [0xFF0000FF, 0xFF00FF, 0xFFFF];
-        for(v, draw_shape('line',2,'from',p,'to',p+_,'color', c:_i));
-        args = _to_euler_angles(v, entity ~ 'yaw')
+        unit_vectors = _t_apply(init_orientation, _t_matrix(null, -init_yaw, null));
+        unit_vectors = _t_apply(unit_vectors, _t_matrix(player ~ 'pitch' - init_pitch, player ~ 'yaw', null));
+        // _draw_unit_vector(player, entity, part, init_yaw, init_pitch, unit_vectors);
+        unit_vectors = _t_apply(unit_vectors, _t_matrix(null, -entity ~ 'yaw', null));
+        args = _rotation_matrix_to_euler_angles(unit_vectors)
     );
     if(args, modify(entity, 'nbt_merge', str('{Pose:{%s:[%.03ff,%.03ff,%.03ff]}}', [part, ... args])));
 );
@@ -333,7 +314,7 @@ _put_on_head(player, entity) -> (
     head = armor_items:3;
     item_tuple = player ~ 'holds' || ['air', 0, {}];
     armor_items:3 = {'id' -> item_tuple:0, 'Count' -> item_tuple:1, 'tag' -> item_tuple:2 || {}};
-    inventory_set(player, player ~ 'selected_slot', head:'Count', head:'id', head:'tag');
+    inventory_set(player, player ~ 'selected_slot', head:'Count', head:'id', encode_nbt(head:'tag' || {}));
     modify(entity, 'nbt_merge', encode_nbt({'ArmorItems' -> armor_items}, true));
     // Feedback
     _sound(player, pos(entity), 'click');
@@ -434,54 +415,11 @@ if(hand == 'mainhand' && _edit_mode(entity),
     )
 );
 
-_test(entity, hitvec) -> (
-    part = _nearest_part(entity, hitvec);
-    r = parse_nbt(entity ~ 'nbt':'Pose':part);
-
+// DEBUG UTIL
+_draw_unit_vector(player, entity, part, init_yaw, init_pitch, unit_vectors) -> (
     p = pos(entity)+_parts(entity):part;
-
-    v = _t_apply(global_identity, _t_matrix(r));
-
+    draw_shape('line',2,'from',p,'to',p + direction(init_yaw, init_pitch));
+    draw_shape('line',2,'from',p,'to',p + player ~ 'look','color', 0xFFFFFF);
     c = [0xFF0000FF, 0xFF00FF, 0xFFFF];
-    for(v, draw_shape('line',2,'from',p,'to',p+_,'color', c:_i))
-);
-
-_transpose(matrix) -> (
-    rows = length(matrix);
-    columns = length(matrix:0);
-    matrix_T = [];
-    loop(columns,
-        row = [];
-        loop(rows,
-            row += matrix:i:j
-        );
-        matrix_T += row
-    );
-    matrix_T
-);
-
-_is_rotation_matrix(matrix) -> (
-    matrix_T = _transpose(matrix);
-    identity = _t(matrix, matrix_T);
-    identity - global_identity
-);
-
-_rotation_matrix_to_euler_angles(matrix) -> (
-    //if(!_is_rotation_matrix(matrix), print(player('all'), 'Matrice non valida'); return());
-
-    sy = sqrt(matrix:0:0 ^ 2 +  matrix:1:0 ^ 2);
-
-    if(sy >= 1e-6,
-        [
-            -atan2(matrix:2:1, matrix:2:2),
-            atan2(-matrix:2:0, sy),
-            atan2(matrix:1:0, matrix:0:0)
-        ]
-    , // Else
-        [
-            -atan2(-matrix:1:2, matrix:1:1),
-            atan2(-matrix:2:0, sy),
-            0
-        ]
-    )
+    for(unit_vectors, draw_shape('line',2,'from',p,'to',p+_,'color', c:_i));
 )
