@@ -1,10 +1,29 @@
 import('math','_euclidean');
-
-// DESCRIZIONE:
-// Picchiando un supporto per armature con una zappa esso entrerà in modalità editing
-// Quando un armorstand è in modalità editing, sarà possibile piazzarlgi blocchi in testa
-// con il tasto destro, muoverlo in giro con shift + tasto destro e cambiargli la posa
-// usando una zappa.
+__config() -> {
+    'scope' -> 'global',
+    'commands' -> {
+        'list' -> '_list_poses',
+        'load <posename>' -> '_load_pose',
+        'save <name>' -> '_save_pose',
+        'remove <posename>' -> ['_remove_pose', false],
+        'remove <posename> force' -> ['_remove_pose', true],
+        'save <name> <nbt>' -> '_save_pose_nbt'
+    },
+    'arguments' -> {
+        'posename' -> {
+            'type' -> 'identifier',
+            'suggester' -> _(args) -> keys(global_poses);
+        },
+        'name' -> {
+            'type' -> 'identifier',
+            'suggest' -> ['favourite'];
+        },
+        'nbt' -> {
+            'type' -> 'text',
+            'suggester' -> _(args) -> values(global_poses)
+        }
+    }
+};
 
 // COSTANTS
 global_tool = '_hoe$';
@@ -18,13 +37,6 @@ global_parts = {
     'RightLeg' -> [-1.9, 12, 0]
 };
 
-global_modes = [
-    'gb.armorstandeditor.mode.pitch',
-    'gb.armorstandeditor.mode.yaw',
-    'gb.armorstandeditor.mode.roll',
-    'gb.armorstandeditor.mode.test',
-];
-
 // TAGS UTILS
 _toggle_tag(entity, tag) -> (
     if(query(entity, 'has_scoreboard_tag', tag),
@@ -34,18 +46,6 @@ _toggle_tag(entity, tag) -> (
         modify(entity, 'tag', tag);
         true
     )
-);
-
-_cycle_tag(entity, ... tags) -> if(tags,
-    for(entity ~ 'scoreboard_tags',
-        if((i = tags ~ _) != null,
-            index = i;
-        );
-    );
-    modify(entity, 'clear_tag', tags);
-    index = (index + 1) % length(tags);
-    modify(entity, 'tag', tags:index);
-    tags:index
 );
 
 _tag_match(entity, match) -> (
@@ -64,7 +64,7 @@ _clear_matching_tag(entity, match) -> (
 // MATRIX UTILS
 global_identity = [[1,0,0],[0,1,0],[0,0,1]];
 // Returns unit vector of given yaw and pitch
-direction(yaw, pitch) -> [-sin(yaw)*cos(pitch), -sin(pitch), cos(pitch)*cos(yaw)];
+_direction(yaw, pitch) -> [-sin(yaw)*cos(pitch), -sin(pitch), cos(pitch)*cos(yaw)];
 // Returns an array of transformation matrices
 // to apply a rotation on pitch, yaw, roll axes
 _t_matrix(pitch, yaw, roll) -> (
@@ -107,6 +107,7 @@ _rotation_matrix_to_euler_angles(matrix) -> (
 );
 
 // ARMORSTAND GETTER
+// Return a map with the position of each entity's part
 _parts(e) -> (
     ret = {};
     for(global_parts,
@@ -120,6 +121,7 @@ _parts(e) -> (
     ret
 );
 
+// Return the nearest entity's part to the hitvec
 _nearest_part(entity, hitvec) -> (
     sd = null;
     for(parts = _parts(entity),
@@ -223,7 +225,7 @@ _stop_moving(entity) -> (
     entity_event(entity, 'on_tick', null)
 );
 
-_change_pose(player, entity, mode, part) -> (
+_change_pose(player, entity, part) -> (
     init_pose = parse_nbt(entity ~ 'nbt':'Pose':part);
     if(!init_pose || init_pose == 'null', init_pose =  [0,0,0]);
 
@@ -238,12 +240,12 @@ _change_pose(player, entity, mode, part) -> (
         str('gb.armorstandeditor.moving.z.%.03f', init_pose:2)
     );
     // Ticking
-    entity_event(entity, 'on_tick', '_change_pose_tick', player, mode, part, init_orientation, player ~ 'yaw', player ~ 'pitch');
+    entity_event(entity, 'on_tick', '_change_pose_tick', player, part, init_orientation, player ~ 'yaw', player ~ 'pitch');
     // Feedback
     _sound(player, pos(entity), 'click');
 );
 
-_change_pose_tick(entity, player, mode, part, init_orientation, init_yaw, init_pitch) -> (
+_change_pose_tick(entity, player, part, init_orientation, init_yaw, init_pitch) -> (
     // Undo (changing item)
     if(!_has_tool(player), _undo_pose(player, entity, part); return());
     // Confirm (unsneaking)
@@ -251,20 +253,12 @@ _change_pose_tick(entity, player, mode, part, init_orientation, init_yaw, init_p
 
     // Move
     pos = parse_nbt(entity ~ 'nbt':'Pose':part) || [0,0,0];
-    if(mode == 'pitch',
-        args = [player ~ 'yaw', pos:1, pos:2]
-    , mode == 'yaw', // elif
-        args = [pos:0, player ~ 'yaw', pos:2]
-    , mode == 'roll', // elif
-        args = [pos:0, pos:1, player ~ 'yaw']
-    , // else
-        unit_vectors = _t_apply(init_orientation, _t_matrix(null, -init_yaw, null));
-        unit_vectors = _t_apply(unit_vectors, _t_matrix(player ~ 'pitch' - init_pitch, player ~ 'yaw', null));
-        // _draw_unit_vector(player, entity, part, init_yaw, init_pitch, unit_vectors);
-        unit_vectors = _t_apply(unit_vectors, _t_matrix(null, -entity ~ 'yaw', null));
-        args = _rotation_matrix_to_euler_angles(unit_vectors)
-    );
-    if(args, modify(entity, 'nbt_merge', str('{Pose:{%s:[%.03ff,%.03ff,%.03ff]}}', [part, ... args])));
+    unit_vectors = _t_apply(init_orientation, _t_matrix(null, -init_yaw, null));
+    unit_vectors = _t_apply(unit_vectors, _t_matrix(player ~ 'pitch' - init_pitch, player ~ 'yaw', null));
+    // _draw_unit_vector(player, entity, part, init_yaw, init_pitch, unit_vectors);
+    unit_vectors = _t_apply(unit_vectors, _t_matrix(null, -entity ~ 'yaw', null));
+    args = _rotation_matrix_to_euler_angles(unit_vectors);
+    modify(entity, 'nbt_merge', str('{Pose:{%s:[%.03ff,%.03ff,%.03ff]}}', [part, ... args]));
 );
 
 _move(player, entity, hitvec) -> (
@@ -301,14 +295,6 @@ _move_tick(entity, player, distance, hitvec, selected_slot) -> (
     modify(entity, 'pos', pos(player) + pos)
 );
 
-_cycle_moving_mode(player, entity) -> (
-    mode = (_cycle_tag(entity, ... global_modes) - 'gb.armorstandeditor.mode.') || global_modes:0;
-    // Feedback
-    _sound(player, pos(entity), 'click');
-    display_title(player, 'actionbar', 'Mode selected: ' + title(replace(mode, '_', ' & ')));
-    mode
-);
-
 _put_on_head(player, entity) -> (
     armor_items = parse_nbt(entity ~ 'nbt':'ArmorItems');
     head = armor_items:3;
@@ -320,6 +306,44 @@ _put_on_head(player, entity) -> (
     _sound(player, pos(entity), 'click');
 );
 
+_special_actions(item, count, entity) -> (
+ if(item == 'stick' && count >= 2 && !entity ~ 'nbt' : 'ShowArms',
+        modify(entity, 'nbt_merge', '{ShowArms:true}');
+        remove_count = 2;
+    , item == 'smooth_stone_slab' && !entity ~ 'nbt' : 'NoBasePlate',
+        modify(entity, 'nbt_merge', '{NoBasePlate:true}')
+    , item == 'feather' && entity ~ 'gravity',
+        modify(entity, 'tag', 'gb.armorstandeditor.nogravity.1');
+        modify(entity, 'gravity', false)
+    , item == 'phantom_membrane' && !entity ~ 'nbt' : 'Invisible',
+        modify(entity, 'tag', 'gb.Invisible');
+        modify(entity, 'nbt_merge', '{Invisible:true}')
+    , item == 'ender_eye' && entity ~ 'nbt' : 'Invisible',
+        modify(entity, 'nbt_merge', '{Invisible:false}');
+        modify(entity, 'tag', 'gb.Visible')
+    , item == 'campfire' && !query(entity, 'has_scoreboard_tag', 'gb.SmokeParticles'),
+        modify(entity, 'tag', 'gb.CampfireSmokeParticles', 'gb.SmokeParticles')
+    , item == 'soul_campfire' && !query(entity, 'has_scoreboard_tag', 'Sgb.mokeParticles'),
+        modify(entity, 'tag', 'gb.SoulCampfireSmokeParticles', 'gb.SmokeParticles')
+    , item == 'stone_button' && !entity ~ 'nbt' : 'Small',
+        modify(entity, 'nbt_merge', '{Small:true}');
+        modify(entity, 'tag', 'gb.StoneSmall')
+    , item == 'polished_blackstone_button' && !entity ~ 'nbt' : 'Small',
+        modify(entity, 'nbt_merge', '{Small:true}');
+        modify(entity, 'tag', 'gb.BlackstoneSmall')
+    , item == 'stone_pressure_plate' && entity ~ 'nbt' : 'Small',
+        modify(entity, 'nbt_merge', '{Small:false}');
+        modify(entity, 'tag', 'gb.StoneBig')
+    , item == 'polished_blackstone_pressure_plate' && entity ~ 'nbt' : 'Small',
+        modify(entity, 'nbt_merge', '{Small:false}');
+        modify(entity, 'tag', 'gb.BlackstoneBig')
+    , item == 'blaze_powder' && !query(entity, 'has_scoreboard_tag', 'gb.FlameParticles'),
+        modify(entity, 'tag', 'gb.FlameParticles')
+    , // Else
+        return(false)
+    );
+    true
+);
 
 // SOUNDS
 _sound(player, pos, type) ->
@@ -344,57 +368,16 @@ if(hand == 'mainhand' && _edit_mode(entity),
     if(player_moving = _moving_mode(entity),
         // Confirm (clicking again)
         _confirm_move(player_moving, entity)
-    , _has_tool(player), // elif
-        if(player ~ 'sneaking',
-            // Change pose
-            part = _nearest_part(entity, hitvec);
-            mode = _tag_match(entity, '(?:gb\\.armorstandeditor\\.mode\\.)(\\w+)');
-            _change_pose(player, entity, mode, part)
-        , // else
-            // Change moving mode
-            _cycle_moving_mode(player, entity)
-        )
-    , // else
+    , player ~ 'sneaking' && _has_tool(player), // Elif
+        // Change pose
+        part = _nearest_part(entity, hitvec);
+        _change_pose(player, entity, part)
+    , // Else
         item_tuple = player ~ 'holds';
         if(player ~ 'sneaking' && item_tuple,
             [item, count, nbt] = item_tuple;
             remove_count = 1;
-            if(item == 'stick' && count >= 2 && !entity ~ 'nbt' : 'ShowArms',
-                modify(entity, 'nbt_merge', '{ShowArms:true}');
-                remove_count = 2;
-            , item == 'smooth_stone_slab' && !entity ~ 'nbt' : 'NoBasePlate',
-                modify(entity, 'nbt_merge', '{NoBasePlate:true}')
-            , item == 'feather' && entity ~ 'gravity',
-                modify(entity, 'tag', 'gb.armorstandeditor.nogravity.1');
-                modify(entity, 'gravity', false)
-            , item == 'phantom_membrane' && !entity ~ 'nbt' : 'Invisible',
-                modify(entity, 'tag', 'gb.Invisible');
-                modify(entity, 'nbt_merge', '{Invisible:true}')
-            , item == 'ender_eye' && entity ~ 'nbt' : 'Invisible',
-                modify(entity, 'nbt_merge', '{Invisible:false}');
-                modify(entity, 'tag', 'gb.Visible')
-            , item == 'campfire' && !query(entity, 'has_scoreboard_tag', 'gb.SmokeParticles'),
-                modify(entity, 'tag', 'gb.CampfireSmokeParticles', 'gb.SmokeParticles')
-            , item == 'soul_campfire' && !query(entity, 'has_scoreboard_tag', 'Sgb.mokeParticles'),
-                modify(entity, 'tag', 'gb.SoulCampfireSmokeParticles', 'gb.SmokeParticles')
-            , item == 'stone_button' && !entity ~ 'nbt' : 'Small',
-                modify(entity, 'nbt_merge', '{Small:true}');
-                modify(entity, 'tag', 'gb.StoneSmall')
-            , item == 'polished_blackstone_button' && !entity ~ 'nbt' : 'Small',
-                modify(entity, 'nbt_merge', '{Small:true}');
-                modify(entity, 'tag', 'gb.BlackstoneSmall')
-            , item == 'stone_pressure_plate' && entity ~ 'nbt' : 'Small',
-                modify(entity, 'nbt_merge', '{Small:false}');
-                modify(entity, 'tag', 'gb.StoneBig')
-            , item == 'polished_blackstone_pressure_plate' && entity ~ 'nbt' : 'Small',
-                modify(entity, 'nbt_merge', '{Small:false}');
-                modify(entity, 'tag', 'gb.BlackstoneBig')
-            , item == 'blaze_powder' && !query(entity, 'has_scoreboard_tag', 'gb.FlameParticles'),
-                modify(entity, 'tag', 'gb.FlameParticles')
-            , // else
-                nospecial = true;
-            );
-            if(!nospecial,
+            if(_special_actions(item, count, entity),
                 modify(player, 'swing', hand);
                 sound('minecraft:item.dye.use', pos(entity), 1.0, 1, 'neutral');
                 if(player ~ 'gamemode' != 'creative',
@@ -402,9 +385,7 @@ if(hand == 'mainhand' && _edit_mode(entity),
                 );
                 return()
             )
-
         );
-
         if(player ~ 'sneaking',
             // Move armostand
             _move(player, entity, hitvec)
@@ -418,8 +399,89 @@ if(hand == 'mainhand' && _edit_mode(entity),
 // DEBUG UTIL
 _draw_unit_vector(player, entity, part, init_yaw, init_pitch, unit_vectors) -> (
     p = pos(entity)+_parts(entity):part;
-    draw_shape('line',2,'from',p,'to',p + direction(init_yaw, init_pitch));
+    draw_shape('line',2,'from',p,'to',p + _direction(init_yaw, init_pitch));
     draw_shape('line',2,'from',p,'to',p + player ~ 'look','color', 0xFFFFFF);
     c = [0xFF0000FF, 0xFF00FF, 0xFFFF];
     for(unit_vectors, draw_shape('line',2,'from',p,'to',p+_,'color', c:_i));
-)
+);
+
+// COMMANDS
+_load_pose(name) -> (
+    if(!(entity = player() ~ ['trace',5,'entities']) || entity ~ 'type' != 'armor_stand',
+        _sound(player(), pos(player()), 'error');
+        exit(print(player(), format('r You must look an Armor Stand to run this command.')))
+    );
+    if(!(pose = global_poses:name) && !(pose = global_poses:(lower(player() + ':' + name))),
+        _sound(player(), pos(entity), 'error');
+        exit(print(player(), format('r Unvalid pose name.')))
+    );
+    modify(entity, 'nbt_merge', str('{Pose:%s}', pose));
+    _sound(player(), pos(entity), 'success');
+);
+
+_save_pose(name) -> (
+    if(!(entity = player() ~ ['trace',5,'entities']) || entity ~ 'type' != 'armor_stand',
+        _sound(player(), pos(player()), 'error');
+        exit(print(player(), format('r You must look an Armor Stand to run this command.')))
+    );
+    _save_pose_nbt(name, entity ~ 'nbt':'Pose');
+);
+
+_save_pose_nbt(name, nbt) -> (
+    if(!nbt(nbt),
+        _sound(player(), pos(player()), 'error');
+        exit(print(player(), format('r Unvalid nbt pose.')))
+    );
+    if(!name ~ ':', name = lower(player()) + ':' + name);
+    namespace = name ~ '$[^:]*';
+    if(!player() ~ 'permission_level' && namespace != lower(player()),
+        _sound(player(), pos(player()), 'error');
+        exit(print(player(), format('r You can\'t save a pose with this name.')))
+    );
+    global_poses:name = nbt;
+    write_file('poses', 'json', global_poses);
+    print(player(), format('l Saved "', 'li '+name, 'l " pose.'));
+    _sound(player(), pos(player()), 'success');
+);
+
+_remove_pose(name, force) -> (
+    if(!has(global_poses, name) && !has(global_poses, name = lower(player()) + ':' + name),
+        _sound(player(), pos(player()), 'error');
+        exit(print(player(), format('r Unvalid pose name.')))
+    );
+    namespace = name ~ '$[^:]*';
+    if(!player() ~ 'permission_level' && namespace != lower(player()),
+        _sound(player(), pos(player()), 'error');
+        exit(print(player(), format('r You can\'t remove the pose with this name.')))
+    );
+    if(force,
+        delete(global_poses:name);
+        write_file('poses', 'json', global_poses);
+        print(player(), format('l Removed "', 'li '+name, 'l " pose.'));
+        _sound(player(), pos(player()), 'success');
+    , // Else
+        command = system_info('app_name');
+        ce = ['^ Click here to delete', str('!/%s remove %s force', command, name)];
+        print(player(), format('y Click here to delete "', ...ce, 'yi ' + name, ...ce, 'y " pose.', ...ce));
+        _sound(player(), pos(player()), 'click');
+    )
+);
+
+_default_poses() -> (
+    poses = {
+        'default' -> '{Head:[0f,0f,0f],Body:[0f,0f,0f],LeftArm:[-10f,0f,-10f],RightArm:[-15f,0f,10f],LeftLeg:[-1f,0f,-1f],RightLeg:[1f,0f,1f]}'
+    };
+    write_file('poses', 'json', poses);
+    poses
+);
+
+global_poses = read_file('poses', 'json') || _default_poses();
+
+_list_poses() -> (
+    print(player(), format('b Aviable poses:'));
+    command = system_info('app_name');
+    for(keys(global_poses),
+        print(player(), format('  ● ', if(_ ~ ':', ' ', 'g ') + _, '^ Click to load this pose', str('!/%s load %s', command, _)));
+    );
+    _sound(player(), pos(player()), 'click');
+);
