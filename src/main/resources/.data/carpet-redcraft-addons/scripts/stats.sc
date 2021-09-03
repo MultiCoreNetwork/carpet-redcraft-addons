@@ -47,7 +47,7 @@ _show_stat(stat) -> (
     scoreboard_remove('redcraft.stats');
     scoreboard_add('redcraft.stats', stat);
     // save();
-    scoreboard_property('redcraft.stats', 'displayname', format('#ff0000 '+
+    scoreboard_property('redcraft.stats', 'display_name', format('#ff0000 '+
         if(stats:0 != 'custom', title(stats:0+' '), '') + title(replace(stats:1, '_', ' '))
     ));
     nbt = parse_nbt(nbt_storage('redcraft:players'));
