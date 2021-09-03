@@ -43,15 +43,22 @@ _toggle() -> if(global_show = !global_show,
 
 _show_stat(stat) -> (
     _hide();
-    if((stats = stat ~ '^minecraft.(\\w+):minecraft.(\\w+)$') == null, return());
+    if((stats = stat ~ '^minecraft.(\\w+):minecraft.(\\w+)$') == null,
+        stats = ['', stat]
+    );
     scoreboard_remove('redcraft.stats');
-    scoreboard_add('redcraft.stats', stat);
+    try(
+        scoreboard_add('redcraft.stats',stat),
+    // catch
+        exit(print(format('rbu Error:','r Unknown criterion. Please check again.')))
+    );
     // save();
-    scoreboard_property('redcraft.stats', 'display_name', format('#ff0000 '+
-        if(stats:0 != 'custom', title(stats:0+' '), '') + title(replace(stats:1, '_', ' '))
-    ));
-    nbt = parse_nbt(nbt_storage('redcraft:players'));
-    for(nbt, scoreboard('redcraft.stats', nbt:_, offline_statistic(_, stats:0, stats:1)));
+    name = if(stats:0 != 'custom' && stats != '', title(stats:0+' '), '') + title(replace(stats:1, '_', ' '));
+    scoreboard_property('redcraft.stats', 'display_name', format('#ff0000 '+ name));
+    if(stats:0 != '',
+        players = parse_nbt(nbt_storage('redcraft:players'));
+        for(players, scoreboard('redcraft.stats', players:_, offline_statistic(_, stats:0, stats:1)))
+    );
     _show()
 );
 
