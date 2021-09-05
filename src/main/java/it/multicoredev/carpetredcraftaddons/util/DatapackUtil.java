@@ -177,7 +177,7 @@ public class DatapackUtil {
             }
             if (needsReload) {
                 CarpetServer.settingsManager.addRuleObserver((source, rule, s) -> {
-                    if (rule.name.equals(ruleName)) {
+                    if (rule.name.equals(ruleName) && DATAPACK_RULES_RELOAD) {
                         reload();
                     }
                 });
@@ -215,7 +215,7 @@ public class DatapackUtil {
         return new File(CarpetServer.minecraft_server.getSavePath(WorldSavePath.DATAPACKS).toString() + File.separator + MOD_NAME + File.separator + subpath);
     }
 
-    private static void reload() {
+    public static void reload() {
         ResourcePackManager datapackManager = CarpetServer.minecraft_server.getDataPackManager();
         datapackManager.scanPacks();
         Collection<String> collection = Lists.newArrayList(datapackManager.getEnabledNames());

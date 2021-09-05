@@ -32,6 +32,7 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
     public static final String MOD_NAME = "Carpet RedCraft Addons";
     public static final String MOD_VERSION = "1.4.34";
     public static final Logger LOG = LogManager.getLogger(MOD_ID);
+    public static boolean DATAPACK_RULES_RELOAD = true;
 
     @Override
     public void onGameStarted() {

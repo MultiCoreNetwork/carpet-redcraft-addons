@@ -127,7 +127,7 @@ When an ArmorStand is in edit mode, you can:
 
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -136,7 +136,7 @@ When an ArmorStand is in edit mode, you can:
 Right clicking with a Phantom Membrane or Glass Pane on an Item Frame will make it invisible or fixed
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -145,7 +145,7 @@ Right clicking with a Phantom Membrane or Glass Pane on an Item Frame will make 
 Allows to dye Shulkers
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -154,7 +154,7 @@ Allows to dye Shulkers
 Allow you to locate player
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
@@ -163,7 +163,7 @@ Allow you to locate player
 Adds the /lookme command to rotate entities
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
@@ -172,7 +172,7 @@ Adds the /lookme command to rotate entities
 Allows deopped player to run /player on themselves
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
@@ -181,7 +181,7 @@ Allows deopped player to run /player on themselves
 Allows to have access to the /skull command
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
@@ -190,7 +190,7 @@ Allows to have access to the /skull command
 Allows to have access to the /stats command
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
@@ -199,7 +199,7 @@ Allows to have access to the /stats command
 Allows to have access to the /swapitem command
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
@@ -208,7 +208,7 @@ Allows to have access to the /swapitem command
 Allows to have access to the /timebar command
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
@@ -217,7 +217,7 @@ Allows to have access to the /timebar command
 Allows to have access to the /waystone command
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `COMMAND`
 
@@ -226,7 +226,7 @@ Allows to have access to the /waystone command
 Adds reverse crafting of Prismarine and Brick, normal and nether variant
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -235,7 +235,7 @@ Adds reverse crafting of Prismarine and Brick, normal and nether variant
 Allows to craft Cobwebs
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -244,7 +244,7 @@ Allows to craft Cobwebs
 Allows to use colored blocks to craft other color variants
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -253,7 +253,7 @@ Allows to use colored blocks to craft other color variants
 Allows to craft Coral Blocks with 4 Coral Fans and Corals
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -262,7 +262,7 @@ Allows to craft Coral Blocks with 4 Coral Fans and Corals
 Allows to smelt saplings to get Dead Bushes
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -271,7 +271,7 @@ Allows to smelt saplings to get Dead Bushes
 You can craft deepslate ore in smithing table
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -280,7 +280,7 @@ You can craft deepslate ore in smithing table
 Allows to craft Elytras
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -289,7 +289,7 @@ Allows to craft Elytras
 Allows to craft Ice from Packed Ice
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -298,7 +298,7 @@ Allows to craft Ice from Packed Ice
 Allows to craft Large Ferns
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -316,7 +316,7 @@ Allows to craft Nether Warts from Nether Warts Block
 Allows to craft Packed Ice from Blue Ice
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -325,7 +325,7 @@ Allows to craft Packed Ice from Blue Ice
 Allows to craft Player Head from any kind of head
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -334,7 +334,7 @@ Allows to craft Player Head from any kind of head
 Allows to craft Quartz from any kind of Quartz Block
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -343,7 +343,7 @@ Allows to craft Quartz from any kind of Quartz Block
 Allows to craft Red Sand from Red Sandstone
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -352,7 +352,7 @@ Allows to craft Red Sand from Red Sandstone
 Allows to craft Red Sand from Sandstone
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -361,7 +361,7 @@ Allows to craft Red Sand from Sandstone
 Allow to craft Sculk Sensor with endeperals and observers
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -370,7 +370,7 @@ Allow to craft Sculk Sensor with endeperals and observers
 Allows to craft Shulker Shells from Turle Shells and Popped Chorus Fruits
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -379,7 +379,7 @@ Allows to craft Shulker Shells from Turle Shells and Popped Chorus Fruits
 Allows to craft Tall Grass
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -388,7 +388,7 @@ Allows to craft Tall Grass
 Allows to craft Tuff and Calite
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -397,7 +397,7 @@ Allows to craft Tuff and Calite
 Allow you to transform concrete to concrete powder filling a glass bottle
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -406,7 +406,7 @@ Allow you to transform concrete to concrete powder filling a glass bottle
 Disable Command Feedback for OPs level 1
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `FEATURE`, `REDCRAFT`
 
@@ -415,7 +415,7 @@ Disable Command Feedback for OPs level 1
 Ender Dragon always spawns a new dragon egg
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -424,7 +424,7 @@ Ender Dragon always spawns a new dragon egg
 Reduced the blocks that an Enderman can hold
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -433,7 +433,7 @@ Reduced the blocks that an Enderman can hold
 Adds fast crafting for Dispenser and Repeater
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -442,7 +442,7 @@ Adds fast crafting for Dispenser and Repeater
 Allows to place ladders under other ladders
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -460,7 +460,7 @@ Ghasts will no grief the world
 Create personal graves when the player dies
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -469,7 +469,7 @@ Create personal graves when the player dies
 Right clicking while sneaking on a horse/donkey/mule, will display the stats of the mob in the chat
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -478,7 +478,7 @@ Right clicking while sneaking on a horse/donkey/mule, will display the stats of 
 Husks drop sand on death
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -496,7 +496,7 @@ Allows illusioners to spawn in raids (It needs restart)
 Allows to right click a compass to make it point towards the last death point
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -514,7 +514,7 @@ Sponges work on lava too, but they will burn
 Adds more trades to the Wandering Trader
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -523,7 +523,7 @@ Adds more trades to the Wandering Trader
 Allows to tie pillager with empty hands
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -532,7 +532,7 @@ Allows to tie pillager with empty hands
 Allows to place plants on all blocks with flat top surface
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -541,7 +541,7 @@ Allows to place plants on all blocks with flat top surface
 Allows to stack multiple protection types
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -550,7 +550,7 @@ Allows to stack multiple protection types
 Allows to prune plants with shears
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -559,7 +559,7 @@ Allows to prune plants with shears
 Adds crafting compatibility with all types of Quartz Block
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -577,7 +577,7 @@ Portals in RedCraft2 area will link to redcraft2 dimensions
 Adds crafting compatibility with all types of Red Sandstone
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -586,7 +586,7 @@ Adds crafting compatibility with all types of Red Sandstone
 Allow to use bonemeal on Spore blossoms
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -595,7 +595,7 @@ Allow to use bonemeal on Spore blossoms
 Allow to repair anvil with iron ingot
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -604,7 +604,7 @@ Allow to repair anvil with iron ingot
 Allow to revive dead coral with water bottle
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -613,7 +613,7 @@ Allow to revive dead coral with water bottle
 Allows to leash a rope beetween two fences
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -622,7 +622,7 @@ Allows to leash a rope beetween two fences
 Adds crafting compatibility with all types of Sandstone
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -631,7 +631,7 @@ Adds crafting compatibility with all types of Sandstone
 Allows to mine a block keeping the blockstate if using a Silky Blocstate tool
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -640,7 +640,7 @@ Allows to mine a block keeping the blockstate if using a Silky Blocstate tool
 Allows to place saddles on the ground
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -649,7 +649,7 @@ Allows to place saddles on the ground
 Allows to use 2 slabs to craft the block back
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -658,7 +658,7 @@ Allows to use 2 slabs to craft the block back
 Adds many special Name Tags
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -667,7 +667,7 @@ Adds many special Name Tags
 Adds stonecutter craftings for all types of Quartz Block
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -676,7 +676,7 @@ Adds stonecutter craftings for all types of Quartz Block
 Adds stonecutter craftings for all types of Red Sandstone
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -685,7 +685,7 @@ Adds stonecutter craftings for all types of Red Sandstone
 Adds stonecutter craftings for all types of Sandstone
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -694,7 +694,7 @@ Adds stonecutter craftings for all types of Sandstone
 Adds stonecutter craftings for all types of Wooden Block
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
@@ -703,7 +703,7 @@ Adds stonecutter craftings for all types of Wooden Block
 Allows to mine an entire tree mining a single block if using a TreeCapitator axe
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
@@ -712,7 +712,7 @@ Allows to mine an entire tree mining a single block if using a TreeCapitator axe
 Allows to leash villagers
 
 - Type: `boolean`
-- Default value: `true`
+- Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 

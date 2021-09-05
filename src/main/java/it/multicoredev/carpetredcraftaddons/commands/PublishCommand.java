@@ -18,25 +18,42 @@ public class PublishCommand {
     private static final DynamicCommandExceptionType ALREADY_PUBLISHED_EXCEPTION = new DynamicCommandExceptionType((object) -> new TranslatableText("commands.publish.alreadyPublished", object));
 
     public static void register(CommandDispatcher<ServerCommandSource> dispatcher) {
-        dispatcher.register(CommandManager.literal("publish")
-                .executes((commandContext) -> execute(commandContext.getSource(), NetworkUtils.findLocalPort()))
-                .then(CommandManager.argument("port", IntegerArgumentType.integer(0, 65535))
-                        .executes((commandContext) -> execute(commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "port")))
-                        .then(CommandManager.argument("allowCheats", BoolArgumentType.bool())
-                                .requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(4)))
-                                .executes((commandContext) -> execute(commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "port"), BoolArgumentType.getBool(commandContext, "allowCheats")))
+        dispatcher.register(
+                CommandManager.literal("publish").requires((serverCommandSource) -> serverCommandSource.hasPermissionLevel(4))
+                        .executes((commandContext) -> execute(commandContext.getSource(), NetworkUtils.findLocalPort(), false, false))
+                        .then(
+                                CommandManager.argument("port", IntegerArgumentType.integer(0, 65535))
+                                        .executes((commandContext) -> execute(commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "port"), true, false))
+                        ).then(
+                        CommandManager.literal("allowCheats")
+                                .executes((commandContext) -> execute(commandContext.getSource(), NetworkUtils.findLocalPort(), true, false))
+                                .then(
+                                        CommandManager.argument("port", IntegerArgumentType.integer(0, 65535))
+                                                .executes((commandContext) -> execute(commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "port"), true, false))
+                                )
+                ).then(
+                        CommandManager.literal("offlineMode")
+                                .executes((commandContext) -> execute(commandContext.getSource(), NetworkUtils.findLocalPort(), true, true))
+                                .then(
+                                        CommandManager.argument("port", IntegerArgumentType.integer(0, 65535))
+                                                .executes((commandContext) -> execute(commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "port"), true, true))
+                                ).then(
+                                CommandManager.literal("allowCheats")
+                                        .executes((commandContext) -> execute(commandContext.getSource(), NetworkUtils.findLocalPort(), true, true))
+                                        .then(
+                                                CommandManager.argument("port", IntegerArgumentType.integer(0, 65535))
+                                                        .executes((commandContext) -> execute(commandContext.getSource(), IntegerArgumentType.getInteger(commandContext, "port"), true, true))
+                                        )
                         )
+                )
         );
     }
 
-    private static int execute(ServerCommandSource source, int port) throws CommandSyntaxException {
-        return execute(source, port, false);
-    }
-
-    private static int execute(ServerCommandSource source, int port, boolean allowCheats) throws CommandSyntaxException {
+    private static int execute(ServerCommandSource source, int port, boolean allowCheats, boolean forceOfflineMode) throws CommandSyntaxException {
         if (source.getServer().isRemote()) {
             throw ALREADY_PUBLISHED_EXCEPTION.create(source.getServer().getServerPort());
-        } else if (!source.getServer().openToLan(null, allowCheats, port)) {
+        } else if (!source.getServer().openToLan(source.getServer().getDefaultGameMode(), allowCheats, port)) {
+            if (forceOfflineMode) source.getServer().setOnlineMode(false);
             throw FAILED_EXCEPTION.create();
         } else {
             source.sendFeedback(new TranslatableText("commands.publish.success", port), true);

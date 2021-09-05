@@ -39,7 +39,7 @@ public class DispenserBehaviorBoneMealMixin extends FallibleItemDispenserBehavio
             this.setSuccess(true);
             MinecraftServer server = CarpetServer.minecraft_server;
             try {
-                CarpetServer.scriptServer.getAppHostByName("renewable_spore_blossom").callLegacy(
+                CarpetServer.scriptServer.getAppHostByName("renewablesporeblossom").callLegacy(
                         server.getCommandSource(), "_duplicate_spore", null,
                         String.format("%d %d %d", blockPos.getX(), blockPos.getY(), blockPos.getZ())
                 );
