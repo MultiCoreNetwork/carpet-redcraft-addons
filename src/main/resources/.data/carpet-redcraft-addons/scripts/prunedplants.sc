@@ -1,9 +1,10 @@
 __config() -> {'stay_loaded' -> true, 'scope' -> 'global'};
 
 global_tall_plants = ['sunflower','lilac','rose_bush','peony','tall_grass','large_fern'];
+global_extra_plants = ['big_dripleaf'];
 
 __on_player_right_clicks_block(player, item_tuple, hand, block, face, hitvec) -> (
-    if(!item_tuple || global_tall_plants~(block)==null || player ~ 'gamemode' == 'spectator', return());
+    if(!item_tuple || (global_tall_plants~block==null && global_extra_plants~block==null) || player ~ 'gamemode' == 'spectator', return());
     [item, count, nbt] = item_tuple;
     if(item!='shears', return());
     if(
@@ -15,6 +16,10 @@ __on_player_right_clicks_block(player, item_tuple, hand, block, face, hitvec) ->
             set(block,block(u),block_state(u));
             set(u,'air')
         ),
+    // elif
+      block == 'big_dripleaf',
+        without_updates(set(block,'air'));
+        spawn('item', pos(block)+0.5, str('{Item:{id:"minecraft:small_dripleaf",Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', rand(0.2) - 0.1, rand(0.2) - 0.1)),
     // else
         return()
     );
