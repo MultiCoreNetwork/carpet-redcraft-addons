@@ -64,6 +64,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
 - [redcraft](#redcraft)
 - [redSandstoneCraftingCompatibility](#redSandstoneCraftingCompatibility)
+- [renewableSporeblossom](#renewableSporeblossom)
 - [repairableAnvil](#repairableAnvil)
 - [reviveCoral](#reviveCoral)
 - [ropes](#ropes)
@@ -568,12 +569,21 @@ Gestisce il teletrasporto infradimensionale fra i 2 server
 
 ## redSandstoneCraftingCompatibility
 
-Aggiunge maggiore compatibilità frai crafting dei blocchi di arenaria rossa
+Aggiunge maggiore compatibilità fra i crafting dei blocchi di arenaria rossa
 
 - Type: `boolean`
-- Default value: `false`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
+
+## renewableSporeblossom
+
+Permette di usare la farina d'ossa sul fiore sporifero
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## repairableAnvil
 

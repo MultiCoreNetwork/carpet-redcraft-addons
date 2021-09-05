@@ -486,20 +486,26 @@ public class CarpetRedCraftSettings {
     )
     public static boolean ghastNoGrief = false;
     @Rule(
+            desc = "Allows illusioners to spawn in raids (It needs restart to turn it off)",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean illusionersSpawnInRaids = false;
+    @Rule(
             desc = "Allows to stack multiple protection types",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean protectionStacking = true;
     @LootTableRule(overrideLoottables = "entities/illusioner.json")
     @Rule(
-            desc = "Allows illusioners to spawn in raids (It needs restart to turn it off)",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
-    )
-    public static boolean illusionersSpawnInRaids = false;
-    @Rule(
             desc = "Portals in RedCraft2 area will link to redcraft2 dimensions",
             appSource = "redcraft",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean redcraft = false;
+    @Rule(
+            desc = "Allows to use bonemeal on Spore blossoms",
+            appSource = "renewable_spore_blossom",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean renewableSporeblossom = true;
 }

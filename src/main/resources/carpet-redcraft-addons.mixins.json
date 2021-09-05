@@ -8,6 +8,7 @@
     "AnvilScreenMinin",
     "ArmorStandEntityMixin",
     "CustomPayloadC2SPacketMixin",
+    "DispenserBehaviorBoneMealMixin",
     "EntityMixin",
     "FireballEntityMixin",
     "ProtectionEnchantmentMixin",

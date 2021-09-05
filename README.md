@@ -64,6 +64,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [quartzCraftingCompatibility](#quartzCraftingCompatibility)
 - [redcraft](#redcraft)
 - [redSandstoneCraftingCompatibility](#redSandstoneCraftingCompatibility)
+- [renewableSporeblossom](#renewableSporeblossom)
 - [repairableAnvil](#repairableAnvil)
 - [reviveCoral](#reviveCoral)
 - [ropes](#ropes)
@@ -576,9 +577,18 @@ Portals in RedCraft2 area will link to redcraft2 dimensions
 Adds crafting compatibility with all types of Red Sandstone
 
 - Type: `boolean`
-- Default value: `false`
+- Default value: `true`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
+
+## renewableSporeblossom
+
+Allow to use bonemeal on Spore blossoms
+
+- Type: `boolean`
+- Default value: `true`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## repairableAnvil
 
