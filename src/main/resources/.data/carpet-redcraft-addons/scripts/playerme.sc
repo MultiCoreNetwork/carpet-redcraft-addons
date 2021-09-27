@@ -6,7 +6,7 @@ __config() -> {
     'commands' -> {
         'attack' ->                     _() ->   _player('attack'),
         'attack continuous' ->          _() ->   _player('attack continuous'),
-        'attack interval <ticks>' ->    _(tk) -> _player('attack continuous ' + tk),
+        'attack interval <ticks>' ->    _(tk) -> _player('attack interval ' + tk),
         'attack once' ->                _() ->   _player('attack once'),
         'dismount' ->                   _() ->   _player('dismount'),
         'drop' ->                       _() ->   _player('drop'),
@@ -39,7 +39,7 @@ __config() -> {
         'use once' ->                   _() ->   _player('use once')
     },
     'arguments' -> {
-        'ticks' -> {'type' -> 'int', 'min' -> 2, 'max' -> 72000, 'suggest' -> [20]},
+        'ticks' -> {'type' -> 'int', 'min' -> 1, 'max' -> 72000, 'suggest' -> [20]},
         'hotbarslot' -> {'type' -> 'int', 'min' -> 0, 'max' -> 8, 'suggest' -> [1,2,3,4,5,6,7,8,9]},
     }
 };
