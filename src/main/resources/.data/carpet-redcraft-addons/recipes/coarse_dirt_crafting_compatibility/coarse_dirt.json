@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "DG",
+        "GD"
+    ],
+    "key": {
+        "D": {
+            "tag": "carpet-redcraft-addons:coarse_dirt_crafting_compatibility/dirts"
+        },
+        "G": {
+            "item": "minecraft:gravel"
+        }
+    },
+    "result": {
+        "item": "minecraft:coarse_dirt",
+        "count": 4
+    }
+}

@@ -46,6 +46,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [crumbleConcrete](#crumbleConcrete)
 - [disableOPsCommandFeedback](#disableOPsCommandFeedback)
 - [dragonEggRespawns](#dragonEggRespawns)
+- [dynamicLight](#dynamicLight)
 - [endermanNoGrief](#endermanNoGrief)
 - [fastRedstoneCrafting](#fastRedstoneCrafting)
 - [floatingLadders](#floatingLadders)
@@ -413,6 +414,15 @@ Disable Command Feedback for OPs level 1
 ## dragonEggRespawns
 
 Ender Dragon always spawns a new dragon egg
+
+- Type: `boolean`
+- Default value: `false`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## dynamicLight
+
+Holding a light source will light around the player
 
 - Type: `boolean`
 - Default value: `false`

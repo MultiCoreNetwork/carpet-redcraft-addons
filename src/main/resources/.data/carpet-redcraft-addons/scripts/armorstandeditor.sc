@@ -16,7 +16,7 @@ __config() -> {
         },
         'name' -> {
             'type' -> 'identifier',
-            'suggest' -> ['favourite'];
+            'suggest' -> [];
         },
         'nbt' -> {
             'type' -> 'text',
@@ -428,12 +428,13 @@ _save_pose(name) -> (
 );
 
 _save_pose_nbt(name, nbt) -> (
-    if(!nbt(nbt),
+    try(nbt(nbt),
+    // catch
         _sound(player(), pos(player()), 'error');
         exit(print(player(), format('r Unvalid nbt pose.')))
     );
     if(!name ~ ':', name = lower(player()) + ':' + name);
-    namespace = name ~ '$[^:]*';
+    namespace = name ~ '^[^:]*';
     if(!player() ~ 'permission_level' && namespace != lower(player()),
         _sound(player(), pos(player()), 'error');
         exit(print(player(), format('r You can\'t save a pose with this name.')))
@@ -449,7 +450,7 @@ _remove_pose(name, force) -> (
         _sound(player(), pos(player()), 'error');
         exit(print(player(), format('r Unvalid pose name.')))
     );
-    namespace = name ~ '$[^:]*';
+    namespace = name ~ '^[^:]*';
     if(!player() ~ 'permission_level' && namespace != lower(player()),
         _sound(player(), pos(player()), 'error');
         exit(print(player(), format('r You can\'t remove the pose with this name.')))

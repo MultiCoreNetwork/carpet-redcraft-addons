@@ -6,6 +6,7 @@ import carpet.script.CarpetExpression;
 import carpet.script.CarpetScriptServer;
 import carpet.script.bundled.BundledModule;
 import carpet.settings.Rule;
+import carpet.settings.SettingsManager;
 import com.mojang.brigadier.CommandDispatcher;
 import it.multicoredev.carpetredcraftaddons.commands.DefaultConfigCommand;
 import it.multicoredev.carpetredcraftaddons.commands.OpCommand;
@@ -42,6 +43,7 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
             if(rule == null) continue;
             CarpetScriptServer.registerSettingsApp(redcraftDefaultScript(rule.appSource(), false));
         }
+        // CarpetServer.settingsManager.printAllRulesToLog(CarpetRedCraftSettings.REDCRAFT);
     }
 
     @Override

@@ -43,7 +43,9 @@ swap(fromEntity, fromSlot, toEntity, toSlot) -> (
     if(toItem == fromItem,
         return(print(player(), format('n You can\'t swap two identical items.')))
     );
-    success = _inventory_set(toEntity, toSlot, fromItem:1, fromItem:0, fromItem:2) &&
+    success = (!fromItem:0 || fromItem:1 <= stack_limit(fromItem:0)) &&
+              (!toItem:0 || toItem:1 <= stack_limit(toItem:0)) &&
+              _inventory_set(toEntity, toSlot, fromItem:1, fromItem:0, fromItem:2) &&
               _inventory_set(fromEntity, fromSlot, toItem:1, toItem:0, toItem:2);
     if(!success,
         _inventory_set(fromEntity, fromSlot, fromItem:1, fromItem:0, fromItem:2);

@@ -243,6 +243,13 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableTuffAndCalcite = false;
+    @TagRule(tags = "items/coarse_dirt_crafting_compatibility")
+    @CraftingRule(recipes = "coarse_dirt_crafting_compatibility")
+    @Rule(
+            desc = "Adds crafting compatibility for coarse dirt with all dirts type",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+    )
+    public static boolean coarseDirtCraftingCompatibility = false;
     @CraftingRule(recipes = "fast_redstone_crafting")
     @Rule(
             desc = "Adds fast crafting for Dispenser and Repeater",
@@ -362,6 +369,12 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean floatingLadders = false;
+    @Rule(
+            desc = "Holding a light source will light around the player",
+            appSource = "dynamiclight",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean dynamicLight = false;
     @Rule(
             desc = "Create personal graves when the player dies",
             appSource = "graves",
