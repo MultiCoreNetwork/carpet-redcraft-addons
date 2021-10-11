@@ -18,12 +18,11 @@ _get_villager(player) -> if((v=query(player,'trace',5,'entities')) && query(v,'h
 _new_trade() -> nbt('{maxUses:2147483647,xp:0,rewardExp:0b,buy:{id:"minecraft:player_head",Count:1b},buyB:{id:"minecraft:emerald",Count:1b},sell:{id:"minecraft:player_head",Count:1b}}');
 
 _add_trade(player, villager, trade) -> (
-    if(trades = villager~'nbt':'Offers.Recipes',
-        trades = slice(str(trades),0,length(trades)-1)+','+str(trade)+']',
-        trades = nbt('['+str(trade)+']')
-    );
+    trades = villager~'nbt':'Offers.Recipes';
+	if(trades == null, trades = []); // CARPET >= 1.4.46 : bool(nbt('[{a:1}]')) -> false
+    trades = [... parse_nbt(trades), parse_nbt(trade)];
     nbt_merge = nbt('{}');
-    nbt_merge:'Offers.Recipes' = nbt(trades);
+    nbt_merge:'Offers.Recipes' = encode_nbt(trades);
     modify(villager,'nbt_merge',nbt_merge);
     print(player,format('l Custom skull has been memorized by the villager.'));
     sound('block.respawn_anchor.charge', pos(villager), 1, 2, 'neutral')
