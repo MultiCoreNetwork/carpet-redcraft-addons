@@ -31,7 +31,7 @@ import static it.multicoredev.carpetredcraftaddons.util.DatapackUtil.*;
 public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer {
     public static final String MOD_ID = "carpet-redcraft-addons";
     public static final String MOD_NAME = "Carpet RedCraft Addons";
-    public static final String MOD_VERSION = "1.4.34";
+    public static final String MOD_VERSION = "1.4.48";
     public static final Logger LOG = LogManager.getLogger(MOD_ID);
     public static boolean DATAPACK_RULES_RELOAD = true;
 
