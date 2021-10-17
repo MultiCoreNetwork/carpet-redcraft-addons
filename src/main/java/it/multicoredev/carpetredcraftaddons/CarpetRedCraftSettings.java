@@ -504,6 +504,11 @@ public class CarpetRedCraftSettings {
     )
     public static boolean illusionersSpawnInRaids = false;
     @Rule(
+            desc = "During Halloween zombie horses can spawn in the world.",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean halloweenZombieHorse = false;
+    @Rule(
             desc = "Allows to stack multiple protection types",
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )

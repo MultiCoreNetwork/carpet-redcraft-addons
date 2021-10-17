@@ -11,6 +11,7 @@
     "DispenserBehaviorBoneMealMixin",
     "EntityMixin",
     "FireballEntityMixin",
+    "NoiseChunkGeneratorMixin",
     "ProtectionEnchantmentMixin",
     "RaidMembrerMixin",
     "ServerCommandSourceMixin",
