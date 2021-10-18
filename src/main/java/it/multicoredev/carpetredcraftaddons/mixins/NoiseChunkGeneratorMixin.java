@@ -16,6 +16,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoField;
+import java.util.ArrayList;
 import java.util.List;
 
 @Mixin(NoiseChunkGenerator.class)
@@ -26,10 +27,11 @@ public class NoiseChunkGeneratorMixin {
             LocalDate localDate = LocalDate.now();
             int i = localDate.get(ChronoField.DAY_OF_MONTH);
             int j = localDate.get(ChronoField.MONTH_OF_YEAR);
-            if (j == 10 && i == 31 || true) {
+            if (j == 10 && i == 31) {
                 Pool<SpawnSettings.SpawnEntry> p = biome.getSpawnSettings().getSpawnEntries(group);
-                ((List)p.getEntries()).add(new SpawnSettings.SpawnEntry(EntityType.ZOMBIE_HORSE, 1, 1, 3));
-                cir.setReturnValue(p);
+                List <SpawnSettings.SpawnEntry> spawnEntries = new ArrayList<>(p.getEntries());
+                spawnEntries.add(new SpawnSettings.SpawnEntry(EntityType.ZOMBIE_HORSE, 1, 1, 3));
+                cir.setReturnValue(Pool.of(spawnEntries));
             }
         }
     }
