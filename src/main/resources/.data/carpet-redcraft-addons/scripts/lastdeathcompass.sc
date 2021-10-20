@@ -1,11 +1,19 @@
 __config() -> {'stay_loaded' -> true, 'scope' -> 'player'};
 
 global_name = 'Last Death Compass';
-global_months = ['gennaio','febbraio','marzo','aprile','maggio','giugno','luglio','agosto','settembre','ottobre','novembre','dicembre'];
-global_days = ['Lunedì','Martedì','Mercoledì','Giovedì','Venerdì','Sabato','Domenica'];
+global_months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+global_days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',  'Sunday'];
 _date(unix_time) -> (
     date = convert_date(unix_time);
-    str('%s %d %s %d, %02d:%02d:%02d', global_days:(date:6-1), date:2, global_months:(date:1-1), date:0, date:3, date:4, date:5)
+    str('%s, %d%s %s %d, %02d:%02d:%02d',
+        global_days:(date:6-1), date:2,
+        if(
+            date:2%10 == 1, 'st'
+            date:2%10 == 2, 'nd'
+            date:2%10 == 3, 'rd',
+            'th'
+        ),
+        global_months:(date:1-1), date:0, date:3, date:4, date:5)
 );
 
 __on_player_uses_item(player, item_tuple, hand) -> (
