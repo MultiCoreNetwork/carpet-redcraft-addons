@@ -27,7 +27,7 @@ _date(tick) -> str('%dd %02d:%02d:%02d',
 
 fast_looper() -> (
     d = day_time()%24000;
-    w = world_time();
+    w = system_info('world_time');
     n = d>12540 && d <= 23458;
     bossbar('redcraft:timebar','name',_date(w));
     bossbar('redcraft:timebar','value',d);

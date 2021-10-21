@@ -81,10 +81,10 @@ _save_grave_position(player) -> (
     nbt:(player~'uuid') += {
         'Pos' -> player~'pos',
         'Dimension' -> player~'dimension',
-        'Tick' -> world_time()
+        'Tick' -> system_info('world_time')
     };
     nbt_storage('redcraft:graves', encode_nbt(nbt));
-    world_time()
+    system_info('world_time')
 );
 _remove_grave_position(player,tick) -> (
     nbt = parse_nbt(nbt_storage('redcraft:graves'));

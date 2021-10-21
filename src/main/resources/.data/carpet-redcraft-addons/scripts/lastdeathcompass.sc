@@ -56,7 +56,7 @@ __on_player_dies(player) -> (
         },
         'Dimension' -> player~'dimension',
         'Date' -> unix_time(),
-        'Tick' -> world_time()
+        'Tick' -> system_info('world_time')
     }};
     nbt_storage('redcraft:deaths', encode_nbt(nbt))
 );
