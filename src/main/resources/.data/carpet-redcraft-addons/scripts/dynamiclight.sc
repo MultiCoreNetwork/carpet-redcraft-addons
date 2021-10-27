@@ -9,7 +9,9 @@ global_lights = {
     'lantern' -> 15,
     'sea_lantern' -> 15,
     'shroomlight' -> 15,
-    'emdrod' -> 14,
+    'end_rod' -> 14,
+    'blaze_rod' -> 14,
+    'blaze_powder' -> 14,
     'glow_berries' -> 14,
     'torch' -> 14,
     'soul_campfire' -> 10,
@@ -36,7 +38,8 @@ __on_tick() -> (
         p = _;
         hold_mainhand = p ~ 'holds' || [null,null,null];
         hold_offhand = p ~ ['holds', 'offhand'] || [null,null,null];
-        light = max(global_lights:(hold_mainhand:0), global_lights:(hold_offhand:0));
+        hold_head = p ~ ['holds', 'head'] || [null,null,null];
+        light = max(global_lights:(hold_mainhand:0), global_lights:(hold_offhand:0), global_lights:(hold_head:0));
         if(light,
             _set_lights(pos(p)+[0,p~'eye_height',0], light)
         )
