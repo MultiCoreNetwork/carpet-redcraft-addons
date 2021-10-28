@@ -11,6 +11,8 @@ import it.multicoredev.carpetredcraftaddons.util.modconditions.CarpetExtraCompat
 import it.multicoredev.carpetredcraftaddons.util.modconditions.RugCompatibleCondition;
 import net.minecraft.server.command.ServerCommandSource;
 
+import java.util.Locale;
+
 import static carpet.settings.RuleCategory.*;
 
 public class CarpetRedCraftSettings {
@@ -35,7 +37,7 @@ public class CarpetRedCraftSettings {
     @Rule(
             desc = "Fixes block states in F3 debug mode not updating for some blocks.",
             category = {EXTRA, EXPERIMENTAL},
-            extra = {"May cause increased network traffic.", "Works with cactus, sugar cane, saplings, hoppers, dispensers and droppers.", "From Gnembon's Carpet Extra" },
+            extra = {"May cause increased network traffic.", "Works with cactus, sugar cane, saplings, hoppers, dispensers and droppers.", "From Gnembon's Carpet Extra"},
             condition = CarpetExtraCompatibleCondition.class
     )
     public static boolean blockStateSyncing = false;
@@ -472,14 +474,20 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean villagerLeash = false;
+
     // ---------------------MIXINS--------------------- //
     private static class AnvilRepairCostLimitValidator extends Validator<Integer> {
-        @Override public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue, String string) {
+        @Override
+        public Integer validate(ServerCommandSource source, ParsedRule<Integer> currentRule, Integer newValue, String string) {
             return (newValue > 0 && newValue <= 32767) ? newValue : null;
         }
+
         @Override
-        public String description() { return "You must choose a value from 1 to 32767";}
+        public String description() {
+            return "You must choose a value from 1 to 32767";
+        }
     }
+
     @Rule(
             desc = "Allows to choose the anvil repair cost limit",
             category = {SURVIVAL, FEATURE, REDCRAFT},
@@ -503,11 +511,29 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT}
     )
     public static boolean illusionersSpawnInRaids = false;
+
+    private static class ZombieHorseSpawningSettings extends Validator<String> {
+        @Override
+        public String validate(ServerCommandSource source, ParsedRule<String> currentRule, String newValue, String string) {
+            CarpetRedCraftSettings.doZombieHorse = !newValue.toLowerCase(Locale.ROOT).equals("false");
+            CarpetRedCraftSettings.zombieHorseHalloween = newValue.toLowerCase(Locale.ROOT).equals("halloween");
+            return newValue;
+        }
+    }
+
     @Rule(
-            desc = "During Halloween zombie horses can spawn in the world.",
-            category = {SURVIVAL, FEATURE, REDCRAFT}
+            desc = "Zombie horses can spawn in the world",
+            extra = {
+                    "With halloween: it will spawn only during Halloween"
+            },
+            category = {EXPERIMENTAL, FEATURE},
+            options = {"true", "false", "halloween"},
+            validate = ZombieHorseSpawningSettings.class
     )
-    public static boolean halloweenZombieHorse = false;
+    public static String zombieHorseSpawning = "false";
+    public static boolean zombieHorseHalloween = false;
+    public static boolean doZombieHorse = false;
+
     @Rule(
             desc = "Allows to stack multiple protection types",
             category = {SURVIVAL, FEATURE, REDCRAFT}

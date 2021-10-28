@@ -81,6 +81,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [stonecutterWood](#stonecutterWood)
 - [treecapitator](#treecapitator)
 - [villagerLeash](#villagerLeash)
+- [zombieHorseSpawning](#zombieHorseSpawning)
 
 ## Rules from other Extensions
 ### [Gnembon's Carpet Extra](https://github.com/gnembon/carpet-extra/)
@@ -724,6 +725,16 @@ Allows to leash villagers
 - Type: `boolean`
 - Default value: `false`
 - Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## zombieHorseSpawning
+
+Zombie horses can spawn in the world
+With halloween: it will spawn only during Halloween
+
+- Type: `boolean`
+- Default value: `false`
+- Suggested options: `true`, `false`, `halloween`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## accurateBlockPlacement

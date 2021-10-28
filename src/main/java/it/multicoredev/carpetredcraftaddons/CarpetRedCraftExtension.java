@@ -91,5 +91,6 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
     public void onInitialize() {
         CarpetRedCraftEvents.noop();
         CarpetServer.manageExtension(new CarpetRedCraftExtension());
+        LOG.info("Mod loaded");
     }
 }
