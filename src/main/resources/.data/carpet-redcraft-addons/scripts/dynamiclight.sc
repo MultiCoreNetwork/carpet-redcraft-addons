@@ -49,7 +49,7 @@ __on_tick() -> (
 _remove_lights() -> for(entity_list('marker'),
     if(_ ~ ['has_scoreboard_tag', 'gb.light_block'],
         block = block(pos(_));
-        set(pos(_), if(liquid(block), 'water', 'air'));
+        without_updates(set(pos(_), if(liquid(block), 'water', 'air')));
         modify(_, 'remove')
     )
 );
@@ -62,14 +62,12 @@ _set_lights(pos, level) -> (
 );
 
 _set_light(pos, level) -> (
-    without_updates(
-        if(air(pos), 
-            set(pos, 'light', 'level', level),
-        block(pos) == 'water', // elif
-            set(pos, 'light', 'level', level, 'waterlogged', 'true'),
-        // else
-            return()
-        );
-        modify(spawn('marker', pos), 'tag', 'gb.light_block')
-    )
+    if(air(pos),
+        without_updates(set(pos, 'light', 'level', level)),
+    block(pos) == 'water[level=0]', // elif
+        without_updates(set(pos, 'light', 'level', level, 'waterlogged', 'true')),
+    // else
+        return()
+    );
+    modify(spawn('marker', pos), 'tag', 'gb.light_block')
 )
