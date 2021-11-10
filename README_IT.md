@@ -83,6 +83,14 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [villagerLeash](#villagerLeash)
 - [zombieHorseSpawning](#zombieHorseSpawning)
 
+## Regole da altre estensioni:
+### [Gnembon's Carpet Extra](https://github.com/gnembon/carpet-extra/)
+- [accurateBlockPlacement](#accurateBlockPlacement)
+- [blockStateSyncing](#blockStateSyncing)
+### [whoImT's Carpet Addons](https://github.com/whoImT/carpet-addons/)
+- [carefulBreak](#carefulBreak)
+
+--- 
 ## anvilRepairCostLimit
 
 Permette di scegliere il massimo costo di riparazione all'interno dell'incudine
@@ -753,16 +761,6 @@ Da Carpet Extra di Gnembon
 * Default value: `false`
 * Required options: `true`, `false`
 * Categorie: `EXTRAS`, `EXPERIMENTAL`
-
-## updateSuppressionCrashFix
-Risolve i crash del server dovuti alla soppressione di aggiornamenti
-
-Da Carpet Extra di Gnembon 
-
-* Type: `booleano`
-* Default value: `false`
-* Required options: `true`, `false`
-* Categorie: `BUGFIX`, `EXTRAS`
 
 ## carefulBreak
 Piazza i blocchi direttamente nell'inventario quando rotti accovacciandosi
