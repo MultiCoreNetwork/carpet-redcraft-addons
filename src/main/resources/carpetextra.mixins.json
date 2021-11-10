@@ -7,10 +7,8 @@
     "CactusBlock_syncMixin",
     "DispenserBlock_syncMixin",
     "HopperBlock_syncMixin",
-    "MinecraftServer_updateSuppressionCrashFixMixin",
     "SaplingBlock_syncMixin",
-    "SugarCaneBlock_syncMixin",
-    "World_updateSuppressionCrashFixMixin"
+    "SugarCaneBlock_syncMixin"
   ],
   "client": [
   ],
