@@ -41,13 +41,6 @@ public class CarpetRedCraftSettings {
             condition = CarpetExtraCompatibleCondition.class
     )
     public static boolean blockStateSyncing = false;
-    @Rule(
-            desc = "Fixes updates suppression causing server crashes.",
-            extra = {"From Gnembon's Carpet Extra"},
-            category = {BUGFIX, EXTRA},
-            condition = CarpetExtraCompatibleCondition.class
-    )
-    public static boolean updateSuppressionCrashFix = false;
 
     // -------------------COMMANDS--------------------- //
     @Rule(

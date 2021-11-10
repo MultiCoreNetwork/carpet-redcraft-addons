@@ -87,7 +87,6 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 ### [Gnembon's Carpet Extra](https://github.com/gnembon/carpet-extra/)
 - [accurateBlockPlacement](#accurateBlockPlacement)
 - [blockStateSyncing](#blockStateSyncing)
-- [updateSuppressionCrashFix](#updateSuppressionCrashFix)
 ### [whoImT's Carpet Addons](https://github.com/whoImT/carpet-addons/)
 - [carefulBreak](#carefulBreak)
 
@@ -758,16 +757,6 @@ From Gnembon's Carpet Extra
 * Default value: `false`
 * Required options: `true`, `false`
 * Categories: `EXTRAS`, `EXPERIMENTAL`  
-
-## updateSuppressionCrashFix
-Fixes updates suppression causing server crashes.
-
-From Gnembon's Carpet Extra
-
-* Type: `boolean`
-* Default value: `false`
-* Required options: `true`, `false`
-* Categories: `BUGFIX`, `EXTRAS`
 
 ## carefulBreak
 Places the mined block in the player inventory when sneaking.
