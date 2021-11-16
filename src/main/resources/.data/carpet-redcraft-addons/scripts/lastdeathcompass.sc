@@ -8,8 +8,8 @@ _date(unix_time) -> (
     str('%s, %d%s %s %d, %02d:%02d:%02d',
         global_days:(date:6-1), date:2,
         if(
-            date:2%10 == 1, 'st'
-            date:2%10 == 2, 'nd'
+            date:2%10 == 1, 'st',
+            date:2%10 == 2, 'nd',
             date:2%10 == 3, 'rd',
             'th'
         ),
