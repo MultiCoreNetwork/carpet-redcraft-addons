@@ -9,7 +9,10 @@ __on_player_clicks_block(player, block, face) -> (
     level = block_state(block, 'level');
     set(pos(block), 'air');
     if(g == 'creative', return());
-    spawn('item', pos(block) + [0.5, 0, 0.5], str('{Item:{id:"minecraft:light",tag:{BlockStateTag:{level:"%d"}},Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', level, rand(0.2) - 0.1, rand(0.2) - 0.1))
+    if(player ~ 'sneaking' && system_info('world_carpet_rules'):'carefulBreak' == 'true',
+        spawn('item', pos(player), str('{Item:{id:"minecraft:light",tag:{BlockStateTag:{level:"%d"}},Count:1b},PickupDelay:10}', level)),
+        spawn('item', pos(block) + [0.5, 0, 0.5], str('{Item:{id:"minecraft:light",tag:{BlockStateTag:{level:"%d"}},Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', level, rand(0.2) - 0.1, rand(0.2) - 0.1))
+    )
 );
 
 _show_light(player, pos) -> particle('light', pos + [0.5, 0.5, 0.5], 1, 0, 0, player);
