@@ -29,13 +29,15 @@ global_lights = {
     'brown_mushroom' -> 1,
     'dragon_egg' -> 1,
     'end_portal_frame' -> 1,
-    'sculk_sensor' -> 1
+    'sculk_sensor' -> 1,
+    'enchanting_table' -> 7
 };
 
 __on_tick() -> (
     _remove_lights();
     for(player('all'),
         p = _;
+        if (p~'gamemode' == 'spectator', return());
         hold_mainhand = p ~ 'holds' || [null,null,null];
         hold_offhand = p ~ ['holds', 'offhand'] || [null,null,null];
         hold_head = p ~ ['holds', 'head'] || [null,null,null];
