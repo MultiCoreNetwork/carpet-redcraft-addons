@@ -1,0 +1,36 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:phantom_membrane"
+    },
+    {
+      "tag": "carpet-redcraft-addons:craftable_barrier/craftable_barrier"
+    },
+    {
+      "tag": "carpet-redcraft-addons:craftable_barrier/craftable_barrier"
+    },
+    {
+      "tag": "carpet-redcraft-addons:craftable_barrier/craftable_barrier"
+    },
+    {
+      "tag": "carpet-redcraft-addons:craftable_barrier/craftable_barrier"
+    },
+    {
+      "tag": "carpet-redcraft-addons:craftable_barrier/craftable_barrier"
+    },
+    {
+      "tag": "carpet-redcraft-addons:craftable_barrier/craftable_barrier"
+    },
+    {
+      "tag": "carpet-redcraft-addons:craftable_barrier/craftable_barrier"
+    },
+    {
+      "tag": "carpet-redcraft-addons:craftable_barrier/craftable_barrier"
+    }
+  ],
+  "result": {
+    "item": "minecraft:barrier",
+    "count": 8
+  }
+}
