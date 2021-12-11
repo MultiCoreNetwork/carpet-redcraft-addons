@@ -11,12 +11,6 @@ __on_player_clicks_block(player, block, face) -> (
         ),
         schedule(0, '_break', player, pos(block), str(block), 5, 0);
     )
-//    set(pos(block), 'air');
-//    if(g == 'creative', return());
-//    if(player ~ 'sneaking' && system_info('world_carpet_rules'):'carefulBreak' == 'true',
-//        spawn('item', pos(player), str('{Item:{id:"minecraft:barrier",Count:1b},PickupDelay:10}')),
-//        spawn('item', pos(block) + [0.5, 0, 0.5], str('{Item:{id:"minecraft:barrier",Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', level, rand(0.2) - 0.1, rand(0.2) - 0.1))
-//    )
 );
 
 _break(player, pos, block_name, step, lvl) -> (
@@ -60,24 +54,6 @@ if((item_tuple = player ~ 'holds') && item_tuple:0 == 'barrier' || (item_tuple =
     _show_barrier_area(player)
 )
 );
-
-
-//__on_player_places_block(player, item_tuple, hand, block) ->
-//if(block == 'barrier' && item_tuple,
-//    [item, count, nbt] = item_tuple;
-//    if (count > 1, _show_barrier(player, pos(block)));
-//    if(nbt && (level = nbt:'display.Name' ~ '\\d+') && number(level) >= 0 && number(level) < 16,
-//        set(pos(block), block, 'level', level);
-//        nbt:'BlockStateTag.level' = level;
-//        inventory_set(
-//            player,
-//            if(hand == 'mainhand', player ~ 'selected_slot', -1),
-//            if(player ~ 'gamemode' == 'creative', count, count-1),
-//            item,
-//            nbt
-//        )
-//    )
-//);
 
 _looper() -> (
     for(filter(player('*'), (h = _ ~ 'holds') && h:0 == 'barrier' && _ ~ 'gamemode' != 'creative' || (h = inventory_get(_, -1)) && h:0 == 'barrier' && _ ~ 'gamemode' != 'creative'),
