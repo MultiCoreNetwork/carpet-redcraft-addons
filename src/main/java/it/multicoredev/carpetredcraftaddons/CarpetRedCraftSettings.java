@@ -148,12 +148,6 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableElytra = false;
-    @CraftingRule(recipes = "craftable_ice")
-    @Rule(
-            desc = "Allows to craft Ice from Packed Ice",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
-    )
-    public static boolean craftableIce = false;
     @CraftingRule(recipes = "craftable_large_fern")
     @Rule(
             desc = "Allows to craft Large Ferns",
@@ -174,12 +168,6 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableNetherWarts = false;
-    @CraftingRule(recipes = "craftable_packed_ice")
-    @Rule(
-            desc = "Allows to craft Packed Ice from Blue Ice",
-            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
-    )
-    public static boolean craftablePackedIce = false;
     @TagRule(tags = "items/craftable_player_heads")
     @CraftingRule(recipes = "craftable_player_heads")
     @Rule(
@@ -308,6 +296,12 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean stonecutterWood = false;
+    @CraftingRule(recipes = "unpackable_ice")
+    @Rule(
+            desc = "Allow to unpack PackedIce & BlueIce using the stonecutter",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+    )
+    public static boolean unpackableIce = false;
 
     // ---------------------TAGS----------------------- //
     @TagRule(overrideTags = "blocks/enderman_holdable.json")
