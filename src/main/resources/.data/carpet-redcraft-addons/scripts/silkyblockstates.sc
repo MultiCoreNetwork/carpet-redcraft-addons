@@ -18,7 +18,10 @@ global_plants = ['^kelp_plant$','^twisting_vines_plant$','^weeping_vines_plant$'
 
 // Change global_drop_in_creative boolean
 _changeCreativeDrop(player) -> (
-    if(player ~ 'permission_level' >= 1, global_drop_in_creative = !global_drop_in_creative);
+    if(player ~ 'permission_level' >= 1, (
+    global_drop_in_creative = !global_drop_in_creative;
+    print(player, str('SilkyBlockStates drop in creative is now set to: %s', global_drop_in_creative));
+    ));
 );
 
 
