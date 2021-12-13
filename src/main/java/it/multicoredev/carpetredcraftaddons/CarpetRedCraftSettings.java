@@ -102,6 +102,14 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean craftableAmethysts = false;
+    @TagRule(tags = "items/craftable_barrier")
+    @CraftingRule(recipes = "craftable_barrier")
+    @Rule(
+            desc = "Allows to craft barrier block",
+            appSource = "barrier",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+    )
+    public static boolean craftableBarrier = false;
     @CraftingRule(recipes = "craftable_bricks")
     @Rule(
             desc = "Adds reverse crafting of Prismarine, Prismarine Bricks, Bricks and Nether Bricks",
