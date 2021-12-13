@@ -3,7 +3,8 @@ __config() -> {
     'scope' -> 'global',
     'command_permission' -> 'ops',
     'commands' -> {
-        '' -> _() -> _enchant(player())
+        '' -> _() -> _enchant(player()),
+        'creativeDrop' -> _() -> _changeCreativeDrop(player())
     }
 };
 
@@ -14,6 +15,17 @@ global_preserve_block_state_blacklist = ['_bed$', '_door$', '^sticky_piston$', '
 global_preserve_block_data_blacklist = ['^bee_nest$', '^beehive$', '^campfire$', '^soul_campfire$', '^lectern$', '^jukebox$', '_banner$', '^player_head$', '_bed$'];
 global_need_forced_placement = ['^spawner$','_sign$'];
 global_plants = ['^kelp_plant$','^twisting_vines_plant$','^weeping_vines_plant$'];
+
+// Change global_drop_in_creative boolean
+_changeCreativeDrop(player) -> (
+    if(player ~ 'permission_level' >= 1, (
+    global_drop_in_creative = !global_drop_in_creative;
+    print(player, str('SilkyBlockStates drop in creative is now set to: %s', global_drop_in_creative));
+    ));
+);
+
+
+
 
 // Enchants player's tool with silkyblockstate
 _enchant(player) -> (
@@ -218,7 +230,7 @@ if(_valid_item(player),
             )
         );
 
-        if(system_info('world_carpet_rules'):'carefulBreak' && player ~ 'sneaking',
+        if(system_info('world_carpet_rules'):'carefulBreak' == 'true' && player ~ 'sneaking',
             items = _items_near_pos(pos(block) + 0.5);
             for(items,
                 if(_inventory_space(_, player),
