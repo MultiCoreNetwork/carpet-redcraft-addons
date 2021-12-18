@@ -15,10 +15,7 @@ __on_player_interacts_with_entity(player, entity, hand) -> (
         custom_name = entity ~ 'custom_name';
         if(custom_name ~ '^\\&',
             parti = slice(split('&', custom_name),1);
-            modify(entity, 'custom_name', format(parti))
-        );
-        if(entity ~ 'type' == 'armor_stand',
-            modify(entity, 'nbt_merge', '{CustomNameVisible:true}')
+            modify(entity, 'custom_name', format(parti), true)
         );
         // SPECIAL ACTIONS
         custom_name = lower(entity ~ 'custom_name');
