@@ -21,7 +21,9 @@ __on_player_right_clicks_block(player, item_tuple, hand, block, face, hitvec) ->
 __on_player_attacks_entity(player, entity) -> if(
     query(entity,'has_scoreboard_tag','gb.sitawyway.pig'),
     modify(entity, 'remove');
-    spawn('item', pos(entity)+[0,1.04,0], str('{Item:{id:"minecraft:saddle",Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', rand(0.2) - 0.1, rand(0.2) - 0.1))
+    if( player ~ 'gamemode' != 'creative',
+        spawn('item', pos(entity)+[0,1.04,0], str('{Item:{id:"minecraft:saddle",Count:1b},PickupDelay:10,Motion:[%f,.2,%f]}', rand(0.2) - 0.1, rand(0.2) - 0.1))
+    )
 );
 
 team_add('gb.nocollision');
