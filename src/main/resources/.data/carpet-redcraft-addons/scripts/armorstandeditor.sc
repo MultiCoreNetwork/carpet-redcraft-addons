@@ -313,6 +313,7 @@ _special_actions(item, count, entity) -> (
     , item == 'smooth_stone_slab' && !entity ~ 'nbt' : 'NoBasePlate',
         modify(entity, 'nbt_merge', '{NoBasePlate:true}')
     , item == 'feather' && entity ~ 'gravity',
+        modify(entity, 'tag', 'gb.armorstandeditor.nogravity.1');
         modify(entity, 'tag', 'gb.NoGravity');
         modify(entity, 'gravity', false)
     , item == 'phantom_membrane' && !entity ~ 'nbt' : 'Invisible',
