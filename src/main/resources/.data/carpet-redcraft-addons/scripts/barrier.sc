@@ -40,6 +40,7 @@ if((item_tuple = inventory_get(player, to)) && item_tuple:0 == 'barrier' || (ite
 );
 
 __on_explosion_outcome(pos, power, source, causer, mode, fire, blocks, entities) -> (
+if (length(blocks) == 0 || system_info('world_gamerules'):'mobGriefing' == 'false', return());
 in_dimension(query(source, 'dimension'),
     scan(pos, [power, power, power],
         if(_ == 'barrier',
