@@ -19,7 +19,14 @@ _break(player, pos, block_name, step, lvl) -> (
       modify(player, 'breaking_progress', null);
    ,
       modify(player, 'breaking_progress', lvl);
-      if (lvl >= 10, destroy(pos, -1));
+      if (lvl >= 10, (
+        destroy(pos, -1);
+        [item, count, nbt] = inventory_get(player, player ~ 'selected_slot');
+        if (item ~ '_axe$' || item ~ '_pickaxe$' || item ~ '_shovel$' || item ~ '_sword$' || item ~ '_hoe$' || item ~ 'shears', (
+        nbt:'Damage' = nbt:'Damage' + 1;
+        inventory_set(player, player ~ 'selected_slot', count, item, nbt);
+        ));
+      ));
       schedule(step, '_break', player, pos, block_name, step, lvl+1)
    );
 );
