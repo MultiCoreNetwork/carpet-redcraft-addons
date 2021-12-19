@@ -15,7 +15,7 @@ __on_player_interacts_with_entity(player, entity, hand) -> (
         custom_name = entity ~ 'custom_name';
         if(custom_name ~ '^\\&',
             parti = slice(split('&', custom_name),1);
-            modify(entity, 'custom_name', format(parti))
+            modify(entity, 'custom_name', format(parti), entity~'type'=='armor_stand')
         );
         // SPECIAL ACTIONS
         custom_name = lower(entity ~ 'custom_name');
