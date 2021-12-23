@@ -41,7 +41,7 @@ if((item_tuple = inventory_get(player, to)) && item_tuple:0 == 'barrier' || (ite
 
 __on_explosion_outcome(pos, power, source, causer, mode, fire, blocks, entities) -> (
 print(source);
-if (length(blocks) == 0 || (system_info('world_gamerules'):'mobGriefing' == 'false' && source != 'Primed TNT'), return());
+if (system_info('world_carpet_rules'):'explosionNoBlockDamage' == 'true' || (system_info('world_gamerules'):'mobGriefing' == 'false' && source != 'Primed TNT'), return());
 in_dimension(query(source, 'dimension'),
     scan(pos, [power, power, power],
         if(_ == 'barrier',
