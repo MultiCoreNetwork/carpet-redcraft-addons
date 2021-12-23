@@ -1,5 +1,9 @@
 __config() -> {'scope'->'global','stay_loaded'->true};
 
+//Constants
+global_durability = {'wooden' -> 59, 'stone' -> 131, 'iron' -> 250, 'diamond' -> 1561, 'netherite' -> 2031};
+
+
 __on_player_clicks_block(player, block, face) -> (
     g = player ~ 'gamemode';
     if(g == 'spectator' || g == 'creative' || block != 'barrier', return());
@@ -21,10 +25,16 @@ _break(player, pos, block_name, step, lvl) -> (
       modify(player, 'breaking_progress', lvl);
       if (lvl >= 10, (
         destroy(pos, -1);
-        [item, count, nbt] = inventory_get(player, player ~ 'selected_slot');
+        item_tuple = inventory_get(player, player ~ 'selected_slot');
+        if (!item_tuple, return());
+        [item, count, nbt] = item_tuple;
         if (item ~ '_axe$' || item ~ '_pickaxe$' || item ~ '_shovel$' || item ~ '_sword$' || item ~ '_hoe$' || item ~ 'shears', (
         nbt:'Damage' = nbt:'Damage' + 1;
-        inventory_set(player, player ~ 'selected_slot', count, item, nbt);
+        if (nbt:'Damage' < global_durability:(split('_', item):0),
+            inventory_set(player, player ~ 'selected_slot', count, item, nbt), (
+            inventory_set(player, player ~ 'selected_slot', 0);
+            sound('entity.item.break', player ~ 'pos', 1.0, 1.0, 'player');
+            ))
         ));
       ));
       schedule(step, '_break', player, pos, block_name, step, lvl+1)
