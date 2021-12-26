@@ -35,6 +35,9 @@ swap(fromEntity, fromSlot, toEntity, toSlot) -> (
     if(!isValid(fromEntity) || !isValid(toEntity),
         return(print(player(), format('n The entity you\'re looking at is not a valid entity.')))
     );
+    if(trade(fromEntity) || trade(toEntity),
+        return(print(player(), format('n You can\'t swap items that are villager trades to villager')))
+    );
     if(fromEntity == toEntity && fromSlot == toSlot,
         return(print(player(), format('n You can\'t swap items on the same slot of the same entity.')))
     );
@@ -87,4 +90,13 @@ _inventory_set(entity, slot, count, item, nbt) -> (
         nbt,
         count
     )):0
-)
+);
+
+trade(entity) -> (
+    if( entity ~ 'type' == 'villager', (
+        hold = entity ~ 'holds';
+        trades = entity ~ 'nbt':'Offers':'Recipes';
+        return(trades ~ hold);
+        )
+    )
+);
