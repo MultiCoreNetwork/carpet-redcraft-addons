@@ -489,16 +489,13 @@ _list_poses() -> (
 );
 
 // PARTICLES
-global_tick = 0;
-__on_tick() -> (
-    if(global_tick == 20,
-    for(filter(entity_list('*'), _ == 'Armor Stand'),
-        position = str(pos(_):0 + ' ' + str(pos(_):1 + 0.5) + ' ' + pos(_):2);
-        if (query(_, 'has_scoreboard_tag', 'gb.SmokeParticles'), run(str('particle minecraft:campfire_signal_smoke ' + position + ' .2 1 .3 .05 0')),
-            query(_, 'has_scoreboard_tag', 'gb.FlameParticles'), run(str('particle minecraft:flame ' + position + ' .01 .01 .01 .005 2'))
-        );
-        global_tick = -1;
-    ),
-    global_tick += 1;
+__on_tick() ->
+if(tick_time()%20 == 0,
+    for(entity_list('armor_stand'),
+        z = -cos(_~'body_yaw') * 0.3;
+        x = sin(_~'body_yaw') * 0.3;
+        if (query(_, 'has_scoreboard_tag', 'gb.SmokeParticles'), run(str('particle minecraft:campfire_signal_smoke %f %f %f %f 1 %f .05 0',...(pos(_)+[0,0.5,0]), x, z)),
+            query(_, 'has_scoreboard_tag', 'gb.FlameParticles'), run(str('particle minecraft:flame %f %f %f .01 .01 .01 .005 2', pos(_)+[0,0.5,0]))
+        )
     )
 )
