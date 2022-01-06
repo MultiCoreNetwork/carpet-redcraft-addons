@@ -74,6 +74,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [sitAnywhere](#sitAnywhere)
 - [slabToBlockCrafing](#slabToBlockCrafing)
 - [specialNameTags](#specialNameTags)
+- [spongesqueeze](#spongesqueeze)
 - [stonecutterQuartz](#stonecutterQuartz)
 - [stonecutterRedSandstone](#stonecutterRedSandstone)
 - [stonecutterSandstone](#stonecutterSandstone)
@@ -675,6 +676,15 @@ Aggiunge molte altre targhette speciali
 - Valore predefinito: `false`
 - Opzioni suggerite: `true`, `false`
 - Categorie: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## spongesqueeze
+
+Permette di spremere le spugne
+
+- Type: `boolean`
+- Default value: `false`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
 
 ## stonecutterQuartz
 

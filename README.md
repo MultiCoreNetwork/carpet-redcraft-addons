@@ -74,6 +74,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [sitAnywhere](#sitAnywhere)
 - [slabToBlockCrafing](#slabToBlockCrafing)
 - [specialNameTags](#specialNameTags)
+- [spongesqueeze](#spongesqueeze)
 - [stonecutterQuartz](#stonecutterQuartz)
 - [stonecutterRedSandstone](#stonecutterRedSandstone)
 - [stonecutterSandstone](#stonecutterSandstone)
@@ -666,6 +667,15 @@ Allows to use 2 slabs to craft the block back
 ## specialNameTags
 
 Adds many special Name Tags
+
+- Type: `boolean`
+- Default value: `false`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## spongesqueeze
+
+Allow to squeeze and wet sponge on cauldron
 
 - Type: `boolean`
 - Default value: `false`
