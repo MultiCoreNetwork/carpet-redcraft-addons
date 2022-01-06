@@ -324,7 +324,7 @@ _special_actions(item, count, entity) -> (
         modify(entity, 'tag', 'gb.Visible')
     , item == 'campfire' && !query(entity, 'has_scoreboard_tag', 'gb.SmokeParticles'),
         modify(entity, 'tag', 'gb.CampfireSmokeParticles', 'gb.SmokeParticles')
-    , item == 'soul_campfire' && !query(entity, 'has_scoreboard_tag', 'Sgb.mokeParticles'),
+    , item == 'soul_campfire' && !query(entity, 'has_scoreboard_tag', 'gb.SmokeParticles'),
         modify(entity, 'tag', 'gb.SoulCampfireSmokeParticles', 'gb.SmokeParticles')
     , item == 'stone_button' && !entity ~ 'nbt' : 'Small',
         modify(entity, 'nbt_merge', '{Small:true}');
@@ -487,3 +487,18 @@ _list_poses() -> (
     );
     _sound(player(), pos(player()), 'click');
 );
+
+// PARTICLES
+global_tick = 0;
+__on_tick() -> (
+    if(global_tick == 20,
+    for(filter(entity_list('*'), _ == 'Armor Stand'),
+        position = str(pos(_):0 + ' ' + str(pos(_):1 + 0.5) + ' ' + pos(_):2);
+        if (query(_, 'has_scoreboard_tag', 'gb.SmokeParticles'), run(str('particle minecraft:campfire_signal_smoke ' + position + ' .2 1 .3 .05 0')),
+            query(_, 'has_scoreboard_tag', 'gb.FlameParticles'), run(str('particle minecraft:flame ' + position + ' .01 .01 .01 .005 2'))
+        );
+        global_tick = -1;
+    ),
+    global_tick += 1;
+    )
+)
