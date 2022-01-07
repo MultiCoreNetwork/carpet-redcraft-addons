@@ -25,7 +25,6 @@ _prevent_placing(player, item, count, nbt, hand, face, block) -> (
 _empty_cauldron(player, item, count, nbt, hand, block, posPlayer, face) -> (
     _prevent_placing(player, item, count, nbt, hand, face, block);
     set(pos(block), 'cauldron');
-    //inventory_set(player, if(hand == 'mainhand', player ~ 'selected_slot', -1), if(player ~ 'gamemode' == 'creative', count, count - 1), item, nbt);
     spawn('item', posPlayer, '{Item:{id:"minecraft:wet_sponge",Count:1b}}');
 );
 
@@ -36,11 +35,9 @@ _fill_cauldron(player, item, count, nbt, hand, block, posPlayer, face) -> (
     levelFinal = number(level) + randomNumber;
     if(levelFinal >= 3, (
         set(pos(block), 'water_cauldron', 'level', 3);
-        //inventory_set(player, if(hand == 'mainhand', player ~ 'selected_slot', -1), if(player ~ 'gamemode' == 'creative', count, count - 1), item, nbt);
         spawn('item', posPlayer, '{Item:{id:"minecraft:sponge",Count:1b}}');
     ), (
         set(pos(block), 'water_cauldron', 'level', levelFinal);
-        //inventory_set(player, if(hand == 'mainhand', player ~ 'selected_slot', -1), if(player ~ 'gamemode' == 'creative', count, count - 1), item, nbt);
         spawn('item', posPlayer, '{Item:{id:"minecraft:sponge",Count:1b}}');
     ))
 );
