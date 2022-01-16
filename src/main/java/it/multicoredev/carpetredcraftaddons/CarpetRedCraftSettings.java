@@ -458,6 +458,12 @@ public class CarpetRedCraftSettings {
     )
     public static boolean specialNameTags = false;
     @Rule(
+            desc = "Allow to squeeze and wet sponge on cauldron",
+            appSource = "spongesqueeze",
+            category = {SURVIVAL, FEATURE, REDCRAFT}
+    )
+    public static boolean spongeSqueeze = false;
+    @Rule(
             desc = "Allows to mine an entire tree mining a single block if using a TreeCapitator axe",
             appSource = "treecapitator",
             category = {SURVIVAL, FEATURE, REDCRAFT}
