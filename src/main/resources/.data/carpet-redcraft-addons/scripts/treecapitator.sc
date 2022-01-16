@@ -47,9 +47,9 @@ _type(block) -> join('_',slice(t=split('_',block),0,length(t)-1));
 global_blocks = ['_log$', '_stem$'];
 _valid_block(block) -> reduce(global_blocks, _a || bool(block ~ _), false);
 
-_log_area(log, ... large_oak) -> if(
+_log_area(log, ... large_tree) -> if(
     log ~ '^birch_' || log ~ '^spruce_' || log ~ '_stem$', [block(pos_offset(log,'up'))],
-    has(large_oak:0) && large_oak:0, t = [rect(log, [1,0,1][1,1,1])]; delete(t:4); t,
+    has(large_tree:0) && large_tree:0, t = [rect(log, [1,0,1],[1,1,1])]; delete(t:4); t,
     [rect(pos_offset(log,'up'),[1,0,1])]
 );
 
@@ -111,7 +111,7 @@ _not_far(log) -> (
 _detect_base_log(log) -> (
     map = {};
     for(_log_base_area(log),
-        map = _detect_log(_, map)
+        map = if(!has(map:pos(_)),  _detect_log(_, map), map);
     );
     map
 );
@@ -119,7 +119,7 @@ _detect_base_log(log) -> (
 _detect_log(log, ... map) -> (
     if(map == [] || (map = map:0) == null, map = {});
     map += pos(log);
-    for(_log_area(log, global_first_log == 'oak_log' && _not_far(log)),
+    for(_log_area(log, global_large_tree && _not_far(log)),
         if(str(log) == str(_) && !has(map:pos(_)),
             map = _detect_log(_, map),
            _valid_leaves(log, _)
@@ -138,6 +138,7 @@ _detect_attached_leaves(logs) -> (
 
 __on_player_breaks_block(player, block) -> (
     if(!_valid_item(player) || !_valid_block(block) || !_valid_tree(block), return());
+    global_large_tree = block == 'oak_log' || block == 'jungle_log';
     for(_detect_attached_leaves(logs = _detect_base_log(global_first_log = block)),
         [item, count, nbt] = player~'holds';
         destroy(_, item, nbt)
