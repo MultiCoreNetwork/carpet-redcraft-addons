@@ -11,7 +11,7 @@ __config() -> {
     }
 };
 
-_command() -> if((player=player())~'permission_level'>=1, _remove_grave(player, pos(player), null, true));
+_command() -> if((player=player())~'permission_level'>=1, _remove_grave(player, pos(player), null, true); _remove_grave_position(player,null, true));
 _graves_list(player_name) -> (
     for(keys(uuid_storage = parse_nbt(nbt_storage('redcraft:players'))),
         if(lower(uuid_storage:_)==lower(player_name), player_uuid = _; break())
@@ -86,10 +86,10 @@ _save_grave_position(player) -> (
     nbt_storage('redcraft:graves', encode_nbt(nbt));
     system_info('world_time')
 );
-_remove_grave_position(player,tick) -> (
+_remove_grave_position(player,tick,ignore_tick) -> (
     nbt = parse_nbt(nbt_storage('redcraft:graves'));
     if(!has(nbt,player~'uuid'), return(false));
-    for(nbt:(player~'uuid'),if(_:'Tick' == tick, i=_i; break()));
+    for(nbt:(player~'uuid'),if(_:'Tick' == tick || ignore_tick, i=_i; break()));
     if(i==null, return(false));
     delete(nbt:(player~'uuid'):i);
     nbt_storage('redcraft:graves', encode_nbt(nbt));
@@ -110,7 +110,7 @@ __on_player_starts_sneaking(player) -> (
 		grave = _;
 		if(player ~ 'dimension' == grave:'Dimension' && _distance(pos(player), grave:'Pos')<1,
 			_remove_grave(player, pos(player), grave:'Tick', false);
-            _remove_grave_position(player,grave:'Tick')
+            _remove_grave_position(player,grave:'Tick', false)
 		)
 	)
 );
