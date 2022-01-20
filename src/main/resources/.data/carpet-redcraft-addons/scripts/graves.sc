@@ -41,6 +41,10 @@ scoreboard_add('gb.grave.time');
 
 __on_player_dies(player) -> (
 	if(inventory_has_items(player),
+        uuid_storage = parse_nbt(nbt_storage('redcraft:players'));
+        put(uuid_storage, player~'uuid', player~'command_name');
+        nbt_storage('redcraft:players', encode_nbt(uuid_storage));
+
         schedule(0, _(outer(player)) -> if(
             (items = filter(entity_area('item', (pos=pos(player)) + [0,player~'eye_height',0], [3, 3, 3]), _~'age'==0)) != [],
             _make_grave(player, pos, items)
