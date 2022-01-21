@@ -1,7 +1,7 @@
 {
   "required": true,
   "package": "carpetextra.mixins",
-  "compatibilityLevel": "JAVA_16",
+  "compatibilityLevel": "JAVA_17",
   "mixins": [
     "BlockItemMixin_accurateBlockPlacement",
     "CactusBlock_syncMixin",
