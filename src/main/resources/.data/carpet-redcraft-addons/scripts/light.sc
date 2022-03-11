@@ -15,12 +15,12 @@ __on_player_clicks_block(player, block, face) -> (
     )
 );
 
-_show_light(player, pos) -> particle('light', pos + [0.5, 0.5, 0.5], 1, 0, 0, player);
+_show_light(player, pos, level, waterlogged) -> particle(str('block_marker light[level=%d,waterlogged=%s]', level, if(waterlogged, 'true', 'false')), pos + [0.5, 0.5, 0.5], 1, 0, 0, player);
 _show_light_area(player) ->
 in_dimension(player,
     scan(pos(player), [5, 5, 5],
         if(_ == 'light',
-            _show_light(player, pos(_))
+            _show_light(player, pos(_), block_state(_, 'level'), block_state(_, 'waterlogged'))
         )
     )
 );
@@ -33,7 +33,7 @@ if((item_tuple = inventory_get(player, to)) && item_tuple:0 == 'light',
 __on_player_places_block(player, item_tuple, hand, block) ->
 if(block == 'light' && item_tuple,
     [item, count, nbt] = item_tuple;
-    if (count > 1, _show_light(player, pos(block)));
+    if (count > 1, _show_light(player, pos(block), block_state(block, 'level'), block_state(block, 'waterlogged')));
     if(nbt && (level = nbt:'display.Name' ~ '\\d+') && number(level) >= 0 && number(level) < 16,
         set(pos(block), block, 'level', level);
         nbt:'BlockStateTag.level' = level;
