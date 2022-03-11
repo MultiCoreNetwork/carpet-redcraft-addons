@@ -41,7 +41,7 @@ _break(player, pos, block_name, step, lvl) -> (
    );
 );
 
-_show_barrier(player, pos) -> particle('barrier', pos + [0.5, 0.5, 0.5], 1, 0, 0, player);
+_show_barrier(player, pos) -> particle('block_marker barrier', pos + [0.5, 0.5, 0.5], 1, 0, 0, player);
 _show_barrier_area(player) ->
 in_dimension(player,
     scan(pos(player), [5, 5, 5],
