@@ -4,7 +4,7 @@ __on_player_right_clicks_block(player, item_tuple, hand, block, face, hitvec) ->
     if(!item_tuple || player ~ 'gamemode' == 'spectator', return());
     [item, count, nbt] = item_tuple;
     if(item != 'saddle', return());
-    armor_stand = spawn('armor_stand', pos(block) + hitvec - [0,1.03,0], '{Tags:["gb.sitawyway"],Marker:1,NoGravity:1,Invisible:1}');
+    armor_stand = spawn('armor_stand', pos(block) + hitvec - [0,1.03,0], str('{Tags:["gb.sitawyway"],Marker:1,NoGravity:1,Invisible:1,Rotation:[%fF,%fF]}', player ~ 'yaw', player ~ 'pitch'));
     entity = spawn('pig', t=pos(block); t:1=0; t, '{Team:"gb.nocollision",NoGravity:1,DeathLootTable:"minecraft:empty",Tags:["gb.sitawyway.pig","gb.effect.invisible"],Saddle:1,Invulnerable:1,PersistenceRequired:1,NoAI:1,Silent:1,Attributes:[{Name:generic.max_health,Base:0}]}');
     modify(entity, 'effect', 'invisibility', 2147483647, 1, false, false);
     modify(entity, 'yaw', player~'yaw');
