@@ -253,6 +253,12 @@ public class CarpetRedCraftSettings {
             category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
     )
     public static boolean quartzCraftingCompatibility = false;
+    @CraftingRule(recipes = "raw_ore_block_smelting")
+    @Rule(
+            desc = "Allo to smelt and blast raw ore block",
+            category = {SURVIVAL, FEATURE, REDCRAFT, CRAFTING}
+    )
+    public static boolean rawOreBlockSmelting = false;
     @CraftingRule(recipes = "red_sandstone_crafting_compatibility")
     @Rule(
             desc = "Adds crafting compatibility with all types of Red Sandstone",
