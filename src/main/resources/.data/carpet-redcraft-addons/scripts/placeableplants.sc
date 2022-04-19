@@ -28,6 +28,7 @@ _placeable(player, item_tuple, hand, block, face) -> (
     g = player ~ 'gamemode';
     if(g == 'spectator' || !item_tuple, return());
     [item, count, nbt] = item_tuple;
+    if(item == 'wither_rose' && block ~ 'nether_brick', return());
     if(face != 'up' || !has(global_placeable_items, item) && !has(global_placeable_tall_items, item) || !flat_surface(block), return());
     if(g=='adventure' && !nbt:'CanPlaceOn' ~ str('"minecraft:%s"',block), return());
     b1 = pos_offset(block, face);
