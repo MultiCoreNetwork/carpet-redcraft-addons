@@ -25,3 +25,4 @@ local.properties
 # fabric
 logs/latest.log
 
+remappedSrc/

@@ -51,8 +51,10 @@ __on_tick() -> (
 _remove_lights() -> for(entity_list('marker'),
     if(_ ~ ['has_scoreboard_tag', 'gb.light_block'],
         block = block(pos(_));
-        without_updates(set(pos(_), if(liquid(block), 'water', 'air')));
-        modify(_, 'remove')
+        if( block == 'light',
+            without_updates(set(pos(_), if(liquid(block), 'water', 'air')));
+            modify(_, 'remove')
+        )
     )
 );
 

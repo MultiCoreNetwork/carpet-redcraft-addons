@@ -66,7 +66,7 @@ public class OpCommand {
         int i = 0;
         for (GameProfile gameProfile : targets) {
             if (!playerManager.isOperator(gameProfile)) {
-                playerManager.getOpList().add(new OperatorEntry(gameProfile, level, playerManager.getOpList().isOp(gameProfile)));
+                playerManager.getOpList().add(new OperatorEntry(gameProfile, level, playerManager.isOperator(gameProfile)));
                 ServerPlayerEntity serverPlayerEntity = playerManager.getPlayer(gameProfile.getId());
                 if (serverPlayerEntity != null) {
                     playerManager.sendCommandTree(serverPlayerEntity);
