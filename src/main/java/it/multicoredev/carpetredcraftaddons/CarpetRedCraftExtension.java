@@ -4,7 +4,7 @@ import carpet.CarpetExtension;
 import carpet.CarpetServer;
 import carpet.script.CarpetExpression;
 import carpet.script.CarpetScriptServer;
-import carpet.script.bundled.BundledModule;
+import carpet.script.Module;
 import carpet.settings.Rule;
 import carpet.settings.SettingsManager;
 import com.mojang.brigadier.CommandDispatcher;
@@ -15,6 +15,7 @@ import it.multicoredev.carpetredcraftaddons.events.CarpetRedCraftEvents;
 import it.multicoredev.carpetredcraftaddons.functions.OfflineStatisticFunction;
 import it.multicoredev.carpetredcraftaddons.functions.StructuresFunctions;
 import net.fabricmc.api.ModInitializer;
+import net.minecraft.command.CommandRegistryAccess;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.command.ServerCommandSource;
 import org.apache.commons.io.IOUtils;
@@ -57,7 +58,7 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
     }
 
     @Override
-    public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher) {
+    public void registerCommands(CommandDispatcher<ServerCommandSource> dispatcher,  final CommandRegistryAccess commandBuildContext) {
         DefaultConfigCommand.register(dispatcher);
         OpCommand.register(dispatcher);
         PublishCommand.register(dispatcher);
@@ -74,12 +75,12 @@ public class CarpetRedCraftExtension implements CarpetExtension, ModInitializer 
         return MOD_ID;
     }
 
-    private static BundledModule redcraftDefaultScript(String scriptName, boolean isLibrary) {
-        BundledModule module = new BundledModule(scriptName.toLowerCase(Locale.ROOT), null, false);
+    private static Module redcraftDefaultScript(String scriptName, boolean isLibrary) {
+        Module module = new Module(scriptName.toLowerCase(Locale.ROOT), "null", false);
         try {
-            module = new BundledModule(scriptName.toLowerCase(Locale.ROOT),
+            module = new Module(scriptName.toLowerCase(Locale.ROOT),
                     IOUtils.toString(
-                            BundledModule.class.getClassLoader().getResourceAsStream(".data/" + MOD_ID + "/scripts/" + scriptName + (isLibrary ? ".scl" : ".sc")),
+                            Module.class.getClassLoader().getResourceAsStream(".data/" + MOD_ID + "/scripts/" + scriptName + (isLibrary ? ".scl" : ".sc")),
                             StandardCharsets.UTF_8
                     ), isLibrary);
         } catch (NullPointerException | IOException ignored) {

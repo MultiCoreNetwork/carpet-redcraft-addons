@@ -34,7 +34,7 @@ public class CarefulBreakUtils {
                     dropStack(world, pos, itemStack);
                 }
             });
-            state.onStacksDropped((ServerWorld) world, pos, stack);
+            state.onStacksDropped((ServerWorld) world, pos, stack, true);
         }
     }
 

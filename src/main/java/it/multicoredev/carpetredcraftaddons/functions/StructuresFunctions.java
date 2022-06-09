@@ -13,19 +13,19 @@ import carpet.script.value.NumericValue;
 import carpet.script.value.Value;
 import net.minecraft.block.Block;
 import net.minecraft.block.StructureBlock;
-import net.minecraft.structure.Structure;
-import net.minecraft.structure.StructureManager;
 import net.minecraft.structure.StructurePlacementData;
+import net.minecraft.structure.StructureTemplate;
+import net.minecraft.structure.StructureTemplateManager;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.InvalidIdentifierException;
 import net.minecraft.util.Util;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Vec3i;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.util.registry.Registry;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.Random;
 
 import static java.lang.Math.max;
 import static java.lang.Math.min;
@@ -51,8 +51,8 @@ public class StructuresFunctions {
             if (lv.size() < pos2Locator.offset + 2) params.add(Value.NULL);
             if (lv.size() < pos2Locator.offset + 3) params.add(Value.FALSE);
 
-            StructureManager structureManager = cc.s.getServer().getStructureManager();
-            Structure structure;
+            StructureTemplateManager structureManager = cc.s.getServer().getStructureTemplateManager();
+            StructureTemplate structure;
 
             Identifier structureIdentifier;
             try {
@@ -60,7 +60,7 @@ public class StructuresFunctions {
             } catch (InvalidIdentifierException ignored) {
                 return LazyValue.NULL;
             }
-            structure = structureManager.getStructureOrBlank(structureIdentifier);
+            structure = structureManager.getTemplateOrBlank(structureIdentifier);
 
             BlockPos pos1 = pos1Locator.block.getPos();
             BlockPos pos2 = pos2Locator.block.getPos();
@@ -95,7 +95,7 @@ public class StructuresFunctions {
             structure.saveFromWorld(cc.s.getWorld(), new BlockPos(minx, miny, minz), new Vec3i(sizex, sizey, sizez), params.get(pos2Locator.offset).getBoolean(), ignoredBlock);
 
             if(params.get(pos2Locator.offset + 2).getBoolean())
-                structureManager.saveStructure(structureIdentifier);
+                structureManager.saveTemplate(structureIdentifier);
 
             return (_c, _t) -> new NumericValue(sizex * sizey * sizez);
         });
@@ -112,12 +112,12 @@ public class StructuresFunctions {
 
             if (lv.size() < pos1Locator.offset + 1) params.add(Value.FALSE);
 
-            StructureManager structureManager = cc.s.getServer().getStructureManager();
-            Optional<Structure> structure;
+            StructureTemplateManager structureManager = cc.s.getServer().getStructureTemplateManager();
+            Optional<StructureTemplate> structure;
 
             try {
                 Identifier identifier = new Identifier(params.get(0).getString());
-                structure = structureManager.getStructure(identifier);
+                structure = structureManager.getTemplate(identifier);
                 if (!structure.isPresent()) throw new ThrowStatement(identifier.toString(), Throwables.UNKNOWN_STRUCTURE);
             } catch (InvalidIdentifierException ignored) {
                 return LazyValue.NULL;
@@ -133,7 +133,7 @@ public class StructuresFunctions {
             if (!CarpetSettings.fillUpdates)
                 CarpetSettings.impendingFillSkipUpdates.set(true);
             try {
-                return (_c, _t) -> BooleanValue.of(structure.get().place(cc.s.getWorld(), pos1, pos1, structurePlacementData, new Random(Util.getMeasuringTimeMs()), 2));
+                return (_c, _t) -> BooleanValue.of(structure.get().place(cc.s.getWorld(), pos1, pos1, structurePlacementData, Random.create(Util.getMeasuringTimeMs()), 2));
             } finally {
                 CarpetSettings.impendingFillSkipUpdates.set(false);
             }

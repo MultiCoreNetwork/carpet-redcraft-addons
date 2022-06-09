@@ -33,7 +33,7 @@ public class DefaultConfigCommand {
                     try {
                         String world = c.getSource().getServer().getSavePath(WorldSavePath.ROOT).toString();
                         Files.copy(
-                                BundledModule.class.getClassLoader().getResourceAsStream("assets/" + MOD_ID + "/default.conf"),
+                                Module.class.getClassLoader().getResourceAsStream("assets/" + MOD_ID + "/default.conf"),
                                 new File(world, "carpet.conf").toPath(),
                                 StandardCopyOption.REPLACE_EXISTING
                         );

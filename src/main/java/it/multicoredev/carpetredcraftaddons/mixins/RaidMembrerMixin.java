@@ -4,6 +4,7 @@ import it.multicoredev.carpetredcraftaddons.CarpetRedCraftSettings;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.raid.RaiderEntity;
 import net.minecraft.village.raid.Raid;
+import net.minecraft.village.raid.Raid.Member;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -17,11 +18,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-@Mixin(Raid.Member.class)
+@Mixin(Member.class)
 public class RaidMembrerMixin {
     @SuppressWarnings("InvokerTarget")
     @Invoker("<init>")
-    private static Raid.Member newVariant(String internalName, int internalId, EntityType<? extends RaiderEntity> type, int[] countInWave) {
+    private static Member newVariant(String internalName, int internalId, EntityType<? extends RaiderEntity> type, int[] countInWave) {
         throw new AssertionError();
     }
 
@@ -29,7 +30,7 @@ public class RaidMembrerMixin {
     @Shadow
     private static @Final
     @Mutable
-    Raid.Member[] field_16632;
+    Member[] field_16632;
 
     @SuppressWarnings("UnresolvedMixinReference")
     @Inject(method = "<clinit>", at = @At(value = "FIELD",
@@ -39,10 +40,10 @@ public class RaidMembrerMixin {
     private static void addCustomVariant(CallbackInfo ci) {
         if(CarpetRedCraftSettings.illusionersSpawnInRaids) {
             var variants = new ArrayList<>(Arrays.asList(field_16632));
-            Raid.Member last = variants.get(variants.size() - 1);
+            Member last = variants.get(variants.size() - 1);
             var illusioner = newVariant("ILLUSIONER", last.ordinal() + 1, EntityType.ILLUSIONER, new int[]{0, 0, 0, 0, 0, 1, 1, 2});
             variants.add(illusioner);
-            field_16632 = variants.toArray(new Raid.Member[0]);
+            field_16632 = variants.toArray(new Member[0]);
         }
     }
 }

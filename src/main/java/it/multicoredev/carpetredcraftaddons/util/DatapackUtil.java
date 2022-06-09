@@ -243,7 +243,7 @@ public class DatapackUtil {
             while (entries.hasMoreElements()) {
                 final String filePath = entries.nextElement().getName();
                 if (filePath.endsWith(".json") && (filePath.startsWith(resourcePath + "/") || filePath.equals(resourcePath))) {
-                    InputStream source = BundledModule.class.getClassLoader().getResourceAsStream(filePath);
+                    InputStream source = Module.class.getClassLoader().getResourceAsStream(filePath);
                     try {
                         assert source != null;
                         Path targetPath = dataPath.resolve(filePath.replace(".data/", ""));
@@ -265,7 +265,7 @@ public class DatapackUtil {
 
     public static void copyElementFromIDE(String resourcePath, Path targetPath) {
         try {
-            URL resourceURL = BundledModule.class.getClassLoader().getResource(resourcePath);
+            URL resourceURL = Module.class.getClassLoader().getResource(resourcePath);
             if (resourceURL == null) throw new NoSuchFileException("Impossible to find " + resourcePath);
 
             File resourceFile = Paths.get(resourceURL.toURI()).toFile();

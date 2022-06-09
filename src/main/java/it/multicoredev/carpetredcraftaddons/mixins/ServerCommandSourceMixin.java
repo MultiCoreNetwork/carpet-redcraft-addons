@@ -17,10 +17,10 @@ import java.util.UUID;
 @Mixin(ServerCommandSource.class)
 public abstract class ServerCommandSourceMixin {
     @Redirect(method = "sendToOps(Lnet/minecraft/text/Text;)V", at = @At(value = "INVOKE",
-        target = "Lnet/minecraft/server/network/ServerPlayerEntity;sendSystemMessage(Lnet/minecraft/text/Text;Ljava/util/UUID;)V")
+        target = "Lnet/minecraft/server/network/ServerPlayerEntity;sendMessage(Lnet/minecraft/text/Text;)V")
     )
-    private void sendSystemMessageMixin(ServerPlayerEntity serverPlayerEntity, Text message, UUID senderUuid){
+    private void sendSystemMessageMixin(ServerPlayerEntity serverPlayerEntity, Text message){
         if(!CarpetRedCraftSettings.disableOPsCommandFeedback || serverPlayerEntity.hasPermissionLevel(2))
-            serverPlayerEntity.sendSystemMessage(message,senderUuid);
+            serverPlayerEntity.sendMessage(message);
     }
 }
