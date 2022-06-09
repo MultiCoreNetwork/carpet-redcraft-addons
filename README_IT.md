@@ -31,10 +31,8 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [craftableDeadBushes](#craftableDeadBushes)
 - [craftableDeepslateOres](#craftableDeepslateOres)
 - [craftableElytra](#craftableElytra)
-- [craftableIce](#craftableIce)
 - [craftableLargeFern](#craftableLargeFern)
 - [craftableNetherWarts](#craftableNetherWarts)
-- [craftablePackedIce](#craftablePackedIce)
 - [craftablePlayerHead](#craftablePlayerHead)
 - [craftableQuartz](#craftableQuartz)
 - [craftableRedSand](#craftableRedSand)
@@ -81,6 +79,7 @@ Da usare con la Carpet Mod nella stessa versione di Minecraft. È suggerito usar
 - [stonecutterStone](#stonecutterStone)
 - [stonecutterWood](#stonecutterWood)
 - [treecapitator](#treecapitator)
+- [unpackableIce](#unpackableIce)
 - [villagerLeash](#villagerLeash)
 - [zombieHorseSpawning](#zombieHorseSpawning)
 
@@ -288,15 +287,6 @@ Permette di craftare le elytra
 - Opzioni suggerite: `true`, `false`
 - Categorie: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
 
-## craftableIce
-
-Permette di craftare ghiaccio partendo dal ghiccio compatto
-
-- Tipo: `booleano`
-- Valore predefinito: `false`
-- Opzioni suggerite: `true`, `false`
-- Categorie: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
-
 ## craftableLargeFern
 
 Permette di craftare le felci alte
@@ -309,15 +299,6 @@ Permette di craftare le felci alte
 ## craftableNetherWarts
 
 Permette di craftare verruche del nether partendo dal relativo blocco
-
-- Tipo: `booleano`
-- Valore predefinito: `false`
-- Opzioni suggerite: `true`, `false`
-- Categorie: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`, `DATAPACK`
-
-## craftablePackedIce
-
-Permette di craftare il ghiaccio compatto partendo dalla versione blu
 
 - Tipo: `booleano`
 - Valore predefinito: `false`
@@ -730,6 +711,15 @@ Permette di abbattere un intero albero se tagliato alla base con un'ascia incant
 - Valore predefinito: `false`
 - Opzioni suggerite: `true`, `false`
 - Categorie: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+
+## unpackableIce
+
+Permette di spacchettare il ghiaccio compatto ed il ghiaccio blu utilizzando il tagliapietre
+
+- Type: `boolean`
+- Default value: `false`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## villagerLeash
 
