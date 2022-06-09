@@ -31,10 +31,8 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [craftableDeadBushes](#craftableDeadBushes)
 - [craftableDeepslateOres](#craftableDeepslateOres)
 - [craftableElytra](#craftableElytra)
-- [craftableIce](#craftableIce)
 - [craftableLargeFern](#craftableLargeFern)
 - [craftableNetherWarts](#craftableNetherWarts)
-- [craftablePackedIce](#craftablePackedIce)
 - [craftablePlayerHead](#craftablePlayerHead)
 - [craftableQuartz](#craftableQuartz)
 - [craftableRedSand](#craftableRedSand)
@@ -81,6 +79,7 @@ Use with carpet mod in the same Minecraft version. Use newer carpet mod versions
 - [stonecutterStone](#stonecutterStone)
 - [stonecutterWood](#stonecutterWood)
 - [treecapitator](#treecapitator)
+- [unpackableIce](#unpackableIce)
 - [villagerLeash](#villagerLeash)
 - [zombieHorseSpawning](#zombieHorseSpawning)
 
@@ -286,15 +285,6 @@ Allows to craft Elytras
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
-## craftableIce
-
-Allows to craft Ice from Packed Ice
-
-- Type: `boolean`
-- Default value: `false`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
-
 ## craftableLargeFern
 
 Allows to craft Large Ferns
@@ -307,15 +297,6 @@ Allows to craft Large Ferns
 ## craftableNetherWarts
 
 Allows to craft Nether Warts from Nether Warts Block
-
-- Type: `boolean`
-- Default value: `false`
-- Suggested options: `true`, `false`
-- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
-
-## craftablePackedIce
-
-Allows to craft Packed Ice from Blue Ice
 
 - Type: `boolean`
 - Default value: `false`
@@ -726,6 +707,15 @@ Allows to mine an entire tree mining a single block if using a TreeCapitator axe
 - Default value: `false`
 - Suggested options: `true`, `false`
 - Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`
+- 
+## unpackableIce
+
+Allow to unpack PackedIce & BlueIce using the stonecutter
+
+- Type: `boolean`
+- Default value: `false`
+- Suggested options: `true`, `false`
+- Categories: `SURVIVAL`, `FEATURE`, `REDCRAFT`, `CRAFTING`
 
 ## villagerLeash
 
