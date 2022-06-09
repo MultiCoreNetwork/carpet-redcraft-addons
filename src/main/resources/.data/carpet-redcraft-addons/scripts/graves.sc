@@ -91,11 +91,15 @@ _save_grave_position(player) -> (
     system_info('world_time')
 );
 _remove_grave_position(player,tick) -> (
+    players = parse_nbt(nbt_storage('redcraft:players'));
     nbt = parse_nbt(nbt_storage('redcraft:graves'));
-    if(!has(nbt,player~'uuid'), return(false));
-    for(nbt:(player~'uuid'),if(_:'Tick' == tick, i=_i; break()));
+    for(players,
+        if(players:_ == player, uuid = _; break)
+    );
+    if(!has(nbt,uuid), return(false));
+    for(nbt:uuid,if(_:'Tick' == tick, i=_i; break()));
     if(i==null, return(false));
-    delete(nbt:(player~'uuid'):i);
+    delete(nbt:uuid:i);
     nbt_storage('redcraft:graves', encode_nbt(nbt));
     true
 );
@@ -114,13 +118,13 @@ __on_player_starts_sneaking(player) -> (
 		grave = _;
 		if(player ~ 'dimension' == grave:'Dimension' && _distance(pos(player), grave:'Pos')<1,
 			_remove_grave(player, pos(player), grave:'Tick', false);
-            _remove_grave_position(player,grave:'Tick')
 		)
 	)
 );
 
 _remove_grave(player, pos, tick, ignore_tick) -> (
     for(filter(entity_area('armor_stand', pos, [1.5,1.5,1.5]), scoreboard('gb.grave.time', _~'uuid') == tick || ignore_tick),
+        time = scoreboard('gb.grave.time', _~'uuid');
         modify(_, 'remove')
     );
     for(filter(entity_area('item', pos, [1,1,1]), scoreboard('gb.grave.time', _~'uuid') == tick || ignore_tick),
@@ -129,4 +133,18 @@ _remove_grave(player, pos, tick, ignore_tick) -> (
         if(!ignore_tick, modify(_, 'nbt_merge', str('{Owner:%s}',player~'nbt':'UUID')))
     );
     sound('block.wart_block.fall', pos, 1.0, 0, 'block');
+    if(ignore_tick, (
+        players = parse_nbt(nbt_storage('redcraft:players'));
+        graves = parse_nbt(nbt_storage('redcraft:graves'));
+        for(players,
+            p = _;
+            for(graves:p,
+                if(_:'Tick' == time,
+                    _remove_grave_position(players:p,time);
+                    )
+                )
+            )
+        ),
+        _remove_grave_position(player,tick)
+    )
 )
