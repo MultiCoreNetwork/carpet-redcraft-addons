@@ -1,8 +1,12 @@
 {
-    "type": "minecraft:stonecutting",
-    "ingredient": {
-        "item": "minecraft:packed_ice"
-    },
-    "result": "minecraft:ice",
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:packed_ice"
+    }
+  ],
+  "result": {
+    "item": "minecraft:ice",
     "count": 9
+  }
 }
